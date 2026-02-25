@@ -1,99 +1,84 @@
 <div align="center">
-  
-# RISHI PRASEETH KRISHNAN
 
-<a href="https://git.io/typing-svg">
-  <img src="https://readme-typing-svg.demolab.com?font=Fira+Code&weight=600&size=20&pause=1000&color=888888&center=true&vCenter=true&width=600&lines=Software+Engineering;Systems+%26+Backend;Building+High-Performance+Tools;Architecting+Robust+Solutions" alt="Typing SVG" />
-</a>
+<img src="https://readme-typing-svg.demolab.com?font=Orbitron&weight=700&size=36&pause=1000&color=ffffff&center=true&vCenter=true&width=800&height=100&lines=Rishi+Praseeth+Krishnan;Software+Engineer;Systems+%26+Backend" alt="Typing SVG" />
 
-<br/>
+*Architecting robust backends, engineering critical system tools, and building zero-friction apps.*
+<br>
+<sub>**B.Tech Computer Science @ Muthoot Institute of Technology and Science**</sub>
 
-*Architecting robust backends and developing critical system tools.*
-<br/>
-B.Tech Computer Science @ Muthoot Institute of Technology and Science.
+<br><br>
 
-<br/>
+<a href="mailto:rishi.praseeth@gmail.com"><img src="https://img.shields.io/badge/Email-000000?style=for-the-badge&logo=minutemailer&logoColor=white" alt="Email" /></a>
+<a href="https://github.com/CodedRichy"><img src="https://img.shields.io/badge/GitHub-000000?style=for-the-badge&logo=github&logoColor=white" alt="GitHub" /></a>
+<a href="https://linkedin.com"><img src="https://img.shields.io/badge/LinkedIn-000000?style=for-the-badge&logo=linkedin&logoColor=white" alt="LinkedIn" /></a>
 
-<a href="mailto:rishi.praseeth@gmail.com">
-  <img src="https://img.shields.io/badge/Email-000000?style=for-the-badge&logo=minutemailer&logoColor=white" alt="Email" />
-</a>
-<a href="https://github.com/CodedRichy">
-  <img src="https://img.shields.io/badge/GitHub-000000?style=for-the-badge&logo=github&logoColor=white" alt="GitHub" />
-</a>
-<a href="https://linkedin.com">
-  <img src="https://img.shields.io/badge/LinkedIn-000000?style=for-the-badge&logo=linkedin&logoColor=white" alt="LinkedIn" />
+<br><br>
+
+<a href="https://skillicons.dev">
+  <img src="https://skillicons.dev/icons?i=python,django,c,cpp,javascript,react,flutter,firebase,sqlite,postgres,git,github,vscode,linux&theme=dark&perline=15" />
 </a>
 
 </div>
 
-<br/>
+<br>
 
-## ❖ EXPERTISE & STACK
+### ❖ THE ARSENAL
 
-<p align="left">
-  <a href="https://skillicons.dev">
-    <img src="https://skillicons.dev/icons?i=python,django,c,cpp,javascript,react,flutter,firebase,sqlite,postgres,git,github,vscode,linux&theme=dark&perline=15" />
-  </a>
-</p>
+*(Because the best work often lives in private repositories, here is an inside look at my core engineering projects)*
 
-## ❖ FEATURED WORK
-
-<div align="center">
-<table>
+<table width="100%">
   <tr>
-    <td align="center" width="50%">
-      <a href="https://github.com/CodedRichy/Expenso">
-        <img height="120" src="https://github-readme-stats.vercel.app/api/pin/?username=CodedRichy&repo=Expenso&theme=radical&hide_border=true&bg_color=0D1117" />
-      </a>
+    <td width="50%" valign="top">
+      <h3>↳ Expenso</h3>
+      <b>AI-Powered Expense Engine</b><br>
+      A cross-platform group expense tracking Flutter app. Features natural language parsing via Groq/Llama for instant expense logging and direct in-app UPI settlement integration.<br>
       <br>
-      <i>A robust Flutter app for group expense tracking. Features an AI "Magic Bar" (Groq/Llama) for natural language parsing and in-app UPI settlements.</i>
+      <img src="https://img.shields.io/badge/-Flutter-000000?style=flat&logo=flutter" />
+      <img src="https://img.shields.io/badge/-Firebase-000000?style=flat&logo=firebase" />
+      <img src="https://img.shields.io/badge/-Groq%20AI-000000?style=flat&logo=openai" />
     </td>
-    <td align="center" width="50%">
-      <a href="https://github.com/CodedRichy/RoadPack">
-        <img height="120" src="https://github-readme-stats.vercel.app/api/pin/?username=CodedRichy&repo=RoadPack&theme=radical&hide_border=true&bg_color=0D1117" />
-      </a>
+    <td width="50%" valign="top">
+      <h3>↳ RoadPack</h3>
+      <b>Live Convoy Telemetry</b><br>
+      A real-time tracking and coordination app built for bikers and car enthusiasts. Features zero-latency location syncing, live Google Maps telemetry, and instant group updates.<br>
       <br>
-      <i>A real-time convoy tracking and coordination app built for bikers and car enthusiasts using Flutter, Firebase, and Google Maps.</i>
+      <img src="https://img.shields.io/badge/-Flutter-000000?style=flat&logo=flutter" />
+      <img src="https://img.shields.io/badge/-GCP%20Maps-000000?style=flat&logo=googlecloud" />
+      <img src="https://img.shields.io/badge/-Firebase-000000?style=flat&logo=firebase" />
     </td>
   </tr>
   <tr>
-    <td align="center" width="50%">
-      <a href="https://github.com/CodedRichy/GitPulse">
-        <img height="120" src="https://github-readme-stats.vercel.app/api/pin/?username=CodedRichy&repo=GitPulse&theme=radical&hide_border=true&bg_color=0D1117" />
-      </a>
+    <td width="50%" valign="top">
+      <h3>↳ GitPulse</h3>
+      <b>Autonomous Git Sync</b><br>
+      A background Python daemon that fully automates Git workflows. Implements local debouncing per-repo and uses AI diff-analysis to automatically generate contextual commit summaries.<br>
       <br>
-      <i>An automated, background Git sync tool in Python. Features per-repo debouncing and diff-based AI commit summaries.</i>
+      <img src="https://img.shields.io/badge/-Python-000000?style=flat&logo=python" />
+      <img src="https://img.shields.io/badge/-DevOps-000000?style=flat&logo=git" />
     </td>
-    <td align="center" width="50%">
-      <a href="https://github.com/CodedRichy/RepoPilot">
-        <img height="120" src="https://github-readme-stats.vercel.app/api/pin/?username=CodedRichy&repo=RepoPilot&theme=radical&hide_border=true&bg_color=0D1117" />
-      </a>
+    <td width="50%" valign="top">
+      <h3>↳ RepoPilot</h3>
+      <b>Codebase Intelligence Pipeline</b><br>
+      Core execution infrastructure for advanced repo management. Automates source code classification, pipeline enforcement, and architectural formatting across complex codebases.<br>
       <br>
-      <i>Core execution pipeline infrastructure for automated source code classification and repository management.</i>
+      <img src="https://img.shields.io/badge/-Python-000000?style=flat&logo=python" />
+      <img src="https://img.shields.io/badge/-Systems-000000?style=flat&logo=linux" />
     </td>
   </tr>
 </table>
-</div>
 
-*(Explore my repositories for more backend infrastructure, systems tools, web applications, and mobile apps.)*
+<br>
 
-<br/>
+### ❖ CHRONOLOGY
 
-## ❖ EXPERIENCE
+| Role | Organization | Timeline | Focus |
+| :--- | :--- | :--- | :--- |
+| **Tech Subcom Member** | **MITS Media Club** | Oct 2024 – Present | Technical direction and infrastructure |
+| **Member** | **MITS Motorsports** | Oct 2024 – Present | Engineering and team operations |
+| **Apprentice Trainee** | **Soften Technologies** | May 2024 – Aug 2024 | Python & JavaScript Backend Engineering |
 
-**Tech Subcom Member | MITS Media Club**  
-*Oct 2024 – Present*  
-
-**Member | MITS Motorsports**  
-*Oct 2024 – Present*  
-
-**Trainee | Soften Technologies**  
-*May 2024 – Aug 2024*  
-- Apprenticeship focused on Python and JavaScript development alongside backend systems engineering.
-
-## ❖ STATS
+<br>
 
 <div align="center">
-  <img src="https://github-readme-stats.vercel.app/api?username=CodedRichy&show_icons=true&theme=radical&hide_border=true&bg_color=0D1117" alt="GitHub Stats" />
-  <img src="https://github-readme-streak-stats.herokuapp.com/?user=CodedRichy&theme=radical&hide_border=true&background=0D1117" alt="GitHub Streak" />
+  <i>"I build things that work, and I build them well."</i>
 </div>
