@@ -3,7 +3,7 @@
 # RISHI PRASEETH KRISHNAN
 
 <a href="https://git.io/typing-svg">
-  <img src="https://readme-typing-svg.demolab.com?font=Fira+Code&weight=600&size=22&pause=1000&color=666666&center=true&vCenter=true&width=600&lines=Software+Engineer;Systems+%26+Backend;Hardware+Design+(Verilog);Building+High-Performance+Tools" alt="Typing SVG" />
+  <img src="https://readme-typing-svg.demolab.com?font=Fira+Code&weight=600&size=22&pause=1000&color=666666&center=true&vCenter=true&width=600&lines=Software+Engineering;Systems+%26+Backend;Hardware+Design;Building+High-Performance+Tools" alt="Typing SVG" />
 </a>
 
 <br/>
@@ -36,8 +36,8 @@ B.Tech Computer Science @ Muthoot Institute of Technology and Science.
 
 ## ❖ FEATURED WORK
 
-* **[LiteCPU16](https://github.com/CodedRichy/LiteCPU16)** — A custom 16-bit processor designed in Verilog, featuring a core execution pipeline and well-documented modular architecture.
-* **[GitPulse](https://github.com/CodedRichy/GitPulse)** — An automated, background Git synchronization tool built in Python. Features per-repo debouncing, automatic diff-based AI commit summaries via Groq, and a local UI.
+* **[LiteCPU16](https://github.com/CodedRichy/LiteCPU16)** — A custom 16-bit processor designed in Verilog, featuring a core execution pipeline and modular architecture.
+* **[GitPulse](https://github.com/CodedRichy/GitPulse)** — An automated, background Git synchronization tool built in Python. Features per-repo debouncing and diff-based AI commit summaries.
 * **[RepoPilot](https://github.com/CodedRichy/RepoPilot)** — Core execution pipeline infrastructure for automated source code classification, policy enforcement, and repository management.
 
 *(Explore my repositories for more backend infrastructure, systems tools, hardware projects, and web applications.)*
