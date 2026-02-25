@@ -43,14 +43,14 @@ B.Tech Computer Science @ Muthoot Institute of Technology and Science.
   <tr>
     <td align="center" width="50%">
       <a href="https://github.com/CodedRichy/Expenso">
-        <img src="https://github-readme-stats.vercel.app/api/pin/?username=CodedRichy&repo=Expenso&theme=dark&hide_border=true&title_color=ffffff&text_color=999999&icon_color=444444&bg_color=000000" />
+        <img height="120" src="https://github-readme-stats.vercel.app/api/pin/?username=CodedRichy&repo=Expenso&theme=tokyonight&hide_border=true&bg_color=0D1117" />
       </a>
       <br>
       <i>A robust Flutter app for group expense tracking. Features an AI "Magic Bar" (Groq/Llama) for natural language parsing and in-app UPI settlements.</i>
     </td>
     <td align="center" width="50%">
       <a href="https://github.com/CodedRichy/RoadPack">
-        <img src="https://github-readme-stats.vercel.app/api/pin/?username=CodedRichy&repo=RoadPack&theme=dark&hide_border=true&title_color=ffffff&text_color=999999&icon_color=444444&bg_color=000000" />
+        <img height="120" src="https://github-readme-stats.vercel.app/api/pin/?username=CodedRichy&repo=RoadPack&theme=tokyonight&hide_border=true&bg_color=0D1117" />
       </a>
       <br>
       <i>A real-time convoy tracking and coordination app built for bikers and car enthusiasts using Flutter, Firebase, and Google Maps.</i>
@@ -59,14 +59,14 @@ B.Tech Computer Science @ Muthoot Institute of Technology and Science.
   <tr>
     <td align="center" width="50%">
       <a href="https://github.com/CodedRichy/GitPulse">
-        <img src="https://github-readme-stats.vercel.app/api/pin/?username=CodedRichy&repo=GitPulse&theme=dark&hide_border=true&title_color=ffffff&text_color=999999&icon_color=444444&bg_color=000000" />
+        <img height="120" src="https://github-readme-stats.vercel.app/api/pin/?username=CodedRichy&repo=GitPulse&theme=tokyonight&hide_border=true&bg_color=0D1117" />
       </a>
       <br>
       <i>An automated, background Git sync tool in Python. Features per-repo debouncing and diff-based AI commit summaries.</i>
     </td>
     <td align="center" width="50%">
       <a href="https://github.com/CodedRichy/RepoPilot">
-        <img src="https://github-readme-stats.vercel.app/api/pin/?username=CodedRichy&repo=RepoPilot&theme=dark&hide_border=true&title_color=ffffff&text_color=999999&icon_color=444444&bg_color=000000" />
+        <img height="120" src="https://github-readme-stats.vercel.app/api/pin/?username=CodedRichy&repo=RepoPilot&theme=tokyonight&hide_border=true&bg_color=0D1117" />
       </a>
       <br>
       <i>Core execution pipeline infrastructure for automated source code classification and repository management.</i>
@@ -90,6 +90,6 @@ B.Tech Computer Science @ Muthoot Institute of Technology and Science.
 ## ❖ STATS
 
 <div align="center">
-  <img src="https://github-readme-stats.vercel.app/api?username=CodedRichy&show_icons=true&theme=dark&hide_border=true&bg_color=000000&title_color=ffffff&text_color=999999&icon_color=444444" alt="GitHub Stats" />
-  <img src="https://github-readme-streak-stats.herokuapp.com/?user=CodedRichy&theme=dark&hide_border=true&background=000000&ring=444444&fire=ffffff&currStreakNum=ffffff&sideNums=999999&currStreakLabel=999999&sideLabels=999999&dates=999999" alt="GitHub Streak" />
+  <img src="https://github-readme-stats.vercel.app/api?username=CodedRichy&show_icons=true&theme=tokyonight&hide_border=true&bg_color=0D1117" alt="GitHub Stats" />
+  <img src="https://github-readme-streak-stats.herokuapp.com/?user=CodedRichy&theme=tokyonight&hide_border=true&background=0D1117" alt="GitHub Streak" />
 </div>
