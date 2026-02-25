@@ -69,6 +69,19 @@
 
 <br>
 
+### ❖ METRICS & CONTRIBUTIONS
+
+<div align="center">
+
+<img src="https://cdn.jsdelivr.net/gh/CodedRichy/CodedRichy/profile-3d-contrib/profile-night-rainbow.svg" alt="3D Git Contributions" />
+
+<img src="https://github-readme-stats.vercel.app/api?username=CodedRichy&show_icons=true&theme=dark&hide_border=true&bg_color=000000&title_color=ffffff&text_color=999999&icon_color=444444" alt="GitHub Stats" />
+<img src="https://github-readme-streak-stats.herokuapp.com/?user=CodedRichy&theme=dark&hide_border=true&background=000000&ring=444444&fire=ffffff&currStreakNum=ffffff&sideNums=999999&currStreakLabel=999999&sideLabels=999999&dates=999999" alt="GitHub Streak" />
+
+</div>
+
+<br>
+
 ### ❖ CHRONOLOGY
 
 | Role | Organization | Timeline | Focus |
