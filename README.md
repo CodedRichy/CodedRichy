@@ -1,7 +1,10 @@
 <div align="center">
 
-<img src="https://readme-typing-svg.demolab.com?font=Orbitron&weight=700&size=36&pause=1000&color=ffffff&center=true&vCenter=true&width=800&height=100&lines=Rishi+Praseeth+Krishnan;Software+Engineer;Systems+%26+Backend" alt="Typing SVG" />
+# RISHI PRASEETH KRISHNAN
 
+<a href="https://git.io/typing-svg">
+  <img src="https://readme-typing-svg.demolab.com?font=Fira+Code&weight=600&size=20&pause=1000&color=888888&center=true&vCenter=true&width=600&lines=Software+Engineering;Systems+%26+Backend;Building+High-Performance+Tools;Architecting+Robust+Solutions" alt="Typing SVG" />
+</a>
 *Architecting robust backends, engineering critical system tools, and building zero-friction apps.*
 <br>
 <sub>**B.Tech Computer Science @ Muthoot Institute of Technology and Science**</sub>
