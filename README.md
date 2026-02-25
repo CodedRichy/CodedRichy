@@ -81,11 +81,15 @@ B.Tech Computer Science @ Muthoot Institute of Technology and Science.
 
 ## ❖ EXPERIENCE
 
-**Student Trainee | Soften Technologies**  
-*2024 – Present*  
-- Engineered robust backend systems utilizing Python and Django.
-- Developed the data architecture and logic for several key products, including a project tailored for United Nations Fundraisers.
-- Optimized and managed relational databases (PostgreSQL & SQLite3).
+**Tech Subcom Member | MITS Media Club**  
+*Oct 2024 – Present*  
+
+**Member | MITS Motorsports**  
+*Oct 2024 – Present*  
+
+**Trainee | Soften Technologies**  
+*May 2024 – Aug 2024*  
+- Apprenticeship focused on Python and JavaScript development alongside backend systems engineering.
 
 ## ❖ STATS
 
