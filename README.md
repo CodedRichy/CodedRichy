@@ -3,12 +3,12 @@
 # RISHI PRASEETH KRISHNAN
 
 <a href="https://git.io/typing-svg">
-  <img src="https://readme-typing-svg.demolab.com?font=Fira+Code&weight=600&size=20&pause=1000&color=888888&center=true&vCenter=true&width=600&lines=Software+Engineering;Systems+%26+Backend;Hardware+Design;Building+High-Performance+Tools" alt="Typing SVG" />
+  <img src="https://readme-typing-svg.demolab.com?font=Fira+Code&weight=600&size=20&pause=1000&color=888888&center=true&vCenter=true&width=600&lines=Software+Engineering;Systems+%26+Backend;Building+High-Performance+Tools;Architecting+Robust+Solutions" alt="Typing SVG" />
 </a>
 
 <br/>
 
-*Architecting robust backends, developing critical system tools, and diving into hardware design.*
+*Architecting robust backends and developing critical system tools.*
 <br/>
 B.Tech Computer Science @ Muthoot Institute of Technology and Science.
 
@@ -43,14 +43,14 @@ B.Tech Computer Science @ Muthoot Institute of Technology and Science.
   <tr>
     <td align="center" width="50%">
       <a href="https://github.com/CodedRichy/Expenso">
-        <img src="https://github-readme-stats.vercel.app/api/pin/?username=CodedRichy&repo=Expenso&theme=transparent&hide_border=true&title_color=ffffff&text_color=999999&icon_color=444444&bg_color=00000000" />
+        <img src="https://github-readme-stats.vercel.app/api/pin/?username=CodedRichy&repo=Expenso&theme=dark&hide_border=true&title_color=ffffff&text_color=999999&icon_color=444444&bg_color=000000" />
       </a>
       <br>
       <i>A robust Flutter app for group expense tracking. Features an AI "Magic Bar" (Groq/Llama) for natural language parsing and in-app UPI settlements.</i>
     </td>
     <td align="center" width="50%">
       <a href="https://github.com/CodedRichy/GitPulse">
-        <img src="https://github-readme-stats.vercel.app/api/pin/?username=CodedRichy&repo=GitPulse&theme=transparent&hide_border=true&title_color=ffffff&text_color=999999&icon_color=444444&bg_color=00000000" />
+        <img src="https://github-readme-stats.vercel.app/api/pin/?username=CodedRichy&repo=GitPulse&theme=dark&hide_border=true&title_color=ffffff&text_color=999999&icon_color=444444&bg_color=000000" />
       </a>
       <br>
       <i>An automated, background Git sync tool in Python. Features per-repo debouncing and diff-based AI commit summaries.</i>
@@ -58,15 +58,15 @@ B.Tech Computer Science @ Muthoot Institute of Technology and Science.
   </tr>
   <tr>
     <td align="center" width="50%">
-      <a href="https://github.com/CodedRichy/LiteCPU16">
-        <img src="https://github-readme-stats.vercel.app/api/pin/?username=CodedRichy&repo=LiteCPU16&theme=transparent&hide_border=true&title_color=ffffff&text_color=999999&icon_color=444444&bg_color=00000000" />
+      <a href="https://github.com/CodedRichy/GitScribe">
+        <img src="https://github-readme-stats.vercel.app/api/pin/?username=CodedRichy&repo=GitScribe&theme=dark&hide_border=true&title_color=ffffff&text_color=999999&icon_color=444444&bg_color=000000" />
       </a>
       <br>
-      <i>A custom 16-bit processor designed in Verilog, featuring a core execution pipeline and modular architecture.</i>
+      <i>Generates markdown documentation (CHANGELOG, ARCHITECTURE, DEVELOPMENT) directly from a repository's local Git history.</i>
     </td>
     <td align="center" width="50%">
       <a href="https://github.com/CodedRichy/RepoPilot">
-        <img src="https://github-readme-stats.vercel.app/api/pin/?username=CodedRichy&repo=RepoPilot&theme=transparent&hide_border=true&title_color=ffffff&text_color=999999&icon_color=444444&bg_color=00000000" />
+        <img src="https://github-readme-stats.vercel.app/api/pin/?username=CodedRichy&repo=RepoPilot&theme=dark&hide_border=true&title_color=ffffff&text_color=999999&icon_color=444444&bg_color=000000" />
       </a>
       <br>
       <i>Core execution pipeline infrastructure for automated source code classification and repository management.</i>
@@ -75,7 +75,7 @@ B.Tech Computer Science @ Muthoot Institute of Technology and Science.
 </table>
 </div>
 
-*(Explore my repositories for more backend infrastructure, systems tools, hardware projects, and web applications.)*
+*(Explore my repositories for more backend infrastructure, systems tools, web applications, and mobile apps.)*
 
 <br/>
 
