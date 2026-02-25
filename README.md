@@ -1,59 +1,65 @@
 <div align="center">
-  <img src="https://capsule-render.vercel.app/api?type=waving&color=gradient&height=250&section=header&text=Hi%20there,%20I'm%20Rishi!&fontSize=70&fontAlignY=35&animation=twinkling&fontColor=ffffff" />
+  
+# RISHI PRASEETH KRISHNAN
+
+<a href="https://git.io/typing-svg">
+  <img src="https://readme-typing-svg.demolab.com?font=Fira+Code&weight=500&size=20&pause=1000&color=666666&center=true&vCenter=true&width=600&lines=Software+Engineer;Computer+Science+Undergrad;Python,+Django,+Hardware+Design;Building+automation+%26+systems" alt="Typing SVG" />
+</a>
+
+<br/>
+
+*Architecting robust backends, developing interactive interfaces, and diving into hardware design.*
+<br/>
+Currently pursuing B.Tech in Computer Science at Muthoot Institute of Technology and Science (2024–2028).
+
+<br/>
+
+<a href="mailto:rishi.praseeth@gmail.com">
+  <img src="https://img.shields.io/badge/Email-000000?style=for-the-badge&logo=minutemailer&logoColor=white" alt="Email" />
+</a>
+<a href="https://github.com/CodedRichy">
+  <img src="https://img.shields.io/badge/GitHub-000000?style=for-the-badge&logo=github&logoColor=white" alt="GitHub" />
+</a>
+<a href="https://linkedin.com">
+  <img src="https://img.shields.io/badge/LinkedIn-000000?style=for-the-badge&logo=linkedin&logoColor=white" alt="LinkedIn" />
+</a>
+
 </div>
 
-<h2 align="center">
-  <a href="https://git.io/typing-svg">
-    <img src="https://readme-typing-svg.demolab.com?font=Fira+Code&weight=600&size=24&pause=1000&color=36BCF7&center=true&vCenter=true&width=500&lines=Computer+Science+Student;Freelance+Web+Developer;Python+%26+Django+Enthusiast" alt="Typing SVG" />
-  </a>
-</h2>
+<br/>
 
-<div align="center">
-  <p>I'm a B.Tech Computer Science student at Muthoot Institute of Technology and Science (2024–2028), passionate about building clean, interactive web applications.</p>
-</div>
+## ❖ EXPERTISE & STACK
 
-<br />
-
-<div align="center">
-  <a href="mailto:rishi.praseeth@gmail.com">
-    <img src="https://img.shields.io/badge/Gmail-D14836?style=for-the-badge&logo=gmail&logoColor=white" alt="Gmail" />
-  </a>
-  <a href="https://github.com/CodedRichy">
-    <img src="https://img.shields.io/badge/GitHub-100000?style=for-the-badge&logo=github&logoColor=white" alt="GitHub" />
-  </a>
-</div>
-
-<br />
-
-### 🛠️ Tech Stack & Tools
-
-<p align="center">
-  <img src="https://skillicons.dev/icons?i=python,django,javascript,jquery,css,bootstrap,sqlite,postgres" alt="Tech Stack" />
+<p align="left">
+  <img src="https://skillicons.dev/icons?i=python,django,javascript,react,css,bootstrap,sqlite,postgres,git,github,vscode,linux&theme=dark" alt="Tech Stack" />
 </p>
 
-### 💼 Experience
+## ❖ FEATURED WORK
 
-**Student Trainee @ Soften Technologies** *(2024 - Present)*
-- Developed web applications focusing on robust backends with Python & Django.
-- Crafted responsive frontends utilizing HTML, CSS, Bootstrap, JavaScript, and jQuery.
-- Managed and optimized databases using SQLite3 and PostgreSQL.
-- Collaborated effectively to create solutions like the UN's Fundraisers project.
+* **[GitPulse](https://github.com/CodedRichy/GitPulse)** — An automated, background Git synchronization tool built in Python. Features per-repo debouncing, automatic diff-based AI commit summaries via Groq, and a local UI.
+* **[LiteCPU16](https://github.com/CodedRichy/LiteCPU16)** — A custom 16-bit processor designed in Verilog, featuring a core execution pipeline and well-documented modular architecture.
+* **[RepoPilot](https://github.com/CodedRichy/RepoPilot)** — Core execution pipeline infrastructure for automated source code classification, policy enforcement, and repository management.
 
-### 🏀 Extracurriculars
-- Proudly represented my school as a player on the basketball team.
+*(Explore my repositories for more SaaS, mobile apps, and full-stack projects!)*
 
-### 📈 GitHub Stats
+<br/>
+
+## ❖ EXPERIENCE
+
+**Student Trainee | Soften Technologies**  
+*2024 – Present*  
+- Engineered robust backend systems utilizing Python and Django.
+- Developed the data architecture and logic for several key web products, including a project tailored for United Nations Fundraisers.
+- Optimized and managed relational databases (PostgreSQL & SQLite3).
+- Built responsive user interfaces with Javascript, jQuery, HTML5, and standard CSS frameworks.
+
+## ❖ ANALYTICS
 
 <div align="center">
-  <img src="https://github-readme-stats.vercel.app/api?username=CodedRichy&show_icons=true&theme=tokyonight&hide_border=true&bg_color=0D1117" alt="GitHub Stats" />
-  <img src="https://github-readme-streak-stats.herokuapp.com/?user=CodedRichy&theme=tokyonight&hide_border=true&background=0D1117" alt="GitHub Streak" />
+  <img src="https://github-readme-stats.vercel.app/api?username=CodedRichy&show_icons=true&theme=dark&hide_border=true&bg_color=000000&title_color=ffffff&text_color=999999&icon_color=444444" alt="GitHub Stats" />
+  <img src="https://github-readme-streak-stats.herokuapp.com/?user=CodedRichy&theme=dark&hide_border=true&background=000000&ring=444444&fire=ffffff&currStreakNum=ffffff&sideNums=999999&currStreakLabel=999999&sideLabels=999999&dates=999999" alt="GitHub Streak" />
 </div>
 
 <p align="center">
-  <img src="https://github-readme-stats.vercel.app/api/top-langs/?username=CodedRichy&layout=compact&theme=tokyonight&hide_border=true&bg_color=0D1117" alt="Top Languages" />
+  <img src="https://github-readme-stats.vercel.app/api/top-langs/?username=CodedRichy&layout=compact&theme=dark&hide_border=true&bg_color=000000&title_color=ffffff&text_color=999999" alt="Top Languages" />
 </p>
-
----
-<div align="center">
-  <i>"Always eager to learn and build something new."</i>
-</div>
