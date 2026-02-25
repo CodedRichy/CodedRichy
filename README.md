@@ -49,20 +49,20 @@ B.Tech Computer Science @ Muthoot Institute of Technology and Science.
       <i>A robust Flutter app for group expense tracking. Features an AI "Magic Bar" (Groq/Llama) for natural language parsing and in-app UPI settlements.</i>
     </td>
     <td align="center" width="50%">
+      <a href="https://github.com/CodedRichy/RoadPack">
+        <img src="https://github-readme-stats.vercel.app/api/pin/?username=CodedRichy&repo=RoadPack&theme=dark&hide_border=true&title_color=ffffff&text_color=999999&icon_color=444444&bg_color=000000" />
+      </a>
+      <br>
+      <i>A real-time convoy tracking and coordination app built for bikers and car enthusiasts using Flutter, Firebase, and Google Maps.</i>
+    </td>
+  </tr>
+  <tr>
+    <td align="center" width="50%">
       <a href="https://github.com/CodedRichy/GitPulse">
         <img src="https://github-readme-stats.vercel.app/api/pin/?username=CodedRichy&repo=GitPulse&theme=dark&hide_border=true&title_color=ffffff&text_color=999999&icon_color=444444&bg_color=000000" />
       </a>
       <br>
       <i>An automated, background Git sync tool in Python. Features per-repo debouncing and diff-based AI commit summaries.</i>
-    </td>
-  </tr>
-  <tr>
-    <td align="center" width="50%">
-      <a href="https://github.com/CodedRichy/GitScribe">
-        <img src="https://github-readme-stats.vercel.app/api/pin/?username=CodedRichy&repo=GitScribe&theme=dark&hide_border=true&title_color=ffffff&text_color=999999&icon_color=444444&bg_color=000000" />
-      </a>
-      <br>
-      <i>Generates markdown documentation (CHANGELOG, ARCHITECTURE, DEVELOPMENT) directly from a repository's local Git history.</i>
     </td>
     <td align="center" width="50%">
       <a href="https://github.com/CodedRichy/RepoPilot">
