@@ -3,14 +3,14 @@
 # RISHI PRASEETH KRISHNAN
 
 <a href="https://git.io/typing-svg">
-  <img src="https://readme-typing-svg.demolab.com?font=Fira+Code&weight=500&size=20&pause=1000&color=666666&center=true&vCenter=true&width=600&lines=Software+Engineer;Computer+Science+Undergrad;Python,+Django,+Hardware+Design;Building+automation+%26+systems" alt="Typing SVG" />
+  <img src="https://readme-typing-svg.demolab.com?font=Fira+Code&weight=600&size=22&pause=1000&color=666666&center=true&vCenter=true&width=600&lines=Software+Engineer;Systems+%26+Backend;Hardware+Design+(Verilog);Building+High-Performance+Tools" alt="Typing SVG" />
 </a>
 
 <br/>
 
-*Architecting robust backends, developing interactive interfaces, and diving into hardware design.*
+*Architecting robust backends, developing critical system tools, and diving into hardware design.*
 <br/>
-Currently pursuing B.Tech in Computer Science at Muthoot Institute of Technology and Science (2024–2028).
+B.Tech Computer Science @ Muthoot Institute of Technology and Science.
 
 <br/>
 
@@ -31,16 +31,16 @@ Currently pursuing B.Tech in Computer Science at Muthoot Institute of Technology
 ## ❖ EXPERTISE & STACK
 
 <p align="left">
-  <img src="https://skillicons.dev/icons?i=python,django,javascript,react,css,bootstrap,sqlite,postgres,git,github,vscode,linux&theme=dark" alt="Tech Stack" />
+  <img src="https://skillicons.dev/icons?i=python,django,c,cpp,javascript,react,sqlite,postgres,git,github,vscode,linux&theme=dark" alt="Tech Stack" />
 </p>
 
 ## ❖ FEATURED WORK
 
-* **[GitPulse](https://github.com/CodedRichy/GitPulse)** — An automated, background Git synchronization tool built in Python. Features per-repo debouncing, automatic diff-based AI commit summaries via Groq, and a local UI.
 * **[LiteCPU16](https://github.com/CodedRichy/LiteCPU16)** — A custom 16-bit processor designed in Verilog, featuring a core execution pipeline and well-documented modular architecture.
+* **[GitPulse](https://github.com/CodedRichy/GitPulse)** — An automated, background Git synchronization tool built in Python. Features per-repo debouncing, automatic diff-based AI commit summaries via Groq, and a local UI.
 * **[RepoPilot](https://github.com/CodedRichy/RepoPilot)** — Core execution pipeline infrastructure for automated source code classification, policy enforcement, and repository management.
 
-*(Explore my repositories for more SaaS, mobile apps, and full-stack projects!)*
+*(Explore my repositories for more backend infrastructure, systems tools, hardware projects, and web applications.)*
 
 <br/>
 
@@ -49,9 +49,8 @@ Currently pursuing B.Tech in Computer Science at Muthoot Institute of Technology
 **Student Trainee | Soften Technologies**  
 *2024 – Present*  
 - Engineered robust backend systems utilizing Python and Django.
-- Developed the data architecture and logic for several key web products, including a project tailored for United Nations Fundraisers.
+- Developed the data architecture and logic for several key products, including a project tailored for United Nations Fundraisers.
 - Optimized and managed relational databases (PostgreSQL & SQLite3).
-- Built responsive user interfaces with Javascript, jQuery, HTML5, and standard CSS frameworks.
 
 ## ❖ ANALYTICS
 
