@@ -43,14 +43,14 @@ B.Tech Computer Science @ Muthoot Institute of Technology and Science.
   <tr>
     <td align="center" width="50%">
       <a href="https://github.com/CodedRichy/Expenso">
-        <img height="120" src="https://github-readme-stats.vercel.app/api/pin/?username=CodedRichy&repo=Expenso&theme=tokyonight&hide_border=true&bg_color=0D1117" />
+        <img height="120" src="https://github-readme-stats.vercel.app/api/pin/?username=CodedRichy&repo=Expenso&theme=radical&hide_border=true&bg_color=0D1117" />
       </a>
       <br>
       <i>A robust Flutter app for group expense tracking. Features an AI "Magic Bar" (Groq/Llama) for natural language parsing and in-app UPI settlements.</i>
     </td>
     <td align="center" width="50%">
       <a href="https://github.com/CodedRichy/RoadPack">
-        <img height="120" src="https://github-readme-stats.vercel.app/api/pin/?username=CodedRichy&repo=RoadPack&theme=tokyonight&hide_border=true&bg_color=0D1117" />
+        <img height="120" src="https://github-readme-stats.vercel.app/api/pin/?username=CodedRichy&repo=RoadPack&theme=radical&hide_border=true&bg_color=0D1117" />
       </a>
       <br>
       <i>A real-time convoy tracking and coordination app built for bikers and car enthusiasts using Flutter, Firebase, and Google Maps.</i>
@@ -59,14 +59,14 @@ B.Tech Computer Science @ Muthoot Institute of Technology and Science.
   <tr>
     <td align="center" width="50%">
       <a href="https://github.com/CodedRichy/GitPulse">
-        <img height="120" src="https://github-readme-stats.vercel.app/api/pin/?username=CodedRichy&repo=GitPulse&theme=tokyonight&hide_border=true&bg_color=0D1117" />
+        <img height="120" src="https://github-readme-stats.vercel.app/api/pin/?username=CodedRichy&repo=GitPulse&theme=radical&hide_border=true&bg_color=0D1117" />
       </a>
       <br>
       <i>An automated, background Git sync tool in Python. Features per-repo debouncing and diff-based AI commit summaries.</i>
     </td>
     <td align="center" width="50%">
       <a href="https://github.com/CodedRichy/RepoPilot">
-        <img height="120" src="https://github-readme-stats.vercel.app/api/pin/?username=CodedRichy&repo=RepoPilot&theme=tokyonight&hide_border=true&bg_color=0D1117" />
+        <img height="120" src="https://github-readme-stats.vercel.app/api/pin/?username=CodedRichy&repo=RepoPilot&theme=radical&hide_border=true&bg_color=0D1117" />
       </a>
       <br>
       <i>Core execution pipeline infrastructure for automated source code classification and repository management.</i>
@@ -94,6 +94,6 @@ B.Tech Computer Science @ Muthoot Institute of Technology and Science.
 ## ❖ STATS
 
 <div align="center">
-  <img src="https://github-readme-stats.vercel.app/api?username=CodedRichy&show_icons=true&theme=tokyonight&hide_border=true&bg_color=0D1117" alt="GitHub Stats" />
-  <img src="https://github-readme-streak-stats.herokuapp.com/?user=CodedRichy&theme=tokyonight&hide_border=true&background=0D1117" alt="GitHub Streak" />
+  <img src="https://github-readme-stats.vercel.app/api?username=CodedRichy&show_icons=true&theme=radical&hide_border=true&bg_color=0D1117" alt="GitHub Stats" />
+  <img src="https://github-readme-streak-stats.herokuapp.com/?user=CodedRichy&theme=radical&hide_border=true&background=0D1117" alt="GitHub Streak" />
 </div>
