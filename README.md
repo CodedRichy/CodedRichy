@@ -116,5 +116,5 @@ Building backend-heavy applications, system tools, and automation pipelines. <br
 ## ❖ GITHUB STATS
 
 <div align="center">
-  <img src="https://github-readme-stats.vercel.app/api?username=CodedRichy&show_icons=true&theme=dark&hide_border=true&rank_icon=github" />
+  <img src="https://github-readme-streak-stats.herokuapp.com/?user=CodedRichy&theme=dark&hide_border=true" />
 </div>
