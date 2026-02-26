@@ -111,12 +111,6 @@ Building backend-heavy applications, system tools, and automation pipelines. <br
 * **Correctness-first application design**
 * **Performance-aware architectures**
 
-<br>
-
-<div align="center">
-  <i>"I care more about things working correctly than sounding impressive."</i>
-</div>
-
 <br><br>
 
 ## ❖ GITHUB STATS
