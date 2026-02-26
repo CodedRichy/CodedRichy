@@ -93,15 +93,6 @@ Building backend-heavy applications, system tools, and automation pipelines. <br
 
 <br><br>
 
-## ❖ ENGINEERING METRICS
-
-<div align="center">
-  <img src="https://github-readme-stats.vercel.app/api?username=CodedRichy&show_icons=true&theme=dark&hide_border=true&rank_icon=github" />
-</div>
-
-> *Minimal by design. One reliable signal beats multiple flaky widgets.*
-
-<br><br>
 
 ## ❖ EXPERIENCE
 
@@ -121,3 +112,15 @@ Building backend-heavy applications, system tools, and automation pipelines. <br
 * **Performance-aware architectures**
 
 <br>
+
+<div align="center">
+  <i>"I care more about things working correctly than sounding impressive."</i>
+</div>
+
+<br><br>
+
+## ❖ GITHUB STATS
+
+<div align="center">
+  <img src="https://github-readme-stats.vercel.app/api?username=CodedRichy&show_icons=true&theme=dark&hide_border=true&rank_icon=github" />
+</div>
