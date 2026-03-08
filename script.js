@@ -92,6 +92,38 @@ document.addEventListener('DOMContentLoaded', () => {
         marquee.innerHTML += marquee.innerHTML; // duplicate to ensure smooth scroll
     }
 
+    // --- Staggered Hover Text Logic ---
+    const navLinks = document.querySelectorAll('.nav-link, .footer-links a');
+    navLinks.forEach(link => {
+        const text = link.innerText;
+        link.innerText = '';
+        link.setAttribute('data-text', text);
+
+        // Wrap each character in a span for original text
+        for (let i = 0; i < text.length; i++) {
+            const charSpan = document.createElement('span');
+            charSpan.classList.add('char');
+            // preserve spaces
+            charSpan.innerHTML = text[i] === ' ' ? '&nbsp;' : text[i];
+
+            // Stagger original character speeds
+            charSpan.style.transitionDelay = `${i * 0.03}s`;
+
+            link.appendChild(charSpan);
+        }
+    });
+
+    // Generate cloned characters for the 'data-text' pseudo-element effect
+    const style = document.createElement('style');
+    let delayCSS = '';
+    // Let's assume max length of 20 chars for any nav link
+    for (let i = 0; i < 20; i++) {
+        delayCSS += `.nav-link:hover::before .char:nth-child(${i + 1}) { transition-delay: ${i * 0.03}s } \n`;
+        delayCSS += `.cta:hover .char:nth-child(${i + 1}) { transition-delay: ${i * 0.03}s } \n`;
+    }
+    style.innerHTML = delayCSS;
+    document.head.appendChild(style);
+
     // --- Sublte Parallax on Hero ---
     const heroBg = document.querySelector('.hero-bg-accent');
     window.addEventListener('scroll', () => {

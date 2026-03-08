@@ -1,17 +1,20 @@
 :root {
-    --bg-color: #030303;
-    --text-color: #ffffff;
-    --accent: #ff4a00;
-    /* Subtle sporty/racing orange accent */
-    --surface: #121212;
-    --surface-hover: #1f1f1f;
-    --text-muted: #888888;
+    --bg-color: #171813;
+    /* Deep Olive / Off-black */
+    --text-color: #f1f2e6;
+    /* Bone / Off-white */
+    --accent: #D2FF00;
+    /* Neon Yellow / Papaya variant */
+    --surface: #282C20;
+    /* Dark Olive */
+    --surface-hover: #313626;
+    --text-muted: #9fa38b;
 
-    --font-display: 'Syncopate', sans-serif;
-    --font-body: 'Inter', sans-serif;
+    --font-display: 'Space Grotesk', sans-serif;
+    --font-body: 'Outfit', sans-serif;
 
-    --transition-smooth: all 0.6s cubic-bezier(0.16, 1, 0.3, 1);
-    --transition-fast: all 0.3s ease;
+    --transition-smooth: all 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+    --transition-fast: all 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
 }
 
 * {
@@ -35,6 +38,19 @@ body {
     line-height: 1.6;
     overflow-x: hidden;
     -webkit-font-smoothing: antialiased;
+}
+
+/* Grain Overlay for Cinematic Texture */
+.noise-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    pointer-events: none;
+    z-index: 9999;
+    background: url('data:image/svg+xml,%3Csvg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg"%3E%3Cfilter id="noiseFilter"%3E%3CfeTurbulence type="fractalNoise" baseFrequency="0.65" numOctaves="3" stitchTiles="stitch"/%3E%3C/filter%3E%3Crect width="100%25" height="100%25" filter="url(%23noiseFilter)"/%3E%3C/svg%3E');
+    opacity: 0.05;
 }
 
 /* Custom Cursor */
@@ -124,43 +140,64 @@ li {
 }
 
 .nav-link {
-    font-weight: 500;
-    font-size: 0.9rem;
-    letter-spacing: 1px;
+    font-family: var(--font-display);
+    font-weight: 700;
+    font-size: 0.85rem;
+    letter-spacing: 2px;
     text-transform: uppercase;
     position: relative;
     padding-bottom: 4px;
+    overflow: hidden;
+    display: inline-flex;
+    color: var(--text-color);
 }
 
-.nav-link::after {
-    content: '';
+.char {
+    display: inline-block;
+    transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.nav-link:hover .char {
+    transform: translateY(-100%);
+    color: var(--accent);
+}
+
+.nav-link::before {
+    content: attr(data-text);
     position: absolute;
-    bottom: 0;
+    top: 100%;
     left: 0;
-    width: 0%;
-    height: 2px;
-    background-color: var(--accent);
-    transition: var(--transition-fast);
+    color: var(--accent);
+    display: flex;
+    white-space: nowrap;
 }
 
-.nav-link:hover::after {
-    width: 100%;
+.nav-link:hover::before .char {
+    transform: translateY(-100%);
 }
 
 .cta {
-    border: 1px solid rgba(255, 255, 255, 0.2);
-    padding: 0.6rem 1.5rem;
+    background-color: var(--text-color);
+    color: var(--bg-color);
+    padding: 0.6rem 2rem;
     border-radius: 100px;
-}
-
-.cta::after {
-    display: none;
+    border: 1px solid var(--text-color);
+    transition: var(--transition-fast);
 }
 
 .cta:hover {
-    background-color: var(--text-color);
-    color: var(--bg-color);
-    border-color: var(--text-color);
+    background-color: transparent;
+    color: var(--accent);
+    border-color: var(--accent);
+}
+
+.cta:hover .char {
+    color: var(--accent);
+    transform: translateY(-100%);
+}
+
+.cta::before {
+    color: var(--accent);
 }
 
 /* Layout Containers */
@@ -344,15 +381,19 @@ li {
 
 .project-card {
     background-color: var(--bg-color);
-    border-radius: 8px;
-    padding: 3rem;
+    padding: 4rem 3rem;
     transition: var(--transition-smooth);
-    border: 1px solid transparent;
+    border: 1px solid rgba(210, 255, 0, 0.05);
+    /* very faint accent border */
+    /* Helmet Notched Corners */
+    clip-path: polygon(0 0, calc(100% - 30px) 0, 100% 30px, 100% 100%, 30px 100%, 0 calc(100% - 30px));
 }
 
 .project-card:hover {
-    border-color: rgba(255, 255, 255, 0.1);
-    transform: translateY(-10px);
+    border-color: var(--accent);
+    transform: translateY(-15px) scale(1.02);
+    background-color: var(--surface-hover);
+    box-shadow: 0 30px 60px rgba(0, 0, 0, 0.5);
 }
 
 .project-meta {
