@@ -1,14 +1,13 @@
 :root {
-    --bg-color: #111112;
-    /* Real Lando Off-Black */
-    --text-color: #F4F4ED;
-    /* Real Lando Bone White */
-    --accent: #D2FF00;
-    /* Neon Lime */
-    --surface: #282C20;
-    /* Dark Olive Technical Surface */
-    --surface-hover: #313626;
-    --text-muted: #9fa38b;
+    --bg-color: #050505;
+    /* Black */
+    --text-color: #FFFFFF;
+    /* Stark White */
+    --accent: #800020;
+    /* Deep Burgundy */
+    --surface: #121212;
+    --surface-hover: #1A1A1A;
+    --text-muted: #888888;
 
     --font-display: 'Space Grotesk', sans-serif;
     --font-body: 'Outfit', sans-serif;
@@ -48,10 +47,10 @@ body::before {
     left: 0;
     width: 100%;
     height: 100%;
-    /* Infinite resolution technical grid - mimics F1 telemetry overlays */
+    /* Monochrome technical grid */
     background-image:
-        linear-gradient(rgba(210, 255, 0, 0.04) 1px, transparent 1px),
-        linear-gradient(90deg, rgba(210, 255, 0, 0.04) 1px, transparent 1px);
+        linear-gradient(rgba(255, 255, 255, 0.02) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255, 255, 255, 0.02) 1px, transparent 1px);
     background-size: 60px 60px;
     z-index: -2;
     pointer-events: none;
@@ -65,8 +64,8 @@ body::after {
     left: 0;
     width: 100%;
     height: 100%;
-    background: radial-gradient(circle at 80% 20%, rgba(210, 255, 0, 0.15) 0%, transparent 50%),
-        radial-gradient(circle at 20% 80%, rgba(210, 255, 0, 0.05) 0%, transparent 40%);
+    background: radial-gradient(circle at 80% 20%, rgba(128, 0, 32, 0.15) 0%, transparent 60%),
+        radial-gradient(circle at 20% 80%, rgba(255, 255, 255, 0.03) 0%, transparent 40%);
     z-index: -1;
     pointer-events: none;
 }
