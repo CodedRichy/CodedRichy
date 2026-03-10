@@ -1,0 +1,1420 @@
+================================================================================
+PROJECTS README LOG
+Generated on: GitHub
+================================================================================
+
+
+[ PROJECT: AUTOMATEDATTENDANCEENGINE ]
+----------------------------------------
+# Automated Attendance Engine (AAE)
+
+[![Status](https://img.shields.io/badge/Status-Architectural_Proposal_%7C_Research-orange)](#)
+[![License](https://img.shields.io/badge/License-Proprietary-red)](#)
+
+
+Traditional attendance infrastructure—manual roll calls, QR check-ins, and hardware-bound biometrics—exhibits three compounding failure modes: high operational overhead, capital-intensive scaling, and fundamental vulnerability to proxy-based circumvention. 
+
+**AAE is a passive, infrastructure-independent presence verification framework.**
+
+It shifts the verification model from *active authentication* ("prove you are here" via a queue or scan) to *passive presence verification*, executing on the devices students already carry. 
+
+---
+
+## 🏗️ Core Architecture
+
+AAE achieves robust tracking without specialized hardware by leveraging a decentralized **Bluetooth Low Energy (BLE)** subnetwork. The architecture is explicitly documented in the accompanying technical whitepaper: `docs/AutomatedAttendanceEngine.tex`.
+
+### 1. The Proximity Mesh
+Instead of authenticating against a single teacher hub (which is easily spoofed via Bluetooth relays from the hallway), AAE constructs a device-to-device (D2D) Proximity Mesh. Every enrolled peer independently scans and advertises, using an $O(N)$ **Union-Find Disjoint Set** algorithm to cross-verify physical quorum within the classroom cluster.
+
+### 2. Multi-Modal Anti-Spoofing (Liveness Engine)
+To defeat advanced proxy tactics (e.g., the "Faraday Bag-Drop" and "Classroom Collusion"), AAE synthesizes local hardware telemetry:
+- **Light Sensor Correlation:** Flags identically dark environments (< 2 lux).
+- **Gyroscope Fusion:** Differentiates fluid human manipulation from artificially shaken devices.
+- **Engagement Scoring:** Analyzes screen state and UI interaction to flag unattended 'mule' devices.
+
+### 3. DPDPA / GDPR Privacy Core
+AAE eliminates the surveillance concerns associated with biometric and persistent GPS tracking. 
+- **Ephemeral Identity:** Devices broadcast HMAC-SHA256 session tokens, randomized per lecture. Hardware MAC addresses are never resolved.
+- **Differential Privacy:** Liveness telemetry collapses into binary flags with mathematical noise injected before securely dispatching.
+- **Zero Persistence:** Evaluation is strictly restricted to ephemeral Time-To-Live (TTL) buffers on a Redis ingestion layer.
+
+---
+
+## ⚙️ Stack Strategy (Proposed)
+
+| Subsystem | Technology | Rationale |
+|-----------|-------------|------------|
+| **Edge Client** | Flutter (Dart) | Unified iOS/Android codebase; native CoreBluetooth API access. |
+| **Ingestion Pipeline** | Node.js + Redis | High-frequency IO multiplexing to absorb massive synchronized mesh pulses. |
+| **Data Store** | PostgreSQL | ACID compliance for final computed Confidence Scores. |
+
+---
+
+## 📈 Status & Next Steps
+
+This repository currently hosts the foundational mathematics and engineering frameworks. The physical implementation of the Flutter Edge Client and Node.js Verification Engine is pending subsequent research validation.
+
+**Whitepaper:** View the complete mathematical parameterization and limits in `/docs/AutomatedAttendanceEngine.pdf`
+
+---
+
+## 📄 License
+
+Copyright (c) 2025 Rishi Praseeth Krishnan. All rights reserved.
+
+This repository and its source code are made visible for viewing and reference only. No license is granted to use, copy, modify, distribute, or create derivative works from this software. See the [LICENSE](LICENSE) file for full details.
+
+
+
+
+--------------------------------------------------------------------------------
+
+[ PROJECT: CODEDRICHY ]
+----------------------------------------
+<div align="center">
+
+# RISHI PRASEETH KRISHNAN
+
+Building backend-heavy applications, system tools, and automation pipelines. <br>
+*Focused on correctness, performance, and developer ergonomics.*
+
+**B.Tech Computer Science @ Muthoot Institute of Technology and Science**
+
+<br>
+
+<a href="mailto:rishi.praseeth@gmail.com">
+  <img src="https://img.shields.io/badge/Email-000000?style=flat-square&logo=minutemailer&logoColor=white" />
+</a>
+<a href="https://github.com/CodedRichy">
+  <img src="https://img.shields.io/badge/GitHub-000000?style=flat-square&logo=github&logoColor=white" />
+</a>
+<a href="https://linkedin.com">
+  <img src="https://img.shields.io/badge/LinkedIn-000000?style=flat-square&logo=linkedin&logoColor=white" />
+</a>
+
+<br><br>
+
+<a href="https://skillicons.dev">
+  <img src="https://skillicons.dev/icons?i=python,django,c,cpp,javascript,react,flutter,firebase,sqlite,postgres,git,github,linux&theme=dark&perline=15" />
+</a>
+
+</div>
+
+<br><br>
+
+## ❖ CORE PROJECTS
+
+> Selected engineering projects. Some repositories are private; descriptions focus on architecture and technical guarantees.
+
+<br>
+
+<table width="100%">
+  <tr>
+    <td width="50%" valign="top">
+      <h4>↳ <b>Expenso</b> — <i>Ledger-Based Group Expense System</i></h4>
+      <p>A cross-platform group expense application designed around strict accounting invariants.</p>
+      <b>Key Engineering Decisions:</b>
+      <blockquote>
+        • Append-only expense revisions (no destructive updates)<br>
+        • Integer minor-unit accounting to eliminate rounding errors<br>
+        • Deterministic settlement computation (zero-sum invariant enforced)<br>
+        • Natural-language expense parsing using Groq/Llama<br>
+        • Direct UPI intent-based settlement flows
+      </blockquote>
+      <code>Stack: Flutter, Firebase, Groq</code>
+    </td>
+    <td width="50%" valign="top">
+      <h4>↳ <b>RoadPack</b> — <i>Real-Time Convoy Telemetry Platform</i></h4>
+      <p>A live location and coordination system for group rides and convoys.</p>
+      <b>Technical Highlights:</b>
+      <blockquote>
+        • Real-time location synchronization<br>
+        • Google Maps telemetry integration<br>
+        • Group state consistency under network jitter<br>
+        • Optimized Firebase read/write patterns
+      </blockquote>
+      <code>Stack: Flutter, Firebase, Google Maps Platform</code>
+    </td>
+  </tr>
+  <tr>
+    <td width="50%" valign="top">
+      <h4>↳ <b>GitPulse</b> — <i>Autonomous Git Synchronization Daemon</i></h4>
+      <p>A background Python service that automates Git workflows with safety guarantees.</p>
+      <b>Core Mechanisms:</b>
+      <blockquote>
+        • File-system event debouncing per repository<br>
+        • AI-generated commit summaries from diff context<br>
+        • Guardrails to prevent noisy or unsafe commits<br>
+        • Designed for long-running background execution
+      </blockquote>
+      <code>Stack: Python</code>
+    </td>
+    <td width="50%" valign="top">
+      <h4>↳ <b>RepoPilot</b> — <i>Codebase Intelligence & Automation Pipeline</i></h4>
+      <p>Infrastructure tooling for managing and enforcing structure across large repositories.</p>
+      <b>Responsibilities:</b>
+      <blockquote>
+        • Source code classification<br>
+        • Architectural formatting enforcement<br>
+        • Automated repository hygiene rules<br>
+        • Pipeline-oriented execution model
+      </blockquote>
+      <code>Stack: Python, Linux</code>
+    </td>
+  </tr>
+</table>
+
+<br><br>
+
+
+## ❖ EXPERIENCE
+
+| Role | Organization | Timeline | Focus |
+| :--- | :--- | :--- | :--- |
+| **Tech Subcommittee Member** | **MITS Media Club** | Oct 2024 – Present | Technical direction and infrastructure |
+| **Member** | **MITS Motorsports** | Oct 2024 – Present | Engineering and team operations |
+| **Apprentice Trainee** | **Soften Technologies** | May 2024 – Aug 2024 | Backend development (Python & JavaScript) |
+
+<br><br>
+
+## ❖ INTERESTS
+
+* **Backend & systems engineering**
+* **Developer tooling and automation**
+* **Correctness-first application design**
+* **Performance-aware architectures**
+
+<br><br>
+
+## ❖ GITHUB STATS
+
+<div align="center">
+  <img src="https://github-readme-streak-stats.herokuapp.com/?user=CodedRichy&theme=dark&hide_border=true" />
+</div>
+
+
+--------------------------------------------------------------------------------
+
+[ PROJECT: COLLEGENOTESSAAS ]
+----------------------------------------
+# CollegeNotesSaaS
+
+## Overview
+**CollegeNotesSaaS** is a centralized study material platform built for KTU (Kerala Technological University) S4 students. It provides a dedicated, accessible repository for students to upload, organize, and view Database Management Systems (DBMS) notes exactly as they align with the university syllabus.
+
+## The Problem
+During exam preparation, students consistently struggle with disorganized study materials. Notes are often scattered across various WhatsApp groups, lost in Google Drive links, or fragmented between different students. This project eliminates that friction by providing a single, reliable source of truth for module-specific learning resources.
+
+## Core Features
+- **PDF Upload Portal:** A streamlined interface allowing anyone to easily upload their study materials.
+- **Module-Centric Organization:** Automatic sorting and storage of PDFs into KTU Modules 1 through 4, reflecting the actual KTU exam syllabus structure.
+- **Instant Viewing:** Direct, publicly accessible links to view documents quickly from the browser without downloading constraints or file format mismatches.
+- **Cloud Storage Integration:** Scalable, reliable file handling powered by Supabase.
+
+## Tech Stack
+- **Framework:** Next.js (App Router)
+- **Library:** React
+- **Styling:** Tailwind CSS
+- **Database / Storage:** Supabase
+
+## Architecture
+The application runs as a modern Next.js serverless frontend. Form handling and UI states are managed via React Server Components and generic client components. File persistence skips traditional intermediate API layers by securely communicating directly from the client to a configured Supabase Storage Bucket (`notes`). Directory structures within the bucket dynamically act as categories for KTU modules holding the files. 
+
+## Setup Instructions
+
+1. **Clone the repository:**
+   ```bash
+   git clone https://github.com/YourUsername/CollegeNotesSaaS.git
+   cd CollegeNotesSaaS/college-notes-saas
+   ```
+
+2. **Install dependencies:**
+   ```bash
+   npm install
+   ```
+
+3. **Configure Environment Variables:**
+   Create a `.env.local` file in the Next.js root and add your Supabase keys:
+   ```env
+   NEXT_PUBLIC_SUPABASE_URL=your_supabase_url
+   NEXT_PUBLIC_SUPABASE_ANON_KEY=your_supabase_anon_key
+   ```
+
+4. **Run the development server:**
+   ```bash
+   npm run dev
+   ```
+   *Navigate to `http://localhost:3000` to view the application.*
+
+## Roadmap
+While the current implementation focuses intensely on reliable storage infrastructure and exam-oriented UI foundations, future technical expansions include:
+- **Authentication & Authorization:** Secure student sign-ins and upload attributions.
+- **AI-Powered Semantic Search:** Query-based search logic to find specific topics within uploaded PDFs.
+- **Exam-Mode Q&A Generation:** Automated extraction of core DBMS concepts to synthesize exam-ready flashcards and summaries.
+
+
+--------------------------------------------------------------------------------
+
+[ PROJECT: DINEDASH ]
+----------------------------------------
+# 🚀 DineDash
+
+A professional, 4-sided marketplace food delivery application built with a modern full-stack architecture.
+
+## 🏗️ Architecture & Roles
+DineDash is designed with a robust Role-Based Access Control (RBAC) system:
+- **🛒 Consumer**: Browse restaurants, build carts, and place orders.
+- **🍱 Restaurant Manager**: Manage menu items and process incoming orders for their specific restaurant.
+- **🛵 Delivery Partner (Rider)**: Claim available jobs and update delivery status.
+- **👑 Super Admin**: Platform-wide oversight of all restaurants and users.
+
+## 🛠️ Tech Stack
+- **Frontend:** React (Vite), Tailwind CSS, Lucide icons.
+- **Backend:** Node.js, Express.
+- **Database/Auth:** Supabase (PostgreSQL, RLS Policies, Auth Service).
+
+## 📁 Project Structure
+- `backend/`: Express API server and database schema (`schema.sql`).
+- `frontend/`: React application powered by Vite.
+- `supabase/`: Local and remote database migrations.
+- `COLLABORATION_GUIDE.md`: Essential guide for team members working on forks.
+
+## 🚀 Setup Instructions
+
+### 1. Database Setup (Supabase)
+1. Create a Supabase project at [supabase.com](https://supabase.com).
+2. Run `backend/schema.sql` in the SQL Editor to initialize tables and roles.
+
+### 2. Environment Configuration
+Create a `.env` file in **both** the `frontend/` and `backend/` directories.
+
+**Frontend (`frontend/.env`):**
+```env
+VITE_SUPABASE_URL=your_url
+VITE_SUPABASE_ANON_KEY=your_key
+```
+
+**Backend (`backend/.env`):**
+```env
+SUPABASE_URL=your_url
+SUPABASE_KEY=your_key
+PORT=5000
+```
+
+### 3. Installation & Running
+In the root directory, run:
+```bash
+# Install root, backend, and frontend dependencies
+npm install && cd frontend && npm install && cd ..
+
+# Start the full application
+npm run dev
+```
+
+## 🤝 Team Collaboration
+If you are contributing to this project, please read the **[Collaboration Guide](./COLLABORATION_GUIDE.md)** first. It contains important instructions on forking, branching, and shared database etiquette.
+
+### **Shared Test Accounts (Password: `password123`)**
+| Account Type | Login Email |
+| :--- | :--- |
+| **Admin** | `admin@dinedash.app` |
+| **Manager** | `manager@dinedash.app` |
+| **Rider** | `rider@dinedash.app` |
+| **Consumer** | `consumer@dinedash.app` |
+
+---
+
+## ✨ Key Features
+- **Smart Navbar**: Content changes dynamically based on user role.
+- **Manager Dashboard**: Private management for specific restaurant owners.
+- **Rider Portal**: Dedicated interface for delivery partners to claim jobs.
+- **Apple Glass Aesthetic (Optional)**: Modern design options available in components.
+- **Secure Ordering**: Row Level Security (RLS) ensures users only see their own data.
+
+
+--------------------------------------------------------------------------------
+
+[ PROJECT: EXPENSO ]
+----------------------------------------
+# Expenso
+
+[![Build Android](https://github.com/CodedRichy/Expenso/actions/workflows/build.yml/badge.svg)](https://github.com/CodedRichy/Expenso/actions/workflows/build.yml)
+[![CodeQL](https://github.com/CodedRichy/Expenso/actions/workflows/codeql.yml/badge.svg)](https://github.com/CodedRichy/Expenso/actions/workflows/codeql.yml)
+[![License](https://img.shields.io/badge/License-Proprietary-red)](#)
+[![Flutter](https://img.shields.io/badge/Flutter-02569B?logo=flutter&logoColor=white)](https://flutter.dev)
+[![Dart](https://img.shields.io/badge/Dart-0175C2?logo=dart&logoColor=white)](https://dart.dev)
+[![Platform](https://img.shields.io/badge/Platform-Android%20%7C%20iOS-lightgrey)]()
+[![Firebase](https://img.shields.io/badge/Firebase-FFCA28?logo=firebase&logoColor=black)](https://firebase.google.com)
+
+**Group expense tracking done right.** Track who paid what, see who owes whom, settle debts, repeat.
+
+```
+  ┌─────────┐      ┌─────────┐      ┌─────────┐      ┌─────────┐
+  │  ADD    │      │  TRACK  │      │  SEE    │      │  PAY    │
+  │ EXPENSE │ ───► │ SPLITS  │ ───► │ BALANCE │ ───► │  & GO   │
+  └─────────┘      └─────────┘      └─────────┘      └─────────┘
+      │                                                   │
+      └───────────────────── REPEAT ◄─────────────────────┘
+```
+
+> *"Dinner 1200 with Ash"* → Magic Bar parses it → Split calculated → Everyone knows what they owe
+
+---
+
+## Project Overview
+
+Expenso is a Flutter app that solves shared-expense tracking for small groups (friends, roommates, trips). It removes the pain of manual tallying and "who paid for what" confusion by enforcing a clear model: one group creator, an active expense cycle, and a two-phase settlement (freeze cycle, then archive and start new). Expenses are recorded with flexible splits (even, exact, exclude, percentage, shares); balances and settlement instructions are derived automatically. In-app settlement via UPI with app picker (GPay, PhonePe, Paytm, etc.). The app exists to give groups a single source of truth and a repeatable way to settle and reset.
+
+---
+
+## How It Works
+
+```
+┌─────────────────────────────────────────────────────────────────────────────┐
+│                           THE EXPENSO CYCLE                                  │
+└─────────────────────────────────────────────────────────────────────────────┘
+
+     ┌──────────┐          ┌──────────┐          ┌──────────┐
+     │  CREATE  │          │  TRACK   │          │  SETTLE  │
+     │  GROUP   │────────► │ EXPENSES │────────► │    UP    │
+     └──────────┘          └──────────┘          └──────────┘
+          │                      │                     │
+          │                      │                     │
+          ▼                      ▼                     ▼
+   ┌─────────────┐        ┌─────────────┐       ┌─────────────┐
+   │ Add members │        │ "Dinner     │       │ Pay via UPI │
+   │ via phone   │        │  1200 with  │       │ (GPay, etc) │
+   │ or contacts │        │  Ash"      │        │ or Cash     │
+   └─────────────┘        └─────────────┘       └─────────────┘
+                                │                     │
+                                ▼                     ▼
+                         ┌─────────────┐       ┌─────────────┐
+                         │ Auto-split  │       │ Start new   │
+                         │ & balance   │       │ cycle ──────┼──────┐
+                         │ calculation │       │             │      │
+                         └─────────────┘       └─────────────┘      │
+                                                                    │
+                                ┌───────────────────────────────────┘
+                                │
+                                ▼
+                         ┌─────────────┐
+                         │   REPEAT    │
+                         │   ∞         │
+                         └─────────────┘
+```
+
+---
+
+## Expense Entry — Magic Bar
+
+```
+┌─────────────────────────────────────────────────────────────────────────────┐
+│                         NATURAL LANGUAGE INPUT                              │
+└─────────────────────────────────────────────────────────────────────────────┘
+
+  You type:                          Expenso understands:
+  ─────────                          ────────────────────
+
+  "Dinner 1200 with Ash"       ──►  ₹1,200 • Dinner • Split with Ash
+
+  "Auto 450 paid by Ash"         ──►  ₹450 • Auto • Ash paid • Split all
+
+  "Groceries 800 exclude Ash" ──►  ₹800 • Groceries • Exclude Ash from split
+
+  "Movie 300 me and Ash"         ──►  ₹300 • Movie • Split: You + Ash
+
+                                          │
+                                          ▼
+                                   ┌─────────────┐
+                                   │  CONFIRM &  │
+                                   │    SAVE     │
+                                   └─────────────┘
+```
+
+---
+
+## Settlement Flow
+
+```
+┌─────────────────────────────────────────────────────────────────────────────┐
+│                         PAYMENT & CONFIRMATION                              │
+└─────────────────────────────────────────────────────────────────────────────┘
+
+  PAYER                                              RECEIVER
+  ─────                                              ────────
+
+  ┌─────────────────┐                          ┌─────────────────┐
+  │  Pay / Settle   │                          │                 │
+  │  (or View       │                          │  ₹450 incoming  │
+  │   settlement)   │                          │  from Ash       │
+  │  You owe ₹450   │                          │                 │
+  └────────┬────────┘                          └────────┬────────┘
+           │                                            │
+           ▼                                            │
+  ┌─────────────────┐                                   │
+  │  Pay via UPI    │                                   │
+  │  ┌────┬────┬────┤                                   │
+  │  │GPay│PhPe│Paytm                                   │
+  │  └────┴────┴────┘                                   │
+  └────────┬────────┘                                   │
+           │                                            │
+           ▼                                            │
+  ┌─────────────────┐                                   │
+  │  Payment sent   │                                   │
+  │  ─────────────  │                                   │
+  │  Mark as paid ✓ │──────────── notification ────────►│
+  └────────┬────────┘                                   │
+           │                                            ▼
+           │                                   ┌─────────────────┐
+           │                                   │  Confirm        │
+           │                                   │  received? ✓    │ 
+           │                                   └────────┬────────┘
+           │                                            │
+           ▼                                            ▼
+  ┌─────────────────────────────────────────────────────────────┐
+  │                                                             │
+  │                      ✓ SETTLED                              │
+  │                                                             │
+  └─────────────────────────────────────────────────────────────┘
+```
+
+---
+
+## Decision Clarity Card
+
+```
+┌─────────────────────────────────────────────────────────────────────────────┐
+│                         ALWAYS KNOW WHERE YOU STAND                         │
+└─────────────────────────────────────────────────────────────────────────────┘
+
+                    ┌─────────────────────────────────┐
+                    │                                 │
+                    │   CYCLE TOTAL      ₹4,500       │
+                    │   ─────────────────────────     │
+                    │   You spent        ₹2,100       │
+                    │   Your share       ₹1,500       │
+                    │   ─────────────────────────     │
+                    │                                 │
+                    │   ┌─────────────────────────┐   │
+                    │   │  YOU GET BACK  ₹600  ▲  │   │  ◄── Green = others owe you
+                    │   └─────────────────────────┘   │
+                    │                                 │
+                    │           ── or ──              │
+                    │                                 │
+                    │   ┌─────────────────────────┐   │
+                    │   │  YOU OWE      ₹300   ▼  │   │  ◄── Red = you owe others
+                    │   └─────────────────────────┘   │
+                    │                                 │
+                    └─────────────────────────────────┘
+```
+
+---
+
+## Key Features
+
+- **Groups** — Create groups, add members by phone or contacts, pin up to 3 groups, delete (creator only).
+- **Expenses** — Add via Magic Bar (natural language, Groq/Llama-4-Scout) or manual form. Splits: Even, Exact, Exclude, Percentage, Shares. Decision Clarity card shows cycle total, spent-by-you, and your net status (credit/debt).
+- **Settlement** — Two-phase: Settle (freeze cycle) then Start New Cycle (creator). Phase 2 archive is handled by the Cloud Function `settleAndRestart` which atomically validates balances and rotates the cycle. Pay dues via UPI app picker (GPay, PhonePe, Paytm, etc.) with QR fallback, or mark as cash. Payer/receiver confirmation flow; receiver confirmation required before balance clears.
+- **Profile** — Display name, avatar (Firebase Storage), UPI ID for payment settings, logout.
+- **Auth** — Phone (OTP) sign-in via Firebase when configured; optional mock flow when not.
+
+---
+
+## Architecture
+
+```
+┌─────────────────────────────────────────────────────────────────────────────┐
+│                              DATA FLOW                                      │
+└─────────────────────────────────────────────────────────────────────────────┘
+
+  ┌──────────────┐     ┌──────────────┐     ┌──────────────┐
+  │    USER      │     │   FLUTTER    │     │   FIREBASE   │
+  │   ACTION     │────►│     APP      │────►│  FIRESTORE   │
+  └──────────────┘     └──────────────┘     └──────────────┘
+                              │                    │
+                              │                    │
+                       ┌──────┴──────┐      ┌──────┴──────┐
+                       │             │      │             │
+                       ▼             ▼      ▼             ▼
+                ┌───────────┐  ┌─────────┐  ┌─────────────────┐
+                │  MAGIC    │  │ SETTLE- │  │     REAL-TIME   │
+                │   BAR     │  │  MENT   │  │      SYNC       │
+                │  (Groq)   │  │ ENGINE  │  │                 │
+                └───────────┘  └─────────┘  └─────────────────┘
+                     │              │              │
+                     │              ▼              │
+                     │       ┌───────────┐         │
+                     │       │  BALANCE  │         │
+                     └──────►│   CALC    │◄────────┘
+                             └───────────┘
+                                   │
+                                   ▼
+                            ┌─────────────┐
+                            │  DECISION   │
+                            │  CLARITY    │
+                            │   CARD      │
+                            └─────────────┘
+```
+
+| Layer | Component | Role |
+|-------|-----------|------|
+| **UI** | Screens, Widgets | User interaction |
+| **State** | CycleRepository | Single source of truth, Firestore sync |
+| **Logic** | SettlementEngine | Balance math, debt minimization |
+| **AI** | GroqExpenseParserService | Natural language → structured expense |
+| **Payments** | UpiPaymentService | UPI app discovery, deep links |
+| **Backend** | Firebase (Auth, Firestore, Storage) | Persistence, real-time sync |
+
+On launch, the app shows a splash then routes by Firebase Auth state: unauthenticated users see Phone Auth; authenticated users sync identity to a singleton `CycleRepository` and then either onboarding (name) or the groups list. The repository subscribes to Firestore streams for groups (where the user is a member) and each group’s current-cycle expenses; it maintains in-memory state (`_groups`, `_expensesByCycleId`, `_membersById`) and notifies listeners. Group detail reads the active cycle and uses `SettlementEngine` to compute debts and net balances for the Decision Clarity card and Balances section. Expense writes go to `groups/{groupId}/expenses`; settlement is creator-only: Phase 1 sets cycle status to `settling`, Phase 2 archives expenses into `settled_cycles/{cycleId}/expenses`, clears current expenses, and creates a new active cycle. Magic Bar calls `GroqExpenseParserService` (with optional local number fallback); the result is confirmed in UI then persisted via `CycleRepository.addExpenseFromMagicBar`. Payments use `upi_india` to detect installed UPI apps and launch transactions directly; payment attempts are tracked in Firestore with payer/receiver confirmation states.
+
+---
+
+## Tech Stack
+
+- **Client:** Flutter (Dart), Material 3
+- **Backend / services:** Firebase (Phone Auth, Cloud Firestore, Cloud Functions `settleAndRestart` + `createRazorpayOrder` + encryption key functions, Storage)
+- **AI parsing:** Groq (`meta-llama/llama-4-scout-17b-16e-instruct`) for natural-language expense parsing
+- **Payments:** UPI app picker via `upi_india` (GPay, PhonePe, Paytm, BHIM, etc.); QR code via `qr_flutter`; Razorpay for optional gateway payments
+- **Local:** SharedPreferences (pinned groups, theme, locale, app profile cache), `flutter_contacts`, `flutter_dotenv` (`GROQ_API_KEY`)
+
+---
+
+## Getting Started
+
+### Prerequisites
+
+- Flutter SDK (Dart 3.10+)
+- Firebase project with Phone Auth, Firestore, and (optional) Storage and Cloud Functions
+- For Magic Bar: Groq API key
+- For in-app UPI payments: Android device with UPI apps installed (GPay, PhonePe, etc.)
+
+### Installation
+
+```bash
+git clone <repo-url>
+cd Expenso
+flutter pub get
+```
+
+### Configuration
+
+- **Firebase:** Run `dart run flutterfire configure` to generate `lib/firebase_options.dart` and link Android/iOS. Enable Phone sign-in in Firebase Console. Deploy Firestore rules from `firestore.rules` (Console or `firebase deploy --only firestore`).
+- **Environment:** Create a `.env` in the project root (listed in `pubspec.yaml` assets). Set `GROQ_API_KEY` for Magic Bar; omit for manual-only expense entry.
+- **UPI Payments:** No configuration needed. The app detects installed UPI apps automatically on Android. On iOS, add UPI URL schemes to `Info.plist` (already configured). UPI intent launch is via the `upi_india` package; QR fallback generated with `qr_flutter`.
+- **Cloud Functions:** Deploy `functions/` with `firebase deploy --only functions`. Functions required: `settleAndRestart` (cycle archive), `createRazorpayOrder` (optional Razorpay), `getUserEncryptionKey` / `getGroupEncryptionKey` (optional encryption). All deployed to `asia-south1`.
+- **Data encryption (optional):** To encrypt sensitive data at rest, set `DATA_ENCRYPTION_MASTER_KEY` in Firebase Functions config. Use a 32-byte key as **64 hex characters** (e.g. `9f3c7a1d8b4e2f0c...` — 64 chars total). Deploy `getUserEncryptionKey` and `getGroupEncryptionKey`; the app will encrypt/decrypt automatically when the key is available.
+
+### Running locally
+
+```bash
+flutter run
+```
+
+Use a device or emulator with the same Firebase/Google config (e.g. `google-services.json` / `GoogleService-Info.plist`) as your project.
+
+---
+
+## Usage
+
+- **Groups:** From the groups list, use the FAB to create a group, then add members (phone or contacts; supports 15 international country codes). Swipe left to pin/unpin (max 3), swipe right to delete (creator only). Share invite link (`expenso://join/<groupId>`) from InviteMembers screen (creator only).
+- **Expenses:** In group detail, use the Magic Bar (e.g. "Dinner 1200 with Ash") or tap to add manually. Choose payer, split type, and participants; confirm. Recent add shows an undo screen for a few seconds.
+- **Settlement:** Everyone sees **Settlement** button; opens the settlement screen (UPI app picker with QR fallback, Mark as paid, Paid via cash). **Creator only** also sees **Close cycle** (or **Start New Cycle** when cycle is settling); confirm in the dialog invokes the `settleAndRestart` Cloud Function which atomically validates, archives the old cycle, and starts a new one. Payer marks payment; receiver confirms receipt before balance clears.
+- **Profile:** Set display name (used in Magic Bar matching), avatar, and UPI ID. Log out to switch accounts.
+
+Detailed flows, routes, and logic are in [APP_BLUEPRINT.md](APP_BLUEPRINT.md). Additional docs are in [docs/](docs/):
+- [PRODUCT_NORTH_STAR.md](docs/PRODUCT_NORTH_STAR.md) — Core product philosophy ("I want my money back — without asking")
+- [STABILIZATION.md](docs/STABILIZATION.md) — Invariants, limitations, and change safety guidance
+- [DATA_SPINE.md](docs/DATA_SPINE.md) — Formal data entity definitions
+- [DATA_FLOW_TABLES.md](docs/DATA_FLOW_TABLES.md) — Screen-to-database data mapping (SQL table format)
+- [features/MONEY_BALANCE_LOGIC.md](docs/features/MONEY_BALANCE_LOGIC.md) — Balance computation specification
+- [features/MONEY_TESTS.md](docs/features/MONEY_TESTS.md) — Golden test cases for balance computation
+- [features/SETTLEMENT_UI_FLOW.md](docs/features/SETTLEMENT_UI_FLOW.md) — Group Detail settlement buttons (Pay / Settle, Close cycle)
+- [features/MONEY_CANONICALIZATION.md](docs/features/MONEY_CANONICALIZATION.md) — Canonical implementation plan
+- [features/MONEY_PHASE2.md](docs/features/MONEY_PHASE2.md) — Phase 2 invariant enforcement plan
+
+---
+
+## Project Status
+
+Expenso is **v5.0.0** (released). Core logic (expense recording, split calculation, settlement engine, cycle management) is complete and tested. V4 added cross-group identity, FCM infrastructure, and payment attempt tracking. V5 polished the experience with premium micro-animations (TapScale, StaggeredListItem, FadeIn). All primary flows are secured with **187+ tests** covering settlement math, balance-after-settlements contract, normalization, revision lifecycle, encryption, parser outcomes, widget states, and app launch. Detailed flows, invariants, and limitations are in [STABILIZATION.md](docs/STABILIZATION.md).
+
+**CI:** Every push/PR runs `flutter analyze`, `flutter test`, a release APK build (Android), and Cloud Functions `npm test`. CodeQL security scanning is also enabled.
+
+**Known limitations (documented in [STABILIZATION.md](docs/STABILIZATION.md)):** Expense dates stored as display strings; timezone/locale boundaries are device-dependent. Groups, expenses, and cycle history load in full (no pagination); add when scale demands.
+
+**Production readiness:** Assessed as ready for controlled beta / Early Access launch. See [docs/PRODUCTION_READINESS_ASSESSMENT.md](docs/PRODUCTION_READINESS_ASSESSMENT.md) for the full rubric and launch recommendation.
+
+**Past releases:** V1 — Magic Bar, Decision Clarity, SettlementEngine. V2 — Profile pictures, UPI deep-linking. V3 — Settlement activity feed, Dynamic UPI QR. V4 — Cross-group identity, God Mode foundation, FCM infrastructure. V5 — Animation polish pass. See [docs/releases/](docs/releases/) for contracts.
+
+**Planned features** (not yet implemented) are listed in APP_BLUEPRINT.md Section 9. No timeline commitments.
+
+---
+
+## Contributing
+
+This repository is shared for reference. If you have permission to contribute: prefer small, focused PRs; follow the logic and conventions in APP_BLUEPRINT.md and the existing code style; run `flutter test` before submitting (187+ unit and widget tests must pass). Optional: run `flutter test integration_test/app_test.dart -d <deviceId>` for the app-launch integration test. For behavioral or product changes, align with the release contracts in `docs/releases/`.
+
+---
+
+## License
+
+Proprietary. Copyright (c) 2025 Rishi Praseeth Krishnan. All rights reserved. This repository and source code are made visible for viewing and reference only. No license is granted to use, copy, modify, distribute, or create derivative works without express written permission from the copyright holder. See [LICENSE](LICENSE).
+
+
+--------------------------------------------------------------------------------
+
+[ PROJECT: GITPULSE ]
+----------------------------------------
+# GitPulse
+
+Auto-commit and push multiple Git repos after a short period of inactivity. One window, zero manual commits.
+
+## What it does
+
+- **Discovers repos** — Scans a root folder (default: parent of the script, e.g. your `GitHub` folder) for direct subfolders that contain `.git`.
+- **Startup sync** — For each repo with uncommitted changes, runs add/commit/push once before watching.
+- **Watches all** — Single watcher; file events are attributed to the right repo.
+- **Per-repo debounce** — After **60 seconds** with no changes in a repo, runs only for that repo:
+  - `git add .` (then unstages `.env` so it is never committed)
+  - `git commit -m "Auto-sync: [files]"` with body from Groq summary or diff shortstat
+  - `git push origin [branch]`
+
+Only the repo that had changes is pushed.
+
+## Requirements
+
+- Python 3.10+
+- Git installed (remote `origin` and branch set per repo)
+
+## Install
+
+```bash
+pip install -r requirements.txt
+```
+
+## Run
+
+```bash
+python git-pulse.py
+```
+
+A **window** opens with a table of repos (branch, status, last pushed, fix hint). **Close the window to stop.**
+
+- **Background mode:** `python git-pulse.py --detach` launches GitPulse as an independent process that keeps running after you close VS Code or your terminal.
+- **Terminal UI:** `python git-pulse.py --cli` (stop with Ctrl+C)
+- **Double-click** a row to open that repo’s folder.
+- **Refresh repos** — Rescan so new clones appear.
+- **Retry selected** — Retry push for the selected repo (selection is remembered when you click the button).
+- **Desktop notifications** — Optional: `pip install plyer` for a notification on successful push.
+
+## Optional: AI commit summary
+
+Set `GROQ_API_KEY` in a `.env` file next to `git-pulse.py`. GitPulse loads it at startup and uses Groq to summarize the staged diff as the commit message body. Without the key, it uses the diff shortstat. **`.env` is in `.gitignore`** and the script unstages `.env` before every commit, so your key is never committed or pushed.
+
+## Config
+
+Optional `.gitpulse.json` next to `git-pulse.py`:
+
+```json
+{
+  "watch_root": "C:\\Users\\you\\Documents\\GitHub",
+  "debounce_seconds": 60
+}
+```
+
+`debounce_seconds` must be between 10 and 86400.
+
+## Behavior
+
+| Item | Detail |
+|------|--------|
+| Repos | Direct subdirs of watch root that contain `.git`. |
+| Ignored | `.git/`, `__pycache__/`, `.git-pulse.log`, `git-pulse.py`, `.env`, and each repo’s `.gitignore`. `.env` is always unstaged before commit. |
+| Auth failure | **auth**; auto-retry once after 5s. Store credentials once (see below) and it recovers. |
+| Rules (GH013) | **rules** — GitHub repo rules block push to main. In repo Settings → Rules, allow direct push or use another branch. |
+| Other failures | **Fix** column and `.git-pulse.log` show a short hint. Use **Retry selected** after fixing. |
+| Log | `.git-pulse.log` next to the script. |
+
+## Credentials (one-time)
+
+If you see **Failed (auth)** (e.g. SEC_E_NO_CREDENTIALS), Git has no credentials in that run. Do this once:
+
+1. `git config --global credential.helper store`
+2. In any repo: `git push origin main` (or your branch) and sign in when prompted.
+
+Git saves credentials to a file. After that, GitPulse works from Cursor or anywhere. Auth failures also trigger one automatic retry after 5 seconds.
+
+**Alternative:** Use SSH: `git remote set-url origin git@github.com:USER/REPO.git` so push uses your SSH key.
+
+## License
+
+Copyright (c) 2025 Rishi Praseeth Krishnan. All rights reserved. See [LICENSE](LICENSE) for full terms.
+
+
+--------------------------------------------------------------------------------
+
+[ PROJECT: GITSCRIBE ]
+----------------------------------------
+# GitScribe
+
+Generates **CHANGELOG.md**, **ARCHITECTURE.md**, and **DEVELOPMENT.md** from a repo’s Git history. No GitHub, no API — it only reads the local `.git` folder.
+
+---
+
+## What you need
+
+- **Python 3.9+**
+- A **Git repo** (the folder you want docs for must have a `.git` inside it)
+
+---
+
+## One-time setup
+
+Install the only dependency (do this once):
+
+```bash
+pip install GitPython
+```
+
+---
+
+## How to run it
+
+**Option A — You’re in the GitScribe folder**
+
+```bash
+python run.py
+```
+Analyzes the current folder (must be a Git repo).
+
+**Option B — You’re in the project you want docs for (e.g. GitPulse)**
+
+```bash
+python ..\GitScribe\run.py .
+```
+The `.` means “this folder.” Use the path to GitScribe if it’s not one level up, e.g.:
+
+```bash
+python C:\Users\rishi\Documents\GitHub\GitScribe\run.py .
+```
+
+**Option C — You’re in GitScribe and want to analyze another repo**
+
+```bash
+python run.py C:\path\to\other\project
+```
+
+---
+
+## Where the files go
+
+GitScribe writes all Markdown files into a **`docs`** folder inside the repo it analyzed. If the repo is `C:\GitPulse`, the files go in `C:\GitPulse\docs\`.
+
+| File | What it is |
+|------|------------|
+| **CHANGELOG.md** | Changes by version/commit, plus breaking changes |
+| **ARCHITECTURE.md** | How folders and structure changed over time |
+| **DEVELOPMENT.md** | Timeline of features, refactors, fixes |
+
+Add **SUMMARY.md** (busiest files, unstable areas) by running with:
+
+```bash
+python run.py . --with-summary
+```
+(or `python run.py C:\path\to\repo --with-summary`)
+
+---
+
+## Other options
+
+| Option | Meaning |
+|--------|--------|
+| `--with-summary` | Also create SUMMARY.md |
+| `-o FOLDER` | Write files into `FOLDER` instead of `docs` |
+| `--max-commits 2000` | Limit how many commits to scan (default 5000) |
+| `-q` | Less output while running |
+
+Example (custom output folder):
+
+```bash
+python ..\GitScribe\run.py . --with-summary -o .\my-docs
+```
+
+---
+
+## License
+
+Copyright (c) 2025 Rishi Praseeth Krishnan. All rights reserved.
+
+This repository and its source code are made visible for viewing and reference only. No license is granted to use, copy, modify, distribute, or create derivative works from this software. You may not use this code in your own projects, products, or services without express written permission from the copyright holder. Viewing the code (e.g., on GitHub) does not constitute permission to use it.
+
+
+--------------------------------------------------------------------------------
+
+[ PROJECT: LITECPU16 ]
+----------------------------------------
+#LiteCPU16
+
+LiteCPU16 is a minimal 16-bit single-cycle embedded processor designed explicitly for educational purposes. It serves as an accessible introduction to computer architecture, demonstrating how a Central Processing Unit (CPU) functions at the hardware level.
+
+## Introduction to CPUs and Hardware Description Languages
+
+A Central Processing Unit (CPU) acts as the logic center of any computer, executing the mathematical operations and decisions required to run software. 
+
+Unlike typical software written in languages like Python or C++, LiteCPU16 is constructed using Verilog. Verilog is a Hardware Description Language (HDL)—it describes physical logic gates and electrical pathways rather than software routines. By reading this project's code, you are viewing the blueprint of a physical microchip.
+
+👉 **Want to understand how instructions flow through this chip? Read our [Architecture Guide](ARCHITECTURE_GUIDE.md)!**
+
+## Core Architecture Features
+
+LiteCPU16 strips away the modern complexities of commercial processors (such as pipelining, caching, and interrupts) to focus exclusively on fundamental mechanics:
+
+*   **16-bit Architecture:** The processor handles data and memory addresses in 16-bit segments (binary numbers up to 16 digits long).
+*   **Harvard Architecture:** It utilizes separate memory structures for instructions (the program sequence) and data (the variables being processed), preventing structural hazards.
+*   **Reduced Instruction Set:** It implements only five essential instructions:
+    1.  `ADD`: Performs addition on two registers.
+    2.  `LW` (Load Word): Retrieves a value from Data Memory into a register.
+    3.  `SW` (Store Word): Saves a value from a register into Data Memory.
+    4.  `BEQ` (Branch if Equal): Checks if two registers are equal, and alters the instruction sequence if true.
+    5.  `NOP` (No Operation): A safe placeholder instruction that performs no action.
+*   **Single-Cycle Execution:** Every instruction completes entirely within one clock cycle. 
+
+## The 8-File Modular Structure
+
+Real processors consist of interconnected functional units. LiteCPU16 is divided into 8 distinct Verilog files to model these units clearly:
+
+1.  **`cpu_top.v`**: The Top-Level Module. It wires all internal components and memory interfaces together into a single cohesive processor.
+2.  **`pc.v`** (Program Counter): A register that holds the memory address of the instruction currently being executed.
+3.  **`instr_mem.v`** (Instruction Memory): A read-only memory block containing the sequence of commands the CPU must execute.
+4.  **`dmem.v`** (Data Memory): A read/write memory block that stores the data values the CPU is actively manipulating.
+5.  **`control.v`** (Control Unit): The decoding logic. It evaluates the current instruction opcode and orchestrates control signals to direct the rest of the processor.
+6.  **`regfile.v`** (Register File): Fast, internal working memory consisting of 8 slots (`R0` through `R7`). `R0` is physically hardwired to the value 0.
+7.  **`alu.v`** (Arithmetic Logic Unit): The computational core. It handles arithmetic operations (addition) and logical evaluations (equality comparisons).
+8.  **`sign_ext.v` & `branch_unit.v`**: Auxiliary logic. These modules handle the extension of negative offsets and calculate target addresses for branch instructions, respectively.
+
+## Running the Simulation
+
+Because LiteCPU16 is described in Verilog, you can simulate its electrical behavior directly on your computer to observe instructions executing step-by-step.
+
+**Prerequisites:** You must have a Verilog simulator installed, such as [Icarus Verilog](https://bleyer.org/icarus/) (`iverilog`).
+
+### Simulation Steps
+1. Open your system's command line interface.
+2. Compile the design modules alongside the test environment:
+   ```bash
+   iverilog -o litecpu16_sim tb_litecpu16.v cpu_top.v pc.v control.v regfile.v alu.v sign_ext.v branch_unit.v instr_mem.v dmem.v
+   ```
+3. Execute the resulting simulation binary:
+   ```bash
+   vvp litecpu16_sim
+   ```
+
+Upon execution, the testbench will output the state of the registers and memory to verify that the processor correctly executed its hardcoded instruction sequence.
+
+
+--------------------------------------------------------------------------------
+
+[ PROJECT: OS_LAB_WORK ]
+No README file found.
+--------------------------------------------------------------------------------
+
+[ PROJECT: PRODUCTBLUEPRINTS ]
+----------------------------------------
+# ProductBlueprints
+
+A personal repository for storing, evaluating, and tracking project ideas with professional rigor.
+
+## Structure
+
+- `ideas/` - Individual product/project blueprints
+- `IDEA_TEMPLATE.md` - Template for new ideas
+- `.cursor/rules/` - AI evaluation rules
+
+## Quick Add
+
+Copy `IDEA_TEMPLATE.md` into `ideas/` and rename it to your idea's name.
+
+## Evaluation Process
+
+Every idea is stress-tested from three perspectives:
+1. **Professional Developer** - Is it technically feasible?
+2. **Startup Entrepreneur** - Is it shippable and valuable?
+3. **Domain Expert** - Does it solve a real problem?
+
+Each idea gets scored (out of 40) on:
+- Shippability (can you build and deploy soon?)
+- Impact (does it solve a real problem?)
+- Feasibility (is the tech realistic?)
+- Signal Value (will this build credibility?)
+
+## Idea Statuses
+
+- **💡 Concept** - Initial idea, needs more thought
+- **📋 Planned** - Fleshed out, ready to start
+- **🚧 In Progress** - Currently working on it
+- **✅ Completed** - Done!
+- **❄️ On Hold** - Paused for now
+- **🗑️ Abandoned** - Not pursuing anymore
+
+## The Golden Question
+
+> "Can a stranger on the internet verify my work in 5 minutes?"
+
+If NO → the idea needs rework.
+
+
+--------------------------------------------------------------------------------
+
+[ PROJECT: RELIEFWATCH ]
+----------------------------------------
+# ReliefWatch
+
+**Early-warning signals for humanitarian needs, surfaced from public sources before official reports exist.**
+
+---
+
+## What This Is
+
+ReliefWatch is a public humanitarian early-warning system.
+
+It continuously scans open signals—social media and news—during disasters and answers one question:
+
+> "What kind of help is being urgently talked about, where, and how recently?"
+
+It does **not**:
+- Verify ground truth
+- Coordinate aid
+- Replace official reports
+
+It surfaces signals earlier than formal systems, so humans can decide faster.
+
+---
+
+## How It Works
+
+```
+┌──────────────────────────────────────────────────────────────┐
+│                     DATA INGESTION                           │
+│  Twitter  •  Reddit  •  GDELT  •  News APIs                  │
+│  Keywords: flood, cyclone, displacement, medical emergency   │
+└──────────────────────────────────────────────────────────────┘
+                              │
+                              ▼
+┌──────────────────────────────────────────────────────────────┐
+│                   SIGNAL CLASSIFICATION                      │
+│  Food  •  Medical  •  Shelter  •  Displacement  •  Infra     │
+└──────────────────────────────────────────────────────────────┘
+                              │
+                              ▼
+┌──────────────────────────────────────────────────────────────┐
+│                   SIGNAL AGGREGATION                         │
+│  Group similar mentions  •  Count volume  •  Detect spikes   │
+└──────────────────────────────────────────────────────────────┘
+                              │
+                              ▼
+┌──────────────────────────────────────────────────────────────┐
+│                        OUTPUT                                │
+│  Ranked needs  •  Locations  •  Timestamps  •  Source links  │
+└──────────────────────────────────────────────────────────────┘
+```
+
+---
+
+## What You See
+
+A public page showing:
+
+**Latest Alerts**
+> "Food shortage — Barpeta, Assam (↑ spike in last 6h)"
+
+**Map**
+- Dots marking locations with active signals
+
+**Transparency**
+- Source links for every signal
+- Timestamps
+- Signal counts
+
+**Disclaimer**
+> "These are signals, not verified ground truth."
+
+No login. No friction. Scannable in under 60 seconds.
+
+---
+
+## Example Output
+
+```
+ALERT: Food shortage
+LOCATION: Barpeta, Assam
+LAST 6 HOURS: 47 mentions (↑ 520% vs baseline)
+NEED TYPE: Food
+
+SOURCES:
+1. @AssamTribune - "Heavy flooding, markets closed in Barpeta..."
+   twitter.com/... • 2 hours ago
+
+2. NDTV - "Assam floods: 50,000 affected as Brahmaputra rises"
+   ndtv.com/... • 4 hours ago
+
+3. r/india - "Any updates on relief camps in Barpeta district?"
+   reddit.com/... • 5 hours ago
+```
+
+---
+
+## Current Scope
+
+| Dimension | V1 Coverage |
+|-----------|-------------|
+| **Region** | India |
+| **Languages** | English (Hindi planned) |
+| **Crisis types** | Floods, cyclones, disease outbreaks, displacement |
+| **Sources** | X/Twitter, Reddit, GDELT, NewsAPI |
+
+Starting narrow is intentional. Expansion follows validation.
+
+---
+
+## Who This Is For
+
+**Crisis analysts and OSINT researchers**
+- Early signals before official reports
+- Transparent methodology
+
+**Journalists**
+- Fast situational awareness
+- Quotable, shareable outputs
+
+**NGOs and disaster responders**
+- Informal reference during active events
+- No vendor lock-in
+
+---
+
+## Who This Is NOT For
+
+- General public seeking news (use news sites)
+- Automated decision-making (requires human judgment)
+- Legal documentation (signals are unverified)
+- Tactical response (latency too high)
+
+---
+
+## Known Limitations
+
+**Signals, not facts**
+- Social media contains rumors and misinformation
+- No ground verification
+- Confidence reflects volume and recency, not truth
+
+**Coverage gaps**
+- Internet blackouts create blind spots
+- Populations without internet access are invisible
+- Urban/English bias
+
+**Technical constraints**
+- Platform API changes may disrupt access
+- Location extraction relies on text mentions
+- Classification is keyword-based (V1)
+
+Users should treat outputs as leads for investigation, not confirmed reports.
+
+---
+
+## License
+
+**Proprietary.** This repository is visible for reference only. No license is granted to use, copy, modify, or distribute this software. See [LICENSE](LICENSE) for details.
+
+---
+
+## Project Status
+
+**Status:** Active Development  
+**Version:** Pre-release
+
+---
+
+<sub>Copyright 2025 Rishi Praseeth Krishnan. All rights reserved.</sub>
+
+
+--------------------------------------------------------------------------------
+
+[ PROJECT: REPOPILOT ]
+No README file found.
+--------------------------------------------------------------------------------
+
+[ PROJECT: RESQTRACK ]
+----------------------------------------
+# ResQTrack
+A Java-based Disaster Management System for reporting incidents, managing shelters, sending alerts, and coordinating rescue operations.
+
+## Features
+- **User Management**: Admin, volunteer, and citizen roles
+- **Shelter Management**: Track shelter capacity, resources (food, water, medicine)
+- **Task Management**: Assign and track rescue tasks
+- **SOS Alerts**: Emergency alert system with location tracking
+- **Incident Reports**: Report and track disaster incidents
+- **Hazard Tracking**: Monitor and manage hazards
+- **Public Information**: Share alerts, guidelines, and updates
+- **Database Integration**: MySQL database for persistent data storage
+
+## Prerequisites
+- Java 8 or higher
+- MySQL Server 5.7 or higher
+- MySQL Connector/J (included in project)
+
+## Database Setup
+
+### 1. Install MySQL Server
+Download and install MySQL Server from [mysql.com](https://dev.mysql.com/downloads/mysql/)
+
+### 2. Create Database User
+Connect to MySQL as root and create a user for the application:
+```sql
+CREATE USER 'admin'@'localhost' IDENTIFIED BY 'mifa@123';
+GRANT ALL PRIVILEGES ON *.* TO 'admin'@'localhost';
+FLUSH PRIVILEGES;
+```
+
+### 3. Database Configuration
+The application is configured to connect to:
+- **Host**: localhost
+- **Port**: 3306
+- **Database**: disaster_management_system
+- **Username**: admin
+- **Password**: mifa@123
+
+To change these settings, edit `database/DatabaseConnector.java`.
+
+### 4. Initialize Database
+The database will be automatically initialized when you first run the application. The schema and sample data will be created automatically.
+
+Alternatively, you can manually initialize the database by running:
+```bash
+java -cp ".;mysql-connector-java-8.0.33.jar" database.DatabaseInitializer
+```
+
+## Building and Running
+
+### Option 1: Using Batch Files (Windows)
+1. Download MySQL Connector/J and place `mysql-connector-java-8.0.33.jar` in the project root
+2. Run `build.bat` to compile the project
+3. Run `run.bat` to start the application
+
+### Option 2: Manual Compilation
+1. Download MySQL Connector/J and place `mysql-connector-java-8.0.33.jar` in the project root
+2. Compile the project:
+```bash
+javac -cp ".;mysql-connector-java-8.0.33.jar" -d . database/*.java
+javac -cp ".;mysql-connector-java-8.0.33.jar" -d . service/*.java
+javac -cp ".;mysql-connector-java-8.0.33.jar" -d . userinterface/*.java
+javac -cp ".;mysql-connector-java-8.0.33.jar" -d . main/*.java
+```
+3. Run the application:
+```bash
+java -cp ".;mysql-connector-java-8.0.33.jar" main.Main
+```
+
+## Project Structure
+```
+ResQTrack/
+├── database/           # Database layer
+│   ├── DatabaseConnector.java    # Database connection
+│   ├── DatabaseSchema.sql        # Database schema
+│   ├── DatabaseInitializer.java  # Database initialization
+│   ├── BaseDAO.java             # Base DAO class
+│   ├── *DAO.java                # Data Access Objects
+│   └── DatabaseService.java     # Database service layer
+├── service/            # Business logic layer
+│   ├── User.java
+│   ├── Shelter.java
+│   ├── Task.java
+│   ├── SosAlert.java
+│   ├── Report.java
+│   ├── Hazard.java
+│   └── PublicInfo.java
+├── userinterface/      # UI layer
+│   ├── UserPanel.java
+│   ├── ShelterPanel.java
+│   ├── TaskPanel.java
+│   ├── SosAlertPanel.java
+│   ├── ReportPanel.java
+│   ├── HazardPanel.java
+│   └── PublicInfoPanel.java
+├── main/               # Application entry point
+│   └── Main.java
+├── build.bat          # Windows build script
+├── run.bat            # Windows run script
+└── README.md
+```
+
+## Usage
+
+### Login
+The application starts with a login screen. Use these default credentials:
+- **Admin**: username: `admin`, password: `admin123`
+- **Volunteer**: username: `volunteer1`, password: `vol123`
+- **Citizen**: username: `citizen1`, password: `cit123`
+
+### Navigation
+After login, you can access different modules through the tabbed interface:
+- **Shelters**: Manage emergency shelters and resources
+- **Tasks**: Assign and track rescue tasks
+- **SOS Alerts**: View and manage emergency alerts
+- **Reports**: Create and review incident reports
+- **Hazards**: Track and manage hazards
+- **Public Info**: Share public information and alerts
+
+## Database Schema
+
+The application uses the following main tables:
+- `users` - User accounts and roles
+- `shelters` - Emergency shelter information
+- `tasks` - Rescue and relief tasks
+- `sos_alerts` - Emergency SOS alerts
+- `reports` - Incident reports
+- `hazards` - Hazard tracking
+- `public_info` - Public information and alerts
+
+## Troubleshooting
+
+### Database Connection Issues
+1. Ensure MySQL server is running
+2. Check database credentials in `DatabaseConnector.java`
+3. Verify the database user has proper permissions
+4. Check firewall settings if connecting to remote MySQL
+
+### Compilation Issues
+1. Ensure Java 8+ is installed
+2. Verify MySQL Connector/J is in the project root
+3. Check file paths and package declarations
+
+### Runtime Issues
+1. Check console output for error messages
+2. Verify database connection and permissions
+3. Ensure all required tables exist
+
+## Contributing
+1. Fork the repository
+2. Create a feature branch
+3. Make your changes
+4. Test thoroughly
+5. Submit a pull request
+
+## License
+This project is open source and available under the MIT License.
+
+--------------------------------------------------------------------------------
+
+[ PROJECT: ROADPACK ]
+----------------------------------------
+# 🛣️ RoadPack
+
+![Flutter](https://img.shields.io/badge/Flutter-02569B?logo=flutter\&logoColor=white)
+![Firebase](https://img.shields.io/badge/Firebase-FFCA28?logo=firebase\&logoColor=black)
+![Google Maps](https://img.shields.io/badge/Maps%20API-4285F4?logo=googlemaps\&logoColor=white)
+![Platform](https://img.shields.io/badge/Platform-Android-green)
+
+**RoadPack** is a real-time convoy tracking and coordination app built for **bikers and car enthusiasts**.
+It keeps every member of the ride connected — view everyone’s location on a shared live map, organize convoys, and never lose the pack again.
+
+---
+
+## 🚀 Key Features
+
+* 📍 **Live Convoy Map:** See every rider or car in real-time
+* 🔑 **Phone OTP Login:** Quick and secure sign-in
+* 🧭 **Convoy Controls:** Create, join, and manage group rides
+* ⚡ **Instant Updates:** Real-time sync powered by Firebase
+* 🏁 **Session Tracking:** Start and end convoys with one tap
+
+---
+
+## 💡 Why RoadPack
+
+RoadPack solves what existing apps like WhatsApp and Google Maps don’t —
+a **unified interface** for connected rides, real-time coordination, and group navigation.
+
+Built for:
+
+* Motorcycle clubs
+* Car meetups and rallies
+* Road trip groups
+* Convoy logistics
+
+---
+
+## 🧠 Powered By
+
+* Flutter
+* Firebase (Auth + Firestore)
+* Google Maps SDK
+
+---
+
+## 👨‍💻 Developer
+
+**Rishi Praseeth**
+Founder & Lead Developer
+
+---
+
+## ⚖️ Legal Notice
+
+© 2025 **Rishi Praseeth** — All Rights Reserved.
+
+This repository and its contents are proprietary to the author.
+Viewing the code does **not** grant permission to copy, modify, distribute, or reuse any part of it.
+For collaborations, partnerships, or licensing inquiries, contact the author.
+
+
+
+--------------------------------------------------------------------------------
+
+[ PROJECT: BUILD-SYNC ]
+----------------------------------------
+# BuildSync
+
+![BuildSync](https://img.shields.io/badge/Status-Active-brightgreen.svg) ![Version](https://img.shields.io/badge/Version-MVP-blue.svg)
+
+BuildSync is an automated resource planning and management system tailored for small and mid-scale construction projects. It bridges the gap between project scheduling and material/manpower procurement, moving away from disconnected spreadsheets into a deterministic, data-driven calculation engine.
+
+## 📖 Documentation Directory
+
+The complete technical and architectural documentation has been professionally structured into individual modules. Please refer to the specific documents below for deep dives into particular architectural strategies, use cases, and technical alignment.
+
+### 1. Vision & Strategy
+*   [Idea Alignment](docs/IDEA_ALIGNMENT.md) - Core problem summaries and domain value.
+*   [Problem Statement](docs/PROBLEM_STATEMENT.md) - Industry pain points and the gap current solutions leave.
+*   [Objectives](docs/OBJECTIVES.md) - Quantifiable engineering and business goals.
+*   [MVP Scope](docs/MVP_SCOPE.md) - Features included and strict architectural exclusions.
+*   [Results & Outcomes](docs/RESULTS_AND_OUTCOMES.md) - Key performance indicators and metrics.
+
+### 2. System Architecture & Design
+*   [System Architecture](docs/SYSTEM_ARCHITECTURE.md) - 3-tier modular monolith layout and scaling strategy.
+*   [Database Schema](docs/DATABASE_SCHEMA.md) - Third Normal Form (3NF) breakdown and integrity constraints.
+*   [Tech Stack](docs/TECH_STACK.md) - Rationale for using Node.js, React, and PostgreSQL.
+*   [Workflow](docs/WORKFLOW.md) - End-to-End Orchestration and event lifecycles.
+*   [State Machine](docs/STATE_MACHINE.md) - Strict, decoupled workflow states for material requests.
+
+### 3. Usage & Operations
+*   [User Roles](docs/USER_ROLES.md) - Security, RBAC, and the Principle of Least Privilege.
+*   [Use Cases](docs/USE_CASES.md) - API contracts and system interaction boundaries.
+*   [Assumptions & Constraints](docs/ASSUMPTIONS_AND_LIMITATIONS.md) - System constraints, guardrails, and acceptable trade-offs.
+
+### 4. Development & QA
+*   [Development Plan](docs/DEVELOPMENT_PLAN.md) - Agile vertical slicing vs waterfall.
+*   [Version Control](docs/VERSION_CONTROL.md) - Trunk-based development and CI pipeline hygiene.
+*   [Testing Strategy](docs/TESTING_STRATEGY.md) - Implementing the Enterprise Test Pyramid (Unit -> Integration -> E2E).
+
+### 5. Roadmap
+*   [Future Enhancements](docs/FUTURE_ENHANCEMENTS.md) - SaaS integration, AI forecasting, and mobile application strategies.
+
+---
+
+> *"BuildSync is designed to replace heuristic estimation with deterministic algorithmic planning, ensuring Just-In-Time delivery, minimal material waste, and absolute operational auditability."*
+
+
+--------------------------------------------------------------------------------
