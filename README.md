@@ -51,42 +51,42 @@ Building backend-heavy applications, system tools, and automation pipelines. <br
       <code>Stack: Flutter, Firebase, Groq</code>
     </td>
     <td width="50%" valign="top">
-      <h4>↳ <b>RoadPack</b> — <i>Real-Time Convoy Telemetry Platform</i></h4>
-      <p>A live location and coordination system for group rides and convoys.</p>
+      <h4>↳ <b>AAE</b> — <i>Passive Presence Verification Framework</i></h4>
+      <p>A decentralized, infrastructure-independent framework for high-integrity presence tracking.</p>
       <b>Technical Highlights:</b>
       <blockquote>
-        • Real-time location synchronization<br>
-        • Google Maps telemetry integration<br>
-        • Group state consistency under network jitter<br>
-        • Optimized Firebase read/write patterns
+        • Proximity Mesh using BLE and Union-Find DJS algorithm<br>
+        • Multi-modal anti-spoofing via gyroscope and light sensor fusion<br>
+        • Differential privacy core with ephemeral identity tokens<br>
+        • High-frequency ingestion via Node.js and Redis
       </blockquote>
-      <code>Stack: Flutter, Firebase, Google Maps Platform</code>
+      <code>Stack: Flutter, Node.js, Redis, PostgreSQL</code>
     </td>
   </tr>
   <tr>
     <td width="50%" valign="top">
       <h4>↳ <b>GitPulse</b> — <i>Autonomous Git Synchronization Daemon</i></h4>
-      <p>A background Python service that automates Git workflows with safety guarantees.</p>
+      <p>A background service that automates Git workflows with per-repo safety guarantees.</p>
       <b>Core Mechanisms:</b>
       <blockquote>
         • File-system event debouncing per repository<br>
-        • AI-generated commit summaries from diff context<br>
-        • Guardrails to prevent noisy or unsafe commits<br>
-        • Designed for long-running background execution
+        • AI-generated commit summaries from diff context using Groq<br>
+        • Automated push failure recovery and auth retries<br>
+        • Designed for low-latency background monitoring
       </blockquote>
-      <code>Stack: Python</code>
+      <code>Stack: Python, Git, Groq</code>
     </td>
     <td width="50%" valign="top">
-      <h4>↳ <b>RepoPilot</b> — <i>Codebase Intelligence & Automation Pipeline</i></h4>
-      <p>Infrastructure tooling for managing and enforcing structure across large repositories.</p>
-      <b>Responsibilities:</b>
+      <h4>↳ <b>LiteCPU16</b> — <i>16-bit Single-Cycle Processor</i></h4>
+      <p>A minimal educational CPU designed to demonstrate hardware-level instruction execution.</p>
+      <b>Core Architecture Features:</b>
       <blockquote>
-        • Source code classification<br>
-        • Architectural formatting enforcement<br>
-        • Automated repository hygiene rules<br>
-        • Pipeline-oriented execution model
+        • 16-bit Harvard Architecture designed in Verilog (HDL)<br>
+        • Modular 8-file structure (ALU, Control Unit, Register File)<br>
+        • Executes fundamental RISC instruction set (ADD, LW, SW, BEQ)<br>
+        • Validated via simulation in Icarus Verilog
       </blockquote>
-      <code>Stack: Python, Linux</code>
+      <code>Stack: Verilog, Icarus Verilog</code>
     </td>
   </tr>
 </table>
