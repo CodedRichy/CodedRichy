@@ -80,7 +80,7 @@ Building AI-native systems, agent orchestration platforms, and intelligent devel
     </td>
     <td width="50%" valign="top">
       <h4>↳ <b>Sentinel</b> — <i>Real-Time AI Piracy Detection</i></h4>
-      <p>Dual-mode fingerprinting system for real-time content protection. Won NEXUS Hackathon 2026 for digital asset protection innovation.</p>
+      <p>Dual-mode fingerprinting system for real-time content protection. 3rd place at NEXUS Hackathon 2026 for digital asset protection innovation.</p>
       <b>Technical Achievements:</b>
       <blockquote>
         • pHash + dHash video fingerprinting with Mel-spectrogram audio<br>
