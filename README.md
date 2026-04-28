@@ -2,8 +2,8 @@
 
 # RISHI PRASEETH KRISHNAN
 
-Building backend-heavy applications, system tools, and automation pipelines. <br>
-*Focused on correctness, performance, and developer ergonomics.*
+Building AI-native systems, agent orchestration platforms, and intelligent developer tooling. <br>
+*Focused on stateful reasoning, multi-agent coordination, and human-AI collaboration.*
 
 **B.Tech Computer Science @ Muthoot Institute of Technology and Science**
 
@@ -22,7 +22,7 @@ Building backend-heavy applications, system tools, and automation pipelines. <br
 <br><br>
 
 <a href="https://skillicons.dev">
-  <img src="https://skillicons.dev/icons?i=python,django,c,cpp,javascript,react,flutter,firebase,sqlite,postgres,git,github,linux&theme=dark&perline=15" />
+  <img src="https://skillicons.dev/icons?i=python,typescript,react,nextjs,flutter,pytorch,postgres,redis,git,github,linux,vscode,nodejs&theme=dark&perline=15" />
 </a>
 
 </div>
@@ -31,62 +31,65 @@ Building backend-heavy applications, system tools, and automation pipelines. <br
 
 ## ❖ CORE PROJECTS
 
-> Selected engineering projects. Some repositories are private; descriptions focus on architecture and technical guarantees.
+> AI-native systems and agent orchestration platforms. Architected for stateful reasoning and human-AI collaboration.
 
 <br>
 
 <table width="100%">
   <tr>
     <td width="50%" valign="top">
-      <h4>↳ <b>Expenso</b> — <i>Ledger-Based Group Expense System</i></h4>
-      <p>A cross-platform group expense application designed around strict accounting invariants.</p>
-      <b>Key Engineering Decisions:</b>
+      <h4>↳ <b>GitPulse</b> — <i>AI-Powered Git Guardrails</i></h4>
+      <p>MCP-native developer tooling that sits between AI coding assistants and git history. Quality gates, convention learning, and intelligent commit automation.</p>
+      <b>Key Systems:</b>
       <blockquote>
-        • Append-only expense revisions (no destructive updates)<br>
-        • Integer minor-unit accounting to eliminate rounding errors<br>
-        • Deterministic settlement computation (zero-sum invariant enforced)<br>
-        • Natural-language expense parsing using Groq/Llama<br>
-        • Direct UPI intent-based settlement flows
+        • MCP Server integration for Claude/Cursor/Windsurf<br>
+        • Multi-provider AI orchestration (5 LLM providers)<br>
+        • Deterministic quality gates (security, code smells, coverage)<br>
+        • Convention learning engine from commit history<br>
+        • TypeScript CLI + Next.js dashboard architecture
       </blockquote>
-      <code>Stack: Flutter, Firebase, Groq</code>
+      <code>Stack: TypeScript, MCP SDK, Next.js, Supabase, Ollama</code>
     </td>
     <td width="50%" valign="top">
-      <h4>↳ <b>AAE</b> — <i>Passive Presence Verification Framework</i></h4>
-      <p>A decentralized, infrastructure-independent framework for high-integrity presence tracking.</p>
-      <b>Technical Highlights:</b>
+      <h4>↳ <b>Hybrid Cognitive Runtime</b> — <i>Stateful AI Reasoning Engine</i></h4>
+      <p>A state-based intelligence system that makes AI reasoning persistent, structured, and resumable. Intelligence = State. Reasoning = State Transitions.</p>
+      <b>Core Innovation:</b>
       <blockquote>
-        • Proximity Mesh using BLE and Union-Find DJS algorithm<br>
-        • Multi-modal anti-spoofing via gyroscope and light sensor fusion<br>
-        • Differential privacy core with ephemeral identity tokens<br>
-        • High-frequency ingestion via Node.js and Redis
+        • Hybrid Cognitive Operators (HCO): Neural + Symbolic + Causal<br>
+        • Persistent cognitive state across sessions<br>
+        • Zero-latency context resumption (10-100x token reduction)<br>
+        • 42/42 tests passing, Groq/Gemini/Ollama providers<br>
+        • Causal dependency graph for reasoning traceability
       </blockquote>
-      <code>Stack: Flutter, Node.js, Redis, PostgreSQL</code>
+      <code>Stack: Python, LLM APIs, State Machines</code>
     </td>
   </tr>
   <tr>
     <td width="50%" valign="top">
-      <h4>↳ <b>GitPulse</b> — <i>Autonomous Git Synchronization Daemon</i></h4>
-      <p>A background service that automates Git workflows with per-repo safety guarantees.</p>
-      <b>Core Mechanisms:</b>
+      <h4>↳ <b>Intent Compiler</b> — <i>Multi-Agent Orchestration System</i></h4>
+      <p>Transforms high-level goals into executable workflows. Compiles intent into structured AI systems with specialized agent dispatch and role matching.</p>
+      <b>Architecture Highlights:</b>
       <blockquote>
-        • File-system event debouncing per repository<br>
-        • AI-generated commit summaries from diff context using Groq<br>
-        • Automated push failure recovery and auth retries<br>
-        • Designed for low-latency background monitoring
+        • 3-tier model orchestration (Quality/Efficiency/Speed)<br>
+        • Dynamic agent-role matching with skill registry<br>
+        • 6-dimensional quality scoring system<br>
+        • Instruction file generation (CLAUDE.md, .cursorrules, AGENTS.md)<br>
+        • Reactive workflow execution with rollback support
       </blockquote>
-      <code>Stack: Python, Git, Groq</code>
+      <code>Stack: Next.js 15, TypeScript, OpenRouter, Groq, Framer Motion</code>
     </td>
     <td width="50%" valign="top">
-      <h4>↳ <b>LiteCPU16</b> — <i>16-bit Single-Cycle Processor</i></h4>
-      <p>A minimal educational CPU designed to demonstrate hardware-level instruction execution.</p>
-      <b>Core Architecture Features:</b>
+      <h4>↳ <b>Sentinel</b> — <i>Real-Time AI Piracy Detection</i></h4>
+      <p>Dual-mode fingerprinting system for real-time content protection. Won NEXUS Hackathon 2026 for digital asset protection innovation.</p>
+      <b>Technical Achievements:</b>
       <blockquote>
-        • 16-bit Harvard Architecture designed in Verilog (HDL)<br>
-        • Modular 8-file structure (ALU, Control Unit, Register File)<br>
-        • Executes fundamental RISC instruction set (ADD, LW, SW, BEQ)<br>
-        • Validated via simulation in Icarus Verilog
+        • pHash + dHash video fingerprinting with Mel-spectrogram audio<br>
+        • 95% detection accuracy, 20x parallel speedup<br>
+        • Groq Llama 3.3 70B for automated DMCA generation<br>
+        • <90 second enforcement window<br>
+        • React + Flask + WebSocket real-time dashboard
       </blockquote>
-      <code>Stack: Verilog, Icarus Verilog</code>
+      <code>Stack: Python, OpenCV, React, Groq, Redis</code>
     </td>
   </tr>
 </table>
@@ -106,10 +109,12 @@ Building backend-heavy applications, system tools, and automation pipelines. <br
 
 ## ❖ INTERESTS
 
-* **Backend & systems engineering**
-* **Developer tooling and automation**
-* **Correctness-first application design**
-* **Performance-aware architectures**
+* **AI-native application architecture**
+* **Multi-agent orchestration systems**
+* **MCP (Model Context Protocol) integration**
+* **Stateful reasoning and cognitive runtimes**
+* **Developer tooling for the AI era**
+* **Correctness-first system design**
 
 <br><br>
 
