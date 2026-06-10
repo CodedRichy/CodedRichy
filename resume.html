@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Rishi Praseeth Krishnan — Resume</title>
+<style>
+  @page { size: letter; margin: 0.45in 0.5in; }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    font-family: 'Segoe UI', 'Helvetica Neue', Arial, sans-serif;
+    font-size: 10px;
+    line-height: 1.45;
+    color: #1a1a1a;
+    -webkit-print-color-adjust: exact;
+    print-color-adjust: exact;
+  }
+
+  a { color: #1a1a1a; text-decoration: none; }
+  a:hover { text-decoration: underline; }
+
+  .header { text-align: center; margin-bottom: 10px; padding-bottom: 8px; border-bottom: 1.5px solid #8B2035; }
+  .header h1 { font-size: 20px; font-weight: 700; letter-spacing: 1px; margin-bottom: 4px; }
+  .header .contact { font-size: 10px; color: #444; }
+  .header .contact a { color: #444; }
+  .header .contact span { margin: 0 6px; color: #aaa; }
+
+  .section { margin-bottom: 10px; }
+  .section-title {
+    font-size: 10px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    color: #8B2035;
+    border-bottom: 1px solid #ddd;
+    padding-bottom: 2px;
+    margin-bottom: 6px;
+  }
+
+  .two-col { display: flex; gap: 24px; }
+  .col-main { flex: 1.6; }
+  .col-side { flex: 1; }
+
+  .entry { margin-bottom: 7px; }
+  .entry-header { display: flex; justify-content: space-between; align-items: baseline; }
+  .entry-title { font-weight: 600; font-size: 10.5px; }
+  .entry-date { font-size: 9px; color: #666; white-space: nowrap; }
+  .entry-org { font-size: 9.5px; color: #555; font-style: italic; }
+  .entry-desc { margin-top: 2px; }
+  .entry-desc li { margin-left: 14px; font-size: 9.5px; color: #333; margin-bottom: 1px; }
+  .entry-link { font-size: 9px; color: #8B2035; font-weight: 500; }
+
+  .tag-accent { color: #8B2035; font-weight: 600; font-size: 9px; }
+
+  .skills-grid { display: grid; grid-template-columns: 80px 1fr; gap: 2px 8px; font-size: 9.5px; }
+  .skills-grid dt { font-weight: 600; color: #555; }
+  .skills-grid dd { color: #333; }
+
+  .project { margin-bottom: 6px; }
+  .project-title { font-weight: 600; font-size: 10.5px; }
+  .project-meta { font-size: 9px; color: #666; }
+  .project ul { margin-top: 1px; }
+  .project li { margin-left: 14px; font-size: 9.5px; color: #333; margin-bottom: 0.5px; }
+
+  @media print {
+    body { -webkit-print-color-adjust: exact; }
+  }
+</style>
+</head>
+<body>
+
+<div class="header">
+  <h1>RISHI PRASEETH KRISHNAN</h1>
+  <div class="contact">
+    <a href="mailto:rishi.praseeth@gmail.com">rishi.praseeth@gmail.com</a>
+    <span>|</span> +91 7902203218
+    <span>|</span> <a href="https://github.com/CodedRichy">github.com/CodedRichy</a>
+    <span>|</span> <a href="https://www.linkedin.com/in/rishi-praseeth-321237306/">LinkedIn</a>
+  </div>
+</div>
+
+<div class="two-col">
+<div class="col-main">
+
+  <div class="section">
+    <div class="section-title">Experience</div>
+
+    <div class="entry">
+      <div class="entry-header">
+        <span class="entry-title">AI Engineer (Contract) — Veridock AI</span>
+        <span class="entry-date">2025 — Present</span>
+      </div>
+      <ul class="entry-desc">
+        <li>Built privacy-first invoice automation platform for Indian CA firms</li>
+        <li>Designed multi-language OCR pipeline with Claude Haiku integration</li>
+        <li>Full-stack: FastAPI backend, Supabase auth, production deployment</li>
+      </ul>
+    </div>
+
+    <div class="entry">
+      <div class="entry-header">
+        <span class="entry-title">Backend Developer Intern — Soften Technologies</span>
+        <span class="entry-date">May — Aug 2024</span>
+      </div>
+      <ul class="entry-desc">
+        <li>Built Django applications including UN Fundraiser platform</li>
+        <li>Designed REST APIs, database schemas, deployment pipelines</li>
+        <li>Python, JavaScript, PostgreSQL, SQLite3</li>
+      </ul>
+    </div>
+
+    <div class="entry">
+      <div class="entry-header">
+        <span class="entry-title">3rd Place — ACM Nexus Hackathon 2026</span>
+        <span class="entry-date">Jan 2026</span>
+      </div>
+      <ul class="entry-desc">
+        <li>Team RRR: built Sentinel, a real-time piracy detection system in 24 hours</li>
+        <li>Dual-mode fingerprinting achieving 95% accuracy, &lt;90s enforcement</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="section">
+    <div class="section-title">Featured Projects</div>
+
+    <div class="project">
+      <div class="entry-header">
+        <span class="project-title">FixMyPrompt <span class="tag-accent">LIVE</span></span>
+        <span class="entry-link">fixmyprompt-five.vercel.app</span>
+      </div>
+      <div class="project-meta">Next.js 16 · Supabase · Gemini Flash-Lite · Lemon Squeezy</div>
+      <ul>
+        <li>Production SaaS: prompt engineering training with ELO gamification</li>
+        <li>561+ challenges, 18-module academy, real payment infrastructure</li>
+      </ul>
+    </div>
+
+    <div class="project">
+      <div class="entry-header">
+        <span class="project-title">Hybrid Cognitive Runtime</span>
+        <span class="entry-link">github.com/PantheraLabs/HybridCognitiveRuntime</span>
+      </div>
+      <div class="project-meta">Python · FastAPI · MCP SDK · SQLite · NetworkX · 20K+ LOC</div>
+      <ul>
+        <li>Persistent AI agent memory: 40+ MCP tools, 41% token savings vs stateless baselines</li>
+        <li>Causal event graphs, BOCPD-based episode segmentation, 20+ test files</li>
+      </ul>
+    </div>
+
+    <div class="project">
+      <div class="entry-header">
+        <span class="project-title">TARS</span>
+        <span class="entry-link">github.com/CodedRichy/TARS</span>
+      </div>
+      <div class="project-meta">Python · SQLite · 37 test files · 100% auditable</div>
+      <ul>
+        <li>Self-hosted AI agent with traceable decisions and explainable parameters</li>
+        <li>Hash-chained action ledger, multi-tier model router with cost receipts</li>
+      </ul>
+    </div>
+
+    <div class="project">
+      <div class="entry-header">
+        <span class="project-title">GitPulse</span>
+        <span class="entry-link">github.com/CodedRichy/GitPulse</span>
+      </div>
+      <div class="project-meta">TypeScript · Next.js · React Ink · MCP SDK · 18K+ LOC</div>
+      <ul>
+        <li>AI-powered Git guardrails: MCP server (10+ tools), CLI, web dashboard</li>
+        <li>Convention learning from commit history across 3 surfaces</li>
+      </ul>
+    </div>
+
+    <div class="project">
+      <div class="entry-header">
+        <span class="project-title">Sentinel</span>
+        <span class="entry-link">Team project · 114 commits</span>
+      </div>
+      <div class="project-meta">Python · Flask · OpenCV · librosa · React · Groq</div>
+      <ul>
+        <li>Real-time piracy detection: video pHash + audio mel-spectrogram fusion</li>
+        <li>95% detection accuracy, enforcement window under 90 seconds</li>
+      </ul>
+    </div>
+  </div>
+
+</div>
+<div class="col-side">
+
+  <div class="section">
+    <div class="section-title">Education</div>
+    <div class="entry">
+      <div class="entry-title">B.Tech Computer Science</div>
+      <div class="entry-org">Muthoot Institute of Technology & Science</div>
+      <div class="entry-date" style="font-size: 9.5px; color: #555;">2024 — 2028</div>
+    </div>
+  </div>
+
+  <div class="section">
+    <div class="section-title">Technical Skills</div>
+    <dl class="skills-grid">
+      <dt>Languages</dt>
+      <dd>Python, TypeScript, JavaScript, Verilog</dd>
+      <dt>Frontend</dt>
+      <dd>Next.js, React, Flutter, Tailwind, React Ink</dd>
+      <dt>Backend</dt>
+      <dd>FastAPI, Flask, Django, Node.js</dd>
+      <dt>AI / ML</dt>
+      <dd>Claude API, MCP SDK, Groq, Gemini, Ollama</dd>
+      <dt>Data</dt>
+      <dd>PostgreSQL, Redis, SQLite, Supabase, Neo4j</dd>
+      <dt>Tools</dt>
+      <dd>Docker, Git, CI/CD, Vercel, Netlify</dd>
+    </dl>
+  </div>
+
+  <div class="section">
+    <div class="section-title">Focus Areas</div>
+    <ul style="list-style: none; font-size: 9.5px; color: #333;">
+      <li style="margin-bottom: 2px;">&#9656; AI-native architecture & stateful reasoning</li>
+      <li style="margin-bottom: 2px;">&#9656; MCP server development (50+ tools shipped)</li>
+      <li style="margin-bottom: 2px;">&#9656; Multi-agent orchestration</li>
+      <li style="margin-bottom: 2px;">&#9656; Developer tooling & CLI</li>
+      <li style="margin-bottom: 2px;">&#9656; Production shipping & deployment</li>
+    </ul>
+  </div>
+
+  <div class="section">
+    <div class="section-title">Other Projects</div>
+    <div style="font-size: 9px; color: #444; line-height: 1.5;">
+      <p style="margin-bottom: 3px;"><strong>Sonder</strong> — Discord OS: 70+ commands, React dashboard, virtual economy, sentiment analysis</p>
+      <p style="margin-bottom: 3px;"><strong>Intent Compiler</strong> — Goal → multi-agent workflow compiler with quality scoring</p>
+      <p style="margin-bottom: 3px;"><strong>Expenso</strong> — AI expense tracker, 187+ tests, Flutter + Groq</p>
+      <p style="margin-bottom: 3px;"><strong>LiteCPU16</strong> — 16-bit single-cycle CPU in Verilog, Harvard architecture</p>
+      <p style="margin-bottom: 3px;"><strong>CodeSense AI</strong> — Codebase → Neo4j knowledge graph with NL queries</p>
+      <p style="margin-bottom: 3px;"><strong>ObsidianBridge</strong> — GitHub↔Obsidian real-time sync with AI tagging</p>
+    </div>
+  </div>
+
+</div>
+</div>
+
+</body>
+</html>

@@ -1,203 +1,561 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>RISHI PRASEETH KRISHNAN | Software Engineer</title>
-
-    <!-- SEO Best Practices -->
-    <meta name="description"
-        content="Portfolio of Rishi Praseeth Krishnan - Software Engineer focusing on backend-heavy applications, system tools, and automation pipelines.">
-
-    <!-- Fonts -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link
-        href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;700&family=Outfit:wght@300;400;500;700;900&display=swap"
-        rel="stylesheet">
-
-    <link rel="stylesheet" href="css/style.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Rishi Praseeth Krishnan — AI Systems Engineer</title>
+  <meta name="description" content="I build AI systems that remember, reason, and ship. Cognitive runtimes, MCP tooling, deployed SaaS.">
+  <meta property="og:title" content="Rishi Praseeth Krishnan — AI Systems Engineer">
+  <meta property="og:description" content="I build AI systems that remember, reason, and ship. Cognitive runtimes, MCP tooling, deployed SaaS.">
+  <meta property="og:type" content="website">
+  <meta property="og:image" content="og-image.png">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Rishi Praseeth Krishnan — AI Systems Engineer">
+  <meta name="twitter:description" content="I build AI systems that remember, reason, and ship. Cognitive runtimes, MCP tooling, deployed SaaS.">
+  <meta name="twitter:image" content="og-image.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;1,9..40,300;1,9..40,400&family=JetBrains+Mono:wght@400;500&family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+  <noscript><style>.loader{display:none!important}.hero__greeting-inner,.hero__name-word,.hero__tagline,.hero__cta{opacity:1!important;transform:none!important}</style></noscript>
 </head>
-
 <body>
+  <!-- SKIP LINK -->
+  <a href="#about" class="skip-link">Skip to content</a>
 
-    <!-- Grain Texture Overlay -->
-    <div class="noise-overlay"></div>
-
-    <!-- Custom Cursor -->
-    <div class="cursor-dot" id="cursor-dot"></div>
-    <div class="cursor-outline" id="cursor-outline"></div>
-
-    <!-- Navigation -->
-    <nav class="navbar" id="navbar">
-        <div class="nav-brand">RPK.</div>
-        <div class="nav-links">
-            <a href="#home" class="nav-link">Home</a>
-            <a href="#projects" class="nav-link">Projects</a>
-            <a href="#experience" class="nav-link">Experience</a>
-            <a href="mailto:rishi.praseeth@gmail.com" class="nav-link cta">Contact</a>
-        </div>
-    </nav>
-
-    <!-- Hero Section -->
-    <section id="home" class="hero">
-        <div class="hero-bg-accent"></div>
-        <div class="hero-content">
-            <h1 class="hero-title reveal-text">
-                <span class="block">BUILDING</span>
-                <span class="block">CORRECTNESS</span>
-                <span class="block accent-text">FIRST.</span>
-            </h1>
-            <p class="hero-subtitle reveal-fade">Software Engineer • Backend Systems & Automation • Performance-Aware
-                Architecture</p>
-
-            <div class="hero-scroll-indicator reveal-fade">
-                <span>SCROLL</span>
-                <div class="scroll-line"></div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Marquee Section -->
-    <div class="marquee-container">
-        <div class="marquee" id="tech-marquee">
-            <span>PYTHON</span><span class="dot">•</span>
-            <span>C</span><span class="dot">•</span>
-            <span>C++</span><span class="dot">•</span>
-            <span>REACT</span><span class="dot">•</span>
-            <span>FLUTTER</span><span class="dot">•</span>
-            <span>DJANGO</span><span class="dot">•</span>
-            <span>FIREBASE</span><span class="dot">•</span>
-            <span>POSTGRES</span><span class="dot">•</span>
-        </div>
+  <!-- LOADING SCREEN -->
+  <div class="loader" id="loader" aria-hidden="true">
+    <div class="loader__inner">
+      <div class="loader__logo">RPK</div>
+      <div class="loader__bar"><div class="loader__fill"></div></div>
     </div>
+  </div>
 
-    <!-- Projects Section -->
-    <section id="projects" class="projects">
-        <div class="section-container">
-            <div class="section-header reveal-fade">
-                <p class="section-label">01 // CORE PROJECTS</p>
-                <h2 class="section-title">ENGINEERED FOR SCALE</h2>
-            </div>
+  <!-- CUSTOM CURSOR -->
+  <div class="cursor" id="cursor" aria-hidden="true">
+    <div class="cursor__dot"></div>
+    <div class="cursor__ring"></div>
+  </div>
 
-            <div class="projects-grid">
-                <!-- Project 1 -->
-                <article class="project-card reveal-up">
-                    <div class="project-content">
-                        <div class="project-meta">Flutter, Firebase, Groq</div>
-                        <h3 class="project-name">EXPENSO</h3>
-                        <p class="project-desc">Ledger-Based Group Expense System. A cross-platform group expense
-                            application designed around strict accounting invariants.</p>
-                        <ul class="project-features">
-                            <li>Append-only expense revisions</li>
-                            <li>Integer minor-unit accounting</li>
-                            <li>Deterministic settlement computation</li>
-                            <li>Direct UPI intent-based settlement flows</li>
-                        </ul>
-                    </div>
-                </article>
+  <!-- SCROLL PROGRESS -->
+  <div class="scroll-progress" id="scrollProgress" aria-hidden="true"></div>
 
-                <!-- Project 2 -->
-                <article class="project-card reveal-up">
-                    <div class="project-content">
-                        <div class="project-meta">Flutter, Node.js, Redis</div>
-                        <h3 class="project-name">AAE</h3>
-                        <p class="project-desc">Passive Presence Verification Framework. A decentralized system for
-                            high-integrity tracking via BLE mesh networks.</p>
-                        <ul class="project-features">
-                            <li>BLE Proximity Mesh with Union-Find cross-verification</li>
-                            <li>Multi-modal anti-spoofing via sensor fusion</li>
-                            <li>Differential privacy core for data security</li>
-                            <li>High-frequency Redis-based ingestion layer</li>
-                        </ul>
-                    </div>
-                </article>
+  <!-- NAV -->
+  <nav class="nav" id="nav">
+    <a href="#" class="nav__logo">RPK</a>
+    <div class="nav__links">
+      <a href="#about" class="nav__link" data-index="01">About</a>
+      <a href="#focus" class="nav__link" data-index="02">Focus</a>
+      <a href="#projects" class="nav__link" data-index="03">Projects</a>
+      <a href="#experience" class="nav__link" data-index="04">Experience</a>
+      <a href="#contact" class="nav__link" data-index="05">Contact</a>
+    </div>
+    <button class="nav__menu-btn" id="menuBtn" aria-label="Toggle menu" aria-expanded="false" aria-controls="mobileMenu">
+      <span></span><span></span>
+    </button>
+  </nav>
 
-                <!-- Project 3 -->
-                <article class="project-card reveal-up">
-                    <div class="project-content">
-                        <div class="project-meta">Python, Git, Groq</div>
-                        <h3 class="project-name">GITPULSE</h3>
-                        <p class="project-desc">Autonomous Git Synchronization Daemon. A background service that
-                            automates complex Git workflows with AI-driven summaries.</p>
-                        <ul class="project-features">
-                            <li>File-system event debouncing per repository</li>
-                            <li>AI-generated commit context via Groq LLM</li>
-                            <li>Automated push failure recovery and auth retries</li>
-                        </ul>
-                    </div>
-                </article>
+  <!-- MOBILE MENU -->
+  <div class="mobile-menu" id="mobileMenu" role="dialog" aria-hidden="true" aria-label="Navigation menu">
+    <a href="#about" class="mobile-menu__link" data-index="01">About</a>
+    <a href="#focus" class="mobile-menu__link" data-index="02">Focus</a>
+    <a href="#projects" class="mobile-menu__link" data-index="03">Projects</a>
+    <a href="#experience" class="mobile-menu__link" data-index="04">Experience</a>
+    <a href="#contact" class="mobile-menu__link" data-index="05">Contact</a>
+  </div>
 
-                <!-- Project 4 -->
-                <article class="project-card reveal-up">
-                    <div class="project-content">
-                        <div class="project-meta">Verilog, HDL</div>
-                        <h3 class="project-name">LITECPU16</h3>
-                        <p class="project-desc">16-bit Single-Cycle Processor. A minimal educational CPU blueprint
-                            designed for hardware-level instruction execution.</p>
-                        <ul class="project-features">
-                            <li>16-bit Harvard Architecture design</li>
-                            <li>Modular Control Unit & ALU implementation</li>
-                            <li>RISC instruction set (ADD, LW, SW, BEQ)</li>
-                            <li>Icarus Verilog simulation-ready</li>
-                        </ul>
-                    </div>
-                </article>
-            </div>
+  <!-- HERO -->
+  <main>
+  <section class="hero" id="hero">
+    <canvas class="hero__canvas" id="nodeGraph" aria-hidden="true"></canvas>
+    <div class="ambient-orb ambient-orb--1" aria-hidden="true"></div>
+    <div class="ambient-orb ambient-orb--2" aria-hidden="true"></div>
+    <div class="hero__content">
+      <p class="hero__greeting"><span class="hero__greeting-inner">Hi, I'm</span></p>
+      <h1 class="hero__name" aria-label="Rishi Praseeth Krishnan">
+        <span class="hero__name-line">
+          <span class="hero__name-word">Rishi</span>
+          <span class="hero__name-word">Praseeth</span>
+        </span>
+        <span class="hero__name-line">
+          <span class="hero__name-word hero__name--accent">Krishnan</span>
+        </span>
+      </h1>
+      <p class="hero__tagline">I build <span class="hero__tagline--em">AI systems that remember.</span> Cognitive runtimes,<br class="hide-mobile"> MCP tooling, and a shipped SaaS — all from scratch.</p>
+      <div class="hero__cta">
+        <a href="#projects" class="btn btn--primary">View My Work</a>
+        <a href="assets/Rishi_Praseeth_Krishnan_Resume.pdf" download class="btn btn--ghost">Resume PDF</a>
+        <a href="#contact" class="btn btn--ghost">Get In Touch</a>
+      </div>
+    </div>
+    <div class="hero__scroll-indicator">
+      <div class="hero__scroll-line"></div>
+    </div>
+  </section>
+
+  <!-- ABOUT -->
+  <section class="section about" id="about">
+    <div class="ambient-orb ambient-orb--3" aria-hidden="true"></div>
+    <div class="section__header">
+      <span class="section__index">01</span>
+      <h2 class="section__title">About</h2>
+      <div class="section__line"></div>
+    </div>
+    <div class="about__grid">
+      <div class="about__text">
+        <p class="about__lead">I got obsessed with one question: why do AI agents forget everything between conversations?</p>
+        <p>That question turned into HCR — a 20K-line cognitive runtime with 40+ MCP tools. Then TARS, an auditable agent with a Bayesian personality system. Then GitPulse, FixMyPrompt, and a dozen more things I couldn't stop building. B.Tech CS at MITS, but most of what I know came from shipping at 3am and debugging production at 7am.</p>
+        <p>I optimize for shipping, not for resume padding. If it doesn't run, it doesn't count.</p>
+      </div>
+      <div class="about__stats">
+        <div class="stat-card">
+          <span class="stat-card__number" data-count="40" data-suffix="+">0</span>
+          <span class="stat-card__label">MCP Tools Shipped</span>
         </div>
-    </section>
-
-    <!-- Experience & Interests Section -->
-    <section id="experience" class="experience">
-        <div class="section-container">
-            <div class="section-header reveal-fade">
-                <p class="section-label">02 // HISTORY</p>
-                <h2 class="section-title">TIMELINE</h2>
-            </div>
-
-            <div class="timeline-container reveal-up">
-                <div class="timeline-item">
-                    <div class="timeline-date">Oct 2024 — Present</div>
-                    <div class="timeline-content">
-                        <h4>TECH SUBCOMMITTEE MEMBER</h4>
-                        <p>MITS Media Club • Technical direction and infrastructure</p>
-                    </div>
-                </div>
-
-                <div class="timeline-item">
-                    <div class="timeline-date">Oct 2024 — Present</div>
-                    <div class="timeline-content">
-                        <h4>MEMBER</h4>
-                        <p>MITS Motorsports • Engineering and team operations</p>
-                    </div>
-                </div>
-
-                <div class="timeline-item">
-                    <div class="timeline-date">May 2024 — Aug 2024</div>
-                    <div class="timeline-content">
-                        <h4>APPRENTICE TRAINEE</h4>
-                        <p>Soften Technologies • Backend development (Python & JavaScript)</p>
-                    </div>
-                </div>
-            </div>
+        <div class="stat-card">
+          <span class="stat-card__number" data-count="41" data-suffix="%">0</span>
+          <span class="stat-card__label">Token Savings (HCR)</span>
         </div>
-    </section>
-
-    <!-- Footer Section -->
-    <footer class="footer">
-        <div class="footer-container">
-            <h2 class="footer-title reveal-text">RISHI PRASEETH.</h2>
-            <div class="footer-links">
-                <a href="https://github.com/CodedRichy" target="_blank" rel="noopener noreferrer">GITHUB</a>
-                <a href="mailto:rishi.praseeth@gmail.com">EMAIL</a>
-                <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer">LINKEDIN</a>
-            </div>
-            <p class="footer-copy">© 2026 RISHI PRASEETH KRISHNAN. ALL RIGHTS RESERVED.</p>
+        <div class="stat-card">
+          <span class="stat-card__number" data-count="95" data-suffix="%">0</span>
+          <span class="stat-card__label">Sentinel Accuracy</span>
         </div>
-    </footer>
+        <div class="stat-card">
+          <span class="stat-card__number" data-count="1" data-suffix="">0</span>
+          <span class="stat-card__label">Live Product</span>
+        </div>
+      </div>
+    </div>
+  </section>
 
-    <script src="js/script.js"></script>
+  <!-- FOCUS AREAS -->
+  <section class="section focus" id="focus">
+    <div class="ambient-orb ambient-orb--2" aria-hidden="true"></div>
+    <div class="section__header">
+      <span class="section__index">02</span>
+      <h2 class="section__title">Focus Areas</h2>
+      <div class="section__line"></div>
+    </div>
+    <div class="focus__grid">
+      <div class="focus__card">
+        <div class="focus__icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="12" r="3"/><path d="M12 1v4m0 14v4M4.22 4.22l2.83 2.83m9.9 9.9l2.83 2.83M1 12h4m14 0h4M4.22 19.78l2.83-2.83m9.9-9.9l2.83-2.83"/></svg>
+        </div>
+        <h3 class="focus__card-title">AI-Native Architecture</h3>
+        <p class="focus__card-desc">Designing systems where AI is the core runtime — not a bolted-on feature. Persistent state, structured reasoning, auditable decisions.</p>
+      </div>
+      <div class="focus__card">
+        <div class="focus__icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M9 3H5a2 2 0 00-2 2v4m6-6h10a2 2 0 012 2v4M9 3v18m0 0h10a2 2 0 002-2v-4M9 21H5a2 2 0 01-2-2v-4m0-6v6m18-6v6"/></svg>
+        </div>
+        <h3 class="focus__card-title">Multi-Agent Orchestration</h3>
+        <p class="focus__card-desc">Compiling human intent into executable multi-agent workflows. Role matching, quality scoring, and reactive execution with rollback.</p>
+      </div>
+      <div class="focus__card">
+        <div class="focus__icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M4 7h16M4 12h16M4 17h10"/><circle cx="20" cy="17" r="2"/></svg>
+        </div>
+        <h3 class="focus__card-title">MCP Integration</h3>
+        <p class="focus__card-desc">Building Model Context Protocol servers that give AI agents structured access to developer tools, memory systems, and git intelligence.</p>
+      </div>
+      <div class="focus__card">
+        <div class="focus__icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/></svg>
+        </div>
+        <h3 class="focus__card-title">Stateful Reasoning</h3>
+        <p class="focus__card-desc">Making AI reasoning persistent and resumable. Cognitive state objects, causal event replay, zero-latency context restoration.</p>
+      </div>
+      <div class="focus__card">
+        <div class="focus__icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M14.7 6.3a1 1 0 000 1.4l1.6 1.6a1 1 0 001.4 0l3.77-3.77a6 6 0 01-7.94 7.94l-6.91 6.91a2.12 2.12 0 01-3-3l6.91-6.91a6 6 0 017.94-7.94l-3.76 3.76z"/></svg>
+        </div>
+        <h3 class="focus__card-title">Developer Tooling</h3>
+        <p class="focus__card-desc">CLI tools, quality gates, and intelligent automation for the AI-assisted development workflow. Making developers faster without losing control.</p>
+      </div>
+      <div class="focus__card">
+        <div class="focus__icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+        </div>
+        <h3 class="focus__card-title">Correctness-First Design</h3>
+        <p class="focus__card-desc">Test suites, type safety, deterministic pipelines. Building systems that are provably correct — not hopefully correct.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- TECH STACK MARQUEE -->
+  <section class="stack-marquee" id="stack">
+    <div class="marquee">
+      <div class="marquee__track">
+        <span class="marquee__item">Python</span>
+        <span class="marquee__sep">/</span>
+        <span class="marquee__item">TypeScript</span>
+        <span class="marquee__sep">/</span>
+        <span class="marquee__item">Next.js</span>
+        <span class="marquee__sep">/</span>
+        <span class="marquee__item">React</span>
+        <span class="marquee__sep">/</span>
+        <span class="marquee__item">FastAPI</span>
+        <span class="marquee__sep">/</span>
+        <span class="marquee__item">Flutter</span>
+        <span class="marquee__sep">/</span>
+        <span class="marquee__item">Claude API</span>
+        <span class="marquee__sep">/</span>
+        <span class="marquee__item">MCP SDK</span>
+        <span class="marquee__sep">/</span>
+        <span class="marquee__item">PostgreSQL</span>
+        <span class="marquee__sep">/</span>
+        <span class="marquee__item">Redis</span>
+        <span class="marquee__sep">/</span>
+        <span class="marquee__item">Supabase</span>
+        <span class="marquee__sep">/</span>
+        <span class="marquee__item">Docker</span>
+        <span class="marquee__sep">/</span>
+        <span class="marquee__item">Groq</span>
+        <span class="marquee__sep">/</span>
+        <span class="marquee__item">Neo4j</span>
+        <span class="marquee__sep">/</span>
+        <!-- duplicate for seamless loop -->
+        <span class="marquee__item">Python</span>
+        <span class="marquee__sep">/</span>
+        <span class="marquee__item">TypeScript</span>
+        <span class="marquee__sep">/</span>
+        <span class="marquee__item">Next.js</span>
+        <span class="marquee__sep">/</span>
+        <span class="marquee__item">React</span>
+        <span class="marquee__sep">/</span>
+        <span class="marquee__item">FastAPI</span>
+        <span class="marquee__sep">/</span>
+        <span class="marquee__item">Flutter</span>
+        <span class="marquee__sep">/</span>
+        <span class="marquee__item">Claude API</span>
+        <span class="marquee__sep">/</span>
+        <span class="marquee__item">MCP SDK</span>
+        <span class="marquee__sep">/</span>
+        <span class="marquee__item">PostgreSQL</span>
+        <span class="marquee__sep">/</span>
+        <span class="marquee__item">Redis</span>
+        <span class="marquee__sep">/</span>
+        <span class="marquee__item">Supabase</span>
+        <span class="marquee__sep">/</span>
+        <span class="marquee__item">Docker</span>
+        <span class="marquee__sep">/</span>
+        <span class="marquee__item">Groq</span>
+        <span class="marquee__sep">/</span>
+        <span class="marquee__item">Neo4j</span>
+        <span class="marquee__sep">/</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- FEATURED PROJECTS -->
+  <section class="section projects" id="projects">
+    <div class="ambient-orb ambient-orb--1" aria-hidden="true"></div>
+    <div class="ambient-orb ambient-orb--2" aria-hidden="true"></div>
+    <div class="section__header">
+      <span class="section__index">03</span>
+      <h2 class="section__title">Featured Projects</h2>
+      <div class="section__line"></div>
+    </div>
+    <div class="projects__bento">
+
+      <a href="projects/hcr.html" class="bento__card bento__card--large" data-project="hcr">
+        <div class="bento__glow"></div>
+        <div class="bento__content">
+          <div class="bento__top">
+            <span class="bento__tag">AI Memory Engine</span>
+            <span class="bento__tag">v0.4.0</span>
+            <span class="bento__tag bento__tag--active">Active</span>
+          </div>
+          <h3 class="bento__title">Hybrid Cognitive Runtime</h3>
+          <p class="bento__desc">Persistent AI agent memory system using causal event replay. Agents never repeat the same mistake twice — 40+ MCP tools, 41% token savings vs stateless baselines.</p>
+          <div class="bento__meta">
+            <span>Python</span>
+            <span>FastAPI</span>
+            <span>MCP</span>
+            <span>40+ MCP tools</span>
+            <span>200+ commits</span>
+          </div>
+        </div>
+      </a>
+
+      <a href="projects/fixmyprompt.html" class="bento__card bento__card--medium" data-project="fixmyprompt">
+        <div class="bento__glow"></div>
+        <div class="bento__content">
+          <div class="bento__top">
+            <span class="bento__tag">SaaS</span>
+            <span class="bento__tag bento__tag--live">LIVE</span>
+          </div>
+          <h3 class="bento__title">FixMyPrompt</h3>
+          <p class="bento__desc">Production SaaS transforming vague ideas into professional prompts. ELO gamification, 561+ challenges, 18-module academy, payments.</p>
+          <div class="bento__meta">
+            <span>Next.js 16</span>
+            <span>Gemini</span>
+            <span>Supabase</span>
+            <span>fixmyprompt-five.vercel.app</span>
+          </div>
+        </div>
+      </a>
+
+      <a href="projects/gitpulse.html" class="bento__card bento__card--medium" data-project="gitpulse">
+        <div class="bento__glow"></div>
+        <div class="bento__content">
+          <div class="bento__top">
+            <span class="bento__tag">Dev Tooling</span>
+            <span class="bento__tag bento__tag--deployed">Paused</span>
+          </div>
+          <h3 class="bento__title">GitPulse</h3>
+          <p class="bento__desc">AI-powered Git guardrails. MCP server with 10+ tools, CLI with React Ink, Next.js dashboard. Convention learning from commit history.</p>
+          <div class="bento__meta">
+            <span>TypeScript</span>
+            <span>Next.js</span>
+            <span>MCP</span>
+            <span>10+ MCP tools</span>
+          </div>
+        </div>
+      </a>
+
+      <a href="projects/tars.html" class="bento__card bento__card--medium" data-project="tars">
+        <div class="bento__glow"></div>
+        <div class="bento__content">
+          <div class="bento__top">
+            <span class="bento__tag">AI Agent</span>
+            <span class="bento__tag bento__tag--active">Active</span>
+          </div>
+          <h3 class="bento__title">TARS</h3>
+          <p class="bento__desc">Self-hosted AI agent with a visible, auditable brain. Bayesian genome system, hash-chained action ledger, multi-tier model router with cost receipts.</p>
+          <div class="bento__meta">
+            <span>Python</span>
+            <span>SQLite</span>
+            <span>37 test files</span>
+            <span>100% auditable</span>
+          </div>
+        </div>
+      </a>
+
+      <a href="projects/sonder.html" class="bento__card bento__card--medium" data-project="sonder">
+        <div class="bento__glow"></div>
+        <div class="bento__content">
+          <div class="bento__top">
+            <span class="bento__tag">Full-Stack</span>
+            <span class="bento__tag">110+ files</span>
+          </div>
+          <h3 class="bento__title">Sonder</h3>
+          <p class="bento__desc">Discord community OS with 70+ commands, React web dashboard, virtual economy, automated moderation, music streaming, and sentiment analysis. All behind a deceptively empty README.</p>
+          <div class="bento__meta">
+            <span>Node.js</span>
+            <span>React</span>
+            <span>PostgreSQL</span>
+            <span>Redis</span>
+          </div>
+        </div>
+      </a>
+
+      <a href="projects/sentinel.html" class="bento__card bento__card--medium" data-project="sentinel">
+        <div class="bento__glow"></div>
+        <div class="bento__content">
+          <div class="bento__top">
+            <span class="bento__tag">Computer Vision</span>
+            <span class="bento__tag bento__tag--award">3rd Place</span>
+          </div>
+          <h3 class="bento__title">Sentinel</h3>
+          <p class="bento__desc">Real-time piracy detection with dual-mode fingerprinting. Video pHash + audio mel-spectrograms. 95% accuracy, &lt;90s enforcement window.</p>
+          <div class="bento__meta">
+            <span>Python</span>
+            <span>OpenCV</span>
+            <span>React</span>
+            <span>Groq</span>
+          </div>
+        </div>
+      </a>
+
+    </div>
+  </section>
+
+  <!-- OTHER PROJECTS -->
+  <section class="section other-projects" id="other-projects">
+    <h2 class="other-projects__heading">Other Notable Work</h2>
+    <div class="other-projects__grid">
+      <div class="other-card">
+        <div class="other-card__top">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" class="other-card__icon"><path d="M3 7v10a2 2 0 002 2h14a2 2 0 002-2V9a2 2 0 00-2-2h-6l-2-2H5a2 2 0 00-2 2z"/></svg>
+          <div class="other-card__links">
+            <a href="https://github.com/PantheraLabs/IntentCompiler" target="_blank" rel="noopener noreferrer" aria-label="GitHub">
+              <svg viewBox="0 0 24 24" fill="currentColor" width="18"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/></svg>
+            </a>
+          </div>
+        </div>
+        <h4 class="other-card__title">Intent Compiler</h4>
+        <p class="other-card__desc">Transforms goals into multi-agent execution plans. 6-dimensional quality scoring.</p>
+        <div class="other-card__meta"><span>Next.js</span><span>TypeScript</span><span>AI Orchestration</span></div>
+      </div>
+      <div class="other-card">
+        <div class="other-card__top">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" class="other-card__icon"><path d="M3 7v10a2 2 0 002 2h14a2 2 0 002-2V9a2 2 0 00-2-2h-6l-2-2H5a2 2 0 00-2 2z"/></svg>
+          <div class="other-card__links">
+            <a href="https://github.com/CodedRichy/FoodChainIdeation" target="_blank" rel="noopener noreferrer" aria-label="GitHub">
+              <svg viewBox="0 0 24 24" fill="currentColor" width="18"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/></svg>
+            </a>
+          </div>
+        </div>
+        <h4 class="other-card__title">FoodChain Ideation</h4>
+        <p class="other-card__desc">Adversarial stress-testing with 64 animal agents. Shipped Claude Code plugin suite.</p>
+        <div class="other-card__meta"><span>Claude Plugin</span><span>Shipped</span><span>5 Skills</span></div>
+      </div>
+      <div class="other-card">
+        <div class="other-card__top">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" class="other-card__icon"><path d="M3 7v10a2 2 0 002 2h14a2 2 0 002-2V9a2 2 0 00-2-2h-6l-2-2H5a2 2 0 00-2 2z"/></svg>
+          <div class="other-card__links">
+            <a href="#" aria-label="GitHub (Coming Soon)" onclick="return false;" style="opacity: 0.4; cursor: default;">
+              <svg viewBox="0 0 24 24" fill="currentColor" width="18"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/></svg>
+            </a>
+          </div>
+        </div>
+        <h4 class="other-card__title">Veridock AI</h4>
+        <p class="other-card__desc">Privacy-first invoice automation for Indian CA firms. Multi-language OCR.</p>
+        <div class="other-card__meta"><span>FastAPI</span><span>Claude Haiku</span><span>Supabase</span></div>
+      </div>
+      <div class="other-card">
+        <div class="other-card__top">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" class="other-card__icon"><path d="M3 7v10a2 2 0 002 2h14a2 2 0 002-2V9a2 2 0 00-2-2h-6l-2-2H5a2 2 0 00-2 2z"/></svg>
+          <div class="other-card__links">
+            <a href="https://github.com/CodedRichy/AutomatedAttendanceEngine" target="_blank" rel="noopener noreferrer" aria-label="GitHub">
+              <svg viewBox="0 0 24 24" fill="currentColor" width="18"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/></svg>
+            </a>
+          </div>
+        </div>
+        <h4 class="other-card__title">Attendance Engine</h4>
+        <p class="other-card__desc">BLE proximity mesh for passive attendance. Anti-spoofing liveness detection.</p>
+        <div class="other-card__meta"><span>Flutter</span><span>BLE</span><span>Node.js</span></div>
+      </div>
+      <div class="other-card">
+        <div class="other-card__top">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" class="other-card__icon"><path d="M3 7v10a2 2 0 002 2h14a2 2 0 002-2V9a2 2 0 00-2-2h-6l-2-2H5a2 2 0 00-2 2z"/></svg>
+          <div class="other-card__links">
+            <a href="https://github.com/CodedRichy/Expenso" target="_blank" rel="noopener noreferrer" aria-label="GitHub">
+              <svg viewBox="0 0 24 24" fill="currentColor" width="18"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/></svg>
+            </a>
+          </div>
+        </div>
+        <h4 class="other-card__title">Expenso</h4>
+        <p class="other-card__desc">AI-powered group expense tracker with NLP Magic Bar. 187+ tests, CI/CD.</p>
+        <div class="other-card__meta"><span>Flutter</span><span>Groq</span><span>Supabase</span></div>
+      </div>
+      <div class="other-card">
+        <div class="other-card__top">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" class="other-card__icon"><path d="M3 7v10a2 2 0 002 2h14a2 2 0 002-2V9a2 2 0 00-2-2h-6l-2-2H5a2 2 0 00-2 2z"/></svg>
+          <div class="other-card__links">
+            <a href="https://github.com/CodedRichy/ObsidianBridge" target="_blank" rel="noopener noreferrer" aria-label="GitHub">
+              <svg viewBox="0 0 24 24" fill="currentColor" width="18"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/></svg>
+            </a>
+          </div>
+        </div>
+        <h4 class="other-card__title">ObsidianBridge</h4>
+        <p class="other-card__desc">Real-time GitHub-to-Obsidian sync with AI tagging. Desktop app with system tray.</p>
+        <div class="other-card__meta"><span>Python</span><span>Ollama</span><span>Desktop</span></div>
+      </div>
+      <div class="other-card">
+        <div class="other-card__top">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" class="other-card__icon"><path d="M3 7v10a2 2 0 002 2h14a2 2 0 002-2V9a2 2 0 00-2-2h-6l-2-2H5a2 2 0 00-2 2z"/></svg>
+          <div class="other-card__links">
+            <a href="https://github.com/CodedRichy/CodebaseIntelligenceTool" target="_blank" rel="noopener noreferrer" aria-label="GitHub">
+              <svg viewBox="0 0 24 24" fill="currentColor" width="18"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/></svg>
+            </a>
+          </div>
+        </div>
+        <h4 class="other-card__title">CodeSense AI</h4>
+        <p class="other-card__desc">Transforms codebases into queryable Neo4j knowledge graphs with NL interface.</p>
+        <div class="other-card__meta"><span>FastAPI</span><span>Neo4j</span><span>Tree-sitter</span></div>
+      </div>
+      <div class="other-card">
+        <div class="other-card__top">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" class="other-card__icon"><path d="M3 7v10a2 2 0 002 2h14a2 2 0 002-2V9a2 2 0 00-2-2h-6l-2-2H5a2 2 0 00-2 2z"/></svg>
+          <div class="other-card__links">
+            <a href="https://github.com/CodedRichy/LiteCPU16" target="_blank" rel="noopener noreferrer" aria-label="GitHub">
+              <svg viewBox="0 0 24 24" fill="currentColor" width="18"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/></svg>
+            </a>
+          </div>
+        </div>
+        <h4 class="other-card__title">LiteCPU16</h4>
+        <p class="other-card__desc">Minimal 16-bit single-cycle CPU in Verilog. Harvard architecture, 5-instruction ISA.</p>
+        <div class="other-card__meta"><span>Verilog</span><span>Hardware</span><span>v1.0.0</span></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- EXPERIENCE -->
+  <section class="section experience" id="experience">
+    <div class="ambient-orb ambient-orb--1" aria-hidden="true"></div>
+    <div class="section__header">
+      <span class="section__index">04</span>
+      <h2 class="section__title">Experience</h2>
+      <div class="section__line"></div>
+    </div>
+    <div class="experience__timeline">
+      <div class="experience__item">
+        <div class="experience__dot"></div>
+        <div class="experience__card">
+          <div class="experience__date">Jan 2026</div>
+          <h4 class="experience__role">3rd Place — ACM Nexus Hackathon</h4>
+          <p class="experience__org">Sentinel (Team RRR)</p>
+          <p class="experience__desc">Built a real-time piracy detection system in 24 hours. Dual-mode fingerprinting — video pHash + audio mel-spectrograms — achieving 95% accuracy with enforcement under 90 seconds.</p>
+        </div>
+      </div>
+      <div class="experience__item">
+        <div class="experience__dot"></div>
+        <div class="experience__card">
+          <div class="experience__date">2025 — Present</div>
+          <h4 class="experience__role">Freelance AI Engineer</h4>
+          <p class="experience__org">Veridock AI</p>
+          <p class="experience__desc">Privacy-first AI document automation for Indian CA firms. Designed the multi-language OCR pipeline and Claude Haiku integration from scratch. Shipped, in production.</p>
+        </div>
+      </div>
+      <div class="experience__item">
+        <div class="experience__dot"></div>
+        <div class="experience__card">
+          <div class="experience__date">May 2024 — Aug 2024</div>
+          <h4 class="experience__role">Backend Developer Intern</h4>
+          <p class="experience__org">Soften Technologies</p>
+          <p class="experience__desc">Python and JavaScript backend engineering on production systems. API design, database schema work, deployment pipelines.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTACT -->
+  <section class="section contact" id="contact">
+    <div class="ambient-orb ambient-orb--3" aria-hidden="true"></div>
+    <div class="contact__content">
+      <span class="section__index">05</span>
+      <h2 class="contact__title">Let's Build Something</h2>
+      <p class="contact__text">I'm looking for internships, collaborations, and interesting problems. If you're building something where AI is the product — not the pitch deck — let's talk.</p>
+      <a href="mailto:rishi.praseeth@gmail.com" class="btn btn--primary btn--large">Say Hello</a>
+      <a href="assets/Rishi_Praseeth_Krishnan_Resume.pdf" download class="btn btn--ghost btn--large" style="margin-top: 12px;">Download Resume</a>
+      <div class="contact__socials">
+        <a href="https://github.com/CodedRichy" target="_blank" rel="noopener noreferrer" aria-label="GitHub">
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/></svg>
+        </a>
+        <a href="https://www.linkedin.com/in/rishi-praseeth-321237306/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+        </a>
+        <a href="mailto:rishi.praseeth@gmail.com" aria-label="Email">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/></svg>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <p>Designed & Built by Rishi Praseeth Krishnan</p>
+  </footer>
+
+  <script src="https://unpkg.com/lenis@1.1.18/dist/lenis.min.js" crossorigin="anonymous" integrity="sha384-tKsJDT6PlUI0pSBt9/sBKJluKgA19/a6mBrDsZaXotLB4ZYfMGM6xt6/WgGpYhTm"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js" crossorigin="anonymous" integrity="sha384-g4NTh/Iv5PPU4xPyhEWqPcwtNXOvdaDI8LLnyYfyNZOjKJeYQyjzQ9X5275eBjpt"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js" crossorigin="anonymous" integrity="sha384-Z3REaz79l2IaAZqJsSABtTbhjgOUYyV3p90XNnAPCSHg3EMTz1fouunq9WZRtj3d"></script>
+  <script src="js/node-graph.js"></script>
+  <script src="js/animations.js"></script>
+  <script src="js/main.js"></script>
 </body>
-
 </html>

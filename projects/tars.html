@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>TARS — Rishi Praseeth Krishnan</title>
+  <meta name="description" content="Self-hosted AI agent with a visible, auditable brain. Bayesian genome system, hash-chained action ledger, multi-tier model router.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;1,9..40,300;1,9..40,400&family=JetBrains+Mono:wght@400;500&family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+
+  <!-- CUSTOM CURSOR -->
+  <div class="cursor" id="cursor" aria-hidden="true">
+    <div class="cursor__dot"></div>
+    <div class="cursor__ring"></div>
+  </div>
+
+  <!-- SCROLL PROGRESS -->
+  <div class="scroll-progress" id="scrollProgress" aria-hidden="true"></div>
+
+  <nav class="nav" id="nav">
+    <a href="../index.html" class="nav__logo">RPK</a>
+    <div class="nav__links">
+      <a href="../index.html#about" class="nav__link" data-index="01">About</a>
+      <a href="../index.html#projects" class="nav__link" data-index="03">Projects</a>
+      <a href="../index.html#contact" class="nav__link" data-index="05">Contact</a>
+    </div>
+    <button class="nav__menu-btn" id="menuBtn" aria-label="Toggle menu" aria-expanded="false" aria-controls="mobileMenu">
+      <span></span><span></span>
+    </button>
+  </nav>
+
+  <div class="mobile-menu" id="mobileMenu" role="dialog" aria-hidden="true" aria-label="Navigation menu">
+    <a href="../index.html#about" class="mobile-menu__link" data-index="01">About</a>
+    <a href="../index.html#projects" class="mobile-menu__link" data-index="03">Projects</a>
+    <a href="../index.html#contact" class="mobile-menu__link" data-index="05">Contact</a>
+  </div>
+
+  <main>
+  <section class="project-hero">
+    <a href="../index.html#projects" class="project-hero__back">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M19 12H5m0 0l7 7m-7-7l7-7"/></svg>
+      Back to Projects
+    </a>
+    <div class="project-hero__tags">
+      <span class="project-hero__tag">AI Agent</span>
+      <span class="project-hero__tag">Self-Hosted</span>
+      <span class="project-hero__tag project-hero__tag--live">Active Development</span>
+    </div>
+    <h1 class="project-hero__title">TARS</h1>
+    <p class="project-hero__subtitle">A self-hosted AI agent with a visible, auditable brain. Every decision is traceable through a hash-chained action ledger. Every personality trait is a Bayesian probability, not a hardcoded prompt. Every model call comes with a cost receipt.</p>
+    <div class="project-hero__links">
+      <a href="https://github.com/CodedRichy/TARS" target="_blank" rel="noopener noreferrer" class="btn btn--primary">View on GitHub</a>
+    </div>
+
+    <div class="project-metrics">
+      <div class="project-metric">
+        <span class="project-metric__value">6-10K</span>
+        <span class="project-metric__label">Lines of Code</span>
+      </div>
+      <div class="project-metric">
+        <span class="project-metric__value">37</span>
+        <span class="project-metric__label">Test Files</span>
+      </div>
+      <div class="project-metric">
+        <span class="project-metric__value">9</span>
+        <span class="project-metric__label">Implementation Phases</span>
+      </div>
+      <div class="project-metric">
+        <span class="project-metric__value">100%</span>
+        <span class="project-metric__label">Auditable</span>
+      </div>
+    </div>
+  </section>
+
+  <section class="project-section">
+    <h2 class="project-section__title">The Problem</h2>
+    <div class="project-section__text">
+      <p>AI agents are black boxes. You can't see why they made a decision, you can't verify their reasoning, and you can't tune their personality without rewriting prompts. Most agent frameworks optimize for capability at the expense of transparency.</p>
+      <p>TARS takes the opposite approach: every action is logged in an immutable ledger, every personality trait is a tunable probability distribution, and every model call is tracked with cost receipts.</p>
+    </div>
+  </section>
+
+  <section class="project-section">
+    <h2 class="project-section__title">Key Features</h2>
+    <div class="project-features">
+      <div class="project-feature">
+        <h3 class="project-feature__title">Bayesian Genome System</h3>
+        <p class="project-feature__desc">Personality traits are probability distributions, not static strings. The agent's behavior evolves based on interaction feedback — measurably and predictably.</p>
+      </div>
+      <div class="project-feature">
+        <h3 class="project-feature__title">Hash-Chained Action Ledger</h3>
+        <p class="project-feature__desc">Every action, decision, and model call is logged in a tamper-evident chain. Full audit trail from input to output. Immutable history.</p>
+      </div>
+      <div class="project-feature">
+        <h3 class="project-feature__title">Multi-Tier Model Router</h3>
+        <p class="project-feature__desc">Intelligent routing between model tiers based on task complexity. Simple queries go to fast/cheap models, complex reasoning goes to capable ones. Cost receipts on every call.</p>
+      </div>
+      <div class="project-feature">
+        <h3 class="project-feature__title">Self-Hosted</h3>
+        <p class="project-feature__desc">Runs entirely on your infrastructure. No data leaves your network unless you route a model call externally. Privacy by architecture, not policy.</p>
+      </div>
+      <div class="project-feature">
+        <h3 class="project-feature__title">37 Test Files</h3>
+        <p class="project-feature__desc">Comprehensive test coverage across all 9 implementation phases. Each system component is independently testable and verified.</p>
+      </div>
+      <div class="project-feature">
+        <h3 class="project-feature__title">Phased Architecture</h3>
+        <p class="project-feature__desc">Built in 9 deliberate phases — from core runtime to memory to model routing to audit. Each phase is stable before the next begins.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="project-section">
+    <h2 class="project-section__title">Tech Stack</h2>
+    <div class="project-stack">
+      <span class="project-stack__pill">Python</span>
+      <span class="project-stack__pill">SQLite</span>
+      <span class="project-stack__pill">Pydantic</span>
+      <span class="project-stack__pill">pytest</span>
+      <span class="project-stack__pill">hashlib</span>
+      <span class="project-stack__pill">NumPy</span>
+    </div>
+  </section>
+
+  <nav class="project-nav">
+    <a href="gitpulse.html" class="project-nav__link">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" width="20"><path d="M19 12H5m0 0l7 7m-7-7l7-7"/></svg>
+      <div>
+        <span class="project-nav__label">Previous</span>
+        <span class="project-nav__name">GitPulse</span>
+      </div>
+    </a>
+    <a href="fixmyprompt.html" class="project-nav__link">
+      <div>
+        <span class="project-nav__label">Next Project</span>
+        <span class="project-nav__name">FixMyPrompt</span>
+      </div>
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" width="20"><path d="M5 12h14m0 0l-7-7m7 7l-7 7"/></svg>
+    </a>
+  </nav>
+  </main>
+
+  <footer class="footer">
+    <p>Designed & Built by Rishi Praseeth Krishnan</p>
+  </footer>
+
+  <script src="https://unpkg.com/lenis@1.1.18/dist/lenis.min.js" crossorigin="anonymous" integrity="sha384-tKsJDT6PlUI0pSBt9/sBKJluKgA19/a6mBrDsZaXotLB4ZYfMGM6xt6/WgGpYhTm"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js" crossorigin="anonymous" integrity="sha384-g4NTh/Iv5PPU4xPyhEWqPcwtNXOvdaDI8LLnyYfyNZOjKJeYQyjzQ9X5275eBjpt"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js" crossorigin="anonymous" integrity="sha384-Z3REaz79l2IaAZqJsSABtTbhjgOUYyV3p90XNnAPCSHg3EMTz1fouunq9WZRtj3d"></script>
+  <script src="../js/animations.js"></script>
+  <script src="../js/main.js"></script>
+</body>
+</html>

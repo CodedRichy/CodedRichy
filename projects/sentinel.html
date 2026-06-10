@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sentinel — Rishi Praseeth Krishnan</title>
+  <meta name="description" content="Real-time piracy detection with dual-mode fingerprinting. Video pHash + audio mel-spectrograms. 95% accuracy, 3rd place ACM Nexus.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;1,9..40,300;1,9..40,400&family=JetBrains+Mono:wght@400;500&family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+
+  <!-- CUSTOM CURSOR -->
+  <div class="cursor" id="cursor" aria-hidden="true">
+    <div class="cursor__dot"></div>
+    <div class="cursor__ring"></div>
+  </div>
+
+  <!-- SCROLL PROGRESS -->
+  <div class="scroll-progress" id="scrollProgress" aria-hidden="true"></div>
+
+  <nav class="nav" id="nav">
+    <a href="../index.html" class="nav__logo">RPK</a>
+    <div class="nav__links">
+      <a href="../index.html#about" class="nav__link" data-index="01">About</a>
+      <a href="../index.html#projects" class="nav__link" data-index="03">Projects</a>
+      <a href="../index.html#contact" class="nav__link" data-index="05">Contact</a>
+    </div>
+    <button class="nav__menu-btn" id="menuBtn" aria-label="Toggle menu" aria-expanded="false" aria-controls="mobileMenu">
+      <span></span><span></span>
+    </button>
+  </nav>
+
+  <div class="mobile-menu" id="mobileMenu" role="dialog" aria-hidden="true" aria-label="Navigation menu">
+    <a href="../index.html#about" class="mobile-menu__link" data-index="01">About</a>
+    <a href="../index.html#projects" class="mobile-menu__link" data-index="03">Projects</a>
+    <a href="../index.html#contact" class="mobile-menu__link" data-index="05">Contact</a>
+  </div>
+
+  <main>
+  <section class="project-hero">
+    <a href="../index.html#projects" class="project-hero__back">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M19 12H5m0 0l7 7m-7-7l7-7"/></svg>
+      Back to Projects
+    </a>
+    <div class="project-hero__tags">
+      <span class="project-hero__tag">Computer Vision</span>
+      <span class="project-hero__tag">Audio Processing</span>
+      <span class="project-hero__tag">Team Project</span>
+      <span class="project-hero__tag project-hero__tag--award">3rd Place — ACM Nexus 2026</span>
+    </div>
+    <h1 class="project-hero__title">Sentinel</h1>
+    <p class="project-hero__subtitle">Real-time piracy detection using dual-mode content fingerprinting. Video perceptual hashing combined with audio mel-spectrogram analysis achieves 95% accuracy with an enforcement window under 90 seconds.</p>
+    <div class="project-hero__links">
+      <a href="https://github.com/CodedRichy/15_RRR_ACMNexus26" target="_blank" rel="noopener noreferrer" class="btn btn--primary">View on GitHub</a>
+    </div>
+
+    <div class="project-metrics">
+      <div class="project-metric">
+        <span class="project-metric__value">95%</span>
+        <span class="project-metric__label">Detection Accuracy</span>
+      </div>
+      <div class="project-metric">
+        <span class="project-metric__value">&lt;90s</span>
+        <span class="project-metric__label">Enforcement Window</span>
+      </div>
+      <div class="project-metric">
+        <span class="project-metric__value">114</span>
+        <span class="project-metric__label">Commits</span>
+      </div>
+      <div class="project-metric">
+        <span class="project-metric__value">3rd</span>
+        <span class="project-metric__label">Place — ACM Nexus</span>
+      </div>
+    </div>
+  </section>
+
+  <section class="project-section">
+    <h2 class="project-section__title">The Problem</h2>
+    <div class="project-section__text">
+      <p>Pirated content spreads faster than manual takedown processes can handle. Traditional detection relies on exact file matching or metadata comparison — both trivially defeated by re-encoding, cropping, or speed changes.</p>
+      <p>Sentinel uses perceptual fingerprinting: it identifies content by what it looks and sounds like, not by its file signature. Re-encode, crop, speed up — the fingerprint persists.</p>
+    </div>
+  </section>
+
+  <section class="project-section">
+    <h2 class="project-section__title">Architecture</h2>
+    <div class="project-section__text">
+      <p>Dual-mode detection runs in parallel. The video pipeline extracts frames, computes perceptual hashes (pHash), and compares against a fingerprint database using Hamming distance. The audio pipeline converts audio to mel-spectrograms and runs similarity matching on frequency patterns.</p>
+      <p>A fusion layer combines both signals — content must match on both channels to trigger enforcement, reducing false positives. The React dashboard provides real-time monitoring, and Groq handles natural language reporting.</p>
+    </div>
+  </section>
+
+  <section class="project-section">
+    <h2 class="project-section__title">Key Features</h2>
+    <div class="project-features">
+      <div class="project-feature">
+        <h3 class="project-feature__title">Video pHash Detection</h3>
+        <p class="project-feature__desc">Perceptual hashing on extracted frames. Resistant to re-encoding, resolution changes, cropping, and minor edits. Hamming distance threshold matching.</p>
+      </div>
+      <div class="project-feature">
+        <h3 class="project-feature__title">Audio Mel-Spectrogram</h3>
+        <p class="project-feature__desc">Frequency-domain audio analysis via mel-spectrograms. Catches audio even when video is altered. Handles speed changes and compression artifacts.</p>
+      </div>
+      <div class="project-feature">
+        <h3 class="project-feature__title">Dual-Mode Fusion</h3>
+        <p class="project-feature__desc">Both video and audio must match to trigger enforcement. Dramatically reduces false positives while maintaining 95% true positive rate.</p>
+      </div>
+      <div class="project-feature">
+        <h3 class="project-feature__title">Real-Time Dashboard</h3>
+        <p class="project-feature__desc">React frontend showing detection events, confidence scores, and enforcement actions in real-time. Visual fingerprint comparison for manual review.</p>
+      </div>
+      <div class="project-feature">
+        <h3 class="project-feature__title">&lt;90 Second Response</h3>
+        <p class="project-feature__desc">From content upload to enforcement action in under 90 seconds. Fast enough for live streaming platforms and rapid-distribution channels.</p>
+      </div>
+      <div class="project-feature">
+        <h3 class="project-feature__title">AI-Powered Reporting</h3>
+        <p class="project-feature__desc">Groq generates natural language reports for each detection event — human-readable summaries of what was detected, confidence levels, and recommended actions.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="project-section">
+    <h2 class="project-section__title">Tech Stack</h2>
+    <div class="project-stack">
+      <span class="project-stack__pill">Python</span>
+      <span class="project-stack__pill">Flask</span>
+      <span class="project-stack__pill">OpenCV</span>
+      <span class="project-stack__pill">librosa</span>
+      <span class="project-stack__pill">React</span>
+      <span class="project-stack__pill">Groq</span>
+      <span class="project-stack__pill">NumPy</span>
+      <span class="project-stack__pill">FFmpeg</span>
+    </div>
+  </section>
+
+  <nav class="project-nav">
+    <a href="sonder.html" class="project-nav__link">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" width="20"><path d="M19 12H5m0 0l7 7m-7-7l7-7"/></svg>
+      <div>
+        <span class="project-nav__label">Previous</span>
+        <span class="project-nav__name">Sonder</span>
+      </div>
+    </a>
+    <a href="hcr.html" class="project-nav__link">
+      <div>
+        <span class="project-nav__label">Back to First</span>
+        <span class="project-nav__name">HCR</span>
+      </div>
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" width="20"><path d="M5 12h14m0 0l-7-7m7 7l-7 7"/></svg>
+    </a>
+  </nav>
+  </main>
+
+  <footer class="footer">
+    <p>Designed & Built by Rishi Praseeth Krishnan</p>
+  </footer>
+
+  <script src="https://unpkg.com/lenis@1.1.18/dist/lenis.min.js" crossorigin="anonymous" integrity="sha384-tKsJDT6PlUI0pSBt9/sBKJluKgA19/a6mBrDsZaXotLB4ZYfMGM6xt6/WgGpYhTm"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js" crossorigin="anonymous" integrity="sha384-g4NTh/Iv5PPU4xPyhEWqPcwtNXOvdaDI8LLnyYfyNZOjKJeYQyjzQ9X5275eBjpt"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js" crossorigin="anonymous" integrity="sha384-Z3REaz79l2IaAZqJsSABtTbhjgOUYyV3p90XNnAPCSHg3EMTz1fouunq9WZRtj3d"></script>
+  <script src="../js/animations.js"></script>
+  <script src="../js/main.js"></script>
+</body>
+</html>
