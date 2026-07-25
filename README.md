@@ -37,19 +37,19 @@ Persistent cognitive memory layer for AI-assisted development. Captures develope
 
 ---
 
-**[Food Chain Ideation](https://github.com/CodedRichy/food-chain-ideation)** — *Adversarial AI Stress Testing*
+**Corvus** — *Visual Multi-Agent AI Development Platform*
 
-Published Claude Code plugin. 68 AI "animals" across three libraries attack a startup idea from every angle in live elimination rounds. Each attacker is isolated, role-locked, and forced to find new angles after each patch. Three outcomes: survived, restructured, or killed.
+Electron desktop app with infinite canvas for visually orchestrating multiple AI coding agents working in parallel on a shared codebase. Full supervisor pipeline (Planner → Scheduler → Dispatcher → Monitor → Reviewer → Merger), 6-stage validation with security scanning, file-scoped ownership, Git worktree isolation. BYOK across 6 providers. **89 tests.**
 
-`Claude Code Plugin` `Prompt Engineering` `Markdown`
+`Electron` `React Flow` `Drizzle ORM` `Worker Threads` `Zustand` `Vitest`
 
 ---
 
-**[GitPulse](https://github.com/CodedRichy/GitPulse)** — *AI-Powered Git Guardrails*
+**[RoadPack](https://github.com/CodedRichy/RoadPack)** — *India-First Road Safety Platform*
 
-MCP-native dev tooling between AI coding assistants and git history. Quality gates, convention learning, intelligent commit automation. Multi-provider AI orchestration across 5 LLM providers.
+Mobile app that closes the gap between a crash and the moment help arrives. Automatic crash detection via accelerometer + gyroscope, SOS alert cascades with voice/SMS/FCM escalation, safety circles for family tracking, and real-time commute monitoring. Built for two-wheeler commuters on budget Android phones with patchy connectivity. **16 DB migrations, L2 crash detection live.**
 
-`TypeScript` `MCP SDK` `Next.js` `Supabase` `Ollama`
+`Flutter` `Dart` `Supabase` `Firebase` `Clerk` `Riverpod`
 
 ---
 
