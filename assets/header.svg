@@ -55,7 +55,7 @@
   <circle cx="44" cy="161" r="3" fill="#DA7756" class="dot-pulse-d1"/>
   <text x="56" y="165" font-size="12">
     <tspan fill="#9B9DB0">Scanning </tspan>
-    <tspan fill="#E1E2E7">32 public repos</tspan>
+    <tspan fill="#E1E2E7">42 repositories</tspan>
   </text>
 
   <!-- Name -->

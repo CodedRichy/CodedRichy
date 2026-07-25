@@ -27,37 +27,85 @@
 
 <br>
 
-## `▸` Projects
+I build AI-native systems, agent orchestration platforms, and intelligent developer tooling. Solo developer shipping real products -- from a cognitive middleware layer [published on PyPI](https://pypi.org/project/hcr-memory/) to a prompt engineering SaaS [live in production](https://fixmyprompt.com). Currently building NullTrace, a network security tool for Windows.
 
-**[HCR](https://pypi.org/project/hcr-memory/)** — *Cognitive Middleware for AI Development*
+<br>
 
-Persistent cognitive memory layer for AI-assisted development. Captures developer context via git hooks, stores it as structured Cognitive State Objects with causal graphs, and injects context into any MCP-compatible IDE. Published on PyPI. **907 tests passing.**
+## `▸` Shipped
 
-`Python` `FastAPI` `Supabase` `MCP` `React` `sqlite-vec`
+**[HCR](https://pypi.org/project/hcr-memory/)** — *Persistent Developer Memory for AI Coding Tools* `LIVE ON PYPI`
+
+Cognitive middleware that captures decisions, constraints, and risks as typed, causally-linked records. Works with Claude Code, Cursor, and Windsurf via MCP. Semantic + BM25 hybrid search with cross-encoder reranking. **1,498 tests. Published on PyPI.**
+
+`Python` `FastAPI` `Supabase` `MCP` `sqlite-vec` `sentence-transformers`
+
+---
+
+**[FixMyPrompt](https://fixmyprompt.com)** — *AI Prompt Optimization SaaS* `LIVE`
+
+Web app that transforms rough prompt ideas into production-quality prompts using Google Gemini. Gamification, academy, challenges, and community features. Deployed on Vercel with Lemon Squeezy payments.
+
+`Next.js 16` `React 19` `Gemini 2.5` `Supabase` `Tailwind CSS`
+
+<br>
+
+## `▸` Flagship Projects
+
+**[NullTrace](https://github.com/CodedRichy/NullTrace)** — *Intelligent Endpoint Protection for Windows* `BUILDING`
+
+18 detection engines monitoring Layer 2/3 network traffic in real-time. Guard/Sentinel split architecture -- privileged SYSTEM service (~200 auditable lines) handles network kill, unprivileged process runs all detection. Automatic crash detection for ARP spoofing, DNS poisoning, rogue APs, MITM6, TLS interception, and 12 more attack vectors.
+
+`Python` `Scapy` `FastAPI` `pywin32` `CustomTkinter` `WebSocket`
 
 ---
 
-**Corvus** — *Visual Multi-Agent AI Development Platform*
+**[Corvus](https://github.com/PantheraLabs/Corvus)** — *Visual Multi-Agent AI Development Platform*
 
-Electron desktop app with infinite canvas for visually orchestrating multiple AI coding agents working in parallel on a shared codebase. Full supervisor pipeline (Planner → Scheduler → Dispatcher → Monitor → Reviewer → Merger), 6-stage validation with security scanning, file-scoped ownership, Git worktree isolation. BYOK across 6 providers. **89 tests.**
+Electron desktop app with infinite canvas for orchestrating AI coding agents in parallel. Supervisor pipeline (Planner -> Dispatcher -> Reviewer -> Merger), 6-stage validation, Git worktree isolation, cost tracking. BYOK across 6 providers. **470+ tests, 53K LOC.**
 
-`Electron` `React Flow` `Drizzle ORM` `Worker Threads` `Zustand` `Vitest`
+`Electron` `React Flow` `Drizzle ORM` `Zustand` `tRPC` `Vitest`
 
 ---
+
+**[TARS](https://github.com/CodedRichy/TARS)** — *Self-Improving AI Agent Framework*
+
+AI agent with persistent memory genome, multi-channel communication (Telegram, email, HTTP API, MCP), and a learning loop that tracks performance and adjusts behavior. **306 tests, 13K LOC.**
+
+`Python` `FastAPI` `LiteLLM` `Typer` `aiosqlite` `Pydantic`
+
+---
+
+**[GitPulse](https://github.com/CodedRichy/GitPulse)** — *AI Guardrails for Git Workflows*
+
+CLI + GitHub Action + MCP server that enforces commit quality gates, learns team conventions, and generates AI commit messages. Web dashboard with Next.js 16. **383 tests, 34K LOC.**
+
+`TypeScript` `Ink` `Next.js 16` `Supabase` `GitHub Actions`
+
+<br>
+
+## `▸` Active Projects
 
 **[RoadPack](https://github.com/CodedRichy/RoadPack)** — *India-First Road Safety Platform*
 
-Mobile app that closes the gap between a crash and the moment help arrives. Automatic crash detection via accelerometer + gyroscope, SOS alert cascades with voice/SMS/FCM escalation, safety circles for family tracking, and real-time commute monitoring. Built for two-wheeler commuters on budget Android phones with patchy connectivity. **16 DB migrations, L2 crash detection live.**
+Mobile app with automatic crash detection (accelerometer + gyroscope), SOS alert cascades with voice/SMS/FCM escalation, safety circles for family tracking. Built for two-wheeler commuters on budget Android phones.
 
-`Flutter` `Dart` `Supabase` `Firebase` `Clerk` `Riverpod`
+`Flutter` `Dart` `Supabase` `Clerk` `Riverpod` `Firebase`
 
 ---
 
 **[Veridock](https://veridockai.com)** — *AI Invoice Processing for Indian CA Firms*
 
-Privacy-first B2B SaaS. AI pipeline extracts invoices (Claude Haiku OCR + OpenCV quality gate + GSTIN validation), fuzzy-matches vendors, and generates Tally XML vouchers or pushes to Zoho Books. 150 tests, 9 phases built, DPDPA-compliant.
+Privacy-first B2B SaaS. 3-layer OCR pipeline (OpenCV + Claude Haiku + GSTIN validation), fuzzy vendor matching, Tally XML export, Zoho Books integration. 150 tests, 9 phases built, DPDPA-compliant.
 
 `Python` `FastAPI` `React` `Claude AI` `Supabase` `Redis`
+
+---
+
+**[Sonder](https://github.com/CodedRichy/Sonder)** — *AI-Native Discord Community OS*
+
+Full-featured Discord bot with music, moderation, economy, trivia, leveling, and OpenAI conversations. Web dashboard with React + Discord OAuth. 15K LOC.
+
+`Node.js` `discord.js` `OpenAI` `PostgreSQL` `Redis` `React`
 
 <br>
 
@@ -65,9 +113,9 @@ Privacy-first B2B SaaS. AI pipeline extracts invoices (Claude Haiku OCR + OpenCV
 
 | Role | Organization | Timeline |
 | :--- | :--- | :--- |
-| **Tech Subcommittee** | MITS Media Club | Oct 2024 – Present |
-| **Member** | MITS Motorsports | Oct 2024 – Present |
-| **Apprentice** | Soften Technologies | May – Aug 2024 |
+| **Tech Subcommittee** | MITS Media Club | Oct 2024 -- Present |
+| **Member** | MITS Motorsports | Oct 2024 -- Present |
+| **Apprentice** | Soften Technologies | May -- Aug 2024 |
 
 <br>
 
