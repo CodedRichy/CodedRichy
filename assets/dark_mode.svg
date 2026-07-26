@@ -98,7 +98,7 @@
 
   <!-- Test Summary -->
   <text x="32" y="494" font-size="12">
-    <tspan fill="#7EE787">8 projects</tspan><tspan fill="#6B6D7B"> &#183; </tspan><tspan fill="#7EE787">2,800+ tests passing</tspan>
+    <tspan fill="#7EE787">4 featured</tspan><tspan fill="#6B6D7B"> &#183; </tspan><tspan fill="#7EE787">1,900+ tests passing</tspan>
   </text>
 
   <!-- Contact -->
