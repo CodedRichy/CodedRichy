@@ -39,22 +39,22 @@
 
   <!-- System Info -->
   <text x="32" y="186" font-size="13">
-    <tspan fill="#DA7756" font-weight="bold">OS</tspan><tspan fill="#2E3044"> ................. </tspan><tspan fill="#CBCDD9">Windows 11, Linux</tspan>
+    <tspan fill="#DA7756" font-weight="bold">OS</tspan><tspan fill="#2E3044"> ................. </tspan><tspan fill="#CBCDD9">Windows</tspan>
   </text>
   <text x="32" y="204" font-size="13">
-    <tspan fill="#DA7756" font-weight="bold">Shell</tspan><tspan fill="#2E3044"> .............. </tspan><tspan fill="#CBCDD9">Claude Code, VS Code, Cursor</tspan>
+    <tspan fill="#DA7756" font-weight="bold">Shell</tspan><tspan fill="#2E3044"> .............. </tspan><tspan fill="#CBCDD9">VS Code, Cursor, Antigravity, Devin</tspan>
   </text>
   <text x="32" y="222" font-size="13">
-    <tspan fill="#DA7756" font-weight="bold">Languages</tspan><tspan fill="#2E3044"> .......... </tspan><tspan fill="#CBCDD9">Python, TypeScript, Dart, SQL</tspan>
+    <tspan fill="#DA7756" font-weight="bold">Languages</tspan><tspan fill="#2E3044"> .......... </tspan><tspan fill="#CBCDD9">Python, TypeScript, Dart</tspan>
   </text>
   <text x="32" y="240" font-size="13">
-    <tspan fill="#DA7756" font-weight="bold">Frameworks</tspan><tspan fill="#2E3044"> ......... </tspan><tspan fill="#CBCDD9">FastAPI, React, Next.js, Flutter</tspan>
+    <tspan fill="#DA7756" font-weight="bold">Frameworks</tspan><tspan fill="#2E3044"> ......... </tspan><tspan fill="#CBCDD9">FastAPI, React, Next.js, Flutter, Electron</tspan>
   </text>
   <text x="32" y="258" font-size="13">
-    <tspan fill="#DA7756" font-weight="bold">AI/ML</tspan><tspan fill="#2E3044"> .............. </tspan><tspan fill="#CBCDD9">PyTorch, MCP SDK, Claude API, Gemini</tspan>
+    <tspan fill="#DA7756" font-weight="bold">AI/ML</tspan><tspan fill="#2E3044"> .............. </tspan><tspan fill="#CBCDD9">MCP SDK, Claude API, Gemini, LiteLLM</tspan>
   </text>
   <text x="32" y="276" font-size="13">
-    <tspan fill="#DA7756" font-weight="bold">Infra</tspan><tspan fill="#2E3044"> .............. </tspan><tspan fill="#CBCDD9">Supabase, PostgreSQL, Redis, Docker</tspan>
+    <tspan fill="#DA7756" font-weight="bold">Infra</tspan><tspan fill="#2E3044"> .............. </tspan><tspan fill="#CBCDD9">Supabase, PostgreSQL, Redis, Firebase, Vercel</tspan>
   </text>
 
   <!-- Tool Block: Projects -->
