@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Sentinel — Rishi Praseeth Krishnan</title>
-  <meta name="description" content="Real-time piracy detection with dual-mode fingerprinting. Video pHash + audio mel-spectrograms. 95% accuracy, 3rd place ACM Nexus.">
+  <title>RoadPack — Rishi Praseeth Krishnan</title>
+  <meta name="description" content="India-first road safety app. Safety circles, SOS alert cascades, commute tracking, and crash detection. In active development.">
   <link rel="icon" href="../favicon.ico" sizes="any">
   <link rel="icon" type="image/png" href="../assets/favicon-32x32.png" sizes="32x32">
   <link rel="icon" type="image/png" href="../assets/favicon-16x16.png" sizes="16x16">
@@ -61,61 +61,45 @@
       Back to work
     </a>
     <div class="project-tags">
-      <span class="tag">Computer Vision</span>
-      <span class="tag">Audio Processing</span>
-      <span class="tag">Team Project</span>
-      <span class="tag">3rd Place — ACM Nexus 2026</span>
+      <span class="tag">Road Safety</span>
+      <span class="tag">Mobile App</span>
+      <span class="tag tag--accent">Active Development</span>
     </div>
-    <h1 class="project-hero-title">Sentinel</h1>
-    <p class="project-hero-sub">Real-time piracy detection using dual-mode content fingerprinting. Video perceptual hashing combined with audio mel-spectrogram analysis achieves 95% accuracy with an enforcement window under 90 seconds.</p>
-    <div class="project-links">
-      <a href="https://github.com/CodedRichy/15_RRR_ACMNexus26" target="_blank" rel="noopener noreferrer">View on GitHub</a>
-    </div>
-  </section>
-
-  <section class="project-section">
-    <h2>By the Numbers</h2>
-    <ul>
-      <li><strong>95%</strong> &mdash; Detection Accuracy</li>
-      <li><strong>&lt;90s</strong> &mdash; Enforcement Window</li>
-      <li><strong>114</strong> &mdash; Commits</li>
-      <li><strong>3rd</strong> &mdash; Place — ACM Nexus</li>
-    </ul>
+    <h1 class="project-hero-title">RoadPack</h1>
+    <p class="project-hero-sub">An India-first road safety app. Safety circles for family and friends, SOS alert cascades over voice, SMS, and push, background commute tracking, and sensor-based crash detection — built for how India actually travels. In active development.</p>
   </section>
 
   <section class="project-section">
     <h2>The Problem</h2>
-    <p>Pirated content spreads faster than manual takedown processes can handle. Traditional detection relies on exact file matching or metadata comparison — both trivially defeated by re-encoding, cropping, or speed changes.</p>
-    <p>Sentinel uses perceptual fingerprinting: it identifies content by what it looks and sounds like, not by its file signature. Re-encode, crop, speed up — the fingerprint persists.</p>
+    <p>Road safety tools are built for markets where an ambulance is minutes away and everyone's phone stays online. India needs something different: the people who respond first to a road emergency are family, friends, and bystanders — and the app has to reach them fast, over whatever channel works.</p>
   </section>
 
   <section class="project-section">
-    <h2>Architecture</h2>
-    <p>Dual-mode detection runs in parallel. The video pipeline extracts frames, computes perceptual hashes (pHash), and compares against a fingerprint database using Hamming distance. The audio pipeline converts audio to mel-spectrograms and runs similarity matching on frequency patterns.</p>
-    <p>A fusion layer combines both signals — content must match on both channels to trigger enforcement, reducing false positives. The React dashboard provides real-time monitoring, and Groq handles natural language reporting.</p>
-  </section>
-
-  <section class="project-section">
-    <h2>Key Features</h2>
+    <h2>Built So Far</h2>
     <ul>
-      <li><strong>Video pHash Detection</strong> &mdash; Perceptual hashing on extracted frames. Resistant to re-encoding, resolution changes, cropping, and minor edits. Hamming distance threshold matching.</li>
-      <li><strong>Audio Mel-Spectrogram</strong> &mdash; Frequency-domain audio analysis via mel-spectrograms. Catches audio even when video is altered. Handles speed changes and compression artifacts.</li>
-      <li><strong>Dual-Mode Fusion</strong> &mdash; Both video and audio must match to trigger enforcement. Dramatically reduces false positives while maintaining 95% true positive rate.</li>
-      <li><strong>Real-Time Dashboard</strong> &mdash; React frontend showing detection events, confidence scores, and enforcement actions in real-time. Visual fingerprint comparison for manual review.</li>
-      <li><strong>&lt;90 Second Response</strong> &mdash; From content upload to enforcement action in under 90 seconds. Fast enough for live streaming platforms and rapid-distribution channels.</li>
-      <li><strong>AI-Powered Reporting</strong> &mdash; Groq generates natural language reports for each detection event — human-readable summaries of what was detected, confidence levels, and recommended actions.</li>
+      <li><strong>Foundation</strong> &mdash; Database schema across 16 migrations, with Clerk authentication and Google sign-in.</li>
+      <li><strong>Safety Circles</strong> &mdash; Family and friend groups that form the response network for every alert.</li>
+      <li><strong>SOS Alert Cascade</strong> &mdash; Voice, SMS, and FCM webhooks with escalation, so an alert keeps climbing until someone responds.</li>
+      <li><strong>L1 Commute Tracking</strong> &mdash; Background geolocation with trip detection and route learning, backed by heartbeat, check-in, and non-arrival edge functions that notice when something goes wrong.</li>
+      <li><strong>L2 Crash Detection</strong> &mdash; An accelerometer plus gyroscope detection engine, wired into the server and surfaced in the UI.</li>
     </ul>
   </section>
 
   <section class="project-section">
+    <h2>In Progress and Planned</h2>
+    <p>Currently in progress: bystander features, a live map, and emergency profiles.</p>
+    <p>Planned: hospital database integration, 112 ERSS integration, offline SMS fallback for dead zones, and regional language i18n — the parts that make it genuinely India-first rather than a translated Western app.</p>
+  </section>
+
+  <section class="project-section">
     <h2>Tech Stack</h2>
-    <p>Python &middot; Flask &middot; OpenCV &middot; librosa &middot; React &middot; Groq &middot; NumPy &middot; FFmpeg</p>
+    <p>Flutter &middot; Supabase &middot; Clerk &middot; FCM</p>
   </section>
 
   <nav class="project-section" aria-label="Project navigation">
     <div class="project-links">
-      <a href="food-chain.html">Previous: Food Chain Ideation</a>
-      <a href="tars.html">Next Project: TARS</a>
+      <a href="tars.html">Previous: TARS</a>
+      <a href="expenso.html">Next Project: Expenso</a>
     </div>
   </nav>
   </main>

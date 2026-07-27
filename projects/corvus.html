@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Sentinel — Rishi Praseeth Krishnan</title>
-  <meta name="description" content="Real-time piracy detection with dual-mode fingerprinting. Video pHash + audio mel-spectrograms. 95% accuracy, 3rd place ACM Nexus.">
+  <title>Corvus — Rishi Praseeth Krishnan</title>
+  <meta name="description" content="Visual multi-agent AI development platform. Infinite canvas for orchestrating parallel coding agents through structured contracts. 134 source files, 89 tests.">
   <link rel="icon" href="../favicon.ico" sizes="any">
   <link rel="icon" type="image/png" href="../assets/favicon-32x32.png" sizes="32x32">
   <link rel="icon" type="image/png" href="../assets/favicon-16x16.png" sizes="16x16">
@@ -61,61 +61,56 @@
       Back to work
     </a>
     <div class="project-tags">
-      <span class="tag">Computer Vision</span>
-      <span class="tag">Audio Processing</span>
-      <span class="tag">Team Project</span>
-      <span class="tag">3rd Place — ACM Nexus 2026</span>
+      <span class="tag">Multi-Agent Platform</span>
+      <span class="tag">PantheraLabs</span>
+      <span class="tag tag--accent">V1 Complete</span>
+      <span class="tag">In Development</span>
     </div>
-    <h1 class="project-hero-title">Sentinel</h1>
-    <p class="project-hero-sub">Real-time piracy detection using dual-mode content fingerprinting. Video perceptual hashing combined with audio mel-spectrogram analysis achieves 95% accuracy with an enforcement window under 90 seconds.</p>
-    <div class="project-links">
-      <a href="https://github.com/CodedRichy/15_RRR_ACMNexus26" target="_blank" rel="noopener noreferrer">View on GitHub</a>
-    </div>
+    <h1 class="project-hero-title">Corvus</h1>
+    <p class="project-hero-sub">A visual multi-agent AI development platform. An Electron desktop app with an infinite canvas for orchestrating multiple AI coding agents working in parallel on one codebase — coordinated through structured contracts, not shared memory. Full V1 codebase built; currently in hardening.</p>
   </section>
 
   <section class="project-section">
     <h2>By the Numbers</h2>
     <ul>
-      <li><strong>95%</strong> &mdash; Detection Accuracy</li>
-      <li><strong>&lt;90s</strong> &mdash; Enforcement Window</li>
-      <li><strong>114</strong> &mdash; Commits</li>
-      <li><strong>3rd</strong> &mdash; Place — ACM Nexus</li>
+      <li><strong>134</strong> &mdash; Source Files</li>
+      <li><strong>89</strong> &mdash; Tests Across 6 Test Files</li>
+      <li><strong>V1</strong> &mdash; Codebase Complete</li>
     </ul>
   </section>
 
   <section class="project-section">
     <h2>The Problem</h2>
-    <p>Pirated content spreads faster than manual takedown processes can handle. Traditional detection relies on exact file matching or metadata comparison — both trivially defeated by re-encoding, cropping, or speed changes.</p>
-    <p>Sentinel uses perceptual fingerprinting: it identifies content by what it looks and sounds like, not by its file signature. Re-encode, crop, speed up — the fingerprint persists.</p>
+    <p>Running multiple AI coding agents on the same codebase usually ends one of two ways: they trample each other's changes, or they drift apart because each holds a different mental model of the system. Shared memory doesn't scale to parallel agents — it just scales the confusion.</p>
+    <p>Corvus takes a different position: agents should coordinate the way engineering teams do — through explicit contracts, not telepathy.</p>
   </section>
 
   <section class="project-section">
     <h2>Architecture</h2>
-    <p>Dual-mode detection runs in parallel. The video pipeline extracts frames, computes perceptual hashes (pHash), and compares against a fingerprint database using Hamming distance. The audio pipeline converts audio to mel-spectrograms and runs similarity matching on frequency patterns.</p>
-    <p>A fusion layer combines both signals — content must match on both channels to trigger enforcement, reducing false positives. The React dashboard provides real-time monitoring, and Groq handles natural language reporting.</p>
+    <p>Corvus is an Electron desktop app built around an infinite canvas (React Flow) where each node is an agent working a slice of the codebase. Agents never share memory; they coordinate through structured contracts — OpenAPI specs, database schemas, and TypeScript interfaces — so parallel work composes instead of colliding.</p>
+    <p>Isolation runs through the whole design: Git worktrees isolate each agent's changes on disk, and worker threads isolate agent execution in the app. Corvus is BYOK — it ships zero AI models and connects to the keys you bring.</p>
   </section>
 
   <section class="project-section">
     <h2>Key Features</h2>
     <ul>
-      <li><strong>Video pHash Detection</strong> &mdash; Perceptual hashing on extracted frames. Resistant to re-encoding, resolution changes, cropping, and minor edits. Hamming distance threshold matching.</li>
-      <li><strong>Audio Mel-Spectrogram</strong> &mdash; Frequency-domain audio analysis via mel-spectrograms. Catches audio even when video is altered. Handles speed changes and compression artifacts.</li>
-      <li><strong>Dual-Mode Fusion</strong> &mdash; Both video and audio must match to trigger enforcement. Dramatically reduces false positives while maintaining 95% true positive rate.</li>
-      <li><strong>Real-Time Dashboard</strong> &mdash; React frontend showing detection events, confidence scores, and enforcement actions in real-time. Visual fingerprint comparison for manual review.</li>
-      <li><strong>&lt;90 Second Response</strong> &mdash; From content upload to enforcement action in under 90 seconds. Fast enough for live streaming platforms and rapid-distribution channels.</li>
-      <li><strong>AI-Powered Reporting</strong> &mdash; Groq generates natural language reports for each detection event — human-readable summaries of what was detected, confidence levels, and recommended actions.</li>
+      <li><strong>Infinite Canvas Orchestration</strong> &mdash; A React Flow canvas for visually composing and monitoring multiple agents working in parallel on one codebase.</li>
+      <li><strong>Contract-Based Coordination</strong> &mdash; Agents agree on OpenAPI specs, DB schemas, and TS interfaces up front, then build against them independently. No shared memory, no drift.</li>
+      <li><strong>Git Worktree Isolation</strong> &mdash; Every agent works in its own worktree. Changes merge deliberately, never accidentally.</li>
+      <li><strong>Worker Thread Execution</strong> &mdash; Agent execution runs off the main process, keeping the canvas responsive while agents work.</li>
+      <li><strong>BYOK by Design</strong> &mdash; Ships zero AI models. You bring your own keys; Corvus brings the orchestration.</li>
     </ul>
   </section>
 
   <section class="project-section">
     <h2>Tech Stack</h2>
-    <p>Python &middot; Flask &middot; OpenCV &middot; librosa &middot; React &middot; Groq &middot; NumPy &middot; FFmpeg</p>
+    <p>Electron 35 &middot; React 19 &middot; React Flow &middot; Tailwind v4 &middot; Zustand &middot; better-sqlite3 &middot; Drizzle ORM &middot; CodeMirror 6 &middot; Git worktrees &middot; Vitest/Playwright</p>
   </section>
 
   <nav class="project-section" aria-label="Project navigation">
     <div class="project-links">
-      <a href="food-chain.html">Previous: Food Chain Ideation</a>
-      <a href="tars.html">Next Project: TARS</a>
+      <a href="veridock.html">Previous: Veridock</a>
+      <a href="food-chain.html">Next Project: Food Chain Ideation</a>
     </div>
   </nav>
   </main>

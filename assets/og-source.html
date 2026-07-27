@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  @font-face {
+    font-family: 'Satoshi';
+    src: url('assets/fonts/Satoshi-Variable.woff2') format('woff2');
+    font-weight: 300 900;
+    font-display: block;
+  }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    width: 1200px;
+    height: 630px;
+    background: #fcfcfa;
+    font-family: 'Satoshi', sans-serif;
+    color: #323c4f;
+    overflow: hidden;
+    position: relative;
+  }
+  .frame {
+    position: absolute;
+    inset: 0;
+    padding: 72px 84px 64px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+  .top {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 20px;
+    color: #8a94a6;
+  }
+  .name {
+    font-size: 88px;
+    font-weight: 500;
+    letter-spacing: -0.04em;
+    line-height: 1.04;
+  }
+  .tag {
+    font-size: 88px;
+    font-weight: 500;
+    letter-spacing: -0.04em;
+    line-height: 1.04;
+    color: #323c4f;
+  }
+  .tag em {
+    font-family: 'Instrument Serif', serif;
+    font-style: italic;
+    font-weight: 400;
+    color: #ab6d1a;
+    letter-spacing: -0.01em;
+  }
+  .status {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 22px;
+    color: #8a94a6;
+    margin-top: 34px;
+  }
+  .status .caret {
+    display: inline-block;
+    width: 11px;
+    height: 22px;
+    background: #ab6d1a;
+    vertical-align: -3px;
+    margin-left: 6px;
+  }
+  .bottom {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  .icons { display: flex; gap: 28px; align-items: center; }
+  .icons svg {
+    width: 44px;
+    height: 44px;
+    stroke: #b9c1cf;
+    stroke-width: 1.6;
+    fill: none;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+  }
+  .icons svg.hot { stroke: #ab6d1a; }
+  .foot {
+    font-size: 22px;
+    color: #8a94a6;
+    font-weight: 500;
+  }
+</style>
+</head>
+<body>
+  <div class="frame">
+    <div class="top">rishipraseeth.in</div>
+    <div>
+      <div class="name">Rishi Praseeth Krishnan</div>
+      <div class="tag">AI systems that <em>remember</em>.</div>
+      <div class="status">&gt; session restored. memory intact.<span class="caret"></span></div>
+    </div>
+    <div class="bottom">
+      <div class="icons">
+        <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="2.5"/><circle cx="5" cy="5" r="2"/><circle cx="19" cy="5" r="2"/><circle cx="5" cy="19" r="2"/><circle cx="19" cy="19" r="2"/><path d="M10.2 10.2 6.5 6.5M13.8 10.2 17.5 6.5M10.2 13.8 6.5 17.5M13.8 13.8 17.5 17.5"/></svg>
+        <svg viewBox="0 0 24 24"><path d="M13.5 10.5 4 20"/><path d="M16 3v10"/><path d="M11 8h10"/><circle cx="6" cy="6" r="1"/><circle cx="20" cy="14" r="1"/></svg>
+        <svg viewBox="0 0 24 24"><path d="M14.5 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7.5L14.5 2z"/><path d="M14 2v6h6"/><path d="m9 15 2 2 4-4"/></svg>
+        <svg viewBox="0 0 24 24"><path d="M6 3v12"/><circle cx="18" cy="6" r="3"/><circle cx="6" cy="18" r="3"/><path d="M18 9a9 9 0 0 1-9 9"/></svg>
+        <svg viewBox="0 0 24 24"><path d="M5 17 C6.5 10 9.5 6 12.5 4 C13 10 16 14 19 17 Z"/><path d="M2 20.5 Q5 19 8 20.5 Q11 22 14 20.5 Q17 19 22 20.5"/></svg>
+        <svg viewBox="0 0 24 24"><path d="M20 13c0 5-3.5 7.5-7.66 8.95a1 1 0 0 1-.67-.01C7.5 20.5 4 18 4 13V6a1 1 0 0 1 1-1c2 0 4.5-1.2 6.24-2.72a1.17 1.17 0 0 1 1.52 0C14.51 3.81 17 5 19 5a1 1 0 0 1 1 1z"/><path d="m9 12 2 2 4-4"/></svg>
+        <svg class="hot" viewBox="0 0 24 24"><path d="M3 16 L3 8 L4.6 8 Q6 8 6 10 Q6 12 4.6 12 L3 12 M4.6 12 L6 16"/><path d="M7.4 8 L9.4 8 M8.4 8 L8.4 16 M7.4 16 L9.4 16"/><path d="M13.5 9 Q13.5 8 12.2 8 Q10.9 8 10.9 9.7 Q10.9 11.1 12.2 12 Q13.5 12.9 13.5 14.3 Q13.5 16 12.2 16 Q10.9 16 10.9 15"/><path d="M15.5 8 L15.5 16 M19 8 L19 16 M15.5 12 L19 12"/><path d="M20.4 8 L22.4 8 M21.4 8 L21.4 16 M20.4 16 L22.4 16"/></svg>
+      </div>
+      <div class="foot">Cognitive runtimes &middot; MCP tooling &middot; Shipped SaaS</div>
+    </div>
+  </div>
+</body>
+</html>

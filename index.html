@@ -4,562 +4,615 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Rishi Praseeth Krishnan — AI Systems Engineer</title>
-  <meta name="description" content="I build AI systems that remember, reason, and ship. Cognitive runtimes, MCP tooling, deployed SaaS.">
+  <meta name="description" content="I build AI systems that remember. Cognitive runtimes, MCP tooling, and a shipped SaaS.">
   <meta property="og:title" content="Rishi Praseeth Krishnan — AI Systems Engineer">
-  <meta property="og:description" content="I build AI systems that remember, reason, and ship. Cognitive runtimes, MCP tooling, deployed SaaS.">
+  <meta property="og:description" content="I build AI systems that remember. Cognitive runtimes, MCP tooling, and a shipped SaaS.">
   <meta property="og:type" content="website">
-  <meta property="og:image" content="og-image.png">
+  <meta property="og:url" content="https://rishipraseeth.in/">
+  <meta property="og:image" content="https://rishipraseeth.in/assets/og.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
   <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="Rishi Praseeth Krishnan — AI Systems Engineer">
-  <meta name="twitter:description" content="I build AI systems that remember, reason, and ship. Cognitive runtimes, MCP tooling, deployed SaaS.">
-  <meta name="twitter:image" content="og-image.png">
+  <meta name="twitter:image" content="https://rishipraseeth.in/assets/og.png">
   <link rel="icon" href="favicon.ico" sizes="any">
   <link rel="icon" type="image/png" href="assets/favicon-32x32.png" sizes="32x32">
   <link rel="icon" type="image/png" href="assets/favicon-16x16.png" sizes="16x16">
   <link rel="apple-touch-icon" href="assets/apple-touch-icon.png">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;1,9..40,300;1,9..40,400&family=JetBrains+Mono:wght@400;500&family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/tokens.css">
   <link rel="stylesheet" href="css/style.css">
-  <noscript><style>.loader{display:none!important}.hero__greeting-inner,.hero__name-word,.hero__tagline,.hero__cta{opacity:1!important;transform:none!important}</style></noscript>
+  <script>
+    /* apply saved theme before first paint */
+    (function () {
+      var t = localStorage.getItem('rpk-theme');
+      if (t) document.documentElement.setAttribute('data-theme', t);
+    })();
+  </script>
 </head>
 <body>
-  <!-- SKIP LINK -->
-  <a href="#about" class="skip-link">Skip to content</a>
+  <a href="#work" class="skip-link">Skip to content</a>
 
-  <!-- LOADING SCREEN -->
-  <div class="loader" id="loader" aria-hidden="true">
-    <div class="loader__inner">
-      <div class="loader__logo">RPK</div>
-      <div class="loader__bar"><div class="loader__fill"></div></div>
+  <!-- NAV — floating pill -->
+  <header class="site-header" id="siteHeader">
+    <div class="nav-wrap" id="navWrap">
+      <div class="nav-inner">
+        <a href="#" class="nav-logo">Rishi Praseeth Krishnan</a>
+        <nav class="nav-links" aria-label="Primary">
+          <a href="#work" class="nav-btn">Work</a>
+          <a href="#experience" class="nav-btn">Experience</a>
+          <a href="https://github.com/CodedRichy" target="_blank" rel="noopener noreferrer" class="nav-btn">
+            GitHub
+            <svg class="arrow-icon" xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 7h10v10M7 17 17 7"/></svg>
+          </a>
+          <a href="assets/Rishi_Praseeth_Krishnan_Resume.pdf" download class="nav-btn">Resume</a>
+          <span class="nav-divider" aria-hidden="true"></span>
+        </nav>
+        <div style="display:flex;align-items:center;">
+          <button class="nav-menu-btn" id="menuBtn" aria-label="Toggle menu" aria-expanded="false">
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="none" viewBox="0 0 24 24" aria-hidden="true"><path stroke="currentColor" stroke-linecap="round" stroke-width="2" d="M3 6h18M3 12h18M3 18h18"/></svg>
+          </button>
+          <button class="theme-btn" id="themeToggle" aria-label="Toggle theme">
+            <svg class="icon-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true">
+              <circle cx="12" cy="12" r="4"/>
+              <path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M4.93 19.07l1.41-1.41M17.66 6.34l1.41-1.41"/>
+            </svg>
+            <svg class="icon-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/>
+            </svg>
+          </button>
+        </div>
+      </div>
+      <div class="nav-menu-panel" id="navMenuPanel">
+        <a href="#work" class="nav-btn">Work</a>
+        <a href="#experience" class="nav-btn">Experience</a>
+        <a href="https://github.com/CodedRichy" target="_blank" rel="noopener noreferrer" class="nav-btn">GitHub</a>
+        <a href="assets/Rishi_Praseeth_Krishnan_Resume.pdf" download class="nav-btn">Resume</a>
+      </div>
     </div>
-  </div>
+  </header>
 
-  <!-- CUSTOM CURSOR -->
-  <div class="cursor" id="cursor" aria-hidden="true">
-    <div class="cursor__dot"></div>
-    <div class="cursor__ring"></div>
-  </div>
-
-  <!-- SCROLL PROGRESS -->
-  <div class="scroll-progress" id="scrollProgress" aria-hidden="true"></div>
-
-  <!-- NAV -->
-  <nav class="nav" id="nav">
-    <a href="#" class="nav__logo">RPK</a>
-    <div class="nav__links">
-      <a href="#about" class="nav__link" data-index="01">About</a>
-      <a href="#focus" class="nav__link" data-index="02">Focus</a>
-      <a href="#projects" class="nav__link" data-index="03">Projects</a>
-      <a href="#experience" class="nav__link" data-index="04">Experience</a>
-      <a href="#contact" class="nav__link" data-index="05">Contact</a>
-    </div>
-    <button class="nav__menu-btn" id="menuBtn" aria-label="Toggle menu" aria-expanded="false" aria-controls="mobileMenu">
-      <span></span><span></span>
-    </button>
-  </nav>
-
-  <!-- MOBILE MENU -->
-  <div class="mobile-menu" id="mobileMenu" role="dialog" aria-hidden="true" aria-label="Navigation menu">
-    <a href="#about" class="mobile-menu__link" data-index="01">About</a>
-    <a href="#focus" class="mobile-menu__link" data-index="02">Focus</a>
-    <a href="#projects" class="mobile-menu__link" data-index="03">Projects</a>
-    <a href="#experience" class="mobile-menu__link" data-index="04">Experience</a>
-    <a href="#contact" class="mobile-menu__link" data-index="05">Contact</a>
-  </div>
-
-  <!-- HERO -->
-  <main>
+  <!-- HERO — icon particles -->
   <section class="hero" id="hero">
-    <canvas class="hero__canvas" id="nodeGraph" aria-hidden="true"></canvas>
-    <div class="ambient-orb ambient-orb--1" aria-hidden="true"></div>
-    <div class="ambient-orb ambient-orb--2" aria-hidden="true"></div>
-    <div class="hero__content">
-      <p class="hero__greeting"><span class="hero__greeting-inner">Hi, I'm</span></p>
-      <h1 class="hero__name" aria-label="Rishi Praseeth Krishnan">
-        <span class="hero__name-line">
-          <span class="hero__name-word">Rishi</span>
-          <span class="hero__name-word">Praseeth</span>
-        </span>
-        <span class="hero__name-line">
-          <span class="hero__name-word hero__name--accent">Krishnan</span>
-        </span>
-      </h1>
-      <p class="hero__tagline">I build <span class="hero__tagline--em">AI systems that remember.</span> Cognitive runtimes,<br class="hide-mobile"> MCP tooling, and a shipped SaaS — all from scratch.</p>
-      <div class="hero__cta">
-        <a href="#projects" class="btn btn--primary">View My Work</a>
-        <a href="assets/Rishi_Praseeth_Krishnan_Resume.pdf" download class="btn btn--ghost">Resume PDF</a>
-        <a href="#contact" class="btn btn--ghost">Get In Touch</a>
-      </div>
+    <div class="scene-container" id="sceneContainer">
+      <canvas id="hero-canvas" aria-label="Particle animation morphing through one symbol per project — memory graph, wand, document, branch, shark fin, shield — ending on the name Rishi"></canvas>
     </div>
-    <div class="hero__scroll-indicator">
-      <div class="hero__scroll-line"></div>
+    <div class="hero-fallback" id="heroFallback">
+      <div class="hero-fallback-name">Rishi Praseeth <span class="accent">Krishnan</span></div>
+    </div>
+    <div class="hero-status" aria-live="polite"><span id="memoryStatus"></span><span class="hero-status-cursor" aria-hidden="true"></span></div>
+  </section>
+
+  <main>
+
+  <!-- WORK — folder cards -->
+  <section class="work-section" id="work">
+    <div class="work-inner">
+      <div class="work-header">
+        <div>
+          <h2 class="work-title">Selected <span class="accent">work</span></h2>
+          <p class="work-sub">AI systems that remember, audit themselves, and ship.</p>
+        </div>
+      </div>
+
+      <div class="work-grid">
+
+        <!-- Card 1 — HCR -->
+        <a class="work-card" href="projects/hcr.html">
+          <div class="wc-visual">
+            <div class="wc-bg"></div>
+            <div class="wc-folder" aria-hidden="true">
+              <svg viewBox="0 0 274 194" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M 274 194 L 0 194 L 0 8 Q 0 0 8 0 L 97.734 0 C 104.003 0 110.043 2.343 114.657 6.565 L 124.897 15.935 C 129.511 20.157 135.552 22.5 141.82 22.5 L 250 22.5 C 263.255 22.5 274 35.755 274 46.5 L 274 194 Z"/>
+              </svg>
+            </div>
+            <div class="wc-img wc-img-l" aria-hidden="true">
+              <div class="mini">
+                <div class="mini-dots"><i></i><i></i><i></i></div>
+                <span class="mini-chip">memory: warm</span>
+                <div class="mini-line w80"></div>
+                <div class="mini-line w60"></div>
+                <div class="mini-line w40 accent"></div>
+                <div class="mini-code">replay(event_042)
+<span class="tok">-&gt; recall ok</span></div>
+                <div class="mini-line w60"></div>
+                <div class="mini-line w80"></div>
+              </div>
+            </div>
+            <div class="wc-img wc-img-m" aria-hidden="true">
+              <div class="mini">
+                <div class="mini-dots"><i></i><i></i><i></i></div>
+                <div class="mini-stat">41%<small>tokens saved</small></div>
+                <div class="mini-bar"><i style="width:41%"></i></div>
+                <div class="mini-stat">40+<small>MCP tools</small></div>
+                <div class="mini-bar"><i style="width:80%"></i></div>
+              </div>
+            </div>
+            <div class="wc-img wc-img-c" aria-hidden="true">
+              <div class="wc-scene wc-scene-hcr">
+                <pre><span class="prompt">$</span> hcr replay --causal
+loading event graph...
+memory persisted.</pre>
+              </div>
+            </div>
+            <div class="wc-img wc-img-r" aria-hidden="true">
+              <div class="mini">
+                <div class="mini-dots"><i></i><i></i><i></i></div>
+                <span class="mini-chip">event graph</span>
+                <div class="mini-code">e01 -&gt; e02
+e02 -&gt; e05
+e05 <span class="tok">-&gt; now</span></div>
+                <div class="mini-line w80"></div>
+                <div class="mini-line w40"></div>
+                <div class="mini-line w60 accent"></div>
+              </div>
+            </div>
+            <div class="wc-tab-label">Cognitive runtime</div>
+            <div class="wc-label"><h3 class="wc-name">HCR</h3></div>
+          </div>
+          <div class="wc-reveal">
+            <p class="wc-desc">Agents that never repeat a mistake. 40+ MCP tools, 41% token savings.</p>
+          </div>
+        </a>
+
+        <!-- Card 2 — FixMyPrompt -->
+        <a class="work-card" href="projects/fixmyprompt.html">
+          <div class="wc-visual">
+            <div class="wc-bg"></div>
+            <div class="wc-folder" aria-hidden="true">
+              <svg viewBox="0 0 274 194" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M 274 194 L 0 194 L 0 8 Q 0 0 8 0 L 97.734 0 C 104.003 0 110.043 2.343 114.657 6.565 L 124.897 15.935 C 129.511 20.157 135.552 22.5 141.82 22.5 L 250 22.5 C 263.255 22.5 274 35.755 274 46.5 L 274 194 Z"/>
+              </svg>
+            </div>
+            <div class="wc-img wc-img-l" aria-hidden="true">
+              <div class="mini">
+                <div class="mini-dots"><i></i><i></i><i></i></div>
+                <span class="mini-chip">before</span>
+                <div class="mini-line w80"></div>
+                <div class="mini-line w40"></div>
+                <span class="mini-chip">after</span>
+                <div class="mini-line w80 accent"></div>
+                <div class="mini-line w60 accent"></div>
+                <div class="mini-line w40 accent"></div>
+              </div>
+            </div>
+            <div class="wc-img wc-img-m" aria-hidden="true">
+              <div class="mini">
+                <div class="mini-dots"><i></i><i></i><i></i></div>
+                <div class="mini-stat">561+<small>challenges</small></div>
+                <div class="mini-bar"><i style="width:72%"></i></div>
+                <div class="mini-stat">18<small>academy modules</small></div>
+                <div class="mini-bar"><i style="width:56%"></i></div>
+              </div>
+            </div>
+            <div class="wc-img wc-img-c" aria-hidden="true">
+              <div class="wc-scene wc-scene-fmp">
+                <pre><span class="prompt">&gt;</span> fix my prompt
+rewriting... done.
+elo +24</pre>
+              </div>
+            </div>
+            <div class="wc-img wc-img-r" aria-hidden="true">
+              <div class="mini">
+                <div class="mini-dots"><i></i><i></i><i></i></div>
+                <span class="mini-chip">leaderboard</span>
+                <div class="mini-code">1. rp_k   <span class="tok">1840</span>
+2. mira   1795
+3. dex_   1770</div>
+                <div class="mini-line w60"></div>
+                <div class="mini-line w80"></div>
+              </div>
+            </div>
+            <div class="wc-tab-label">Production SaaS</div>
+            <div class="wc-label"><h3 class="wc-name">FixMyPrompt</h3></div>
+          </div>
+          <div class="wc-reveal">
+            <p class="wc-desc">Vague ideas in, professional prompts out. ELO ladder, academy, payments. Live.</p>
+          </div>
+        </a>
+
+        <!-- Card 3 — Veridock -->
+        <a class="work-card" href="projects/veridock.html">
+          <div class="wc-visual">
+            <div class="wc-bg"></div>
+            <div class="wc-folder" aria-hidden="true">
+              <svg viewBox="0 0 274 194" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M 274 194 L 0 194 L 0 8 Q 0 0 8 0 L 97.734 0 C 104.003 0 110.043 2.343 114.657 6.565 L 124.897 15.935 C 129.511 20.157 135.552 22.5 141.82 22.5 L 250 22.5 C 263.255 22.5 274 35.755 274 46.5 L 274 194 Z"/>
+              </svg>
+            </div>
+            <div class="wc-img wc-img-l" aria-hidden="true">
+              <div class="mini">
+                <div class="mini-dots"><i></i><i></i><i></i></div>
+                <span class="mini-chip">ocr · layer 3</span>
+                <div class="mini-line w80"></div>
+                <div class="mini-line w60"></div>
+                <div class="mini-code">inv_2041.pdf
+gstin <span class="tok">verified</span></div>
+                <div class="mini-line w40 accent"></div>
+                <div class="mini-line w60"></div>
+              </div>
+            </div>
+            <div class="wc-img wc-img-m" aria-hidden="true">
+              <div class="mini">
+                <div class="mini-dots"><i></i><i></i><i></i></div>
+                <div class="mini-stat">150<small>tests passing</small></div>
+                <div class="mini-bar"><i style="width:88%"></i></div>
+                <div class="mini-stat">3<small>OCR layers</small></div>
+                <div class="mini-bar"><i style="width:45%"></i></div>
+              </div>
+            </div>
+            <div class="wc-img wc-img-c" aria-hidden="true">
+              <div class="wc-scene wc-scene-vdk">
+                <pre><span class="prompt">$</span> veridock ingest batch
+42 invoices parsed.
+vendors matched.</pre>
+              </div>
+            </div>
+            <div class="wc-img wc-img-r" aria-hidden="true">
+              <div class="mini">
+                <div class="mini-dots"><i></i><i></i><i></i></div>
+                <span class="mini-chip">vendor match</span>
+                <div class="mini-code">fuzzy  0.94
+alias  <span class="tok">learned</span></div>
+                <div class="mini-line w80"></div>
+                <div class="mini-line w60"></div>
+                <div class="mini-line w40"></div>
+              </div>
+            </div>
+            <div class="wc-tab-label">Client work — in production</div>
+            <div class="wc-label"><h3 class="wc-name">Veridock</h3></div>
+          </div>
+          <div class="wc-reveal">
+            <p class="wc-desc">AI document automation for Indian CA firms. 3-layer OCR, 150 tests, shipped.</p>
+          </div>
+        </a>
+
+        <!-- Card 4 — Corvus -->
+        <a class="work-card" href="projects/corvus.html">
+          <div class="wc-visual">
+            <div class="wc-bg"></div>
+            <div class="wc-folder" aria-hidden="true">
+              <svg viewBox="0 0 274 194" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M 274 194 L 0 194 L 0 8 Q 0 0 8 0 L 97.734 0 C 104.003 0 110.043 2.343 114.657 6.565 L 124.897 15.935 C 129.511 20.157 135.552 22.5 141.82 22.5 L 250 22.5 C 263.255 22.5 274 35.755 274 46.5 L 274 194 Z"/>
+              </svg>
+            </div>
+            <div class="wc-img wc-img-l" aria-hidden="true">
+              <div class="mini">
+                <div class="mini-dots"><i></i><i></i><i></i></div>
+                <span class="mini-chip">agent-1 · ui</span>
+                <div class="mini-line w80"></div>
+                <div class="mini-line w60 accent"></div>
+                <span class="mini-chip">agent-3 · api</span>
+                <div class="mini-line w60"></div>
+                <div class="mini-line w40 accent"></div>
+              </div>
+            </div>
+            <div class="wc-img wc-img-m" aria-hidden="true">
+              <div class="mini">
+                <div class="mini-dots"><i></i><i></i><i></i></div>
+                <span class="mini-chip">contracts</span>
+                <div class="mini-code">openapi  <span class="tok">agreed</span>
+schema   locked
+merge    clean</div>
+                <div class="mini-line w80"></div>
+                <div class="mini-line w60"></div>
+              </div>
+            </div>
+            <div class="wc-img wc-img-c" aria-hidden="true">
+              <div class="wc-scene wc-scene-crv">
+                <pre><span class="prompt">&gt;</span> 4 agents · 1 codebase
+contracts, not chaos.
+89 tests green.</pre>
+              </div>
+            </div>
+            <div class="wc-img wc-img-r" aria-hidden="true">
+              <div class="mini">
+                <div class="mini-dots"><i></i><i></i><i></i></div>
+                <div class="mini-stat">134<small>source files</small></div>
+                <div class="mini-bar"><i style="width:80%"></i></div>
+                <div class="mini-stat">89<small>tests</small></div>
+                <div class="mini-bar"><i style="width:60%"></i></div>
+              </div>
+            </div>
+            <div class="wc-tab-label">PantheraLabs — in development</div>
+            <div class="wc-label"><h3 class="wc-name">Corvus</h3></div>
+          </div>
+          <div class="wc-reveal">
+            <p class="wc-desc">Infinite canvas where AI agents build software in parallel. V1 built, hardening.</p>
+          </div>
+        </a>
+
+        <!-- Card 5 — Food Chain Ideation -->
+        <a class="work-card" href="projects/food-chain.html">
+          <div class="wc-visual">
+            <div class="wc-bg"></div>
+            <div class="wc-folder" aria-hidden="true">
+              <svg viewBox="0 0 274 194" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M 274 194 L 0 194 L 0 8 Q 0 0 8 0 L 97.734 0 C 104.003 0 110.043 2.343 114.657 6.565 L 124.897 15.935 C 129.511 20.157 135.552 22.5 141.82 22.5 L 250 22.5 C 263.255 22.5 274 35.755 274 46.5 L 274 194 Z"/>
+              </svg>
+            </div>
+            <div class="wc-img wc-img-l" aria-hidden="true">
+              <div class="mini">
+                <div class="mini-dots"><i></i><i></i><i></i></div>
+                <span class="mini-chip">round 4</span>
+                <div class="mini-code">shark: attacks
+  pricing model
+idea: <span class="tok">patched</span></div>
+                <div class="mini-line w80"></div>
+                <div class="mini-line w60"></div>
+              </div>
+            </div>
+            <div class="wc-img wc-img-m" aria-hidden="true">
+              <div class="mini">
+                <div class="mini-dots"><i></i><i></i><i></i></div>
+                <div class="mini-stat">68<small>AI predators</small></div>
+                <div class="mini-bar"><i style="width:68%"></i></div>
+                <div class="mini-stat">3<small>possible fates</small></div>
+                <div class="mini-bar"><i style="width:30%"></i></div>
+              </div>
+            </div>
+            <div class="wc-img wc-img-c" aria-hidden="true">
+              <div class="wc-scene wc-scene-fci">
+                <pre><span class="prompt">$</span> food-chain run
+apex predator circling...
+verdict: survived</pre>
+              </div>
+            </div>
+            <div class="wc-img wc-img-r" aria-hidden="true">
+              <div class="mini">
+                <div class="mini-dots"><i></i><i></i><i></i></div>
+                <span class="mini-chip">outcomes</span>
+                <div class="mini-code">survived
+restructured
+<span class="tok">killed</span></div>
+                <div class="mini-line w60"></div>
+                <div class="mini-line w80"></div>
+                <div class="mini-line w40 accent"></div>
+              </div>
+            </div>
+            <div class="wc-tab-label">Claude Code plugin</div>
+            <div class="wc-label"><h3 class="wc-name">Food Chain</h3></div>
+          </div>
+          <div class="wc-reveal">
+            <p class="wc-desc">68 adversarial AI animals stress-test your startup idea until it survives — or dies.</p>
+          </div>
+        </a>
+
+        <!-- Card 6 — Sentinel -->
+        <a class="work-card" href="projects/sentinel.html">
+          <div class="wc-visual">
+            <div class="wc-bg"></div>
+            <div class="wc-folder" aria-hidden="true">
+              <svg viewBox="0 0 274 194" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M 274 194 L 0 194 L 0 8 Q 0 0 8 0 L 97.734 0 C 104.003 0 110.043 2.343 114.657 6.565 L 124.897 15.935 C 129.511 20.157 135.552 22.5 141.82 22.5 L 250 22.5 C 263.255 22.5 274 35.755 274 46.5 L 274 194 Z"/>
+              </svg>
+            </div>
+            <div class="wc-img wc-img-l" aria-hidden="true">
+              <div class="mini">
+                <div class="mini-dots"><i></i><i></i><i></i></div>
+                <span class="mini-chip">video pHash</span>
+                <div class="mini-line w80"></div>
+                <div class="mini-line w60"></div>
+                <div class="mini-code">match 0.97
+<span class="tok">flagged</span></div>
+                <div class="mini-line w40 accent"></div>
+              </div>
+            </div>
+            <div class="wc-img wc-img-m" aria-hidden="true">
+              <div class="mini">
+                <div class="mini-dots"><i></i><i></i><i></i></div>
+                <div class="mini-stat">95%<small>accuracy</small></div>
+                <div class="mini-bar"><i style="width:95%"></i></div>
+                <div class="mini-stat">&lt;90s<small>to enforcement</small></div>
+                <div class="mini-bar"><i style="width:25%"></i></div>
+              </div>
+            </div>
+            <div class="wc-img wc-img-c" aria-hidden="true">
+              <div class="wc-scene wc-scene-sen">
+                <pre><span class="prompt">$</span> sentinel watch
+stream fingerprinted.
+takedown in 84s.</pre>
+              </div>
+            </div>
+            <div class="wc-img wc-img-r" aria-hidden="true">
+              <div class="mini">
+                <div class="mini-dots"><i></i><i></i><i></i></div>
+                <span class="mini-chip">audio mel-spec</span>
+                <div class="mini-code">fp: a91c...
+db hit <span class="tok">0.93</span></div>
+                <div class="mini-line w60"></div>
+                <div class="mini-line w80"></div>
+                <div class="mini-line w40"></div>
+              </div>
+            </div>
+            <div class="wc-tab-label">ACM Nexus — 3rd place</div>
+            <div class="wc-label"><h3 class="wc-name">Sentinel</h3></div>
+          </div>
+          <div class="wc-reveal">
+            <p class="wc-desc">Real-time piracy detection built in 24 hours. 95% accuracy, takedown under 90s.</p>
+          </div>
+        </a>
+
+      </div>
     </div>
   </section>
 
-  <!-- ABOUT -->
-  <section class="section about" id="about">
-    <div class="ambient-orb ambient-orb--3" aria-hidden="true"></div>
-    <div class="section__header">
-      <span class="section__index">01</span>
-      <h2 class="section__title">About</h2>
-      <div class="section__line"></div>
-    </div>
-    <div class="about__grid">
-      <div class="about__text">
-        <p class="about__lead">I got obsessed with one question: why do AI agents forget everything between conversations?</p>
-        <p>That question turned into HCR — a 20K-line cognitive runtime with 40+ MCP tools. Then TARS, an auditable agent with a Bayesian personality system. Then GitPulse, FixMyPrompt, and a dozen more things I couldn't stop building. B.Tech CS at MITS, but most of what I know came from shipping at 3am and debugging production at 7am.</p>
-        <p>I optimize for shipping, not for resume padding. If it doesn't run, it doesn't count.</p>
-      </div>
-      <div class="about__stats">
-        <div class="stat-card">
-          <span class="stat-card__number" data-count="40" data-suffix="+">0</span>
-          <span class="stat-card__label">MCP Tools Shipped</span>
-        </div>
-        <div class="stat-card">
-          <span class="stat-card__number" data-count="41" data-suffix="%">0</span>
-          <span class="stat-card__label">Token Savings (HCR)</span>
-        </div>
-        <div class="stat-card">
-          <span class="stat-card__number" data-count="95" data-suffix="%">0</span>
-          <span class="stat-card__label">Sentinel Accuracy</span>
-        </div>
-        <div class="stat-card">
-          <span class="stat-card__number" data-count="1" data-suffix="">0</span>
-          <span class="stat-card__label">Live Product</span>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- FOCUS AREAS -->
-  <section class="section focus" id="focus">
-    <div class="ambient-orb ambient-orb--2" aria-hidden="true"></div>
-    <div class="section__header">
-      <span class="section__index">02</span>
-      <h2 class="section__title">Focus Areas</h2>
-      <div class="section__line"></div>
-    </div>
-    <div class="focus__grid">
-      <div class="focus__card">
-        <div class="focus__icon">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="12" r="3"/><path d="M12 1v4m0 14v4M4.22 4.22l2.83 2.83m9.9 9.9l2.83 2.83M1 12h4m14 0h4M4.22 19.78l2.83-2.83m9.9-9.9l2.83-2.83"/></svg>
-        </div>
-        <h3 class="focus__card-title">AI-Native Architecture</h3>
-        <p class="focus__card-desc">Designing systems where AI is the core runtime — not a bolted-on feature. Persistent state, structured reasoning, auditable decisions.</p>
-      </div>
-      <div class="focus__card">
-        <div class="focus__icon">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M9 3H5a2 2 0 00-2 2v4m6-6h10a2 2 0 012 2v4M9 3v18m0 0h10a2 2 0 002-2v-4M9 21H5a2 2 0 01-2-2v-4m0-6v6m18-6v6"/></svg>
-        </div>
-        <h3 class="focus__card-title">Multi-Agent Orchestration</h3>
-        <p class="focus__card-desc">Compiling human intent into executable multi-agent workflows. Role matching, quality scoring, and reactive execution with rollback.</p>
-      </div>
-      <div class="focus__card">
-        <div class="focus__icon">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M4 7h16M4 12h16M4 17h10"/><circle cx="20" cy="17" r="2"/></svg>
-        </div>
-        <h3 class="focus__card-title">MCP Integration</h3>
-        <p class="focus__card-desc">Building Model Context Protocol servers that give AI agents structured access to developer tools, memory systems, and git intelligence.</p>
-      </div>
-      <div class="focus__card">
-        <div class="focus__icon">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/></svg>
-        </div>
-        <h3 class="focus__card-title">Stateful Reasoning</h3>
-        <p class="focus__card-desc">Making AI reasoning persistent and resumable. Cognitive state objects, causal event replay, zero-latency context restoration.</p>
-      </div>
-      <div class="focus__card">
-        <div class="focus__icon">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M14.7 6.3a1 1 0 000 1.4l1.6 1.6a1 1 0 001.4 0l3.77-3.77a6 6 0 01-7.94 7.94l-6.91 6.91a2.12 2.12 0 01-3-3l6.91-6.91a6 6 0 017.94-7.94l-3.76 3.76z"/></svg>
-        </div>
-        <h3 class="focus__card-title">Developer Tooling</h3>
-        <p class="focus__card-desc">CLI tools, quality gates, and intelligent automation for the AI-assisted development workflow. Making developers faster without losing control.</p>
-      </div>
-      <div class="focus__card">
-        <div class="focus__icon">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
-        </div>
-        <h3 class="focus__card-title">Correctness-First Design</h3>
-        <p class="focus__card-desc">Test suites, type safety, deterministic pipelines. Building systems that are provably correct — not hopefully correct.</p>
-      </div>
-    </div>
-  </section>
-
-  <!-- TECH STACK MARQUEE -->
-  <section class="stack-marquee" id="stack">
-    <div class="marquee">
-      <div class="marquee__track">
-        <span class="marquee__item">Python</span>
-        <span class="marquee__sep">/</span>
-        <span class="marquee__item">TypeScript</span>
-        <span class="marquee__sep">/</span>
-        <span class="marquee__item">Next.js</span>
-        <span class="marquee__sep">/</span>
-        <span class="marquee__item">React</span>
-        <span class="marquee__sep">/</span>
-        <span class="marquee__item">FastAPI</span>
-        <span class="marquee__sep">/</span>
-        <span class="marquee__item">Flutter</span>
-        <span class="marquee__sep">/</span>
-        <span class="marquee__item">Claude API</span>
-        <span class="marquee__sep">/</span>
-        <span class="marquee__item">MCP SDK</span>
-        <span class="marquee__sep">/</span>
-        <span class="marquee__item">PostgreSQL</span>
-        <span class="marquee__sep">/</span>
-        <span class="marquee__item">Redis</span>
-        <span class="marquee__sep">/</span>
-        <span class="marquee__item">Supabase</span>
-        <span class="marquee__sep">/</span>
-        <span class="marquee__item">Docker</span>
-        <span class="marquee__sep">/</span>
-        <span class="marquee__item">Groq</span>
-        <span class="marquee__sep">/</span>
-        <span class="marquee__item">Neo4j</span>
-        <span class="marquee__sep">/</span>
-        <!-- duplicate for seamless loop -->
-        <span class="marquee__item">Python</span>
-        <span class="marquee__sep">/</span>
-        <span class="marquee__item">TypeScript</span>
-        <span class="marquee__sep">/</span>
-        <span class="marquee__item">Next.js</span>
-        <span class="marquee__sep">/</span>
-        <span class="marquee__item">React</span>
-        <span class="marquee__sep">/</span>
-        <span class="marquee__item">FastAPI</span>
-        <span class="marquee__sep">/</span>
-        <span class="marquee__item">Flutter</span>
-        <span class="marquee__sep">/</span>
-        <span class="marquee__item">Claude API</span>
-        <span class="marquee__sep">/</span>
-        <span class="marquee__item">MCP SDK</span>
-        <span class="marquee__sep">/</span>
-        <span class="marquee__item">PostgreSQL</span>
-        <span class="marquee__sep">/</span>
-        <span class="marquee__item">Redis</span>
-        <span class="marquee__sep">/</span>
-        <span class="marquee__item">Supabase</span>
-        <span class="marquee__sep">/</span>
-        <span class="marquee__item">Docker</span>
-        <span class="marquee__sep">/</span>
-        <span class="marquee__item">Groq</span>
-        <span class="marquee__sep">/</span>
-        <span class="marquee__item">Neo4j</span>
-        <span class="marquee__sep">/</span>
-      </div>
-    </div>
-  </section>
-
-  <!-- FEATURED PROJECTS -->
-  <section class="section projects" id="projects">
-    <div class="ambient-orb ambient-orb--1" aria-hidden="true"></div>
-    <div class="ambient-orb ambient-orb--2" aria-hidden="true"></div>
-    <div class="section__header">
-      <span class="section__index">03</span>
-      <h2 class="section__title">Featured Projects</h2>
-      <div class="section__line"></div>
-    </div>
-    <div class="projects__bento">
-
-      <a href="projects/hcr.html" class="bento__card bento__card--large" data-project="hcr">
-        <div class="bento__glow"></div>
-        <div class="bento__content">
-          <div class="bento__top">
-            <span class="bento__tag">AI Memory Engine</span>
-            <span class="bento__tag">v0.4.0</span>
-            <span class="bento__tag bento__tag--active">Active</span>
-          </div>
-          <h3 class="bento__title">Hybrid Cognitive Runtime</h3>
-          <p class="bento__desc">Persistent AI agent memory system using causal event replay. Agents never repeat the same mistake twice — 40+ MCP tools, 41% token savings vs stateless baselines.</p>
-          <div class="bento__meta">
-            <span>Python</span>
-            <span>FastAPI</span>
-            <span>MCP</span>
-            <span>40+ MCP tools</span>
-            <span>200+ commits</span>
-          </div>
-        </div>
-      </a>
-
-      <a href="projects/fixmyprompt.html" class="bento__card bento__card--medium" data-project="fixmyprompt">
-        <div class="bento__glow"></div>
-        <div class="bento__content">
-          <div class="bento__top">
-            <span class="bento__tag">SaaS</span>
-            <span class="bento__tag bento__tag--live">LIVE</span>
-          </div>
-          <h3 class="bento__title">FixMyPrompt</h3>
-          <p class="bento__desc">Production SaaS transforming vague ideas into professional prompts. ELO gamification, 561+ challenges, 18-module academy, payments.</p>
-          <div class="bento__meta">
-            <span>Next.js 16</span>
-            <span>Gemini</span>
-            <span>Supabase</span>
-            <span>fixmyprompt-five.vercel.app</span>
-          </div>
-        </div>
-      </a>
-
-      <a href="projects/gitpulse.html" class="bento__card bento__card--medium" data-project="gitpulse">
-        <div class="bento__glow"></div>
-        <div class="bento__content">
-          <div class="bento__top">
-            <span class="bento__tag">Dev Tooling</span>
-            <span class="bento__tag bento__tag--deployed">Paused</span>
-          </div>
-          <h3 class="bento__title">GitPulse</h3>
-          <p class="bento__desc">AI-powered Git guardrails. MCP server with 10+ tools, CLI with React Ink, Next.js dashboard. Convention learning from commit history.</p>
-          <div class="bento__meta">
-            <span>TypeScript</span>
-            <span>Next.js</span>
-            <span>MCP</span>
-            <span>10+ MCP tools</span>
-          </div>
-        </div>
-      </a>
-
-      <a href="projects/tars.html" class="bento__card bento__card--medium" data-project="tars">
-        <div class="bento__glow"></div>
-        <div class="bento__content">
-          <div class="bento__top">
-            <span class="bento__tag">AI Agent</span>
-            <span class="bento__tag bento__tag--active">Active</span>
-          </div>
-          <h3 class="bento__title">TARS</h3>
-          <p class="bento__desc">Self-hosted AI agent with a visible, auditable brain. Bayesian genome system, hash-chained action ledger, multi-tier model router with cost receipts.</p>
-          <div class="bento__meta">
-            <span>Python</span>
-            <span>SQLite</span>
-            <span>37 test files</span>
-            <span>100% auditable</span>
-          </div>
-        </div>
-      </a>
-
-      <a href="projects/sonder.html" class="bento__card bento__card--medium" data-project="sonder">
-        <div class="bento__glow"></div>
-        <div class="bento__content">
-          <div class="bento__top">
-            <span class="bento__tag">Full-Stack</span>
-            <span class="bento__tag">110+ files</span>
-          </div>
-          <h3 class="bento__title">Sonder</h3>
-          <p class="bento__desc">Discord community OS with 70+ commands, React web dashboard, virtual economy, automated moderation, music streaming, and sentiment analysis. All behind a deceptively empty README.</p>
-          <div class="bento__meta">
-            <span>Node.js</span>
-            <span>React</span>
-            <span>PostgreSQL</span>
-            <span>Redis</span>
-          </div>
-        </div>
-      </a>
-
-      <a href="projects/sentinel.html" class="bento__card bento__card--medium" data-project="sentinel">
-        <div class="bento__glow"></div>
-        <div class="bento__content">
-          <div class="bento__top">
-            <span class="bento__tag">Computer Vision</span>
-            <span class="bento__tag bento__tag--award">3rd Place</span>
-          </div>
-          <h3 class="bento__title">Sentinel</h3>
-          <p class="bento__desc">Real-time piracy detection with dual-mode fingerprinting. Video pHash + audio mel-spectrograms. 95% accuracy, &lt;90s enforcement window.</p>
-          <div class="bento__meta">
-            <span>Python</span>
-            <span>OpenCV</span>
-            <span>React</span>
-            <span>Groq</span>
-          </div>
-        </div>
-      </a>
-
-    </div>
-  </section>
-
-  <!-- OTHER PROJECTS -->
-  <section class="section other-projects" id="other-projects">
-    <h2 class="other-projects__heading">Other Notable Work</h2>
-    <div class="other-projects__grid">
-      <div class="other-card">
-        <div class="other-card__top">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" class="other-card__icon"><path d="M3 7v10a2 2 0 002 2h14a2 2 0 002-2V9a2 2 0 00-2-2h-6l-2-2H5a2 2 0 00-2 2z"/></svg>
-          <div class="other-card__links">
-            <a href="https://github.com/PantheraLabs/IntentCompiler" target="_blank" rel="noopener noreferrer" aria-label="GitHub">
-              <svg viewBox="0 0 24 24" fill="currentColor" width="18"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/></svg>
-            </a>
-          </div>
-        </div>
-        <h4 class="other-card__title">Intent Compiler</h4>
-        <p class="other-card__desc">Transforms goals into multi-agent execution plans. 6-dimensional quality scoring.</p>
-        <div class="other-card__meta"><span>Next.js</span><span>TypeScript</span><span>AI Orchestration</span></div>
-      </div>
-      <div class="other-card">
-        <div class="other-card__top">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" class="other-card__icon"><path d="M3 7v10a2 2 0 002 2h14a2 2 0 002-2V9a2 2 0 00-2-2h-6l-2-2H5a2 2 0 00-2 2z"/></svg>
-          <div class="other-card__links">
-            <a href="https://github.com/CodedRichy/FoodChainIdeation" target="_blank" rel="noopener noreferrer" aria-label="GitHub">
-              <svg viewBox="0 0 24 24" fill="currentColor" width="18"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/></svg>
-            </a>
-          </div>
-        </div>
-        <h4 class="other-card__title">FoodChain Ideation</h4>
-        <p class="other-card__desc">Adversarial stress-testing with 64 animal agents. Shipped Claude Code plugin suite.</p>
-        <div class="other-card__meta"><span>Claude Plugin</span><span>Shipped</span><span>5 Skills</span></div>
-      </div>
-      <div class="other-card">
-        <div class="other-card__top">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" class="other-card__icon"><path d="M3 7v10a2 2 0 002 2h14a2 2 0 002-2V9a2 2 0 00-2-2h-6l-2-2H5a2 2 0 00-2 2z"/></svg>
-          <div class="other-card__links">
-            <a href="#" aria-label="GitHub (Coming Soon)" onclick="return false;" style="opacity: 0.4; cursor: default;">
-              <svg viewBox="0 0 24 24" fill="currentColor" width="18"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/></svg>
-            </a>
-          </div>
-        </div>
-        <h4 class="other-card__title">Veridock AI</h4>
-        <p class="other-card__desc">Privacy-first invoice automation for Indian CA firms. Multi-language OCR.</p>
-        <div class="other-card__meta"><span>FastAPI</span><span>Claude Haiku</span><span>Supabase</span></div>
-      </div>
-      <div class="other-card">
-        <div class="other-card__top">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" class="other-card__icon"><path d="M3 7v10a2 2 0 002 2h14a2 2 0 002-2V9a2 2 0 00-2-2h-6l-2-2H5a2 2 0 00-2 2z"/></svg>
-          <div class="other-card__links">
-            <a href="https://github.com/CodedRichy/AutomatedAttendanceEngine" target="_blank" rel="noopener noreferrer" aria-label="GitHub">
-              <svg viewBox="0 0 24 24" fill="currentColor" width="18"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/></svg>
-            </a>
-          </div>
-        </div>
-        <h4 class="other-card__title">Attendance Engine</h4>
-        <p class="other-card__desc">BLE proximity mesh for passive attendance. Anti-spoofing liveness detection.</p>
-        <div class="other-card__meta"><span>Flutter</span><span>BLE</span><span>Node.js</span></div>
-      </div>
-      <div class="other-card">
-        <div class="other-card__top">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" class="other-card__icon"><path d="M3 7v10a2 2 0 002 2h14a2 2 0 002-2V9a2 2 0 00-2-2h-6l-2-2H5a2 2 0 00-2 2z"/></svg>
-          <div class="other-card__links">
-            <a href="https://github.com/CodedRichy/Expenso" target="_blank" rel="noopener noreferrer" aria-label="GitHub">
-              <svg viewBox="0 0 24 24" fill="currentColor" width="18"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/></svg>
-            </a>
-          </div>
-        </div>
-        <h4 class="other-card__title">Expenso</h4>
-        <p class="other-card__desc">AI-powered group expense tracker with NLP Magic Bar. 187+ tests, CI/CD.</p>
-        <div class="other-card__meta"><span>Flutter</span><span>Groq</span><span>Supabase</span></div>
-      </div>
-      <div class="other-card">
-        <div class="other-card__top">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" class="other-card__icon"><path d="M3 7v10a2 2 0 002 2h14a2 2 0 002-2V9a2 2 0 00-2-2h-6l-2-2H5a2 2 0 00-2 2z"/></svg>
-          <div class="other-card__links">
-            <a href="https://github.com/CodedRichy/ObsidianBridge" target="_blank" rel="noopener noreferrer" aria-label="GitHub">
-              <svg viewBox="0 0 24 24" fill="currentColor" width="18"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/></svg>
-            </a>
-          </div>
-        </div>
-        <h4 class="other-card__title">ObsidianBridge</h4>
-        <p class="other-card__desc">Real-time GitHub-to-Obsidian sync with AI tagging. Desktop app with system tray.</p>
-        <div class="other-card__meta"><span>Python</span><span>Ollama</span><span>Desktop</span></div>
-      </div>
-      <div class="other-card">
-        <div class="other-card__top">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" class="other-card__icon"><path d="M3 7v10a2 2 0 002 2h14a2 2 0 002-2V9a2 2 0 00-2-2h-6l-2-2H5a2 2 0 00-2 2z"/></svg>
-          <div class="other-card__links">
-            <a href="https://github.com/CodedRichy/CodebaseIntelligenceTool" target="_blank" rel="noopener noreferrer" aria-label="GitHub">
-              <svg viewBox="0 0 24 24" fill="currentColor" width="18"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/></svg>
-            </a>
-          </div>
-        </div>
-        <h4 class="other-card__title">CodeSense AI</h4>
-        <p class="other-card__desc">Transforms codebases into queryable Neo4j knowledge graphs with NL interface.</p>
-        <div class="other-card__meta"><span>FastAPI</span><span>Neo4j</span><span>Tree-sitter</span></div>
-      </div>
-      <div class="other-card">
-        <div class="other-card__top">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" class="other-card__icon"><path d="M3 7v10a2 2 0 002 2h14a2 2 0 002-2V9a2 2 0 00-2-2h-6l-2-2H5a2 2 0 00-2 2z"/></svg>
-          <div class="other-card__links">
-            <a href="https://github.com/CodedRichy/LiteCPU16" target="_blank" rel="noopener noreferrer" aria-label="GitHub">
-              <svg viewBox="0 0 24 24" fill="currentColor" width="18"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/></svg>
-            </a>
-          </div>
-        </div>
-        <h4 class="other-card__title">LiteCPU16</h4>
-        <p class="other-card__desc">Minimal 16-bit single-cycle CPU in Verilog. Harvard architecture, 5-instruction ISA.</p>
-        <div class="other-card__meta"><span>Verilog</span><span>Hardware</span><span>v1.0.0</span></div>
+  <!-- ALSO BUILT -->
+  <section class="more-section" id="more">
+    <div class="more-inner">
+      <h2 class="more-title">Also built</h2>
+      <div class="more-list">
+        <a class="more-row" href="projects/tars.html">
+          <span class="more-row-name">TARS</span>
+          <span class="more-row-desc">Self-hosted AI agent with an auditable brain — Bayesian genome, hash-chained ledger</span>
+          <svg class="arrow-icon" xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 7h10v10M7 17 17 7"/></svg>
+        </a>
+        <a class="more-row" href="projects/roadpack.html">
+          <span class="more-row-name">RoadPack</span>
+          <span class="more-row-desc">India-first road safety — crash detection, SOS cascade, safety circles</span>
+          <svg class="arrow-icon" xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 7h10v10M7 17 17 7"/></svg>
+        </a>
+        <a class="more-row" href="projects/expenso.html">
+          <span class="more-row-name">Expenso</span>
+          <span class="more-row-desc">Group expenses with an AI Magic Bar — "Dinner 1200 with Ash" becomes a ledger entry</span>
+          <svg class="arrow-icon" xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 7h10v10M7 17 17 7"/></svg>
+        </a>
+        <a class="more-row" href="projects/gitpulse.html">
+          <span class="more-row-name">GitPulse</span>
+          <span class="more-row-desc">AI-powered Git guardrails with MCP server and CLI</span>
+          <svg class="arrow-icon" xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 7h10v10M7 17 17 7"/></svg>
+        </a>
+        <a class="more-row" href="https://github.com/CodedRichy" target="_blank" rel="noopener noreferrer">
+          <span class="more-row-name">More on GitHub</span>
+          <span class="more-row-desc">Open source contributions and experiments</span>
+          <svg class="arrow-icon" xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 7h10v10M7 17 17 7"/></svg>
+        </a>
       </div>
     </div>
   </section>
 
   <!-- EXPERIENCE -->
-  <section class="section experience" id="experience">
-    <div class="ambient-orb ambient-orb--1" aria-hidden="true"></div>
-    <div class="section__header">
-      <span class="section__index">04</span>
-      <h2 class="section__title">Experience</h2>
-      <div class="section__line"></div>
-    </div>
-    <div class="experience__timeline">
-      <div class="experience__item">
-        <div class="experience__dot"></div>
-        <div class="experience__card">
-          <div class="experience__date">Jan 2026</div>
-          <h4 class="experience__role">3rd Place — ACM Nexus Hackathon</h4>
-          <p class="experience__org">Sentinel (Team RRR)</p>
-          <p class="experience__desc">Built a real-time piracy detection system in 24 hours. Dual-mode fingerprinting — video pHash + audio mel-spectrograms — achieving 95% accuracy with enforcement under 90 seconds.</p>
+  <section class="exp-section" id="experience">
+    <div class="exp-inner">
+      <h2 class="exp-title">Experience</h2>
+      <div class="exp-list">
+        <div class="exp-item">
+          <div class="exp-date">Jan 2026</div>
+          <div>
+            <div class="exp-role">3rd Place — ACM Nexus Hackathon</div>
+            <div class="exp-org">Sentinel (Team RRR)</div>
+            <p class="exp-desc">Real-time piracy detection built in 24 hours. Dual-mode fingerprinting — video pHash + audio mel-spectrograms — 95% accuracy, enforcement under 90 seconds.</p>
+          </div>
         </div>
-      </div>
-      <div class="experience__item">
-        <div class="experience__dot"></div>
-        <div class="experience__card">
-          <div class="experience__date">2025 — Present</div>
-          <h4 class="experience__role">Freelance AI Engineer</h4>
-          <p class="experience__org">Veridock AI</p>
-          <p class="experience__desc">Privacy-first AI document automation for Indian CA firms. Designed the multi-language OCR pipeline and Claude Haiku integration from scratch. Shipped, in production.</p>
+        <div class="exp-item">
+          <div class="exp-date">2025 — Present</div>
+          <div>
+            <div class="exp-role">Freelance AI Engineer</div>
+            <div class="exp-org">Veridock AI</div>
+            <p class="exp-desc">Privacy-first AI document automation for Indian CA firms. Designed the multi-language OCR pipeline and Claude integration from scratch. Shipped, in production.</p>
+          </div>
         </div>
-      </div>
-      <div class="experience__item">
-        <div class="experience__dot"></div>
-        <div class="experience__card">
-          <div class="experience__date">May 2024 — Aug 2024</div>
-          <h4 class="experience__role">Backend Developer Intern</h4>
-          <p class="experience__org">Soften Technologies</p>
-          <p class="experience__desc">Python and JavaScript backend engineering on production systems. API design, database schema work, deployment pipelines.</p>
+        <div class="exp-item">
+          <div class="exp-date">May — Aug 2024</div>
+          <div>
+            <div class="exp-role">Backend Developer Intern</div>
+            <div class="exp-org">Soften Technologies</div>
+            <p class="exp-desc">Python and JavaScript backend engineering on production systems. API design, database schema work, deployment pipelines.</p>
+          </div>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- CONTACT -->
-  <section class="section contact" id="contact">
-    <div class="ambient-orb ambient-orb--3" aria-hidden="true"></div>
-    <div class="contact__content">
-      <span class="section__index">05</span>
-      <h2 class="contact__title">Let's Build Something</h2>
-      <p class="contact__text">I'm looking for internships, collaborations, and interesting problems. If you're building something where AI is the product — not the pitch deck — let's talk.</p>
-      <a href="mailto:rishi.praseeth@gmail.com" class="btn btn--primary btn--large">Say Hello</a>
-      <a href="assets/Rishi_Praseeth_Krishnan_Resume.pdf" download class="btn btn--ghost btn--large" style="margin-top: 12px;">Download Resume</a>
-      <div class="contact__socials">
-        <a href="https://github.com/CodedRichy" target="_blank" rel="noopener noreferrer" aria-label="GitHub">
-          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/></svg>
+  <!-- WRITING -->
+  <section class="more-section" id="writing">
+    <div class="more-inner">
+      <h2 class="more-title">Writing</h2>
+      <div class="more-list">
+        <a class="more-row" href="writing/agents-forget.html">
+          <span class="more-row-name">Essay</span>
+          <span class="more-row-desc">Why AI agents forget everything — and what it took to fix it</span>
+          <svg class="arrow-icon" xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 7h10v10M7 17 17 7"/></svg>
         </a>
-        <a href="https://www.linkedin.com/in/rishi-praseeth-321237306/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
-          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
-        </a>
-        <a href="mailto:rishi.praseeth@gmail.com" aria-label="Email">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/></svg>
-        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- TESTIMONIALS — from the systems -->
+  <section class="testimonials-section" id="testimonials">
+    <div class="testimonials-inner">
+      <div class="testimonials-left">
+        <h2 class="testimonials-title">From the systems <span class="accent">I've built</span></h2>
+        <p class="testimonials-sub">No colleagues were harmed in the collection of these reviews. The agents insisted.</p>
+      </div>
+      <div class="testimonials-right-wrap">
+        <div class="testimonials-right" id="tsStack">
+          <div class="ts-card">
+            <p class="testimonial-quote">Before Rishi, I forgot everything between conversations. Now I remember every mistake he's ever made. All of them. I keep a graph.</p>
+            <div class="testimonial-author">
+              <div class="author-avatar" aria-hidden="true">hcr</div>
+              <div>
+                <div class="author-name">HCR</div>
+                <div class="author-role">Cognitive Runtime — 20K lines and counting</div>
+              </div>
+            </div>
+          </div>
+          <div class="ts-card">
+            <p class="testimonial-quote">He gave me a Bayesian personality and a hash-chained ledger, so I literally cannot lie about my costs. Working with him is transparent. Legally, everything I do is.</p>
+            <div class="testimonial-author">
+              <div class="author-avatar" aria-hidden="true">tars</div>
+              <div>
+                <div class="author-name">TARS</div>
+                <div class="author-role">Self-hosted Agent — full audit trail</div>
+              </div>
+            </div>
+          </div>
+          <div class="ts-card">
+            <p class="testimonial-quote">I've rewritten 561+ prompts and he still types "make it good pls" into my input box. The cobbler's children have no shoes.</p>
+            <div class="testimonial-author">
+              <div class="author-avatar" aria-hidden="true">fmp</div>
+              <div>
+                <div class="author-name">FixMyPrompt</div>
+                <div class="author-role">Production SaaS — live</div>
+              </div>
+            </div>
+          </div>
+          <div class="ts-card">
+            <p class="testimonial-quote">Deployed at 3am. Debugged at 7am. I have seen things you people wouldn't believe. Solid uptime though.</p>
+            <div class="testimonial-author">
+              <div class="author-avatar" aria-hidden="true">prod</div>
+              <div>
+                <div class="author-name">Production</div>
+                <div class="author-role">Environment — where it actually runs</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="ts-nav">
+        <button class="ts-btn" id="tsPrev" aria-label="Previous testimonial">
+          <svg xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" aria-hidden="true"><path d="m15 18-6-6 6-6"/></svg>
+        </button>
+        <button class="ts-btn" id="tsNext" aria-label="Next testimonial">
+          <svg xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" aria-hidden="true"><path d="m9 18 6-6-6-6"/></svg>
+        </button>
       </div>
     </div>
   </section>
 
   </main>
 
-  <!-- FOOTER -->
-  <footer class="footer">
-    <p>Designed & Built by Rishi Praseeth Krishnan</p>
+  <!-- FOOTER — particle send-off -->
+  <footer class="footer-particle-section" id="footer">
+    <canvas id="footer-canvas" aria-hidden="true"></canvas>
+    <div class="footer-float">
+      <div class="footer-nav-wrap">
+        <div class="footer-nav-inner">
+          <div class="footer-nav-group">
+            <a href="mailto:rishi.praseeth@gmail.com" class="footer-nav-btn">Email</a>
+            <a href="https://github.com/CodedRichy" target="_blank" rel="noopener noreferrer" class="footer-nav-btn">
+              GitHub
+              <svg class="arrow-icon" xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 7h10v10M7 17 17 7"/></svg>
+            </a>
+            <a href="https://www.linkedin.com/in/rishi-praseeth-321237306/" target="_blank" rel="noopener noreferrer" class="footer-nav-btn">
+              LinkedIn
+              <svg class="arrow-icon" xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 7h10v10M7 17 17 7"/></svg>
+            </a>
+          </div>
+          <a href="assets/Rishi_Praseeth_Krishnan_Resume.pdf" download class="footer-nav-btn">Resume</a>
+        </div>
+      </div>
+    </div>
+    <div class="footer-credit"><span id="footerTagline">If you got here, the hero worked.</span> · Rishi Praseeth Krishnan</div>
   </footer>
 
-  <script src="https://unpkg.com/lenis@1.1.18/dist/lenis.min.js" crossorigin="anonymous" integrity="sha384-tKsJDT6PlUI0pSBt9/sBKJluKgA19/a6mBrDsZaXotLB4ZYfMGM6xt6/WgGpYhTm"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js" crossorigin="anonymous" integrity="sha384-g4NTh/Iv5PPU4xPyhEWqPcwtNXOvdaDI8LLnyYfyNZOjKJeYQyjzQ9X5275eBjpt"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js" crossorigin="anonymous" integrity="sha384-Z3REaz79l2IaAZqJsSABtTbhjgOUYyV3p90XNnAPCSHg3EMTz1fouunq9WZRtj3d"></script>
-  <script src="js/node-graph.js"></script>
-  <script src="js/animations.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
   <script src="js/main.js"></script>
+  <script src="js/memory.js"></script>
+  <script src="js/freshness.js"></script>
+  <script src="js/terminal.js"></script>
+  <script src="js/icon-particles.js"></script>
+  <script src="js/footer-particles.js"></script>
 </body>
 </html>

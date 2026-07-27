@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Why AI agents forget everything — Rishi Praseeth Krishnan</title>
+  <meta name="description" content="AI agents are goldfish with API keys. An essay on why statelessness is the real bottleneck, and what building a persistent cognitive runtime taught me.">
+  <link rel="icon" href="../favicon.ico" sizes="any">
+  <link rel="icon" type="image/png" href="../assets/favicon-32x32.png" sizes="32x32">
+  <link rel="icon" type="image/png" href="../assets/favicon-16x16.png" sizes="16x16">
+  <link rel="apple-touch-icon" href="../assets/apple-touch-icon.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../css/tokens.css">
+  <link rel="stylesheet" href="../css/style.css">
+  <script>
+    (function () {
+      var t = localStorage.getItem('rpk-theme');
+      if (t) document.documentElement.setAttribute('data-theme', t);
+    })();
+  </script>
+</head>
+<body>
+
+  <header class="site-header" id="siteHeader">
+    <div class="nav-wrap" id="navWrap">
+      <div class="nav-inner">
+        <a href="../index.html" class="nav-logo">Rishi Praseeth Krishnan</a>
+        <nav class="nav-links" aria-label="Primary">
+          <a href="../index.html#work" class="nav-btn">Work</a>
+          <a href="../index.html#experience" class="nav-btn">Experience</a>
+          <a href="https://github.com/CodedRichy" target="_blank" rel="noopener noreferrer" class="nav-btn">
+            GitHub
+            <svg class="arrow-icon" xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 7h10v10M7 17 17 7"/></svg>
+          </a>
+          <span class="nav-divider" aria-hidden="true"></span>
+        </nav>
+        <div style="display:flex;align-items:center;">
+          <button class="nav-menu-btn" id="menuBtn" aria-label="Toggle menu" aria-expanded="false">
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="none" viewBox="0 0 24 24" aria-hidden="true"><path stroke="currentColor" stroke-linecap="round" stroke-width="2" d="M3 6h18M3 12h18M3 18h18"/></svg>
+          </button>
+          <button class="theme-btn" id="themeToggle" aria-label="Toggle theme">
+            <svg class="icon-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M4.93 19.07l1.41-1.41M17.66 6.34l1.41-1.41"/></svg>
+            <svg class="icon-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+          </button>
+        </div>
+      </div>
+      <div class="nav-menu-panel" id="navMenuPanel">
+        <a href="../index.html#work" class="nav-btn">Work</a>
+        <a href="../index.html#experience" class="nav-btn">Experience</a>
+        <a href="https://github.com/CodedRichy" target="_blank" rel="noopener noreferrer" class="nav-btn">GitHub</a>
+      </div>
+    </div>
+  </header>
+
+  <main class="project-page">
+  <section>
+    <a href="../index.html#writing" class="project-back">
+      <svg class="arrow-icon" xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" aria-hidden="true"><path d="M19 12H5m7 7-7-7 7-7"/></svg>
+      Back
+    </a>
+    <div class="project-tags">
+      <span class="tag">Essay</span>
+      <span class="tag">AI Memory</span>
+      <span class="tag">July 2026</span>
+    </div>
+    <h1 class="project-hero-title">Why AI agents forget everything</h1>
+    <p class="project-hero-sub">The smartest software ever built has the memory of a goldfish. I spent 20,000 lines of code finding out why that's the real bottleneck — and what fixing it actually takes.</p>
+  </section>
+
+  <section class="project-section">
+    <p>Ask an AI agent to fix a bug today, and it will do a genuinely impressive job. Ask it again tomorrow, and it will re-read your codebase, re-derive your conventions, re-discover the gotcha it hit yesterday, and — with unsettling confidence — walk straight into the same wall it walked into last time. Nothing carried over. The agent that helped you yesterday is, functionally, dead. You're talking to its twin.</p>
+    <p>This isn't a model problem. The models are remarkable. It's an architecture problem: we've built brilliant reasoners on top of a runtime that wipes itself after every conversation. Statelessness was a fine assumption for chatbots. For agents doing real, multi-day work, it's the bottleneck nobody prices in — every session pays a tax of re-explanation, re-exploration, and repeated mistakes.</p>
+  </section>
+
+  <section class="project-section">
+    <h2>Chat logs are not memory</h2>
+    <p>The obvious fix is to store the transcript and stuff it back in next time. Everyone tries this first. I tried this first. It fails for the same reason your bank statement isn't a biography: a transcript records what was said, not what was learned.</p>
+    <p>Real memory is structured. When you debug something at 3am, what you keep isn't the terminal scrollback — it's the causal chain: <em>I assumed X, tried Y, it failed because Z</em>. The lesson lives in the links between events, not the events themselves. Feed an agent raw transcripts and it drowns in its own history; the context window fills with noise long before it fills with knowledge.</p>
+  </section>
+
+  <section class="project-section">
+    <h2>What fixing it took</h2>
+    <p>HCR — the Hybrid Cognitive Runtime — is my answer, and it's built on three primitives that took most of those 20,000 lines to get right.</p>
+    <p><strong>Cognitive State Objects.</strong> Instead of transcripts, HCR snapshots the agent's actual reasoning context — beliefs, goals, active plans, working memory — as a structured, queryable object. When a session resumes, the agent doesn't re-read history. Its state is restored, and it continues mid-thought.</p>
+    <p><strong>A causal event graph.</strong> Every decision links to its outcome. "Why did we choose SQLite?" is a graph traversal, not an archaeology dig. And crucially, failure is first-class: an approach that failed once is recorded as failed, with its reason, so the agent can refuse to repeat it. Never making the same mistake twice stops being a slogan and becomes a query.</p>
+    <p><strong>Episode boundaries.</strong> Memory that never forgets the wrong things is just as useless as memory that forgets everything. HCR uses Bayesian online changepoint detection to notice when the work has shifted — new task, new episode — so context from one problem doesn't bleed into the next.</p>
+    <p>All of it is exposed through 40+ MCP tools, which means any MCP-compatible agent can borrow this brain. The measurable result: 41% fewer tokens than a stateless baseline doing the same work, because remembering is cheaper than re-deriving. Every time.</p>
+  </section>
+
+  <section class="project-section">
+    <h2>The thesis, everywhere</h2>
+    <p>Once you see statelessness as the bottleneck, you see it everywhere, and most of what I build is some version of the same answer. TARS keeps a hash-chained ledger so an agent can't misremember its own actions. Even this website remembers you — visits, the projects you've read, your theme — because a portfolio arguing that intelligence is persistent state should probably practice what it preaches.</p>
+    <p>The next generation of agents won't win by being smarter per-token. The frontier models are converging; raw reasoning is becoming a commodity. They'll win by accumulating — by being the agent that has already made the mistakes, already learned your codebase, already knows what failed in March. Intelligence compounds only if it persists.</p>
+    <p>Goldfish don't compound.</p>
+  </section>
+
+  <nav class="project-section" aria-label="Essay navigation">
+    <div class="project-links">
+      <a href="../projects/hcr.html">Read the HCR case study</a>
+      <a href="../index.html#work">Back to work</a>
+    </div>
+  </nav>
+  </main>
+
+  <footer style="padding: 48px 0 24px; text-align: center; font-size: var(--font-size-1); color: var(--text-tertiary);">
+    Rishi Praseeth Krishnan
+  </footer>
+
+  <script src="../js/main.js"></script>
+  <script src="../js/memory.js"></script>
+  <script src="../js/terminal.js"></script>
+</body>
+</html>

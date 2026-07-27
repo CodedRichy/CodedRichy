@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Sentinel — Rishi Praseeth Krishnan</title>
-  <meta name="description" content="Real-time piracy detection with dual-mode fingerprinting. Video pHash + audio mel-spectrograms. 95% accuracy, 3rd place ACM Nexus.">
+  <title>Veridock — Rishi Praseeth Krishnan</title>
+  <meta name="description" content="AI document automation for Indian CA firms. 3-layer OCR pipeline, vendor matching with alias learning, 150 tests passing. In production.">
   <link rel="icon" href="../favicon.ico" sizes="any">
   <link rel="icon" type="image/png" href="../assets/favicon-32x32.png" sizes="32x32">
   <link rel="icon" type="image/png" href="../assets/favicon-16x16.png" sizes="16x16">
@@ -61,61 +61,56 @@
       Back to work
     </a>
     <div class="project-tags">
-      <span class="tag">Computer Vision</span>
-      <span class="tag">Audio Processing</span>
-      <span class="tag">Team Project</span>
-      <span class="tag">3rd Place — ACM Nexus 2026</span>
+      <span class="tag">AI Document Automation</span>
+      <span class="tag">Client Work</span>
+      <span class="tag tag--accent">In Production</span>
     </div>
-    <h1 class="project-hero-title">Sentinel</h1>
-    <p class="project-hero-sub">Real-time piracy detection using dual-mode content fingerprinting. Video perceptual hashing combined with audio mel-spectrogram analysis achieves 95% accuracy with an enforcement window under 90 seconds.</p>
-    <div class="project-links">
-      <a href="https://github.com/CodedRichy/15_RRR_ACMNexus26" target="_blank" rel="noopener noreferrer">View on GitHub</a>
-    </div>
+    <h1 class="project-hero-title">Veridock</h1>
+    <p class="project-hero-sub">AI document automation built for Indian CA firms. A privacy-first pipeline that turns scanned invoices into validated, vendor-matched ledger data — 9 phases complete, 150 tests passing, running in production.</p>
   </section>
 
   <section class="project-section">
     <h2>By the Numbers</h2>
     <ul>
-      <li><strong>95%</strong> &mdash; Detection Accuracy</li>
-      <li><strong>&lt;90s</strong> &mdash; Enforcement Window</li>
-      <li><strong>114</strong> &mdash; Commits</li>
-      <li><strong>3rd</strong> &mdash; Place — ACM Nexus</li>
+      <li><strong>9</strong> &mdash; Phases Complete</li>
+      <li><strong>150</strong> &mdash; Tests Passing</li>
+      <li><strong>3</strong> &mdash; OCR Pipeline Layers</li>
+      <li><strong>7</strong> &mdash; Database Tables</li>
     </ul>
   </section>
 
   <section class="project-section">
     <h2>The Problem</h2>
-    <p>Pirated content spreads faster than manual takedown processes can handle. Traditional detection relies on exact file matching or metadata comparison — both trivially defeated by re-encoding, cropping, or speed changes.</p>
-    <p>Sentinel uses perceptual fingerprinting: it identifies content by what it looks and sounds like, not by its file signature. Re-encode, crop, speed up — the fingerprint persists.</p>
+    <p>Chartered Accountancy firms drown in manual document entry. Every invoice that arrives gets read, keyed in, and cross-checked by hand — slow, error-prone, and impossible to scale during filing season.</p>
+    <p>The constraint that shaped everything: privacy. This is Indian client financial data, so the system was built privacy-first from day one rather than bolted on later.</p>
   </section>
 
   <section class="project-section">
     <h2>Architecture</h2>
-    <p>Dual-mode detection runs in parallel. The video pipeline extracts frames, computes perceptual hashes (pHash), and compares against a fingerprint database using Hamming distance. The audio pipeline converts audio to mel-spectrograms and runs similarity matching on frequency patterns.</p>
-    <p>A fusion layer combines both signals — content must match on both channels to trigger enforcement, reducing false positives. The React dashboard provides real-time monitoring, and Groq handles natural language reporting.</p>
+    <p>A FastAPI backend scaffolds the whole system: PostgreSQL via Supabase (7 tables), JWT authentication through fastapi-users, and Brevo webhooks feeding documents into the pipeline. Celery workers backed by Redis handle async processing, with uploads stored in Cloudflare R2.</p>
+    <p>The core is a 3-layer OCR pipeline: OpenCV preprocessing cleans the scan, Claude Haiku extracts structured fields, and a GSTIN validation layer verifies the output against India's GST identifier format. Extraction is never trusted blindly — it is validated before it lands in the ledger.</p>
   </section>
 
   <section class="project-section">
     <h2>Key Features</h2>
     <ul>
-      <li><strong>Video pHash Detection</strong> &mdash; Perceptual hashing on extracted frames. Resistant to re-encoding, resolution changes, cropping, and minor edits. Hamming distance threshold matching.</li>
-      <li><strong>Audio Mel-Spectrogram</strong> &mdash; Frequency-domain audio analysis via mel-spectrograms. Catches audio even when video is altered. Handles speed changes and compression artifacts.</li>
-      <li><strong>Dual-Mode Fusion</strong> &mdash; Both video and audio must match to trigger enforcement. Dramatically reduces false positives while maintaining 95% true positive rate.</li>
-      <li><strong>Real-Time Dashboard</strong> &mdash; React frontend showing detection events, confidence scores, and enforcement actions in real-time. Visual fingerprint comparison for manual review.</li>
-      <li><strong>&lt;90 Second Response</strong> &mdash; From content upload to enforcement action in under 90 seconds. Fast enough for live streaming platforms and rapid-distribution channels.</li>
-      <li><strong>AI-Powered Reporting</strong> &mdash; Groq generates natural language reports for each detection event — human-readable summaries of what was detected, confidence levels, and recommended actions.</li>
+      <li><strong>3-Layer OCR Pipeline</strong> &mdash; OpenCV preprocessing, Claude Haiku extraction, and GSTIN validation. Each layer catches what the previous one can't.</li>
+      <li><strong>Vendor Matching That Learns</strong> &mdash; Fuzzy matching handles messy vendor names, Haiku disambiguates ambiguous cases, and alias learning records the resolution — so the system gets more accurate with every document processed.</li>
+      <li><strong>Async Processing</strong> &mdash; Celery and Redis keep OCR and matching off the request path. Documents flow in via Brevo webhooks and process in the background.</li>
+      <li><strong>Privacy-First Storage</strong> &mdash; Client documents live in Cloudflare R2 with access controlled through authenticated APIs, built for the sensitivity of Indian client financial data.</li>
+      <li><strong>Production Discipline</strong> &mdash; 9 phases built and shipped with 150 passing tests behind them.</li>
     </ul>
   </section>
 
   <section class="project-section">
     <h2>Tech Stack</h2>
-    <p>Python &middot; Flask &middot; OpenCV &middot; librosa &middot; React &middot; Groq &middot; NumPy &middot; FFmpeg</p>
+    <p>Python &middot; FastAPI &middot; PostgreSQL/Supabase &middot; Celery &middot; Redis &middot; OpenCV &middot; Claude Haiku &middot; Cloudflare R2 &middot; Brevo</p>
   </section>
 
   <nav class="project-section" aria-label="Project navigation">
     <div class="project-links">
-      <a href="food-chain.html">Previous: Food Chain Ideation</a>
-      <a href="tars.html">Next Project: TARS</a>
+      <a href="fixmyprompt.html">Previous: FixMyPrompt</a>
+      <a href="corvus.html">Next Project: Corvus</a>
     </div>
   </nav>
   </main>

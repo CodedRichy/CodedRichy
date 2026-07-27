@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Sentinel — Rishi Praseeth Krishnan</title>
-  <meta name="description" content="Real-time piracy detection with dual-mode fingerprinting. Video pHash + audio mel-spectrograms. 95% accuracy, 3rd place ACM Nexus.">
+  <title>Food Chain Ideation — Rishi Praseeth Krishnan</title>
+  <meta name="description" content="A Claude Code plugin that stress-tests startup ideas with 68 adversarial AI agents in live elimination rounds. Survived, restructured, or killed.">
   <link rel="icon" href="../favicon.ico" sizes="any">
   <link rel="icon" type="image/png" href="../assets/favicon-32x32.png" sizes="32x32">
   <link rel="icon" type="image/png" href="../assets/favicon-16x16.png" sizes="16x16">
@@ -61,61 +61,50 @@
       Back to work
     </a>
     <div class="project-tags">
-      <span class="tag">Computer Vision</span>
-      <span class="tag">Audio Processing</span>
-      <span class="tag">Team Project</span>
-      <span class="tag">3rd Place — ACM Nexus 2026</span>
+      <span class="tag">Claude Code Plugin</span>
+      <span class="tag">Multi-Agent</span>
+      <span class="tag tag--accent">Shipped</span>
     </div>
-    <h1 class="project-hero-title">Sentinel</h1>
-    <p class="project-hero-sub">Real-time piracy detection using dual-mode content fingerprinting. Video perceptual hashing combined with audio mel-spectrogram analysis achieves 95% accuracy with an enforcement window under 90 seconds.</p>
+    <h1 class="project-hero-title">Food Chain Ideation</h1>
+    <p class="project-hero-sub">A shipped Claude Code plugin that stress-tests startup ideas with adversarial AI agents. 68 AI "animals" across three libraries attack an idea from every angle in live elimination rounds — until it survives, restructures, or dies. Installable via <code>claude plugin marketplace add CodedRichy/food-chain-ideation</code>.</p>
     <div class="project-links">
-      <a href="https://github.com/CodedRichy/15_RRR_ACMNexus26" target="_blank" rel="noopener noreferrer">View on GitHub</a>
+      <a href="https://github.com/CodedRichy/food-chain-ideation" target="_blank" rel="noopener noreferrer">View on GitHub</a>
     </div>
-  </section>
-
-  <section class="project-section">
-    <h2>By the Numbers</h2>
-    <ul>
-      <li><strong>95%</strong> &mdash; Detection Accuracy</li>
-      <li><strong>&lt;90s</strong> &mdash; Enforcement Window</li>
-      <li><strong>114</strong> &mdash; Commits</li>
-      <li><strong>3rd</strong> &mdash; Place — ACM Nexus</li>
-    </ul>
   </section>
 
   <section class="project-section">
     <h2>The Problem</h2>
-    <p>Pirated content spreads faster than manual takedown processes can handle. Traditional detection relies on exact file matching or metadata comparison — both trivially defeated by re-encoding, cropping, or speed changes.</p>
-    <p>Sentinel uses perceptual fingerprinting: it identifies content by what it looks and sounds like, not by its file signature. Re-encode, crop, speed up — the fingerprint persists.</p>
+    <p>Founders validate ideas by asking friendly people friendly questions. The market is not friendly. What an idea needs before a line of code is written is a hostile environment — reviewers with different incentives, each hunting for the one flaw that kills it.</p>
+    <p>Food Chain Ideation builds that environment: an ecosystem of adversarial agents where your idea is the prey, and only theses that deserve to survive do.</p>
   </section>
 
   <section class="project-section">
-    <h2>Architecture</h2>
-    <p>Dual-mode detection runs in parallel. The video pipeline extracts frames, computes perceptual hashes (pHash), and compares against a fingerprint database using Hamming distance. The audio pipeline converts audio to mel-spectrograms and runs similarity matching on frequency patterns.</p>
-    <p>A fusion layer combines both signals — content must match on both channels to trigger enforcement, reducing false positives. The React dashboard provides real-time monitoring, and Groq handles natural language reporting.</p>
+    <h2>How It Works</h2>
+    <p>68 AI "animals" across three libraries attack an idea from every angle in live elimination rounds. Each attacker is isolated and role-locked, and after every patch it is forced to find a new angle — no recycling the same objection. Agents consume each other to consolidate arguments, and the idea gets patched between rounds.</p>
+    <p>Every battle ends in one of three outcomes: <strong>survived</strong> — the thesis held under attack; <strong>restructured</strong> — the original framing died but a pivot was found; or <strong>killed</strong> — the problem doesn't exist. The repo ships battle transcripts demonstrating all three.</p>
   </section>
 
   <section class="project-section">
     <h2>Key Features</h2>
     <ul>
-      <li><strong>Video pHash Detection</strong> &mdash; Perceptual hashing on extracted frames. Resistant to re-encoding, resolution changes, cropping, and minor edits. Hamming distance threshold matching.</li>
-      <li><strong>Audio Mel-Spectrogram</strong> &mdash; Frequency-domain audio analysis via mel-spectrograms. Catches audio even when video is altered. Handles speed changes and compression artifacts.</li>
-      <li><strong>Dual-Mode Fusion</strong> &mdash; Both video and audio must match to trigger enforcement. Dramatically reduces false positives while maintaining 95% true positive rate.</li>
-      <li><strong>Real-Time Dashboard</strong> &mdash; React frontend showing detection events, confidence scores, and enforcement actions in real-time. Visual fingerprint comparison for manual review.</li>
-      <li><strong>&lt;90 Second Response</strong> &mdash; From content upload to enforcement action in under 90 seconds. Fast enough for live streaming platforms and rapid-distribution channels.</li>
-      <li><strong>AI-Powered Reporting</strong> &mdash; Groq generates natural language reports for each detection event — human-readable summaries of what was detected, confidence levels, and recommended actions.</li>
+      <li><strong>68 Adversarial Agents</strong> &mdash; Prompt-engineered animal personas across three libraries, each attacking from a distinct role and angle.</li>
+      <li><strong>Live Elimination Rounds</strong> &mdash; Attackers are isolated and role-locked; each patch forces them to find a fresh angle of attack.</li>
+      <li><strong>Agent Consumption</strong> &mdash; Agents consume each other to consolidate arguments, so the strongest objections rise up the food chain.</li>
+      <li><strong>Patch-Between-Rounds Loop</strong> &mdash; The idea evolves under fire; each round tests the patched thesis, not the original.</li>
+      <li><strong>Three Honest Outcomes</strong> &mdash; Survived, restructured, or killed — with battle transcripts included that demonstrate all three.</li>
+      <li><strong>One-Command Install</strong> &mdash; Published to the Claude Code plugin marketplace: <code>claude plugin marketplace add CodedRichy/food-chain-ideation</code>.</li>
     </ul>
   </section>
 
   <section class="project-section">
     <h2>Tech Stack</h2>
-    <p>Python &middot; Flask &middot; OpenCV &middot; librosa &middot; React &middot; Groq &middot; NumPy &middot; FFmpeg</p>
+    <p>Claude Code plugin/skill system &middot; 68 prompt-engineered agent personas &middot; Markdown battle transcripts</p>
   </section>
 
   <nav class="project-section" aria-label="Project navigation">
     <div class="project-links">
-      <a href="food-chain.html">Previous: Food Chain Ideation</a>
-      <a href="tars.html">Next Project: TARS</a>
+      <a href="corvus.html">Previous: Corvus</a>
+      <a href="sentinel.html">Next Project: Sentinel</a>
     </div>
   </nav>
   </main>

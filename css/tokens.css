@@ -1,0 +1,153 @@
+/* ==========================================================================
+   Design Tokens — colin.cv system, Rishi edition
+   Light-first warm white, chai amber accent, narrow editorial column.
+   ========================================================================== */
+
+/* ---- Font Faces ---- */
+
+@font-face {
+  font-family: 'Satoshi';
+  src: url('../assets/fonts/Satoshi-Variable.woff2') format('woff2');
+  font-weight: 300 900;
+  font-style: normal;
+  font-display: swap;
+}
+
+/* ---- Light Theme (default) ---- */
+
+:root {
+  color-scheme: light;
+
+  /* Colors */
+  --background: #fcfcfa;
+  --surface: #f6f6f6;
+  --card-bg: #ffffff;
+  --text-primary: #323c4f;
+  --text-secondary: #6b6e76;
+  --text-tertiary: #565c66;
+  --accent: oklch(0.58 0.13 65); /* burnt chai ~#ab6d1a */
+  --accent-hover: oklch(0.50 0.13 65);
+  --accent-subtle: oklch(0.58 0.13 65 / 0.07);
+  --border-color: rgba(50, 60, 79, 0.11);
+  --nav-bg: rgba(255, 255, 255, 0.82);
+
+  /* Typography */
+  --font-sans: 'Satoshi', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  --font-serif: 'Instrument Serif', Georgia, serif;
+  --font-mono: 'JetBrains Mono', 'Cascadia Code', monospace;
+
+  --font-size-1: 11px;
+  --font-size-2: 13px;
+  --font-size-3: 14px;
+  --font-size-4: 16px;
+  --font-size-5: 18px;
+  --font-size-6: 22px;
+  --font-size-7: 30px;
+  --font-size-8: 44px;
+
+  /* Spacing */
+  --space-1: 4px;
+  --space-2: 8px;
+  --space-3: 12px;
+  --space-4: 16px;
+  --space-5: 20px;
+  --space-6: 24px;
+  --space-7: 32px;
+  --space-8: 40px;
+  --space-9: 48px;
+  --space-10: 64px;
+
+  /* Narrow editorial column: 700px content, huge gutters on wide screens */
+  --gutter: clamp(24px, (100vw - 700px) / 2, 325px);
+
+  /* Radius */
+  --radius-1: 4px;
+  --radius-2: 8px;
+  --radius-3: 12px;
+  --radius-4: 16px;
+  --radius-5: 20px;
+
+  /* Shadows */
+  --shadow-sm: 0 1px 3px rgba(50,60,79,0.07), 0 1px 2px rgba(50,60,79,0.04);
+  --shadow-md: 0 4px 16px rgba(50,60,79,0.08), 0 1px 4px rgba(50,60,79,0.05);
+  --shadow-lg: 0 12px 40px rgba(50,60,79,0.10), 0 4px 12px rgba(50,60,79,0.06);
+
+  /* Motion */
+  --ease-pop: cubic-bezier(0.34, 1.25, 0.64, 1);
+  --ease-smooth: cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* ---- Dark Theme (system preference) ---- */
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    color-scheme: dark;
+    --background: #0d0f12;
+    --surface: #1c2128;
+    --card-bg: #161a1f;
+    --text-primary: #e8eaed;
+    --text-secondary: #8b9099;
+    --text-tertiary: #9ba1a5;
+    --accent: oklch(0.78 0.12 70); /* chai amber ~#e3a75f */
+    --accent-hover: oklch(0.84 0.10 75);
+    --accent-subtle: oklch(0.78 0.12 70 / 0.1);
+    --border-color: rgba(255,255,255,0.08);
+    --nav-bg: rgba(22, 26, 31, 0.85);
+    --shadow-sm: 0 1px 3px rgba(0,0,0,0.3);
+    --shadow-md: 0 4px 16px rgba(0,0,0,0.3);
+    --shadow-lg: 0 12px 40px rgba(0,0,0,0.4);
+  }
+}
+
+/* ---- Manual Toggle: Dark ---- */
+
+:root[data-theme="dark"] {
+  color-scheme: dark;
+  --background: #0d0f12;
+  --surface: #1c2128;
+  --card-bg: #161a1f;
+  --text-primary: #e8eaed;
+  --text-secondary: #8b9099;
+  --text-tertiary: #9ba1a5;
+  --accent: oklch(0.78 0.12 70); /* chai amber ~#e3a75f */
+  --accent-hover: oklch(0.84 0.10 75);
+  --accent-subtle: oklch(0.78 0.12 70 / 0.1);
+  --border-color: rgba(255,255,255,0.08);
+  --nav-bg: rgba(22, 26, 31, 0.85);
+  --shadow-sm: 0 1px 3px rgba(0,0,0,0.3);
+  --shadow-md: 0 4px 16px rgba(0,0,0,0.3);
+  --shadow-lg: 0 12px 40px rgba(0,0,0,0.4);
+}
+
+/* ---- Manual Toggle: Light ---- */
+
+:root[data-theme="light"] {
+  color-scheme: light;
+  --background: #fcfcfa;
+  --surface: #f6f6f6;
+  --card-bg: #ffffff;
+  --text-primary: #323c4f;
+  --text-secondary: #6b6e76;
+  --text-tertiary: #565c66;
+  --accent: oklch(0.58 0.13 65); /* burnt chai ~#ab6d1a */
+  --accent-hover: oklch(0.50 0.13 65);
+  --accent-subtle: oklch(0.58 0.13 65 / 0.07);
+  --border-color: rgba(50, 60, 79, 0.11);
+  --nav-bg: rgba(255, 255, 255, 0.82);
+  --shadow-sm: 0 1px 3px rgba(50,60,79,0.07), 0 1px 2px rgba(50,60,79,0.04);
+  --shadow-md: 0 4px 16px rgba(50,60,79,0.08), 0 1px 4px rgba(50,60,79,0.05);
+  --shadow-lg: 0 12px 40px rgba(50,60,79,0.10), 0 4px 12px rgba(50,60,79,0.06);
+}
+
+/* ---- Reduced Motion ---- */
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}

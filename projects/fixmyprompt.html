@@ -11,152 +11,114 @@
   <link rel="apple-touch-icon" href="../assets/apple-touch-icon.png">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;1,9..40,300;1,9..40,400&family=JetBrains+Mono:wght@400;500&family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../css/tokens.css">
   <link rel="stylesheet" href="../css/style.css">
+  <script>
+    (function () {
+      var t = localStorage.getItem('rpk-theme');
+      if (t) document.documentElement.setAttribute('data-theme', t);
+    })();
+  </script>
 </head>
 <body>
 
-  <!-- CUSTOM CURSOR -->
-  <div class="cursor" id="cursor" aria-hidden="true">
-    <div class="cursor__dot"></div>
-    <div class="cursor__ring"></div>
-  </div>
-
-  <!-- SCROLL PROGRESS -->
-  <div class="scroll-progress" id="scrollProgress" aria-hidden="true"></div>
-
-  <nav class="nav" id="nav">
-    <a href="../index.html" class="nav__logo">RPK</a>
-    <div class="nav__links">
-      <a href="../index.html#about" class="nav__link" data-index="01">About</a>
-      <a href="../index.html#projects" class="nav__link" data-index="03">Projects</a>
-      <a href="../index.html#contact" class="nav__link" data-index="05">Contact</a>
+  <header class="site-header" id="siteHeader">
+    <div class="nav-wrap" id="navWrap">
+      <div class="nav-inner">
+        <a href="../index.html" class="nav-logo">Rishi Praseeth Krishnan</a>
+        <nav class="nav-links" aria-label="Primary">
+          <a href="../index.html#work" class="nav-btn">Work</a>
+          <a href="../index.html#experience" class="nav-btn">Experience</a>
+          <a href="https://github.com/CodedRichy" target="_blank" rel="noopener noreferrer" class="nav-btn">
+            GitHub
+            <svg class="arrow-icon" xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 7h10v10M7 17 17 7"/></svg>
+          </a>
+          <span class="nav-divider" aria-hidden="true"></span>
+        </nav>
+        <div style="display:flex;align-items:center;">
+          <button class="nav-menu-btn" id="menuBtn" aria-label="Toggle menu" aria-expanded="false">
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="none" viewBox="0 0 24 24" aria-hidden="true"><path stroke="currentColor" stroke-linecap="round" stroke-width="2" d="M3 6h18M3 12h18M3 18h18"/></svg>
+          </button>
+          <button class="theme-btn" id="themeToggle" aria-label="Toggle theme">
+            <svg class="icon-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M4.93 19.07l1.41-1.41M17.66 6.34l1.41-1.41"/></svg>
+            <svg class="icon-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+          </button>
+        </div>
+      </div>
+      <div class="nav-menu-panel" id="navMenuPanel">
+        <a href="../index.html#work" class="nav-btn">Work</a>
+        <a href="../index.html#experience" class="nav-btn">Experience</a>
+        <a href="https://github.com/CodedRichy" target="_blank" rel="noopener noreferrer" class="nav-btn">GitHub</a>
+      </div>
     </div>
-    <button class="nav__menu-btn" id="menuBtn" aria-label="Toggle menu" aria-expanded="false" aria-controls="mobileMenu">
-      <span></span><span></span>
-    </button>
-  </nav>
+  </header>
 
-  <div class="mobile-menu" id="mobileMenu" role="dialog" aria-hidden="true" aria-label="Navigation menu">
-    <a href="../index.html#about" class="mobile-menu__link" data-index="01">About</a>
-    <a href="../index.html#projects" class="mobile-menu__link" data-index="03">Projects</a>
-    <a href="../index.html#contact" class="mobile-menu__link" data-index="05">Contact</a>
-  </div>
-
-  <main>
-  <section class="project-hero">
-    <a href="../index.html#projects" class="project-hero__back">
-      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M19 12H5m0 0l7 7m-7-7l7-7"/></svg>
-      Back to Projects
+  <main class="project-page">
+  <section>
+    <a href="../index.html#work" class="project-back">
+      <svg class="arrow-icon" xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" aria-hidden="true"><path d="M19 12H5m7 7-7-7 7-7"/></svg>
+      Back to work
     </a>
-    <div class="project-hero__tags">
-      <span class="project-hero__tag">SaaS</span>
-      <span class="project-hero__tag">Production</span>
-      <span class="project-hero__tag project-hero__tag--accent">LIVE</span>
+    <div class="project-tags">
+      <span class="tag">SaaS</span>
+      <span class="tag">Production</span>
+      <span class="tag tag--accent">LIVE</span>
     </div>
-    <h1 class="project-hero__title">FixMyPrompt</h1>
-    <p class="project-hero__subtitle">A production SaaS that transforms vague ideas into professional, structured prompts. ELO-based gamification where users climb ranks by writing better prompts, a 561+ challenge library, and an 18-module prompt engineering academy — with real payments.</p>
-    <div class="project-hero__links">
-      <a href="https://fixmyprompt-five.vercel.app/" target="_blank" rel="noopener noreferrer" class="btn btn--primary">Visit Live Site</a>
-    </div>
-
-    <div class="project-metrics">
-      <div class="project-metric">
-        <span class="project-metric__value">6-8K</span>
-        <span class="project-metric__label">Lines of Code</span>
-      </div>
-      <div class="project-metric">
-        <span class="project-metric__value">561+</span>
-        <span class="project-metric__label">Challenges</span>
-      </div>
-      <div class="project-metric">
-        <span class="project-metric__value">18</span>
-        <span class="project-metric__label">Academy Modules</span>
-      </div>
-      <div class="project-metric">
-        <span class="project-metric__value">LIVE</span>
-        <span class="project-metric__label">Production Status</span>
-      </div>
+    <h1 class="project-hero-title">FixMyPrompt</h1>
+    <p class="project-hero-sub">A production SaaS that transforms vague ideas into professional, structured prompts. ELO-based gamification where users climb ranks by writing better prompts, a 561+ challenge library, and an 18-module prompt engineering academy — with real payments.</p>
+    <div class="project-links">
+      <a href="https://fixmyprompt-five.vercel.app/" target="_blank" rel="noopener noreferrer">Visit Live Site</a>
     </div>
   </section>
 
   <section class="project-section">
-    <h2 class="project-section__title">The Problem</h2>
-    <div class="project-section__text">
-      <p>Most people interact with AI by typing vague, unstructured prompts — and get vague, generic responses. Prompt engineering is a learnable skill, but there's no structured way to practice it with feedback.</p>
-      <p>FixMyPrompt turns prompt writing into a game. Submit a prompt, get AI-powered feedback, earn ELO points, climb ranks. The academy teaches the fundamentals; the challenge library tests them.</p>
-    </div>
+    <h2>By the Numbers</h2>
+    <ul>
+      <li><strong>6-8K</strong> &mdash; Lines of Code</li>
+      <li><strong>561+</strong> &mdash; Challenges</li>
+      <li><strong>18</strong> &mdash; Academy Modules</li>
+      <li><strong>LIVE</strong> &mdash; Production Status</li>
+    </ul>
   </section>
 
   <section class="project-section">
-    <h2 class="project-section__title">Key Features</h2>
-    <div class="project-features">
-      <div class="project-feature">
-        <h3 class="project-feature__title">ELO Gamification</h3>
-        <p class="project-feature__desc">Competitive ranking system adapted from chess. Users earn and lose points based on prompt quality assessments. Visible leaderboard and rank progression.</p>
-      </div>
-      <div class="project-feature">
-        <h3 class="project-feature__title">561+ Challenge Library</h3>
-        <p class="project-feature__desc">Curated prompt engineering challenges across difficulty tiers. From basic formatting to advanced multi-step reasoning tasks.</p>
-      </div>
-      <div class="project-feature">
-        <h3 class="project-feature__title">18-Module Academy</h3>
-        <p class="project-feature__desc">Structured curriculum covering prompt engineering fundamentals — role setting, context framing, constraint specification, output formatting, and chain-of-thought techniques.</p>
-      </div>
-      <div class="project-feature">
-        <h3 class="project-feature__title">Real Payments</h3>
-        <p class="project-feature__desc">Lemon Squeezy integration for subscription management. This isn't a demo — it's a real product with real revenue infrastructure.</p>
-      </div>
-      <div class="project-feature">
-        <h3 class="project-feature__title">AI-Powered Feedback</h3>
-        <p class="project-feature__desc">Gemini Flash-Lite evaluates prompt quality in real-time. Specific, actionable feedback on structure, clarity, and effectiveness.</p>
-      </div>
-      <div class="project-feature">
-        <h3 class="project-feature__title">Auth & Persistence</h3>
-        <p class="project-feature__desc">Full user authentication, progress tracking, and persistent profiles via Supabase. Pick up where you left off across devices.</p>
-      </div>
-    </div>
+    <h2>The Problem</h2>
+    <p>Most people interact with AI by typing vague, unstructured prompts — and get vague, generic responses. Prompt engineering is a learnable skill, but there's no structured way to practice it with feedback.</p>
+    <p>FixMyPrompt turns prompt writing into a game. Submit a prompt, get AI-powered feedback, earn ELO points, climb ranks. The academy teaches the fundamentals; the challenge library tests them.</p>
   </section>
 
   <section class="project-section">
-    <h2 class="project-section__title">Tech Stack</h2>
-    <div class="project-stack">
-      <span class="project-stack__pill">Next.js 16</span>
-      <span class="project-stack__pill">React</span>
-      <span class="project-stack__pill">Gemini Flash-Lite</span>
-      <span class="project-stack__pill">Supabase</span>
-      <span class="project-stack__pill">Lemon Squeezy</span>
-      <span class="project-stack__pill">Vercel</span>
-      <span class="project-stack__pill">Tailwind CSS</span>
-    </div>
+    <h2>Key Features</h2>
+    <ul>
+      <li><strong>ELO Gamification</strong> &mdash; Competitive ranking system adapted from chess. Users earn and lose points based on prompt quality assessments. Visible leaderboard and rank progression.</li>
+      <li><strong>561+ Challenge Library</strong> &mdash; Curated prompt engineering challenges across difficulty tiers. From basic formatting to advanced multi-step reasoning tasks.</li>
+      <li><strong>18-Module Academy</strong> &mdash; Structured curriculum covering prompt engineering fundamentals — role setting, context framing, constraint specification, output formatting, and chain-of-thought techniques.</li>
+      <li><strong>Real Payments</strong> &mdash; Lemon Squeezy integration for subscription management. This isn't a demo — it's a real product with real revenue infrastructure.</li>
+      <li><strong>AI-Powered Feedback</strong> &mdash; Gemini Flash-Lite evaluates prompt quality in real-time. Specific, actionable feedback on structure, clarity, and effectiveness.</li>
+      <li><strong>Auth & Persistence</strong> &mdash; Full user authentication, progress tracking, and persistent profiles via Supabase. Pick up where you left off across devices.</li>
+    </ul>
   </section>
 
-  <nav class="project-nav">
-    <a href="tars.html" class="project-nav__link">
-      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" width="20"><path d="M19 12H5m0 0l7 7m-7-7l7-7"/></svg>
-      <div>
-        <span class="project-nav__label">Previous</span>
-        <span class="project-nav__name">TARS</span>
-      </div>
-    </a>
-    <a href="sonder.html" class="project-nav__link">
-      <div>
-        <span class="project-nav__label">Next Project</span>
-        <span class="project-nav__name">Sonder</span>
-      </div>
-      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" width="20"><path d="M5 12h14m0 0l-7-7m7 7l-7 7"/></svg>
-    </a>
+  <section class="project-section">
+    <h2>Tech Stack</h2>
+    <p>Next.js 16 &middot; React &middot; Gemini Flash-Lite &middot; Supabase &middot; Lemon Squeezy &middot; Vercel &middot; Tailwind CSS</p>
+  </section>
+
+  <nav class="project-section" aria-label="Project navigation">
+    <div class="project-links">
+      <a href="hcr.html">Previous: HCR</a>
+      <a href="veridock.html">Next Project: Veridock</a>
+    </div>
   </nav>
   </main>
 
-  <footer class="footer">
-    <p>Designed & Built by Rishi Praseeth Krishnan</p>
+  <footer style="padding: 48px 0 24px; text-align: center; font-size: var(--font-size-1); color: var(--text-tertiary);">
+    Rishi Praseeth Krishnan
   </footer>
 
-  <script src="https://unpkg.com/lenis@1.1.18/dist/lenis.min.js" crossorigin="anonymous" integrity="sha384-tKsJDT6PlUI0pSBt9/sBKJluKgA19/a6mBrDsZaXotLB4ZYfMGM6xt6/WgGpYhTm"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js" crossorigin="anonymous" integrity="sha384-g4NTh/Iv5PPU4xPyhEWqPcwtNXOvdaDI8LLnyYfyNZOjKJeYQyjzQ9X5275eBjpt"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js" crossorigin="anonymous" integrity="sha384-Z3REaz79l2IaAZqJsSABtTbhjgOUYyV3p90XNnAPCSHg3EMTz1fouunq9WZRtj3d"></script>
-  <script src="../js/animations.js"></script>
   <script src="../js/main.js"></script>
+  <script src="../js/memory.js"></script>
+  <script src="../js/terminal.js"></script>
 </body>
 </html>
