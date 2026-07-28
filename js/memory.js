@@ -50,7 +50,8 @@
     'tars': 'TARS',
     'roadpack': 'RoadPack',
     'expenso': 'Expenso',
-    'gitpulse': 'GitPulse'
+    'gitpulse': 'GitPulse',
+    'regulait': 'Regulait'
   };
 
   function ago(ts) {

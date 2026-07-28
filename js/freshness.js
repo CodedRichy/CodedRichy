@@ -13,6 +13,7 @@
     'roadpack': 'RoadPack',
     'expenso': 'Expenso',
     'gitpulse': 'GitPulse',
+    'regulait': 'Regulait',
     'food-chain': 'food-chain-ideation'
   };
 

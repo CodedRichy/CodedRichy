@@ -16,7 +16,8 @@
     ['tars',        'TARS',         'self-hosted agent, auditable brain'],
     ['roadpack',    'RoadPack',     'India-first road safety'],
     ['expenso',     'Expenso',      'group expenses with an AI magic bar'],
-    ['gitpulse',    'GitPulse',     'AI git guardrails']
+    ['gitpulse',    'GitPulse',     'AI git guardrails'],
+    ['regulait',    'Regulait',     'EU AI Act checker, shipped in a day']
   ];
 
   var el = null, outEl = null, inputEl = null, open = false;

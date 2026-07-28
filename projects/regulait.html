@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>GitPulse — Rishi Praseeth Krishnan</title>
-  <meta name="description" content="AI-powered Git guardrails. MCP server with 10+ tools, CLI with React Ink, and Next.js dashboard.">
+  <title>Regulait — Rishi Praseeth Krishnan</title>
+  <meta name="description" content="Free EU AI Act compliance checker. Deterministic rule engine in the browser, optional BYOK LLM fallback. Built and shipped in one day.">
   <link rel="icon" href="../favicon.ico" sizes="any">
   <link rel="icon" type="image/png" href="../assets/favicon-32x32.png" sizes="32x32">
   <link rel="icon" type="image/png" href="../assets/favicon-16x16.png" sizes="16x16">
@@ -56,64 +56,56 @@
 
   <main class="project-page">
   <section>
-    <a href="../index.html#work" class="project-back">
+    <a href="../index.html#more" class="project-back">
       <svg class="arrow-icon" xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" aria-hidden="true"><path d="M19 12H5m7 7-7-7 7-7"/></svg>
       Back to work
     </a>
     <div class="project-tags">
-      <span class="tag">Developer Tooling</span>
-      <span class="tag">MCP Server</span>
-      <span class="tag">CLI</span>
-      <span class="tag">Paused</span>
+      <span class="tag">Compliance Tooling</span>
+      <span class="tag">Rule Engine</span>
+      <span class="tag tag--accent">Built in one day</span>
+      <span class="tag">Live</span>
     </div>
-    <h1 class="project-hero-title">GitPulse</h1>
-    <p class="project-hero-sub">AI-powered Git guardrails that learn your team's conventions from commit history. An MCP server with 10+ tools, a React Ink CLI, and a Next.js analytics dashboard — all working together to enforce quality without slowing you down.</p>
+    <h1 class="project-hero-title">Regulait</h1>
+    <p class="project-hero-sub">Free EU AI Act compliance checker. Describe your AI system, get its risk tier and an actionable requirements checklist in under two minutes. Built and deployed in a single day, ahead of the August 2, 2026 enforcement deadline.</p>
     <div class="project-links">
-      <a href="https://github.com/CodedRichy/GitPulse" target="_blank" rel="noopener noreferrer">View on GitHub</a>
+      <a href="https://codedrichy.github.io/Regulait/" target="_blank" rel="noopener noreferrer">Try it live</a>
+      <a href="https://github.com/CodedRichy/Regulait" target="_blank" rel="noopener noreferrer">View on GitHub</a>
     </div>
   </section>
 
   <section class="project-section">
     <h2>By the Numbers</h2>
     <ul>
-      <li><strong>18K+</strong> &mdash; Lines of Code</li>
-      <li><strong>89</strong> &mdash; Commits</li>
-      <li><strong>10+</strong> &mdash; MCP Tools</li>
-      <li><strong>3</strong> &mdash; Surfaces (CLI, Web, MCP)</li>
+      <li><strong>1</strong> &mdash; Day from first commit to deployed</li>
+      <li><strong>20</strong> &mdash; Deterministic classification rules</li>
+      <li><strong>75</strong> &mdash; AI systems tested across sectors</li>
+      <li><strong>28</strong> &mdash; Tests</li>
+      <li><strong>0</strong> &mdash; Servers. Everything runs in your browser</li>
     </ul>
   </section>
 
   <section class="project-section">
     <h2>The Problem</h2>
-    <p>Code review catches convention violations after the code is written. Linters catch syntax, not intent. Teams waste cycles arguing about commit message formats, branch naming, and PR structure — none of which existing tools handle intelligently.</p>
-    <p>GitPulse learns your team's actual conventions from commit history and enforces them at the point of creation, not after the fact.</p>
+    <p>EU AI Act enforcement begins August 2, 2026, with fines reaching &euro;35 million or 7% of global turnover. Compliance consultants charge five figures for an assessment most teams need answered in one sitting: what risk tier is my system, and what do I actually have to do?</p>
+    <p>Regulait answers that for free. Describe the system; it classifies against the Act's own risk tiers — Unacceptable, High, Limited, Minimal — with cited reasoning, and returns a checklist of every applicable Article tagged by effort and deadline, exportable for legal counsel.</p>
   </section>
 
   <section class="project-section">
     <h2>Architecture</h2>
-    <p>Three interfaces, one engine. The MCP server is the core — it exposes 10+ tools that any AI agent can call to analyze commits, suggest improvements, and validate conventions. The React Ink CLI gives developers a terminal-native experience. The Next.js dashboard provides team-wide visibility into convention adherence and code quality trends.</p>
-    <p>The convention learning engine analyzes historical commits to build a model of what "good" looks like for your specific codebase — not generic rules, but your team's actual patterns.</p>
-  </section>
-
-  <section class="project-section">
-    <h2>Key Features</h2>
-    <ul>
-      <li><strong>Convention Learning</strong> &mdash; Analyzes commit history to learn team patterns — message formats, branch naming, file organization. Adapts to your workflow, not the other way around.</li>
-      <li><strong>MCP Tool Suite</strong> &mdash; 10+ tools exposing commit analysis, convention checking, quality scoring, and suggestion generation to any MCP-compatible AI client.</li>
-      <li><strong>React Ink CLI</strong> &mdash; Beautiful terminal interface built with React Ink. Interactive commit message suggestions, branch name validation, and pre-commit checks.</li>
-      <li><strong>Next.js Dashboard</strong> &mdash; Web dashboard for team-wide analytics. Convention adherence trends, quality metrics, and contribution insights.</li>
-    </ul>
+    <p>A deterministic rule engine covers Article 5 prohibitions and Annex III high-risk categories entirely in the browser — no API key, no data leaving the device. Edge cases fall through to an optional LLM classifier, bring-your-own-key: Gemini in the browser; OpenAI, Groq, and Anthropic when run locally. Keys live in localStorage. There are no servers to send anything to.</p>
+    <p>Shipped as a Next.js static export on GitHub Pages: zero hosting cost, zero backend surface, and the privacy story is structural rather than a policy promise.</p>
   </section>
 
   <section class="project-section">
     <h2>Tech Stack</h2>
-    <p>TypeScript &middot; Next.js &middot; React Ink &middot; MCP SDK &middot; Node.js &middot; Tailwind CSS &middot; Netlify</p>
+    <p>Next.js 15 &middot; TypeScript &middot; Tailwind CSS 4 &middot; GitHub Pages</p>
   </section>
 
   <nav class="project-section" aria-label="Project navigation">
     <div class="project-links">
-      <a href="expenso.html">Previous: Expenso</a>
-      <a href="regulait.html">Next Project: Regulait</a>
+      <a href="gitpulse.html">Previous: GitPulse</a>
+      <a href="hcr.html">Next Project: HCR</a>
     </div>
   </nav>
   </main>
