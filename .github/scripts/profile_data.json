@@ -1,0 +1,46 @@
+{
+  "name": "RISHI PRASEETH KRISHNAN",
+  "subtitle": "AI Systems Engineer · B.Tech Computer Science · MITS",
+  "username": "codedrichy",
+  "github_user": "CodedRichy",
+  "window_title": "claude-code — ~/CodedRichy",
+  "system_info": [
+    ["OS", "Windows"],
+    ["Shell", "VS Code, Cursor, Antigravity, Devin"],
+    ["Languages", "Python, TypeScript, Dart"],
+    ["Frameworks", "FastAPI, React, Next.js, Flutter, Electron"],
+    ["AI/ML", "MCP SDK, Claude API, Gemini, LiteLLM"],
+    ["Infra", "Supabase, PostgreSQL, Redis, Firebase, Vercel"]
+  ],
+  "projects": [
+    {
+      "name": "HCR",
+      "desc": "persistent dev memory",
+      "badges": [["green", "1,498 tests"], ["blue", "PyPI"]],
+      "stack": "Python · FastAPI · Supabase · MCP · sqlite-vec"
+    },
+    {
+      "name": "NullTrace",
+      "desc": "endpoint security",
+      "badges": [["text", "18 detection engines"]],
+      "stack": "Python · Scapy · FastAPI · pywin32 · WebSocket"
+    },
+    {
+      "name": "Corvus",
+      "desc": "multi-agent platform",
+      "badges": [["green", "470+ tests"], ["text", "53K LOC"]],
+      "stack": "Electron · React Flow · Drizzle ORM · tRPC · Vitest"
+    },
+    {
+      "name": "FixMyPrompt",
+      "desc": "prompt optimization SaaS",
+      "badges": [["blue", "fixmyprompt.com"]],
+      "stack": "Next.js 16 · React 19 · Gemini 2.5 · Supabase"
+    }
+  ],
+  "summary_static": "4 featured · 1,900+ tests passing",
+  "contact": [
+    [["Email", "rishi.praseeth@gmail.com"], ["GitHub", "CodedRichy"]],
+    [["LinkedIn", "rishi-praseeth"], ["Web", "rishipraseeth.in"]]
+  ]
+}

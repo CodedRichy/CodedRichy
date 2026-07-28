@@ -7,37 +7,31 @@
     text, tspan { font-family: 'Consolas','Courier New','Liberation Mono',monospace; }
   </style>
 
-  <!-- Background -->
   <rect width="840" height="600" rx="12" fill="#FFFFFF"/>
 
-  <!-- Title bar -->
   <rect width="840" height="44" rx="12" fill="#F0F1F3"/>
   <rect y="34" width="840" height="10" fill="#F0F1F3"/>
   <line x1="0" y1="44" x2="840" y2="44" stroke="#D1D5DB"/>
   <circle cx="22" cy="22" r="6" fill="#FF5F57"/>
   <circle cx="42" cy="22" r="6" fill="#FEBC2E"/>
   <circle cx="62" cy="22" r="6" fill="#28C840"/>
-  <text x="420" y="27" text-anchor="middle" font-size="12" fill="#9CA3AF">claude-code &#8212; ~/CodedRichy</text>
+  <text x="420" y="27" text-anchor="middle" font-size="12" fill="#9CA3AF">claude-code — ~/CodedRichy</text>
 
-  <!-- Prompt -->
   <text x="32" y="72" font-size="13">
     <tspan fill="#DA7756" font-weight="bold">&#10095; </tspan>
     <tspan fill="#1F2328">neofetch</tspan>
     <tspan fill="#DA7756" class="cursor">&#9608;</tspan>
   </text>
 
-  <!-- Neofetch Header -->
   <text x="32" y="96" font-size="15" font-weight="bold">
     <tspan fill="#1F2328">codedrichy</tspan><tspan fill="#9CA3AF">@</tspan><tspan fill="#0969DA">github</tspan>
   </text>
   <line x1="32" y1="105" x2="180" y2="105" stroke="#DA7756" stroke-width="1.5" stroke-linecap="round"/>
 
-  <!-- Hero Name -->
   <text x="32" y="136" font-size="22" font-weight="bold" fill="#1F2328" letter-spacing="2.5">RISHI PRASEETH KRISHNAN</text>
   <rect x="32" y="146" width="56" height="2.5" rx="1" fill="#DA7756"/>
-  <text x="32" y="162" font-size="13" fill="#656D76">AI Systems Engineer &#183; B.Tech Computer Science &#183; MITS</text>
+  <text x="32" y="162" font-size="13" fill="#656D76">AI Systems Engineer · B.Tech Computer Science · MITS</text>
 
-  <!-- System Info -->
   <text x="32" y="186" font-size="13">
     <tspan fill="#DA7756" font-weight="bold">OS</tspan><tspan fill="#D1D5DB"> ................. </tspan><tspan fill="#1F2328">Windows</tspan>
   </text>
@@ -57,7 +51,6 @@
     <tspan fill="#DA7756" font-weight="bold">Infra</tspan><tspan fill="#D1D5DB"> .............. </tspan><tspan fill="#1F2328">Supabase, PostgreSQL, Redis, Firebase, Vercel</tspan>
   </text>
 
-  <!-- Tool Block: Projects -->
   <rect x="32" y="300" width="776" height="174" rx="6" stroke="#D1D5DB" fill="none" stroke-width="1"/>
   <rect x="33" y="301" width="774" height="25" rx="5" fill="#F6F8FA"/>
   <line x1="33" y1="326" x2="807" y2="326" stroke="#D1D5DB"/>
@@ -72,38 +65,33 @@
     <tspan fill="#DA7756">HCR</tspan><tspan fill="#D1D5DB"> ............... </tspan><tspan fill="#1F2328">persistent dev memory</tspan><tspan fill="#9CA3AF"> | </tspan><tspan fill="#1A7F37">1,498 tests</tspan><tspan fill="#9CA3AF"> | </tspan><tspan fill="#0969DA">PyPI</tspan>
   </text>
   <text x="48" y="359" font-size="11">
-    <tspan fill="#9CA3AF">Python &#183; FastAPI &#183; Supabase &#183; MCP &#183; sqlite-vec</tspan>
+    <tspan fill="#9CA3AF">Python · FastAPI · Supabase · MCP · sqlite-vec</tspan>
   </text>
-
   <text x="48" y="377" font-size="13">
     <tspan fill="#DA7756">NullTrace</tspan><tspan fill="#D1D5DB"> ......... </tspan><tspan fill="#1F2328">endpoint security</tspan><tspan fill="#9CA3AF"> | </tspan><tspan fill="#1F2328">18 detection engines</tspan>
   </text>
   <text x="48" y="392" font-size="11">
-    <tspan fill="#9CA3AF">Python &#183; Scapy &#183; FastAPI &#183; pywin32 &#183; WebSocket</tspan>
+    <tspan fill="#9CA3AF">Python · Scapy · FastAPI · pywin32 · WebSocket</tspan>
   </text>
-
   <text x="48" y="410" font-size="13">
     <tspan fill="#DA7756">Corvus</tspan><tspan fill="#D1D5DB"> ............ </tspan><tspan fill="#1F2328">multi-agent platform</tspan><tspan fill="#9CA3AF"> | </tspan><tspan fill="#1A7F37">470+ tests</tspan><tspan fill="#9CA3AF"> | </tspan><tspan fill="#1F2328">53K LOC</tspan>
   </text>
   <text x="48" y="425" font-size="11">
-    <tspan fill="#9CA3AF">Electron &#183; React Flow &#183; Drizzle ORM &#183; tRPC &#183; Vitest</tspan>
+    <tspan fill="#9CA3AF">Electron · React Flow · Drizzle ORM · tRPC · Vitest</tspan>
   </text>
-
   <text x="48" y="443" font-size="13">
     <tspan fill="#DA7756">FixMyPrompt</tspan><tspan fill="#D1D5DB"> ....... </tspan><tspan fill="#1F2328">prompt optimization SaaS</tspan><tspan fill="#9CA3AF"> | </tspan><tspan fill="#0969DA">fixmyprompt.com</tspan>
   </text>
   <text x="48" y="458" font-size="11">
-    <tspan fill="#9CA3AF">Next.js 16 &#183; React 19 &#183; Gemini 2.5 &#183; Supabase</tspan>
+    <tspan fill="#9CA3AF">Next.js 16 · React 19 · Gemini 2.5 · Supabase</tspan>
   </text>
 
-  <!-- Test Summary -->
   <text x="32" y="494" font-size="12">
-    <tspan fill="#1A7F37">4 featured</tspan><tspan fill="#9CA3AF"> &#183; </tspan><tspan fill="#1A7F37">1,900+ tests passing</tspan>
+    <tspan fill="#1A7F37">4 featured · 1,900+ tests passing</tspan><tspan fill="#9CA3AF"> &#183; </tspan><tspan fill="#1F2328">&#9733; 4 stars</tspan><tspan fill="#9CA3AF"> &#183; </tspan><tspan fill="#1F2328">33 repos</tspan>
   </text>
 
-  <!-- Contact -->
   <text x="32" y="518" font-size="12">
-    <tspan fill="#D1D5DB">&#9472; </tspan><tspan fill="#DA7756" font-weight="bold">Contact</tspan><tspan fill="#D1D5DB"> &#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;</tspan>
+    <tspan fill="#9CA3AF">&#9472; </tspan><tspan fill="#DA7756" font-weight="bold">Contact</tspan><tspan fill="#9CA3AF"> &#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;</tspan>
   </text>
   <text x="32" y="540" font-size="13">
     <tspan fill="#DA7756">Email</tspan><tspan fill="#D1D5DB"> ......... </tspan><tspan fill="#0969DA">rishi.praseeth@gmail.com</tspan>
@@ -118,7 +106,6 @@
     <tspan fill="#DA7756">Web</tspan><tspan fill="#D1D5DB"> ......... </tspan><tspan fill="#0969DA">rishipraseeth.in</tspan>
   </text>
 
-  <!-- Color Palette -->
   <rect x="32" y="578" width="14" height="14" rx="2" fill="#DA7756"/>
   <rect x="52" y="578" width="14" height="14" rx="2" fill="#1A7F37"/>
   <rect x="72" y="578" width="14" height="14" rx="2" fill="#0969DA"/>
