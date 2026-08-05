@@ -14,7 +14,8 @@
     'expenso': 'Expenso',
     'gitpulse': 'GitPulse',
     'regulait': 'Regulait',
-    'food-chain': 'food-chain-ideation'
+    'food-chain': 'food-chain-ideation',
+    'litecpu16': 'LiteCPU16'
   };
 
   function ago(iso) {

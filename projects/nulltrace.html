@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Food Chain Ideation — Rishi Praseeth Krishnan</title>
-  <meta name="description" content="A Claude Code plugin that stress-tests startup ideas with 68 adversarial AI agents in live elimination rounds. Survived, restructured, or killed.">
+  <title>NullTrace — Rishi Praseeth Krishnan</title>
+  <meta name="description" content="Windows endpoint protection for the Layer 2/3 network attacks antivirus ignores. 18 detection engines covering ARP poisoning, DNS spoofing, and rogue access points.">
   <link rel="icon" href="../favicon.ico" sizes="any">
   <link rel="icon" type="image/png" href="../assets/favicon-32x32.png" sizes="32x32">
   <link rel="icon" type="image/png" href="../assets/favicon-16x16.png" sizes="16x16">
@@ -61,50 +61,55 @@
       Back to work
     </a>
     <div class="project-tags">
-      <span class="tag">Claude Code Plugin</span>
-      <span class="tag">Multi-Agent</span>
-      <span class="tag tag--accent">Shipped</span>
+      <span class="tag">Network Security</span>
+      <span class="tag">Windows Internals</span>
+      <span class="tag tag--accent">18 detection engines</span>
+      <span class="tag">Open source</span>
     </div>
-    <h1 class="project-hero-title">Food Chain Ideation</h1>
-    <p class="project-hero-sub">A shipped Claude Code plugin that stress-tests startup ideas with adversarial AI agents. 68 AI "animals" across three libraries attack an idea from every angle in live elimination rounds — until it survives, restructures, or dies. Installable via <code>claude plugin marketplace add CodedRichy/food-chain-ideation</code>.</p>
+    <h1 class="project-hero-title">NullTrace</h1>
+    <p class="project-hero-sub">Antivirus watches files. NullTrace watches the wire. Windows endpoint protection for the Layer 2 and Layer 3 attacks that traditional endpoint security is not looking for &mdash; ARP poisoning, DNS spoofing, rogue access points, IPv6 takeover.</p>
     <div class="project-links">
-      <a href="https://github.com/CodedRichy/food-chain-ideation" target="_blank" rel="noopener noreferrer">View on GitHub</a>
+      <a href="https://github.com/CodedRichy/NullTrace" target="_blank" rel="noopener noreferrer">View on GitHub</a>
     </div>
   </section>
 
   <section class="project-section">
-    <h2>The Problem</h2>
-    <p>Founders validate ideas by asking friendly people friendly questions. The market is not friendly. What an idea needs before a line of code is written is a hostile environment — reviewers with different incentives, each hunting for the one flaw that kills it.</p>
-    <p>Food Chain Ideation builds that environment: an ecosystem of adversarial agents where your idea is the prey, and only theses that deserve to survive do.</p>
-  </section>
-
-  <section class="project-section">
-    <h2>How It Works</h2>
-    <p>68 AI "animals" across three libraries attack an idea from every angle in live elimination rounds. Each attacker is isolated and role-locked, and after every patch it is forced to find a new angle — no recycling the same objection. Agents consume each other to consolidate arguments, and the idea gets patched between rounds.</p>
-    <p>Every battle ends in one of three outcomes: <strong>survived</strong> — the thesis held under attack; <strong>restructured</strong> — the original framing died but a pivot was found; or <strong>killed</strong> — the problem doesn't exist. The repo ships battle transcripts demonstrating all three.</p>
-  </section>
-
-  <section class="project-section">
-    <h2>Key Features</h2>
+    <h2>By the Numbers</h2>
     <ul>
-      <li><strong>68 Adversarial Agents</strong> &mdash; Prompt-engineered animal personas across three libraries, each attacking from a distinct role and angle.</li>
-      <li><strong>Live Elimination Rounds</strong> &mdash; Attackers are isolated and role-locked; each patch forces them to find a fresh angle of attack.</li>
-      <li><strong>Agent Consumption</strong> &mdash; Agents consume each other to consolidate arguments, so the strongest objections rise up the food chain.</li>
-      <li><strong>Patch-Between-Rounds Loop</strong> &mdash; The idea evolves under fire; each round tests the patched thesis, not the original.</li>
-      <li><strong>Three Honest Outcomes</strong> &mdash; Survived, restructured, or killed — with battle transcripts included that demonstrate all three.</li>
-      <li><strong>One-Command Install</strong> &mdash; Published to the Claude Code plugin marketplace: <code>claude plugin marketplace add CodedRichy/food-chain-ideation</code>.</li>
+      <li><strong>18</strong> &mdash; Independent detection engines</li>
+      <li><strong>4</strong> &mdash; Defense layers: harden, detect, respond, forensics</li>
+      <li><strong>7</strong> &mdash; Whitelisted commands the privileged service will execute. Nothing else.</li>
+      <li><strong>~200</strong> &mdash; Lines in the SYSTEM-level service, kept deliberately small</li>
     </ul>
   </section>
 
   <section class="project-section">
+    <h2>The Problem</h2>
+    <p>A coffee-shop network can be hostile without a single malicious file touching disk. ARP poisoning silently reroutes traffic through an attacker. DNS spoofing sends a bank domain somewhere else. A rogue access point clones an SSID and waits. Endpoint antivirus, which is built around files and processes, sees none of it.</p>
+    <p>The tools that <em>do</em> see it &mdash; Wireshark, arpwatch, custom scripts &mdash; assume the operator already knows what an ARP table is. NullTrace targets the person who does not.</p>
+  </section>
+
+  <section class="project-section">
+    <h2>Architecture</h2>
+    <p>Two processes, split along the privilege boundary. <strong>Guard</strong> runs as a SYSTEM service and is kept small on purpose: roughly 200 lines, and it will execute exactly seven whitelisted commands. <strong>Sentinel</strong> runs unprivileged, hosts all 18 detection engines and the dashboard, and can ask Guard for a privileged action but can never dictate an arbitrary one. They speak JSON over a named pipe.</p>
+    <p>That split is the security design. A detection engine parsing hostile packets is the component most likely to be compromised, so it is also the component with no privileges. Compromising Sentinel buys an attacker seven commands, not the machine.</p>
+    <p>Response is graduated rather than binary: reinforce hardening first, isolate through a VPN if that fails, and disconnect the interface only as a last resort. Detection rules are deterministic for v1 &mdash; no ML in the path where a false positive costs a user their network connection.</p>
+  </section>
+
+  <section class="project-section">
+    <h2>The Engines</h2>
+    <p>Each engine is a self-contained class over a shared base, registered at startup: <code>arp_guard</code>, <code>dns_sentinel</code>, <code>mitm6_guard</code>, <code>wpad_detector</code>, <code>llmnr_guard</code>, <code>mdns_guard</code>, <code>ra_guard</code>, <code>icmp_redirect</code>, <code>dhcp_watch</code>, <code>ap_verifier</code>, <code>beacon_detector</code>, <code>wpa_downgrade</code>, <code>mac_randomizer</code>, <code>port_scan</code>, <code>smb_audit</code>, <code>tls_verify</code>, <code>vpn_leak</code>, and <code>hostname_guard</code>.</p>
+  </section>
+
+  <section class="project-section">
     <h2>Tech Stack</h2>
-    <p>Claude Code plugin/skill system &middot; 68 prompt-engineered agent personas &middot; Markdown battle transcripts</p>
+    <p>Python 3.10+ &middot; FastAPI &middot; Windows services &middot; named pipes &middot; deterministic rule engines</p>
   </section>
 
   <nav class="project-section" aria-label="Project navigation">
     <div class="project-links">
-      <a href="veridock.html">Previous: Veridock</a>
-      <a href="tars.html">Next Project: TARS</a>
+      <a href="corvus.html">Previous: Corvus</a>
+      <a href="sentinel.html">Next Project: Sentinel</a>
     </div>
   </nav>
   </main>

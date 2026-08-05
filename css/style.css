@@ -602,6 +602,8 @@ img { max-width: 100%; display: block; }
 .wc-scene-crv { background: linear-gradient(160deg, #12101c, #221b3a); color: #b3aade; }
 .wc-scene-fci { background: linear-gradient(160deg, #1a120e, #33231a); color: #ddb69f; }
 .wc-scene-sen { background: linear-gradient(160deg, #180f12, #33161f); color: #dda0b0; }
+.wc-scene-cvb { background: linear-gradient(160deg, #14150c, #272b16); color: #ccd39e; }
+.wc-scene-nt  { background: linear-gradient(160deg, #101214, #1f2429); color: #bcc5cf; }
 .wc-scene .prompt { color: #ffffff; }
 .wc-scene pre { font-family: inherit; margin: 0; }
 
@@ -1130,4 +1132,192 @@ img { max-width: 100%; display: block; }
 .term-btn:hover {
   color: var(--accent);
   background: var(--accent-subtle);
+}
+
+
+/* ==========================================================================
+   AUDIO PLAYER — a second pill under the nav. Same glass, same 22px radius,
+   same grid column, so it reads as part of the header rather than an overlay.
+   Rides the header's hide-on-scroll for free.
+   ========================================================================== */
+
+.rplay {
+  grid-column: 2;
+  grid-row: 2;
+  justify-self: stretch;
+  margin: var(--space-2) var(--space-6) 0;
+  display: flex;
+  align-items: center;
+  gap: var(--space-3);
+  height: 40px;
+  padding: 0 var(--space-3) 0 6px;
+  background: var(--nav-bg);
+  border: 1px solid var(--border-color);
+  border-radius: 22px;
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  box-shadow: var(--shadow-sm);
+  pointer-events: all;
+  transform-origin: top center;
+  transform: translateY(-8px) scaleY(0.92);
+  opacity: 0;
+  visibility: hidden;
+  transition: transform 0.32s var(--ease-pop), opacity 0.22s ease, visibility 0s linear 0.32s;
+}
+.rplay-open {
+  transform: translateY(0) scaleY(1);
+  opacity: 1;
+  visibility: visible;
+  transition-delay: 0s;
+}
+
+/* play / pause — round to echo the pill, amber only when it matters */
+.rplay-toggle {
+  flex: none;
+  width: 28px;
+  height: 28px;
+  display: grid;
+  place-items: center;
+  border-radius: 50%;
+  color: var(--accent);
+  background: var(--accent-subtle);
+  transition: background 0.15s ease;
+}
+.rplay-toggle:hover { background: color-mix(in oklab, var(--accent) 16%, transparent); }
+
+/* triangle by default, two bars while playing — drawn in CSS, no icon swap */
+.rplay-glyph {
+  width: 0;
+  height: 0;
+  border-style: solid;
+  border-width: 4.5px 0 4.5px 7.5px;
+  border-color: transparent transparent transparent currentColor;
+  margin-left: 2px;
+}
+.rplay-playing .rplay-glyph {
+  width: 7px;
+  height: 9px;
+  margin-left: 0;
+  border: none;
+  background: currentColor;
+  clip-path: polygon(0 0, 2.5px 0, 2.5px 100%, 0 100%, 0 0, 4.5px 0, 7px 0, 7px 100%, 4.5px 100%, 4.5px 0);
+}
+
+/* same face as the nav logo — Satoshi, 13px, 500, matching tracking */
+.rplay-title {
+  flex: none;
+  font-family: var(--font-sans);
+  font-size: var(--font-size-2);
+  font-weight: 500;
+  line-height: 1;
+  letter-spacing: -0.01em;
+  color: var(--text-primary);
+  white-space: nowrap;
+}
+.rplay-time {
+  flex: none;
+  min-width: 30px;
+  font-family: var(--font-mono);
+  font-size: var(--font-size-1);
+  font-variant-numeric: tabular-nums;
+  color: var(--text-tertiary);
+}
+
+/* ---- hairline ranges: 2px track, amber fill, square thumb ---- */
+
+.rplay-seek,
+.rplay-volrange {
+  -webkit-appearance: none;
+  appearance: none;
+  height: 14px;
+  background: transparent;
+  cursor: pointer;
+  --fill: 0%;
+}
+.rplay-seek { flex: 1 1 auto; min-width: 40px; }
+
+.rplay-seek::-webkit-slider-runnable-track,
+.rplay-volrange::-webkit-slider-runnable-track {
+  height: 2px;
+  border-radius: 1px;
+  background: linear-gradient(to right,
+    var(--accent) 0 var(--fill),
+    var(--border-color) var(--fill) 100%);
+}
+.rplay-seek::-moz-range-track,
+.rplay-volrange::-moz-range-track {
+  height: 2px;
+  border-radius: 1px;
+  background: linear-gradient(to right,
+    var(--accent) 0 var(--fill),
+    var(--border-color) var(--fill) 100%);
+}
+.rplay-seek::-webkit-slider-thumb,
+.rplay-volrange::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 3px;
+  height: 11px;
+  margin-top: -4.5px;
+  border-radius: 1px;
+  background: var(--accent);
+  transition: transform 0.15s ease;
+}
+.rplay-seek::-moz-range-thumb,
+.rplay-volrange::-moz-range-thumb {
+  width: 3px;
+  height: 11px;
+  border: none;
+  border-radius: 1px;
+  background: var(--accent);
+}
+/* grows from its own center — transform only, no reflow */
+.rplay-seek:hover::-webkit-slider-thumb,
+.rplay-volrange:hover::-webkit-slider-thumb {
+  transform: scaleY(1.36);
+}
+.rplay-seek:focus-visible,
+.rplay-volrange:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 2px;
+  border-radius: var(--radius-1);
+}
+
+/* ---- volume cluster ---- */
+
+.rplay-mute {
+  flex: none;
+  width: 16px;
+  height: 16px;
+  color: var(--text-tertiary);
+  transition: color 0.15s ease;
+}
+.rplay-mute:hover { color: var(--accent); }
+.rplay-mute svg { width: 15px; height: 15px; display: block; }
+.rplay-muted .rplay-wave { opacity: 0.25; }
+.rplay-volrange { flex: none; width: 52px; }
+
+.rplay-close {
+  flex: none;
+  width: 16px;
+  height: 16px;
+  line-height: 1;
+  font-size: 15px;
+  color: var(--text-tertiary);
+  transition: color 0.15s ease;
+}
+.rplay-close:hover { color: var(--text-primary); }
+
+/* narrow: the title is the first thing to go, then the volume slider */
+@media (max-width: 620px) {
+  .rplay { gap: var(--space-2); margin-left: var(--space-4); margin-right: var(--space-4); }
+  .rplay-title { display: none; }
+}
+@media (max-width: 420px) {
+  .rplay-volrange { display: none; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .rplay { transition: opacity 0.15s ease, visibility 0s; transform: none; }
+  .rplay-open { transform: none; }
 }

@@ -51,7 +51,10 @@
     'roadpack': 'RoadPack',
     'expenso': 'Expenso',
     'gitpulse': 'GitPulse',
-    'regulait': 'Regulait'
+    'regulait': 'Regulait',
+    'cvb': 'CVB',
+    'nulltrace': 'NullTrace',
+    'litecpu16': 'LiteCPU16'
   };
 
   function ago(ts) {

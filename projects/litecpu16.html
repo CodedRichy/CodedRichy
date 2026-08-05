@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Food Chain Ideation — Rishi Praseeth Krishnan</title>
-  <meta name="description" content="A Claude Code plugin that stress-tests startup ideas with 68 adversarial AI agents in live elimination rounds. Survived, restructured, or killed.">
+  <title>LiteCPU16 — Rishi Praseeth Krishnan</title>
+  <meta name="description" content="A 16-bit single-cycle processor in Verilog. Harvard architecture, five instructions, no abstractions left to hide behind.">
   <link rel="icon" href="../favicon.ico" sizes="any">
   <link rel="icon" type="image/png" href="../assets/favicon-32x32.png" sizes="32x32">
   <link rel="icon" type="image/png" href="../assets/favicon-16x16.png" sizes="16x16">
@@ -56,55 +56,48 @@
 
   <main class="project-page">
   <section>
-    <a href="../index.html#work" class="project-back">
+    <a href="../index.html#more" class="project-back">
       <svg class="arrow-icon" xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" aria-hidden="true"><path d="M19 12H5m7 7-7-7 7-7"/></svg>
       Back to work
     </a>
     <div class="project-tags">
-      <span class="tag">Claude Code Plugin</span>
-      <span class="tag">Multi-Agent</span>
-      <span class="tag tag--accent">Shipped</span>
+      <span class="tag">Verilog</span>
+      <span class="tag">Computer Architecture</span>
+      <span class="tag tag--accent">Hardware</span>
+      <span class="tag">Open source</span>
     </div>
-    <h1 class="project-hero-title">Food Chain Ideation</h1>
-    <p class="project-hero-sub">A shipped Claude Code plugin that stress-tests startup ideas with adversarial AI agents. 68 AI "animals" across three libraries attack an idea from every angle in live elimination rounds — until it survives, restructures, or dies. Installable via <code>claude plugin marketplace add CodedRichy/food-chain-ideation</code>.</p>
+    <h1 class="project-hero-title">LiteCPU16</h1>
+    <p class="project-hero-sub">A 16-bit single-cycle processor written in Verilog. Not a simulator and not a teaching diagram &mdash; the register-transfer description of a physical microchip, stripped to the point where nothing is hidden.</p>
     <div class="project-links">
-      <a href="https://github.com/CodedRichy/food-chain-ideation" target="_blank" rel="noopener noreferrer">View on GitHub</a>
+      <a href="https://github.com/CodedRichy/LiteCPU16" target="_blank" rel="noopener noreferrer">View on GitHub</a>
     </div>
   </section>
 
   <section class="project-section">
-    <h2>The Problem</h2>
-    <p>Founders validate ideas by asking friendly people friendly questions. The market is not friendly. What an idea needs before a line of code is written is a hostile environment — reviewers with different incentives, each hunting for the one flaw that kills it.</p>
-    <p>Food Chain Ideation builds that environment: an ecosystem of adversarial agents where your idea is the prey, and only theses that deserve to survive do.</p>
-  </section>
-
-  <section class="project-section">
-    <h2>How It Works</h2>
-    <p>68 AI "animals" across three libraries attack an idea from every angle in live elimination rounds. Each attacker is isolated and role-locked, and after every patch it is forced to find a new angle — no recycling the same objection. Agents consume each other to consolidate arguments, and the idea gets patched between rounds.</p>
-    <p>Every battle ends in one of three outcomes: <strong>survived</strong> — the thesis held under attack; <strong>restructured</strong> — the original framing died but a pivot was found; or <strong>killed</strong> — the problem doesn't exist. The repo ships battle transcripts demonstrating all three.</p>
-  </section>
-
-  <section class="project-section">
-    <h2>Key Features</h2>
+    <h2>The Design</h2>
     <ul>
-      <li><strong>68 Adversarial Agents</strong> &mdash; Prompt-engineered animal personas across three libraries, each attacking from a distinct role and angle.</li>
-      <li><strong>Live Elimination Rounds</strong> &mdash; Attackers are isolated and role-locked; each patch forces them to find a fresh angle of attack.</li>
-      <li><strong>Agent Consumption</strong> &mdash; Agents consume each other to consolidate arguments, so the strongest objections rise up the food chain.</li>
-      <li><strong>Patch-Between-Rounds Loop</strong> &mdash; The idea evolves under fire; each round tests the patched thesis, not the original.</li>
-      <li><strong>Three Honest Outcomes</strong> &mdash; Survived, restructured, or killed — with battle transcripts included that demonstrate all three.</li>
-      <li><strong>One-Command Install</strong> &mdash; Published to the Claude Code plugin marketplace: <code>claude plugin marketplace add CodedRichy/food-chain-ideation</code>.</li>
+      <li><strong>16-bit</strong> data and address width</li>
+      <li><strong>Harvard architecture</strong> &mdash; separate instruction and data memory, so no structural hazards exist to work around</li>
+      <li><strong>Five instructions</strong> &mdash; <code>ADD</code>, <code>LW</code>, <code>SW</code>, <code>BEQ</code>, <code>NOP</code></li>
+      <li><strong>Single-cycle</strong> execution. No pipelining, no caching, no interrupts.</li>
     </ul>
   </section>
 
   <section class="project-section">
+    <h2>Why Strip It This Far</h2>
+    <p>Every omission here is deliberate. Pipelining, caches, and interrupts are what make real processors fast, and they are also what make a first processor unreadable. Remove them and the datapath becomes something you can follow end to end: fetch, decode, execute, write back, in one clock edge, with every wire visible.</p>
+    <p>Writing software on top of an abstraction is not the same as knowing what the abstraction is made of. This is the layer underneath the one everything else on this site runs on. <code>ARCHITECTURE_GUIDE.md</code> in the repo walks a single instruction through the datapath signal by signal.</p>
+  </section>
+
+  <section class="project-section">
     <h2>Tech Stack</h2>
-    <p>Claude Code plugin/skill system &middot; 68 prompt-engineered agent personas &middot; Markdown battle transcripts</p>
+    <p>Verilog &middot; digital design &middot; RTL simulation</p>
   </section>
 
   <nav class="project-section" aria-label="Project navigation">
     <div class="project-links">
-      <a href="veridock.html">Previous: Veridock</a>
-      <a href="tars.html">Next Project: TARS</a>
+      <a href="gitpulse.html">Previous: GitPulse</a>
+      <a href="expenso.html">Next Project: Expenso</a>
     </div>
   </nav>
   </main>

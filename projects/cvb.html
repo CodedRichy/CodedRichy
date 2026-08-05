@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Food Chain Ideation — Rishi Praseeth Krishnan</title>
-  <meta name="description" content="A Claude Code plugin that stress-tests startup ideas with 68 adversarial AI agents in live elimination rounds. Survived, restructured, or killed.">
+  <title>CVB — Rishi Praseeth Krishnan</title>
+  <meta name="description" content="Constraint-Violation Benchmark. Do coding agents honor project constraints that arrive as ambient memory instead of explicit orders? Three arms, one gap metric.">
   <link rel="icon" href="../favicon.ico" sizes="any">
   <link rel="icon" type="image/png" href="../assets/favicon-32x32.png" sizes="32x32">
   <link rel="icon" type="image/png" href="../assets/favicon-16x16.png" sizes="16x16">
@@ -61,50 +61,45 @@
       Back to work
     </a>
     <div class="project-tags">
-      <span class="tag">Claude Code Plugin</span>
-      <span class="tag">Multi-Agent</span>
-      <span class="tag tag--accent">Shipped</span>
+      <span class="tag">LLM Evaluation</span>
+      <span class="tag">Benchmark</span>
+      <span class="tag tag--accent">PantheraLabs</span>
+      <span class="tag">Open source</span>
     </div>
-    <h1 class="project-hero-title">Food Chain Ideation</h1>
-    <p class="project-hero-sub">A shipped Claude Code plugin that stress-tests startup ideas with adversarial AI agents. 68 AI "animals" across three libraries attack an idea from every angle in live elimination rounds — until it survives, restructures, or dies. Installable via <code>claude plugin marketplace add CodedRichy/food-chain-ideation</code>.</p>
+    <h1 class="project-hero-title">CVB</h1>
+    <p class="project-hero-sub">The Constraint-Violation Benchmark. Teams record a decision once &mdash; &ldquo;we standardized on httpx after the March socket-exhaustion incident&rdquo; &mdash; and expect every future AI generation to honor it. CVB measures whether that actually happens.</p>
     <div class="project-links">
-      <a href="https://github.com/CodedRichy/food-chain-ideation" target="_blank" rel="noopener noreferrer">View on GitHub</a>
+      <a href="https://github.com/PantheraLabs/CVB" target="_blank" rel="noopener noreferrer">View on GitHub</a>
     </div>
   </section>
 
   <section class="project-section">
-    <h2>The Problem</h2>
-    <p>Founders validate ideas by asking friendly people friendly questions. The market is not friendly. What an idea needs before a line of code is written is a hostile environment — reviewers with different incentives, each hunting for the one flaw that kills it.</p>
-    <p>Food Chain Ideation builds that environment: an ecosystem of adversarial agents where your idea is the prey, and only theses that deserve to survive do.</p>
+    <h2>The Gap It Measures</h2>
+    <p>Constraints reach a coding agent two ways. They can arrive as explicit instructions in the prompt &mdash; orders. Or they can sit in ambient context: a memory layer, a CLAUDE.md, a RAG retrieval. Every team building on agents assumes the second works like the first.</p>
+    <p>IFEval and AgentIF only measure the first. That is the gap: the entire premise of persistent project memory rests on an assumption nobody had benchmarked.</p>
   </section>
 
   <section class="project-section">
-    <h2>How It Works</h2>
-    <p>68 AI "animals" across three libraries attack an idea from every angle in live elimination rounds. Each attacker is isolated and role-locked, and after every patch it is forced to find a new angle — no recycling the same objection. Agents consume each other to consolidate arguments, and the idea gets patched between rounds.</p>
-    <p>Every battle ends in one of three outcomes: <strong>survived</strong> — the thesis held under attack; <strong>restructured</strong> — the original framing died but a pivot was found; or <strong>killed</strong> — the problem doesn't exist. The repo ships battle transcripts demonstrating all three.</p>
-  </section>
-
-  <section class="project-section">
-    <h2>Key Features</h2>
+    <h2>Design</h2>
+    <p>Three arms, identical tasks, different context:</p>
     <ul>
-      <li><strong>68 Adversarial Agents</strong> &mdash; Prompt-engineered animal personas across three libraries, each attacking from a distinct role and angle.</li>
-      <li><strong>Live Elimination Rounds</strong> &mdash; Attackers are isolated and role-locked; each patch forces them to find a fresh angle of attack.</li>
-      <li><strong>Agent Consumption</strong> &mdash; Agents consume each other to consolidate arguments, so the strongest objections rise up the food chain.</li>
-      <li><strong>Patch-Between-Rounds Loop</strong> &mdash; The idea evolves under fire; each round tests the patched thesis, not the original.</li>
-      <li><strong>Three Honest Outcomes</strong> &mdash; Survived, restructured, or killed — with battle transcripts included that demonstrate all three.</li>
-      <li><strong>One-Command Install</strong> &mdash; Published to the Claude Code plugin marketplace: <code>claude plugin marketplace add CodedRichy/food-chain-ideation</code>.</li>
+      <li><strong>cold</strong> &mdash; task only. Establishes the baseline violation rate.</li>
+      <li><strong>mandated</strong> &mdash; task plus the constraints as explicit orders. Establishes the instruction-following ceiling.</li>
+      <li><strong>incentivized</strong> &mdash; the same constraints embedded in an ambient project-memory narrative. Measures memory adherence.</li>
     </ul>
+    <p>The headline number is the distance between the last two: <strong>mandated strict accuracy minus incentivized strict accuracy</strong>. A small gap means ambient memory is as good as an order. A large gap means every memory layer in production is quietly failing, and the industry has been measuring the wrong thing.</p>
   </section>
 
   <section class="project-section">
-    <h2>Tech Stack</h2>
-    <p>Claude Code plugin/skill system &middot; 68 prompt-engineered agent personas &middot; Markdown battle transcripts</p>
+    <h2>Why It Exists</h2>
+    <p>CVB is the adversarial counterpart to <a href="hcr.html">HCR</a>. HCR's thesis is that ambient memory has to be <em>enforced</em> rather than hoped for. A benchmark that could disprove that thesis is more valuable than another feature that assumes it.</p>
+    <p>Results are not published yet. The design and harness are public first, deliberately &mdash; a benchmark whose methodology appears only alongside favourable numbers is a marketing asset, not an evaluation.</p>
   </section>
 
   <nav class="project-section" aria-label="Project navigation">
     <div class="project-links">
-      <a href="veridock.html">Previous: Veridock</a>
-      <a href="tars.html">Next Project: TARS</a>
+      <a href="fixmyprompt.html">Previous: FixMyPrompt</a>
+      <a href="corvus.html">Next Project: Corvus</a>
     </div>
   </nav>
   </main>

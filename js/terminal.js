@@ -9,15 +9,18 @@
   var PROJECTS = [
     ['hcr',         'HCR',          'cognitive runtime — agents that remember'],
     ['fixmyprompt', 'FixMyPrompt',  'production SaaS — prompts, fixed'],
-    ['veridock',    'Veridock',     'AI document automation, in production'],
+    ['cvb',         'CVB',          'do agents honor what they only remember?'],
     ['corvus',      'Corvus',       'agents building software in parallel'],
-    ['food-chain',  'Food Chain',   '68 AI predators vs your startup idea'],
+    ['nulltrace',   'NullTrace',    '18 engines watching layer 2 and 3'],
     ['sentinel',    'Sentinel',     'piracy detection, 3rd place ACM Nexus'],
-    ['tars',        'TARS',         'self-hosted agent, auditable brain'],
+    ['regulait',    'Regulait',     'EU AI Act checker, shipped in a day'],
     ['roadpack',    'RoadPack',     'India-first road safety'],
-    ['expenso',     'Expenso',      'group expenses with an AI magic bar'],
+    ['veridock',    'Veridock',     'AI document automation, in production'],
+    ['food-chain',  'Food Chain',   '68 AI predators vs your startup idea'],
+    ['tars',        'TARS',         'self-hosted agent, auditable brain'],
     ['gitpulse',    'GitPulse',     'AI git guardrails'],
-    ['regulait',    'Regulait',     'EU AI Act checker, shipped in a day']
+    ['litecpu16',   'LiteCPU16',    'a 16-bit CPU in verilog, five instructions'],
+    ['expenso',     'Expenso',      'group expenses with an AI magic bar']
   ];
 
   var el = null, outEl = null, inputEl = null, open = false;
@@ -63,6 +66,9 @@
       if (!m.termUsed) { m.termUsed = true; localStorage.setItem('rpk-memory', JSON.stringify(m)); }
     } catch (e) { /* fine */ }
   }
+
+  // audio lives in player.js — one Audio element, driven from both places
+  function player() { return window.rpkPlayer || null; }
 
   var COMMANDS = {
     help: function () {
@@ -122,6 +128,48 @@
     // the ones you find by trying
     sudo: function () { print('nice try. this portfolio runs rootless.'); },
     chai: function () { print('brewing... done. productivity +40%.'); },
+    play: function () {
+      var p = player();
+      if (!p) { print('no player on this page.'); return; }
+      if (p.isPlaying()) { print('already playing. `stop` kills it.'); return; }
+      p.play();
+      print('now playing: ' + p.title + '. `stop` to kill it, `vol 40` to turn it down.');
+    },
+    vol: function (arg) {
+      var p = player();
+      if (!p) { print('no player on this page.'); return; }
+      if (!arg) {
+        print('volume: ' + Math.round(p.getVol() * 100) + '%. set it: `vol 40`, or `vol up` / `vol down`.');
+        return;
+      }
+      var cur = p.getVol(), v;
+      var q = arg.toLowerCase();
+      if (q === 'up') v = cur + 0.1;
+      else if (q === 'down') v = cur - 0.1;
+      else if (q === 'max') v = 1;
+      else if (q === 'mute' || q === 'off') v = 0;
+      else {
+        v = parseFloat(q);
+        if (!isFinite(v)) { print('volume takes a number 0-100. try `vol 70`.'); return; }
+        if (v > 1) v = v / 100; // accept both `vol 70` and `vol 0.7`
+      }
+      v = p.setVol(Math.round(v * 100) / 100);
+      print('volume: ' + Math.round(v * 100) + '%.' + (v === 0 ? ' silence it is.' : ''));
+    },
+    volume: function (arg) { COMMANDS.vol(arg); },
+    mute: function () { COMMANDS.vol('mute'); },
+    pause: function () {
+      var p = player();
+      if (!p || !p.isPlaying()) { print('nothing playing.'); return; }
+      p.pause();
+      print('paused. `play` resumes.');
+    },
+    stop: function () {
+      var p = player();
+      if (!p || !p.isPlaying()) { print('nothing playing.'); return; }
+      p.stop();
+      print('stopped.');
+    },
     hello: function () { print('hey. you found the terminal. that says something about you.'); },
     hi: function () { COMMANDS.hello(); },
     pwd: function () { print(location.pathname); },
