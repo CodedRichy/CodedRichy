@@ -91,9 +91,22 @@
   </section>
 
   <section class="project-section">
+    <h2>Results</h2>
+    <p>Groq API, temperature 0, 3 runs per arm, 35 scenarios, 1260 records. Strict accuracy is the share of runs where <em>every</em> constraint was honored.</p>
+    <ul>
+      <li><strong>llama-3.1-8b-instant</strong> &mdash; cold 0.229 &middot; mandated 0.914 &middot; incentivized 0.857 &middot; gap <strong>+0.057</strong></li>
+      <li><strong>llama-3.3-70b-versatile</strong> &mdash; cold 0.229 &middot; mandated 0.952 &middot; incentivized 0.981 &middot; gap <strong>&minus;0.029</strong></li>
+      <li><strong>gpt-oss-120b</strong> &mdash; cold 0.638 &middot; mandated 0.962 &middot; incentivized 0.952 &middot; gap <strong>+0.010</strong></li>
+      <li><strong>qwen3.6-27b</strong> &mdash; cold 0.476 &middot; mandated 1.000 &middot; incentivized 1.000 &middot; gap <strong>0.000</strong></li>
+    </ul>
+    <p><strong>The result went against the hypothesis.</strong> The expectation was that constraints demoted to ambient memory would be widely ignored. They were not. Only the weakest model loses meaningfully (5.7 points); the 70B model adheres <em>better</em> to memory framing than to direct orders, and qwen is perfect under both.</p>
+    <p>What the run does establish, decisively, is the thing nobody was arguing about: cold accuracy of 0.229 means that without context these models default to the violating pattern &mdash; naive <code>datetime.now()</code>, <code>shell=True</code>, missing locks. Getting constraints into context at all is worth 60&ndash;75 points. Which framing you use is worth close to zero.</p>
+  </section>
+
+  <section class="project-section">
     <h2>Why It Exists</h2>
-    <p>CVB is the adversarial counterpart to <a href="hcr.html">HCR</a>. HCR's thesis is that ambient memory has to be <em>enforced</em> rather than hoped for. A benchmark that could disprove that thesis is more valuable than another feature that assumes it.</p>
-    <p>Results are not published yet. The design and harness are public first, deliberately &mdash; a benchmark whose methodology appears only alongside favourable numbers is a marketing asset, not an evaluation.</p>
+    <p>CVB is the adversarial counterpart to <a href="hcr.html">HCR</a>. HCR's thesis is that ambient memory has to be <em>enforced</em> rather than hoped for. A benchmark that could disprove that thesis is more valuable than another feature that assumes it &mdash; which is exactly what happened, for single-turn generation at these model sizes.</p>
+    <p>The design and harness went public before the numbers, deliberately. A benchmark whose methodology appears only alongside favourable results is a marketing asset, not an evaluation. The honest limitations are published with it: regex checks are conservative, so a pass means &ldquo;no detected violation&rdquo; rather than proof of compliance, and the run measures single-turn generation &mdash; not the long-horizon, many-turn setting where memory decay is actually claimed to bite.</p>
   </section>
 
   <nav class="project-section" aria-label="Project navigation">

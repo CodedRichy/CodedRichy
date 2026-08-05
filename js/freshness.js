@@ -3,7 +3,7 @@
 (function () {
   'use strict';
 
-  var CACHE_KEY = 'rpk-gh';
+  var CACHE_KEY = 'rpk-gh2'; // bumped: v1 cached archived repos too
   var TTL = 60 * 60 * 1000;
   var API = 'https://api.github.com/users/CodedRichy/repos?sort=pushed&per_page=100';
 
@@ -65,8 +65,10 @@
   fetch(API)
     .then(function (r) { return r.ok ? r.json() : Promise.reject(r.status); })
     .then(function (list) {
+      // archived repos are frozen by definition — a "pushed 4mo ago" chip on one
+      // advertises a project that has been formally retired
       var repos = {};
-      list.forEach(function (r) { repos[r.name] = r.pushed_at; });
+      list.forEach(function (r) { if (!r.archived) repos[r.name] = r.pushed_at; });
       try { localStorage.setItem(CACHE_KEY, JSON.stringify({ ts: Date.now(), repos: repos })); } catch (e) { /* fine */ }
       apply(repos);
     })
