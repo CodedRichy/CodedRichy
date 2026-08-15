@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Torque — Rishi Praseeth Krishnan</title>
+  <meta name="description" content="A model router for Claude Code that scores every prompt and shifts models mid-session. Six measured runs proved the v1 classifier carries no signal. The dataset and the kill are the result.">
+  <link rel="icon" href="../favicon.ico" sizes="any">
+  <link rel="icon" type="image/png" href="../assets/favicon-32x32.png" sizes="32x32">
+  <link rel="icon" type="image/png" href="../assets/favicon-16x16.png" sizes="16x16">
+  <link rel="apple-touch-icon" href="../assets/apple-touch-icon.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../css/tokens.css">
+  <link rel="stylesheet" href="../css/style.css">
+  <script>
+    (function () {
+      var t = localStorage.getItem('rpk-theme');
+      if (t) document.documentElement.setAttribute('data-theme', t);
+    })();
+  </script>
+  <script src="/js/analytics.js" defer></script>
+</head>
+<body>
+
+  <header class="site-header" id="siteHeader">
+    <div class="nav-wrap" id="navWrap">
+      <div class="nav-inner">
+        <a href="../index.html" class="nav-logo">Rishi Praseeth Krishnan</a>
+        <nav class="nav-links" aria-label="Primary">
+          <a href="../index.html#work" class="nav-btn">Work</a>
+          <a href="../index.html#experience" class="nav-btn">Experience</a>
+          <a href="https://github.com/CodedRichy" target="_blank" rel="noopener noreferrer" class="nav-btn">
+            GitHub
+            <svg class="arrow-icon" xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 7h10v10M7 17 17 7"/></svg>
+          </a>
+          <span class="nav-divider" aria-hidden="true"></span>
+        </nav>
+        <div style="display:flex;align-items:center;">
+          <button class="nav-menu-btn" id="menuBtn" aria-label="Toggle menu" aria-expanded="false">
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="none" viewBox="0 0 24 24" aria-hidden="true"><path stroke="currentColor" stroke-linecap="round" stroke-width="2" d="M3 6h18M3 12h18M3 18h18"/></svg>
+          </button>
+          <button class="theme-btn" id="themeToggle" aria-label="Toggle theme">
+            <svg class="icon-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M4.93 19.07l1.41-1.41M17.66 6.34l1.41-1.41"/></svg>
+            <svg class="icon-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+          </button>
+        </div>
+      </div>
+      <div class="nav-menu-panel" id="navMenuPanel">
+        <a href="../index.html#work" class="nav-btn">Work</a>
+        <a href="../index.html#experience" class="nav-btn">Experience</a>
+        <a href="https://github.com/CodedRichy" target="_blank" rel="noopener noreferrer" class="nav-btn">GitHub</a>
+      </div>
+    </div>
+  </header>
+
+  <main class="project-page">
+  <section>
+    <a href="../index.html#work" class="project-back">
+      <svg class="arrow-icon" xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" aria-hidden="true"><path d="M19 12H5m7 7-7-7 7-7"/></svg>
+      Back to work
+    </a>
+    <div class="project-tags">
+      <span class="tag">Model Routing</span>
+      <span class="tag">Claude Code</span>
+      <span class="tag tag--accent">v1 Killed on Evidence</span>
+      <span class="tag">Private Repo</span>
+    </div>
+    <h1 class="project-hero-title">Torque</h1>
+    <p class="project-hero-sub">An automatic transmission for Claude Code: score every prompt, route it to the cheapest model that can still handle it, and shift models mid-session without losing the conversation. Six measured validation runs established that the v1 classifier does not work — and exactly why. This page publishes that result rather than hiding it.</p>
+  </section>
+
+  <section class="project-section">
+    <h2>By the Numbers</h2>
+    <ul>
+      <li><strong>101</strong> &mdash; Commits, 0.62 files per commit</li>
+      <li><strong>6</strong> &mdash; Measured validation runs</li>
+      <li><strong>~110</strong> &mdash; Labelled <code>(prompt, work-state, gear, adequate?)</code> rows</li>
+      <li><strong>49%</strong> &mdash; Of Opus turns that needed no Opus at all</li>
+    </ul>
+  </section>
+
+  <section class="project-section">
+    <h2>The Problem</h2>
+    <p>On a Max subscription, roughly 94% of tokens go to the most expensive model available, regardless of whether the turn needed it. Most turns don't. The obvious fix is a router: read the prompt, guess the difficulty, send easy work to a cheaper model.</p>
+    <p>Every competing router does exactly that — and none of them publishes a number saying whether it works.</p>
+  </section>
+
+  <section class="project-section">
+    <h2>What Six Runs Established</h2>
+    <p>The headline result is negative and it is precise. Across 37 turns, the classifier's score does not discriminate between routes that turned out adequate and routes that turned out inadequate:</p>
+    <ul>
+      <li><strong>15.9 vs 16.7</strong> &mdash; Mean classifier score, adequate vs inadequate. Median 2 in both. Slightly <em>higher</em> on the failures.</li>
+      <li><strong>Not a tuning problem</strong> &mdash; Identical distributions mean no threshold change can rescue it. The prompt text carries no information about this decision.</li>
+      <li><strong>Adequacy is not a property of a gear</strong> &mdash; The same gear on the same prompts scored 85% against one default and 28.6% against another.</li>
+      <li><strong>Two gears were the same model</strong> &mdash; Measured twice; the cheaper arm cost slightly more both times.</li>
+      <li><strong>Prompt-text-only routing tops out near 67%</strong> &mdash; A ceiling, not a starting point.</li>
+    </ul>
+    <p>One thing did work. Routing on <em>work state</em> — files touched, tests red, task open, tool failures — rather than on the sentence was worth <strong>+12 points</strong> (66.7% &rarr; 78.6%). Independently corroborated: ACRouter reports +15.3% from the same idea.</p>
+  </section>
+
+  <section class="project-section">
+    <h2>The Prize Is Still Real</h2>
+    <p>18 of 37 turns could have run on a cheaper model with no loss of quality. A perfect oracle roughly <strong>doubles</strong> a Max subscriber's quota on the expensive model. Not 5&ndash;10x — that would need the trivial slice routed to the smallest model, and that model measured 60&ndash;63% adequate in every run.</p>
+    <p>The gap between that ceiling and the current classifier is the entire remaining product.</p>
+  </section>
+
+  <section class="project-section">
+    <h2>Why This Is On The Site</h2>
+    <p>A router that shipped without measurement would have looked better here and been worth less. The measurement is the asset: six runs, ~110 labelled rows, and a competitive landscape where several direct competitors exist and not one of them publishes a single validation number.</p>
+    <p>It also caught its own error. An early run reported 48.6% adequate; a validation harness had reimplemented a production routing rule by hand instead of calling it, and the drift surfaced as a plausible wrong number rather than a crash. The figure is recorded as a lower bound, not a measurement. That correction is in the record too.</p>
+  </section>
+
+  <section class="project-section">
+    <h2>Direction</h2>
+    <p>Stop building the classifier. Build the discriminator — route on what the work <em>is doing</em>, not on what the sentence looks like. The dataset to train that already exists.</p>
+  </section>
+
+  <section class="project-section">
+    <h2>Tech Stack</h2>
+    <p>TypeScript ESM monorepo &middot; <code>@torque-cc/engine</code> &middot; Tauri 2 &middot; SolidJS &middot; Rust backend &middot; Node validation harness</p>
+  </section>
+
+  <nav class="project-section" aria-label="Project navigation">
+    <div class="project-links">
+      <a href="cvb.html">Previous: CVB</a>
+      <a href="nulltrace.html">Next Project: NullTrace</a>
+    </div>
+  </nav>
+  </main>
+
+  <footer style="padding: 48px 0 24px; text-align: center; font-size: var(--font-size-1); color: var(--text-tertiary);">
+    Rishi Praseeth Krishnan
+  </footer>
+
+  <script src="../js/main.js"></script>
+  <script src="../js/memory.js"></script>
+  <script src="../js/player.js"></script>
+  <script src="../js/terminal.js"></script>
+</body>
+</html>

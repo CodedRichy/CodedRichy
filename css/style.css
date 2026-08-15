@@ -604,6 +604,8 @@ img { max-width: 100%; display: block; }
 .wc-scene-sen { background: linear-gradient(160deg, #180f12, #33161f); color: #dda0b0; }
 .wc-scene-cvb { background: linear-gradient(160deg, #14150c, #272b16); color: #ccd39e; }
 .wc-scene-nt  { background: linear-gradient(160deg, #101214, #1f2429); color: #bcc5cf; }
+.wc-scene-tq  { background: linear-gradient(160deg, #1a1408, #33270f); color: #ddc59f; }
+.wc-scene-rp  { background: linear-gradient(160deg, #1a0f0f, #331a1a); color: #dda8a0; }
 .wc-scene .prompt { color: #ffffff; }
 .wc-scene pre { font-family: inherit; margin: 0; }
 

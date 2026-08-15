@@ -10,17 +10,15 @@
     ['hcr',         'HCR',          'cognitive runtime — agents that remember'],
     ['fixmyprompt', 'FixMyPrompt',  'production SaaS — prompts, fixed'],
     ['cvb',         'CVB',          'do agents honor what they only remember?'],
-    ['corvus',      'Corvus',       'agents building software in parallel'],
+    ['torque',      'Torque',       'model router — six runs, one honest kill'],
     ['nulltrace',   'NullTrace',    '18 engines watching layer 2 and 3'],
-    ['sentinel',    'Sentinel',     'piracy detection, 3rd place ACM Nexus'],
-    ['regulait',    'Regulait',     'EU AI Act checker, shipped in a day'],
     ['roadpack',    'RoadPack',     'India-first road safety'],
-    ['veridock',    'Veridock',     'AI document automation, in production'],
+    ['regulait',    'Regulait',     'EU AI Act checker, shipped in a day'],
+    ['sentinel',    'Sentinel',     'piracy detection, 3rd place ACM Nexus'],
+    ['corvus',      'Corvus',       'agents building software in parallel'],
     ['food-chain',  'Food Chain',   '68 AI predators vs your startup idea'],
-    ['tars',        'TARS',         'self-hosted agent, auditable brain'],
     ['gitpulse',    'GitPulse',     'AI git guardrails'],
-    ['litecpu16',   'LiteCPU16',    'a 16-bit CPU in verilog, five instructions'],
-    ['expenso',     'Expenso',      'group expenses with an AI magic bar']
+    ['litecpu16',   'LiteCPU16',    'a 16-bit CPU in verilog, five instructions']
   ];
 
   var el = null, outEl = null, inputEl = null, open = false;
