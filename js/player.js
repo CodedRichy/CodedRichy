@@ -40,8 +40,28 @@
 
   /* Each page is a new document, so the Audio element dies on navigation.
      Park the playhead in memory and pick it up on the next page — a short
-     gap while the file loads, but no restart from zero. */
+     gap while the file loads, but no restart from zero.
+
+     Exception: a reload or a fresh arrival starts the track from the top.
+     The opening is the part worth hearing, and resuming mid-bar after a cold
+     load just sounds like a glitch. Only moving between pages of the site
+     resumes, so browsing three projects doesn't replay the same intro three
+     times. */
+  function isInternalNav() {
+    try {
+      var nav = (performance.getEntriesByType('navigation') || [])[0];
+      if (nav) {
+        if (nav.type === 'reload') return false;
+        if (nav.type === 'back_forward') return true;
+      }
+      return !!document.referrer && new URL(document.referrer).origin === location.origin;
+    } catch (e) {
+      return false;
+    }
+  }
+
   function readAt() {
+    if (!isInternalNav()) return 0;
     var t = parseFloat(mem().audioAt);
     return (isFinite(t) && t > 0) ? t : 0;
   }
