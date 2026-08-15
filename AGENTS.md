@@ -1,6 +1,6 @@
 <!-- HCR:BEGIN do-not-edit -->
-## HCR Cognitive Digest — 2026-08-15 07:27 UTC
-> Memory: 11 CSOs (6 decisions, 4 constraints) | last updated: 2026-08-15 07:27 UTC
+## HCR Cognitive Digest — 2026-08-15 09:14 UTC
+> Memory: 12 CSOs (6 decisions, 5 constraints) | last updated: 2026-08-15 09:14 UTC
 
 ### Active Decisions
 - decision:Added feature: add privacy-friendly analytics and contact-intent events
@@ -15,4 +15,5 @@
 - constraint:a name. Publishing every private repo name nightly would. make disclosure decisions on Rishi's behalf -- Winnow is held back on purpose (scope:developer)
 - constraint:double-play a track (scope:developer)
 - constraint:gives the top of the track (scope:developer)
+- constraint:interpolated into HTML (scope:developer)
 <!-- HCR:END -->
