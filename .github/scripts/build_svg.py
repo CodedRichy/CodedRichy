@@ -64,8 +64,20 @@ PROJECT_LEADER_WIDTH = 18
 
 
 def fetch_github_stats(user):
-    """Return (public_repos, total_stars) or None on any failure."""
-    token = os.environ.get("GITHUB_TOKEN", "")
+    """Return (repo_count, total_stars, repos) or None on any failure.
+
+    PROFILE_TOKEN is a fine-grained PAT with Metadata:read over ALL repos, so
+    /user/repos sees private work too. Without it we fall back to the public
+    /users/{user}/repos endpoint, which is public-only no matter what token is
+    supplied — that fallback is exactly why these stats sat frozen from
+    2026-08-05: every private push was invisible, output never changed, and the
+    workflow reported success while committing nothing.
+    """
+    token = os.environ.get("PROFILE_TOKEN", "")
+    scoped = bool(token)
+    if not token:
+        token = os.environ.get("GITHUB_TOKEN", "")
+
     headers = {"User-Agent": "profile-svg-builder"}
     if token:
         headers["Authorization"] = f"Bearer {token}"
@@ -77,14 +89,49 @@ def fetch_github_stats(user):
 
     try:
         profile = get_json(f"https://api.github.com/users/{user}")
-        repos = get_json(
-            f"https://api.github.com/users/{user}/repos?per_page=100&type=owner"
-        )
+        if scoped:
+            repos = get_json(
+                "https://api.github.com/user/repos"
+                "?per_page=100&affiliation=owner&visibility=all&sort=pushed"
+            )
+            repos = [r for r in repos if r.get("owner", {}).get("login") == user]
+        else:
+            print("WARN: no PROFILE_TOKEN — public repos only", file=sys.stderr)
+            repos = get_json(
+                f"https://api.github.com/users/{user}/repos?per_page=100&type=owner"
+            )
         stars = sum(r.get("stargazers_count", 0) for r in repos)
-        return profile.get("public_repos", len(repos)), stars
+        count = len(repos) if scoped else profile.get("public_repos", len(repos))
+        return count, stars, repos
     except Exception as exc:  # noqa: BLE001 - any failure means "no live data"
         print(f"WARN: live stats unavailable ({exc})", file=sys.stderr)
         return None
+
+
+def write_activity(repos):
+    """Emit data/activity.json for the site's freshness line.
+
+    Deliberately asymmetric: private repos contribute only to the newest-push
+    timestamp, never a name. Rishi decides what gets announced and when — a
+    nightly job listing every private repo would publish that decision for him
+    (Winnow is held back on purpose, Lot/Deadwax/CutMode aren't ready).
+    Public repos are named because they already are.
+    """
+    live = [r for r in repos if not r.get("archived") and r.get("pushed_at")]
+    if not live:
+        return
+    payload = {
+        "generated_at": max(r["pushed_at"] for r in live),
+        "newest_push": max(r["pushed_at"] for r in live),
+        "repo_count": len(live),
+        "public": {
+            r["name"]: r["pushed_at"] for r in live if not r.get("private")
+        },
+    }
+    out = ROOT / "data" / "activity.json"
+    out.parent.mkdir(parents=True, exist_ok=True)
+    out.write_text(json.dumps(payload, indent=2) + "\n", encoding="utf-8")
+    print(f"WROTE -> {out.relative_to(ROOT)} (newest push {payload['newest_push']})")
 
 
 def leaders(label, width):
@@ -158,7 +205,7 @@ def build_svg(theme, data, live_stats):
         f'<tspan fill="{t["green"]}">{escape(data["summary_static"])}</tspan>'
     )
     if live_stats:
-        repos, stars = live_stats
+        repos, stars = live_stats[0], live_stats[1]
         summary += (
             f'<tspan fill="{t["muted"]}"> &#183; </tspan>'
             f'<tspan fill="{t["text"]}">&#9733; {stars} stars</tspan>'
@@ -243,6 +290,7 @@ def main():
     live_stats = fetch_github_stats(data["github_user"])
     if live_stats:
         print(f"Live stats: {live_stats[1]} stars, {live_stats[0]} repos")
+        write_activity(live_stats[2])
     else:
         print("Building without live stats")
 

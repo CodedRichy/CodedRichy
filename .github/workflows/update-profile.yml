@@ -25,6 +25,9 @@ jobs:
 
       - name: Build SVGs
         env:
+          # PROFILE_TOKEN sees private repos (Metadata:read, all repos).
+          # GITHUB_TOKEN stays as the fallback and still does the commit below.
+          PROFILE_TOKEN: ${{ secrets.PROFILE_TOKEN }}
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: python .github/scripts/build_svg.py
 
@@ -32,10 +35,10 @@ jobs:
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
-          git add assets/dark_mode.svg assets/light_mode.svg
+          git add assets/dark_mode.svg assets/light_mode.svg data/activity.json
           if git diff --cached --quiet; then
             echo "No changes"
           else
-            git commit -m "chore: refresh profile SVGs with live stats"
+            git commit -m "chore: refresh profile SVGs and activity feed"
             git push
           fi
