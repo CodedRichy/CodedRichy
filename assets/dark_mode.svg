@@ -74,10 +74,10 @@
     <tspan fill="#6B6D7B">Python · Scapy · FastAPI · pywin32 · WebSocket</tspan>
   </text>
   <text x="48" y="410" font-size="13">
-    <tspan fill="#DA7756">Corvus</tspan><tspan fill="#2E3044"> ............ </tspan><tspan fill="#CBCDD9">multi-agent platform</tspan><tspan fill="#6B6D7B"> | </tspan><tspan fill="#7EE787">470+ tests</tspan><tspan fill="#6B6D7B"> | </tspan><tspan fill="#CBCDD9">53K LOC</tspan>
+    <tspan fill="#DA7756">Torque</tspan><tspan fill="#2E3044"> ............ </tspan><tspan fill="#CBCDD9">model router</tspan><tspan fill="#6B6D7B"> | </tspan><tspan fill="#CBCDD9">6 validation runs</tspan><tspan fill="#6B6D7B"> | </tspan><tspan fill="#CBCDD9">v1 killed</tspan>
   </text>
   <text x="48" y="425" font-size="11">
-    <tspan fill="#6B6D7B">Electron · React Flow · Drizzle ORM · tRPC · Vitest</tspan>
+    <tspan fill="#6B6D7B">TypeScript · Tauri 2 · SolidJS · Rust</tspan>
   </text>
   <text x="48" y="443" font-size="13">
     <tspan fill="#DA7756">FixMyPrompt</tspan><tspan fill="#2E3044"> ....... </tspan><tspan fill="#CBCDD9">prompt optimization SaaS</tspan><tspan fill="#6B6D7B"> | </tspan><tspan fill="#7AAFFF">fixmyprompt.com</tspan>
@@ -87,7 +87,7 @@
   </text>
 
   <text x="32" y="494" font-size="12">
-    <tspan fill="#7EE787">4 featured · 1,900+ tests passing</tspan><tspan fill="#6B6D7B"> &#183; </tspan><tspan fill="#CBCDD9">&#9733; 4 stars</tspan><tspan fill="#6B6D7B"> &#183; </tspan><tspan fill="#CBCDD9">34 repos</tspan>
+    <tspan fill="#7EE787">4 featured · 1,500+ tests passing</tspan><tspan fill="#6B6D7B"> &#183; </tspan><tspan fill="#CBCDD9">&#9733; 4 stars</tspan><tspan fill="#6B6D7B"> &#183; </tspan><tspan fill="#CBCDD9">47 repos</tspan>
   </text>
 
   <text x="32" y="518" font-size="12">

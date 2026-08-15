@@ -26,10 +26,10 @@
       "stack": "Python · Scapy · FastAPI · pywin32 · WebSocket"
     },
     {
-      "name": "Corvus",
-      "desc": "multi-agent platform",
-      "badges": [["green", "470+ tests"], ["text", "53K LOC"]],
-      "stack": "Electron · React Flow · Drizzle ORM · tRPC · Vitest"
+      "name": "Torque",
+      "desc": "model router",
+      "badges": [["text", "6 validation runs"], ["text", "v1 killed"]],
+      "stack": "TypeScript · Tauri 2 · SolidJS · Rust"
     },
     {
       "name": "FixMyPrompt",
@@ -38,7 +38,7 @@
       "stack": "Next.js 16 · React 19 · Gemini 2.5 · Supabase"
     }
   ],
-  "summary_static": "4 featured · 1,900+ tests passing",
+  "summary_static": "4 featured · 1,500+ tests passing",
   "contact": [
     [["Email", "rishi.praseeth@gmail.com"], ["GitHub", "CodedRichy"]],
     [["LinkedIn", "rishi-praseeth"], ["Web", "rishipraseeth.in"]]
