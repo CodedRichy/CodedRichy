@@ -1,0 +1,3 @@
+# Local dev only (`wrangler dev`). Copy to .dev.vars — that file is gitignored.
+LASTFM_API_KEY=
+LASTFM_USER=

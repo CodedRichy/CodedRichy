@@ -44,6 +44,12 @@
   resize();
   window.addEventListener('resize', resize);
 
+  /* The footer is no longer a fixed 40vh strip — the music card mounts into it
+     after a fetch, and its album art lands later still. A window resize event
+     never fires for either, so watch the section itself. resize() only reads
+     layout, so this can't feed back into a loop. */
+  if (window.ResizeObserver) new ResizeObserver(resize).observe(section);
+
   section.addEventListener('mousemove', function (e) {
     var r = section.getBoundingClientRect();
     mouseX = e.clientX - r.left;

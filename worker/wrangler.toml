@@ -1,0 +1,26 @@
+name = "lastfm-proxy"
+main = "src/index.js"
+compatibility_date = "2026-08-15"
+
+# Exposes the deployed version id, which goes into the edge cache key. Without
+# it a blocked cover keeps being served from cache for up to MUSIC_TTL (10 min)
+# after the deploy that blocked it — the one case where staleness is the bug.
+[version_metadata]
+binding = "CF_VERSION"
+
+# The API key is the only real secret here — set it with:
+#   wrangler secret put LASTFM_API_KEY
+#
+# The username is public (it's in the last.fm profile URL), so it lives in
+# plain config rather than costing a second secret prompt.
+[vars]
+LASTFM_USER = "DefNotRichy"
+ALLOWED_ORIGINS = "https://rishipraseeth.in,http://127.0.0.1:8899,http://localhost:8899"
+
+# Album covers to withhold — the art URL is stripped server-side, so it never
+# reaches the page or devtools. The album keeps its rank and renders as type.
+# Format: "Artist - Album", comma separated. "Artist - *" blocks an artist
+# outright. Case, spacing and punctuation are ignored when matching.
+# A baseline list also lives in src/index.js; this adds to it.
+# To add one without editing code:  wrangler deploy  after editing this line.
+BLOCKED_ART = ""

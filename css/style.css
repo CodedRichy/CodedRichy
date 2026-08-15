@@ -824,6 +824,23 @@ img { max-width: 100%; display: block; }
   background: var(--background);
   margin-top: 152px;
 }
+
+/* Set by js/lastfm.js only on the page that mounts the music card. The footer
+   stops being a fixed 40vh strip and grows around the card, so the particle
+   canvas — absolute inset:0 — covers it and the drift passes behind it.
+   The bottom padding is large because .footer-float and .footer-credit are
+   absolutely positioned and reserve no flow space of their own: the pill
+   bottoms out at 72px and stands ~46px tall, so ~118px of that padding is
+   already spoken for before any gap below the card. */
+.footer-particle-section.has-lfm {
+  height: auto;
+  min-height: 40vh;
+  padding: 140px 0 318px;
+  margin-top: 0;
+}
+@media (max-width: 700px) {
+  .footer-particle-section.has-lfm { padding: 72px 0 236px; }
+}
 #footer-canvas {
   position: absolute;
   inset: 0;
@@ -1322,4 +1339,302 @@ img { max-width: 100%; display: block; }
 @media (prefers-reduced-motion: reduce) {
   .rplay { transition: opacity 0.15s ease, visibility 0s; transform: none; }
   .rplay-open { transform: none; }
+}
+
+/* ==========================================================================
+   LISTENING — Last.fm card, between the testimonials and the footer
+   Editorial + technical, matching the rest: hairline rules, no drop shadows,
+   mono for data, Satoshi for names. The one flourish is the record sliding
+   out of the sleeve — it only turns while something is actually playing, so
+   the motion means "live" rather than "decorative".
+   ========================================================================== */
+
+/* Centred in the gap between the carousel arrows and the footer. The padding
+   is asymmetric on purpose: the testimonials section already contributes ~60px
+   below its arrows and the footer ~152px above its content, so symmetric
+   padding here lands the card 92px too high. Measured, not guessed. */
+/* The band sits inside .footer-particle-section, above the canvas. The footer
+   supplies the spacing (see .has-lfm) so the card is centred against the nav
+   pill you actually see rather than the footer's invisible box top. */
+.lfm-band {
+  position: relative;
+  z-index: 2;
+  display: flex;
+  justify-content: center;
+  padding: 0 var(--space-4);
+}
+
+.lfm {
+  width: 100%;
+  max-width: 620px;
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-3);
+  background: var(--surface);
+  padding: var(--space-5);
+  display: grid;
+  gap: var(--space-5);
+  opacity: 0;
+  transform: translateY(6px);
+  transition: opacity .6s ease, transform .6s ease;
+}
+.lfm.is-in { opacity: 1; transform: none; }
+
+/* ---- now playing ---- */
+
+.lfm-now {
+  display: flex;
+  align-items: center;
+  gap: var(--space-5);
+  text-decoration: none;
+  color: inherit;
+  min-width: 0;
+}
+
+/* sleeve + record: the disc sits behind the cover and slides out to the right.
+   The sleeve reserves the full travel width so the record can never overlap
+   the track title. */
+.lfm-sleeve {
+  position: relative;
+  width: 118px;
+  height: 72px;
+  flex: none;
+}
+.lfm-art,
+.lfm-sleeve .lfm-art-empty {
+  position: absolute;
+  left: 0; top: 0;
+  width: 72px;
+  height: 72px;
+  border-radius: var(--radius-1);
+  object-fit: cover;
+  z-index: 1;
+}
+.lfm-sleeve .lfm-art-empty { background: var(--accent-subtle); display: block; }
+
+.lfm-disc {
+  position: absolute;
+  top: 4px;
+  left: 26px;
+  width: 64px;
+  height: 64px;
+  border-radius: 50%;
+  background:
+    repeating-radial-gradient(circle at 50% 50%,
+      rgba(255,255,255,.055) 0 1px, transparent 1px 3px),
+    radial-gradient(circle at 50% 50%,
+      var(--accent) 0 13%,
+      #101014 13% 17%,
+      #26262c 17% 100%);
+  transition: left .55s cubic-bezier(.2,.7,.3,1);
+}
+.lfm-now.is-live .lfm-disc {
+  left: 50px;
+  animation: lfm-spin 3.4s linear infinite;
+}
+@keyframes lfm-spin { to { transform: rotate(360deg); } }
+
+.lfm-now-meta { min-width: 0; display: grid; gap: 3px; }
+
+.lfm-track {
+  font-size: var(--font-size-5);
+  font-weight: 500;
+  letter-spacing: -0.015em;
+  color: var(--text-primary);
+  white-space: nowrap; overflow: hidden; text-overflow: ellipsis;
+}
+.lfm-artist {
+  font-size: var(--font-size-2);
+  color: var(--text-secondary);
+  white-space: nowrap; overflow: hidden; text-overflow: ellipsis;
+}
+
+/* ---- shared label ---- */
+
+.lfm-label {
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+  font-family: var(--font-mono);
+  font-size: var(--font-size-1);
+  letter-spacing: .08em;
+  text-transform: uppercase;
+  color: var(--text-tertiary);
+}
+.lfm-now.is-live .lfm-label { color: var(--accent); }
+
+.lfm-eq { display: inline-flex; align-items: flex-end; gap: 2px; height: 9px; }
+.lfm-eq i { width: 2px; height: 3px; background: currentColor; }
+.lfm-now.is-live .lfm-eq i { animation: lfm-eq .9s ease-in-out infinite; }
+.lfm-now.is-live .lfm-eq i:nth-child(2) { animation-delay: .15s; }
+.lfm-now.is-live .lfm-eq i:nth-child(3) { animation-delay: .3s; }
+@keyframes lfm-eq { 0%,100% { height: 3px } 50% { height: 9px } }
+
+/* ---- sections ---- */
+
+.lfm-sec { display: grid; gap: var(--space-3); }
+.lfm-sec-head {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: var(--space-3);
+  padding-top: var(--space-4);
+  border-top: 1px solid var(--border-color);
+}
+.lfm-aside {
+  font-family: var(--font-mono);
+  font-size: var(--font-size-1);
+  color: var(--text-tertiary);
+  white-space: nowrap;
+}
+
+/* ---- week shape ---- */
+
+.lfm-week {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  gap: var(--space-2);
+}
+/* the bar needs a parent with a definite height — a percentage inside an
+   auto-sized grid track resolves to zero, which is why these vanished */
+.lfm-week-col { display: grid; gap: 6px; justify-items: center; }
+.lfm-week-track {
+  position: relative;
+  width: 100%;
+  max-width: 28px;
+  height: 40px;
+}
+.lfm-week-track i {
+  position: absolute;
+  left: 0; right: 0; bottom: 0;
+  background: var(--accent);
+  opacity: .32;
+  border-radius: 2px;
+}
+.lfm-week-track i.is-zero { opacity: .1; }
+.lfm-week-col:last-child .lfm-week-track i { opacity: .85; }
+.lfm-week-col span {
+  font-family: var(--font-mono);
+  font-size: var(--font-size-1);
+  color: var(--text-tertiary);
+}
+
+/* ---- top artists ---- */
+
+.lfm-artists { list-style: none; display: grid; gap: var(--space-2); }
+.lfm-artist-row {
+  display: grid;
+  grid-template-columns: minmax(0, 11rem) 1fr auto;
+  align-items: center;
+  gap: var(--space-3);
+  text-decoration: none;
+  color: inherit;
+  padding: 2px 0;
+}
+.lfm-artist-name {
+  font-size: var(--font-size-2);
+  color: var(--text-primary);
+  white-space: nowrap; overflow: hidden; text-overflow: ellipsis;
+}
+.lfm-bar { height: 6px; border-radius: 3px; background: var(--accent-subtle); overflow: hidden; }
+.lfm-bar i { display: block; height: 100%; background: var(--accent); opacity: .55; border-radius: 3px; }
+.lfm-artist-row:hover .lfm-bar i { opacity: .9; }
+.lfm-plays {
+  font-family: var(--font-mono);
+  font-size: var(--font-size-1);
+  color: var(--text-tertiary);
+  min-width: 2.2ch;
+  text-align: right;
+}
+
+/* ---- albums ---- */
+
+.lfm-albums { display: grid; grid-template-columns: repeat(4, 1fr); gap: var(--space-3); }
+.lfm-album img,
+.lfm-album .lfm-art-empty {
+  width: 100%;
+  aspect-ratio: 1;
+  object-fit: cover;
+  border-radius: var(--radius-1);
+  display: block;
+  background: var(--accent-subtle);
+  filter: saturate(.9);
+  transition: filter .25s ease, transform .25s ease;
+}
+.lfm-album:hover img { filter: none; transform: translateY(-2px); }
+
+/* Stands in for a cover that is missing or withheld. Reads as a deliberate
+   sleeve rather than a failed image. */
+.lfm-album { text-decoration: none; }
+.lfm-album .lfm-art-empty {
+  display: flex;
+  align-items: flex-end;
+  padding: var(--space-3);
+  aspect-ratio: 1;
+  border-radius: var(--radius-1);
+  transition: color .25s ease, border-color .25s ease;
+  font-family: var(--font-mono);
+  font-size: var(--font-size-1);
+  line-height: 1.3;
+  color: var(--text-tertiary);
+  background: var(--accent-subtle);
+  border: 1px solid var(--border-color);
+  overflow: hidden;
+}
+.lfm-album:hover .lfm-art-empty {
+  color: var(--accent);
+  border-color: var(--accent);
+}
+
+/* ---- follow ---- */
+
+.lfm-foot {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-4);
+  border-top: 1px solid var(--border-color);
+  padding-top: var(--space-4);
+}
+.lfm-since {
+  font-family: var(--font-mono);
+  font-size: var(--font-size-1);
+  color: var(--text-tertiary);
+  letter-spacing: .04em;
+}
+.lfm-follow {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  flex: none;
+  padding: 8px 14px;
+  border: 1px solid var(--border-color);
+  border-radius: 999px;
+  font-size: var(--font-size-2);
+  color: var(--text-secondary);
+  text-decoration: none;
+  background: transparent;
+  transition: color .2s ease, border-color .2s ease, background .2s ease;
+}
+.lfm-follow:hover {
+  color: var(--accent);
+  border-color: var(--accent);
+  background: var(--accent-subtle);
+}
+.lfm-follow .arrow-icon { width: 13px; height: 13px; }
+
+/* ---- narrow ---- */
+
+@media (max-width: 560px) {
+  .lfm { padding: var(--space-4); }
+  .lfm-now { gap: var(--space-4); }
+  .lfm-artist-row { grid-template-columns: minmax(0, 8rem) 1fr auto; }
+  .lfm-track { font-size: var(--font-size-4); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .lfm { transition: none; }
+  .lfm-now .lfm-disc { transition: none; }
+  .lfm-now.is-live .lfm-disc { animation: none; }
+  .lfm-now.is-live .lfm-eq i { animation: none; height: 6px; }
+  .lfm-album:hover img { transform: none; }
 }

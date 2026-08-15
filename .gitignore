@@ -3,3 +3,8 @@
 docs/
 PRODUCT.md
 __debug_player.html
+.env
+__lastfm_mock.html
+worker/.dev.vars
+worker/node_modules/
+worker/.wrangler/
