@@ -32,7 +32,7 @@
   mem.seen = mem.seen || {};
 
   // On a project page, remember the project
-  var pathMatch = location.pathname.match(/projects\/([a-z-]+)\.html/);
+  var pathMatch = location.pathname.match(/projects\/([a-z-]+)(?:\.html)?(?:[?#\/]|$)/);
   if (pathMatch) {
     var slug = pathMatch[1];
     mem.seen[slug] = now;
@@ -130,7 +130,7 @@
   // --- Seen markers on work cards ---
   var cards = document.querySelectorAll('.work-card[href^="projects/"]');
   cards.forEach(function (card) {
-    var m = card.getAttribute('href').match(/projects\/([a-z-]+)\.html/);
+    var m = card.getAttribute('href').match(/projects\/([a-z-]+)(?:\.html)?(?:[?#\/]|$)/);
     if (m && mem.seen[m[1]]) {
       var tab = card.querySelector('.wc-tab-label');
       if (tab && !tab.querySelector('.seen-dot')) {

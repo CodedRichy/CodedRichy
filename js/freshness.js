@@ -41,7 +41,7 @@
   function apply(repos, newestOverride) {
     // per-row chips on Also built
     document.querySelectorAll('.more-row[href^="projects/"]').forEach(function (row) {
-      var m = row.getAttribute('href').match(/projects\/([a-z-]+)\.html/);
+      var m = row.getAttribute('href').match(/projects\/([a-z-]+)(?:\.html)?(?:[?#\/]|$)/);
       var repo = m && REPO_MAP[m[1]];
       if (!repo || !repos[repo] || row.querySelector('.gh-fresh')) return;
       var chip = document.createElement('span');
