@@ -20,6 +20,7 @@
 
   // portfolio slug -> repo name (only repos that are actually public)
   var REPO_MAP = {
+    'targetx': 'TargetX',
     'gitpulse': 'GitPulse',
     'regulait': 'Regulait',
     'food-chain': 'food-chain-ideation',

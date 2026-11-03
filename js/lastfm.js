@@ -92,6 +92,8 @@
     if (d.art) {
       var img = el('img', 'lfm-art');
       img.src = d.art; img.alt = ''; img.loading = 'lazy';
+      // a dead art URL would show the browser's broken-image glyph over the record
+      img.onerror = function () { img.replaceWith(el('span', 'lfm-art lfm-art-empty')); };
       sleeve.appendChild(img);
     } else {
       sleeve.appendChild(el('span', 'lfm-art lfm-art-empty'));
@@ -174,6 +176,7 @@
       if (a.art) {
         var img = el('img');
         img.src = a.art; img.alt = a.name; img.loading = 'lazy';
+        img.onerror = function () { this.replaceWith(el('span', 'lfm-art-empty', this.alt)); };
         link.appendChild(img);
       } else {
         /* No art — either Last.fm has none, or the worker withheld it. Either

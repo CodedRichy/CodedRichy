@@ -4,9 +4,9 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Rishi Praseeth Krishnan — AI Systems Engineer</title>
-  <meta name="description" content="Rishi Praseeth Krishnan builds AI systems that remember: cognitive runtimes, MCP tooling and a shipped SaaS. Founder of Thylacine.">
+  <meta name="description" content="Rishi Praseeth Krishnan builds AI systems that remember, audit themselves, and ship: a KTU marks tracker, a memory benchmark for coding agents and a cognitive runtime. Founder of Thylacine.">
   <meta property="og:title" content="Rishi Praseeth Krishnan — AI Systems Engineer">
-  <meta property="og:description" content="Rishi Praseeth Krishnan builds AI systems that remember: cognitive runtimes, MCP tooling and a shipped SaaS. Founder of Thylacine.">
+  <meta property="og:description" content="Rishi Praseeth Krishnan builds AI systems that remember, audit themselves, and ship: a KTU marks tracker, a memory benchmark for coding agents and a cognitive runtime. Founder of Thylacine.">
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://rishipraseeth.in/">
   <meta property="og:image" content="https://rishipraseeth.in/assets/og.png">
@@ -18,7 +18,7 @@
   <meta property="og:site_name" content="Rishi Praseeth Krishnan">
   <meta property="og:image:alt" content="Rishi Praseeth Krishnan, AI Systems Engineer">
   <meta name="twitter:title" content="Rishi Praseeth Krishnan — AI Systems Engineer">
-  <meta name="twitter:description" content="Rishi Praseeth Krishnan builds AI systems that remember: cognitive runtimes, MCP tooling and a shipped SaaS. Founder of Thylacine.">
+  <meta name="twitter:description" content="Rishi Praseeth Krishnan builds AI systems that remember, audit themselves, and ship: a KTU marks tracker, a memory benchmark for coding agents and a cognitive runtime. Founder of Thylacine.">
   <script type="application/ld+json">{"@context": "https://schema.org", "@graph": [{"@type": "Person", "@id": "https://rishipraseeth.in/#me", "name": "Rishi Praseeth Krishnan", "url": "https://rishipraseeth.in/", "jobTitle": "AI Systems Engineer", "image": "https://rishipraseeth.in/assets/og.png", "worksFor": {"@id": "https://rishipraseeth.in/#thylacine"}, "sameAs": ["https://github.com/CodedRichy"]}, {"@type": "Organization", "@id": "https://rishipraseeth.in/#thylacine", "name": "Thylacine", "description": "Software products and bespoke digital solutions.", "founder": {"@id": "https://rishipraseeth.in/#me"}, "sameAs": ["https://github.com/thylacinehq"]}, {"@type": "WebSite", "url": "https://rishipraseeth.in/", "name": "Rishi Praseeth Krishnan", "publisher": {"@id": "https://rishipraseeth.in/#me"}}]}</script>
   <link rel="icon" href="favicon.ico" sizes="any">
   <link rel="icon" type="image/png" href="assets/favicon-32x32.png" sizes="32x32">
@@ -83,8 +83,9 @@
   <!-- HERO — icon particles -->
   <section class="hero" id="hero">
     <div class="scene-container" id="sceneContainer">
-      <canvas id="hero-canvas" aria-label="Particle animation morphing through one symbol per project — memory graph, wand, document, branch, shark fin, shield — ending on the name Rishi"></canvas>
+      <canvas id="hero-canvas" role="img" aria-label="Particle animation cycling through one symbol per featured project: a target for TargetX, bars for CVB, a graph for HCR, a map pin for RoadPack, a shield for NullTrace and a gauge for Torque"></canvas>
     </div>
+    <a class="hero-label" id="heroLabel" href="#card-targetx"><span class="hero-label-prompt" aria-hidden="true">&gt;</span> <span id="heroLabelName">TargetX</span></a>
     <div class="hero-fallback" id="heroFallback">
       <div class="hero-fallback-name">Rishi Praseeth <span class="accent">Krishnan</span></div>
     </div>
@@ -105,8 +106,8 @@
 
       <div class="work-grid">
 
-        <!-- Card 1 — HCR -->
-        <a class="work-card" href="projects/hcr.html">
+        <!-- Card 1 — TargetX -->
+        <a class="work-card" id="card-targetx" href="projects/targetx.html">
           <div class="wc-visual">
             <div class="wc-bg"></div>
             <div class="wc-folder" aria-hidden="true">
@@ -117,110 +118,52 @@
             <div class="wc-img wc-img-l" aria-hidden="true">
               <div class="mini">
                 <div class="mini-dots"><i></i><i></i><i></i></div>
-                <span class="mini-chip">memory: warm</span>
+                <span class="mini-chip">ask it</span>
                 <div class="mini-line w80"></div>
-                <div class="mini-line w60"></div>
-                <div class="mini-line w40 accent"></div>
-                <div class="mini-code">replay(event_042)
-<span class="tok">-&gt; recall ok</span></div>
-                <div class="mini-line w60"></div>
-                <div class="mini-line w80"></div>
+                <div class="mini-code">what do I need
+in the end sem?
+<span class="tok">computed locally</span></div>
+                <div class="mini-line w60 accent"></div>
+                <div class="mini-line w40"></div>
               </div>
             </div>
             <div class="wc-img wc-img-m" aria-hidden="true">
               <div class="mini">
                 <div class="mini-dots"><i></i><i></i><i></i></div>
-                <div class="mini-stat">41%<small>tokens saved</small></div>
-                <div class="mini-bar"><i style="width:41%"></i></div>
-                <div class="mini-stat">40+<small>MCP tools</small></div>
-                <div class="mini-bar"><i style="width:80%"></i></div>
+                <div class="mini-stat">279<small>commits</small></div>
+                <div class="mini-bar"><i style="width:85%"></i></div>
+                <div class="mini-stat">v0.5.1<small>latest release</small></div>
+                <div class="mini-bar"><i style="width:60%"></i></div>
               </div>
             </div>
             <div class="wc-img wc-img-c" aria-hidden="true">
-              <div class="wc-scene wc-scene-hcr">
-                <pre><span class="prompt">$</span> hcr replay --causal
-loading event graph...
-memory persisted.</pre>
+              <div class="wc-scene wc-scene-tx">
+                <pre><span class="prompt">$</span> targetx need --exam
+reading R 7.5.ii...
+<span class="tok">on your machine.</span></pre>
               </div>
             </div>
             <div class="wc-img wc-img-r" aria-hidden="true">
               <div class="mini">
                 <div class="mini-dots"><i></i><i></i><i></i></div>
-                <span class="mini-chip">event graph</span>
-                <div class="mini-code">e01 -&gt; e02
-e02 -&gt; e05
-e05 <span class="tok">-&gt; now</span></div>
-                <div class="mini-line w80"></div>
-                <div class="mini-line w40"></div>
-                <div class="mini-line w60 accent"></div>
-              </div>
-            </div>
-            <div class="wc-tab-label">Cognitive runtime</div>
-            <div class="wc-label"><h3 class="wc-name">HCR</h3></div>
-          </div>
-          <div class="wc-reveal">
-            <p class="wc-desc">Agents that never repeat a mistake. 40+ MCP tools, 41% token savings.</p>
-          </div>
-        </a>
-
-        <!-- Card 2 — FixMyPrompt -->
-        <a class="work-card" href="projects/fixmyprompt.html">
-          <div class="wc-visual">
-            <div class="wc-bg"></div>
-            <div class="wc-folder" aria-hidden="true">
-              <svg viewBox="0 0 274 194" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
-                <path d="M 274 194 L 0 194 L 0 8 Q 0 0 8 0 L 97.734 0 C 104.003 0 110.043 2.343 114.657 6.565 L 124.897 15.935 C 129.511 20.157 135.552 22.5 141.82 22.5 L 250 22.5 C 263.255 22.5 274 35.755 274 46.5 L 274 194 Z"/>
-              </svg>
-            </div>
-            <div class="wc-img wc-img-l" aria-hidden="true">
-              <div class="mini">
-                <div class="mini-dots"><i></i><i></i><i></i></div>
-                <span class="mini-chip">before</span>
-                <div class="mini-line w80"></div>
-                <div class="mini-line w40"></div>
-                <span class="mini-chip">after</span>
-                <div class="mini-line w80 accent"></div>
-                <div class="mini-line w60 accent"></div>
-                <div class="mini-line w40 accent"></div>
-              </div>
-            </div>
-            <div class="wc-img wc-img-m" aria-hidden="true">
-              <div class="mini">
-                <div class="mini-dots"><i></i><i></i><i></i></div>
-                <div class="mini-stat">561+<small>challenges</small></div>
-                <div class="mini-bar"><i style="width:72%"></i></div>
-                <div class="mini-stat">18<small>academy modules</small></div>
-                <div class="mini-bar"><i style="width:56%"></i></div>
-              </div>
-            </div>
-            <div class="wc-img wc-img-c" aria-hidden="true">
-              <div class="wc-scene wc-scene-fmp">
-                <pre><span class="prompt">&gt;</span> fix my prompt
-rewriting... done.
-elo +24</pre>
-              </div>
-            </div>
-            <div class="wc-img wc-img-r" aria-hidden="true">
-              <div class="mini">
-                <div class="mini-dots"><i></i><i></i><i></i></div>
-                <span class="mini-chip">leaderboard</span>
-                <div class="mini-code">1. rp_k   <span class="tok">1840</span>
-2. mira   1795
-3. dex_   1770</div>
+                <span class="mini-chip">runs on</span>
+                <div class="mini-code">android
+desktop
+<span class="tok">free for students</span></div>
                 <div class="mini-line w60"></div>
                 <div class="mini-line w80"></div>
               </div>
             </div>
-            <div class="wc-tab-label">Production SaaS</div>
-            <div class="wc-label"><h3 class="wc-name">FixMyPrompt</h3></div>
+            <div class="wc-tab-label">KTU academic tracker</div>
+            <div class="wc-label"><h3 class="wc-name">TargetX</h3></div>
           </div>
           <div class="wc-reveal">
-            <p class="wc-desc">Vague ideas in, professional prompts out. ELO ladder, academy, payments. Live.</p>
+            <p class="wc-desc">The mark you still need in each exam, and the CIE marks your attendance is already costing you. Android and desktop.</p>
           </div>
         </a>
 
-        <!-- Card 3 — CVB -->
-        <a class="work-card" href="projects/cvb.html">
+        <!-- Card 2 — CVB -->
+        <a class="work-card" id="card-cvb" href="projects/cvb.html">
           <div class="wc-visual">
             <div class="wc-bg"></div>
             <div class="wc-folder" aria-hidden="true">
@@ -275,8 +218,8 @@ constraint: use httpx
           </div>
         </a>
 
-        <!-- Card 4 — Torque -->
-        <a class="work-card" href="projects/torque.html">
+        <!-- Card 3 — HCR -->
+        <a class="work-card" id="card-hcr" href="projects/hcr.html">
           <div class="wc-visual">
             <div class="wc-bg"></div>
             <div class="wc-folder" aria-hidden="true">
@@ -287,51 +230,109 @@ constraint: use httpx
             <div class="wc-img wc-img-l" aria-hidden="true">
               <div class="mini">
                 <div class="mini-dots"><i></i><i></i><i></i></div>
-                <span class="mini-chip">gear 1 · haiku</span>
+                <span class="mini-chip">memory: warm</span>
+                <div class="mini-line w80"></div>
                 <div class="mini-line w60"></div>
-                <span class="mini-chip">gear 4 · opus</span>
-                <div class="mini-line w80 accent"></div>
-                <div class="mini-code">shift mid-session
-<span class="tok">context kept</span></div>
+                <div class="mini-line w40 accent"></div>
+                <div class="mini-code">replay(event_042)
+<span class="tok">-&gt; recall ok</span></div>
+                <div class="mini-line w60"></div>
+                <div class="mini-line w80"></div>
               </div>
             </div>
             <div class="wc-img wc-img-m" aria-hidden="true">
               <div class="mini">
                 <div class="mini-dots"><i></i><i></i><i></i></div>
-                <div class="mini-stat">49%<small>needed no Opus</small></div>
-                <div class="mini-bar"><i style="width:49%"></i></div>
-                <div class="mini-stat">110<small>labelled rows</small></div>
-                <div class="mini-bar"><i style="width:70%"></i></div>
+                <div class="mini-stat">41%<small>tokens saved</small></div>
+                <div class="mini-bar"><i style="width:41%"></i></div>
+                <div class="mini-stat">40+<small>MCP tools</small></div>
+                <div class="mini-bar"><i style="width:80%"></i></div>
               </div>
             </div>
             <div class="wc-img wc-img-c" aria-hidden="true">
-              <div class="wc-scene wc-scene-tq">
-                <pre><span class="prompt">$</span> torque validate --n 37
-classifier carries
-no signal. killed.</pre>
+              <div class="wc-scene wc-scene-hcr">
+                <pre><span class="prompt">$</span> hcr replay --causal
+loading event graph...
+memory persisted.</pre>
               </div>
             </div>
             <div class="wc-img wc-img-r" aria-hidden="true">
               <div class="mini">
                 <div class="mini-dots"><i></i><i></i><i></i></div>
-                <span class="mini-chip">discrimination</span>
-                <div class="mini-code">adequate    <span class="tok">15.9</span>
-inadequate  16.7
-delta       none</div>
+                <span class="mini-chip">event graph</span>
+                <div class="mini-code">e01 -&gt; e02
+e02 -&gt; e05
+e05 <span class="tok">-&gt; now</span></div>
                 <div class="mini-line w80"></div>
+                <div class="mini-line w40"></div>
+                <div class="mini-line w60 accent"></div>
+              </div>
+            </div>
+            <div class="wc-tab-label">Cognitive runtime — Thylacine</div>
+            <div class="wc-label"><h3 class="wc-name">HCR</h3></div>
+          </div>
+          <div class="wc-reveal">
+            <p class="wc-desc">Agents that never repeat a mistake. 40+ MCP tools, 41% token savings.</p>
+          </div>
+        </a>
+
+        <!-- Card 4 — RoadPack -->
+        <a class="work-card" id="card-roadpack" href="projects/roadpack.html">
+          <div class="wc-visual">
+            <div class="wc-bg"></div>
+            <div class="wc-folder" aria-hidden="true">
+              <svg viewBox="0 0 274 194" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M 274 194 L 0 194 L 0 8 Q 0 0 8 0 L 97.734 0 C 104.003 0 110.043 2.343 114.657 6.565 L 124.897 15.935 C 129.511 20.157 135.552 22.5 141.82 22.5 L 250 22.5 C 263.255 22.5 274 35.755 274 46.5 L 274 194 Z"/>
+              </svg>
+            </div>
+            <div class="wc-img wc-img-l" aria-hidden="true">
+              <div class="mini">
+                <div class="mini-dots"><i></i><i></i><i></i></div>
+                <span class="mini-chip">accelerometer</span>
+                <div class="mini-line w40"></div>
+                <div class="mini-line w80 accent"></div>
+                <div class="mini-code">impact 4.1g
+<span class="tok">crash likely</span></div>
                 <div class="mini-line w60"></div>
               </div>
             </div>
-            <div class="wc-tab-label">Model router — measured kill</div>
-            <div class="wc-label"><h3 class="wc-name">Torque</h3></div>
+            <div class="wc-img wc-img-m" aria-hidden="true">
+              <div class="mini">
+                <div class="mini-dots"><i></i><i></i><i></i></div>
+                <div class="mini-stat">127<small>commits</small></div>
+                <div class="mini-bar"><i style="width:85%"></i></div>
+                <div class="mini-stat">196<small>source files</small></div>
+                <div class="mini-bar"><i style="width:70%"></i></div>
+              </div>
+            </div>
+            <div class="wc-img wc-img-c" aria-hidden="true">
+              <div class="wc-scene wc-scene-rp">
+                <pre><span class="prompt">$</span> roadpack watch
+impact detected.
+cascade armed.</pre>
+              </div>
+            </div>
+            <div class="wc-img wc-img-r" aria-hidden="true">
+              <div class="mini">
+                <div class="mini-dots"><i></i><i></i><i></i></div>
+                <span class="mini-chip">sos cascade</span>
+                <div class="mini-code">t+0s   circle
+t+30s  contacts
+t+60s  <span class="tok">emergency</span></div>
+                <div class="mini-line w60"></div>
+                <div class="mini-line w80"></div>
+              </div>
+            </div>
+            <div class="wc-tab-label">India-first road safety</div>
+            <div class="wc-label"><h3 class="wc-name">RoadPack</h3></div>
           </div>
           <div class="wc-reveal">
-            <p class="wc-desc">Route Claude Code to the cheapest model that can handle it. Six runs proved v1 can't. Publishing the number is the point.</p>
+            <p class="wc-desc">Crash detection, family safety circles, and an escalating SOS cascade in one Flutter app.</p>
           </div>
         </a>
 
         <!-- Card 5 — NullTrace -->
-        <a class="work-card" href="projects/nulltrace.html">
+        <a class="work-card" id="card-nulltrace" href="projects/nulltrace.html">
           <div class="wc-visual">
             <div class="wc-bg"></div>
             <div class="wc-folder" aria-hidden="true">
@@ -386,8 +387,8 @@ detect
           </div>
         </a>
 
-        <!-- Card 6 — RoadPack -->
-        <a class="work-card" href="projects/roadpack.html">
+        <!-- Card 6 — Torque -->
+        <a class="work-card" id="card-torque" href="projects/torque.html">
           <div class="wc-visual">
             <div class="wc-bg"></div>
             <div class="wc-folder" aria-hidden="true">
@@ -398,46 +399,46 @@ detect
             <div class="wc-img wc-img-l" aria-hidden="true">
               <div class="mini">
                 <div class="mini-dots"><i></i><i></i><i></i></div>
-                <span class="mini-chip">accelerometer</span>
-                <div class="mini-line w40"></div>
-                <div class="mini-line w80 accent"></div>
-                <div class="mini-code">impact 4.1g
-<span class="tok">crash likely</span></div>
+                <span class="mini-chip">gear 1 · haiku</span>
                 <div class="mini-line w60"></div>
+                <span class="mini-chip">gear 4 · opus</span>
+                <div class="mini-line w80 accent"></div>
+                <div class="mini-code">shift mid-session
+<span class="tok">context kept</span></div>
               </div>
             </div>
             <div class="wc-img wc-img-m" aria-hidden="true">
               <div class="mini">
                 <div class="mini-dots"><i></i><i></i><i></i></div>
-                <div class="mini-stat">127<small>commits</small></div>
-                <div class="mini-bar"><i style="width:85%"></i></div>
-                <div class="mini-stat">196<small>source files</small></div>
+                <div class="mini-stat">49%<small>needed no Opus</small></div>
+                <div class="mini-bar"><i style="width:49%"></i></div>
+                <div class="mini-stat">110<small>labelled rows</small></div>
                 <div class="mini-bar"><i style="width:70%"></i></div>
               </div>
             </div>
             <div class="wc-img wc-img-c" aria-hidden="true">
-              <div class="wc-scene wc-scene-rp">
-                <pre><span class="prompt">$</span> roadpack watch
-impact detected.
-cascade armed.</pre>
+              <div class="wc-scene wc-scene-tq">
+                <pre><span class="prompt">$</span> torque validate --n 37
+classifier carries
+no signal. killed.</pre>
               </div>
             </div>
             <div class="wc-img wc-img-r" aria-hidden="true">
               <div class="mini">
                 <div class="mini-dots"><i></i><i></i><i></i></div>
-                <span class="mini-chip">sos cascade</span>
-                <div class="mini-code">t+0s   circle
-t+30s  contacts
-t+60s  <span class="tok">emergency</span></div>
-                <div class="mini-line w60"></div>
+                <span class="mini-chip">discrimination</span>
+                <div class="mini-code">adequate    <span class="tok">15.9</span>
+inadequate  16.7
+delta       none</div>
                 <div class="mini-line w80"></div>
+                <div class="mini-line w60"></div>
               </div>
             </div>
-            <div class="wc-tab-label">India-first road safety</div>
-            <div class="wc-label"><h3 class="wc-name">RoadPack</h3></div>
+            <div class="wc-tab-label">Model router — measured kill</div>
+            <div class="wc-label"><h3 class="wc-name">Torque</h3></div>
           </div>
           <div class="wc-reveal">
-            <p class="wc-desc">Crash detection, family safety circles, and an escalating SOS cascade in one Flutter app.</p>
+            <p class="wc-desc">Route Claude Code to the cheapest model that can handle it. Six runs proved v1 can't. Publishing the number is the point.</p>
           </div>
         </a>
 
@@ -450,9 +451,24 @@ t+60s  <span class="tok">emergency</span></div>
     <div class="more-inner">
       <h2 class="more-title">Also built</h2>
       <div class="more-list">
+        <a class="more-row" href="projects/fixmyprompt.html">
+          <span class="more-row-name">FixMyPrompt</span>
+          <span class="more-row-desc">Shipped a prompt-training SaaS with an ELO ladder, an academy and payments</span>
+          <svg class="arrow-icon" xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 7h10v10M7 17 17 7"/></svg>
+        </a>
         <a class="more-row" href="projects/regulait.html">
           <span class="more-row-name">Regulait</span>
           <span class="more-row-desc">Free EU AI Act compliance checker — risk tier + article checklist in 2 minutes. Built and shipped in one day</span>
+          <svg class="arrow-icon" xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 7h10v10M7 17 17 7"/></svg>
+        </a>
+        <a class="more-row" href="https://codedrichy.github.io/DeadWax/" target="_blank" rel="noopener noreferrer">
+          <span class="more-row-name">DeadWax</span>
+          <span class="more-row-desc">A record that wears where you played it. Groove wear rendered from your real listening history</span>
+          <svg class="arrow-icon" xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 7h10v10M7 17 17 7"/></svg>
+        </a>
+        <a class="more-row" href="https://codedrichy.github.io/AsciiTasmanianTigers/" target="_blank" rel="noopener noreferrer">
+          <span class="more-row-name">ASCII Thylacines</span>
+          <span class="more-row-desc">ASCII thylacines walking through a windy eucalypt grassland. Tap the grass to startle them</span>
           <svg class="arrow-icon" xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 7h10v10M7 17 17 7"/></svg>
         </a>
         <a class="more-row" href="projects/sentinel.html">
@@ -462,7 +478,7 @@ t+60s  <span class="tok">emergency</span></div>
         </a>
         <a class="more-row" href="projects/corvus.html">
           <span class="more-row-name">Corvus</span>
-          <span class="more-row-desc">Infinite canvas where AI coding agents work in parallel through contracts, not shared memory</span>
+          <span class="more-row-desc">Thylacine — infinite canvas where AI coding agents work in parallel through contracts, not shared memory</span>
           <svg class="arrow-icon" xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 7h10v10M7 17 17 7"/></svg>
         </a>
         <a class="more-row" href="projects/food-chain.html">
@@ -498,8 +514,8 @@ t+60s  <span class="tok">emergency</span></div>
           <div class="exp-date">2026 — Present</div>
           <div>
             <div class="exp-role">Building Thylacine</div>
-            <div class="exp-org">Software products and bespoke digital solutions</div>
-            <p class="exp-desc">My own products and custom client work. Corvus, CVB and the Hybrid Cognitive Runtime live under its GitHub org, thylacinehq.</p>
+            <div class="exp-org">Founder · <a href="https://thylacinehq.github.io/thylacine/" target="_blank" rel="noopener noreferrer">thylacinehq.github.io/thylacine</a></div>
+            <p class="exp-desc">Thylacine is my company. The products I work on professionally ship under it. HCR, CVB and Corvus sit in its GitHub org, thylacinehq, today.</p>
           </div>
         </div>
         <div class="exp-item">
@@ -559,7 +575,7 @@ t+60s  <span class="tok">emergency</span></div>
               <div class="author-avatar" aria-hidden="true">hcr</div>
               <div>
                 <div class="author-name">HCR</div>
-                <div class="author-role">Cognitive Runtime — 20K lines and counting</div>
+                <div class="author-role">Cognitive Runtime — 20K lines</div>
               </div>
             </div>
           </div>
@@ -579,7 +595,7 @@ t+60s  <span class="tok">emergency</span></div>
               <div class="author-avatar" aria-hidden="true">fmp</div>
               <div>
                 <div class="author-name">FixMyPrompt</div>
-                <div class="author-role">Production SaaS — live</div>
+                <div class="author-role">Production SaaS — shipped</div>
               </div>
             </div>
           </div>

@@ -9,8 +9,8 @@
   'use strict';
 
   var BASE = /\/(projects|writing)\//.test(location.pathname) ? '../' : '';
-  var SRC = BASE + 'assets/audio/oh-que-sera.mp3';
-  var TITLE = '₹₹₹';
+  var SRC = BASE + 'assets/audio/celebrity-deathmatch.mp3';
+  var TITLE = 'Celebrity Deathmatch · fakemink';
   var DEFAULT_VOL = 0.2;
 
   var audio = null, ui = null, els = {}, scrubbing = false, armed = false;

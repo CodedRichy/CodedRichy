@@ -81,6 +81,7 @@
           card.style.opacity = '1';
           card.style.zIndex = '3';
           card.style.pointerEvents = 'auto';
+          card.removeAttribute('aria-hidden');
         } else if (offset === 1) {
           card.style.transform = 'translateY(14px) scale(0.955)';
           card.style.opacity = '0.65';
@@ -100,13 +101,19 @@
       });
     }
 
-    function next() { active = (active + 1) % cards.length; layout(); }
-    function prev() { active = (active - 1 + cards.length) % cards.length; layout(); }
+    // only the front card is read out; the ones peeking behind it are decoration
+    function hideBack() {
+      cards.forEach(function (card, i) { if (i !== active) card.setAttribute('aria-hidden', 'true'); });
+    }
+
+    function next() { active = (active + 1) % cards.length; layout(); hideBack(); }
+    function prev() { active = (active - 1 + cards.length) % cards.length; layout(); hideBack(); }
 
     document.getElementById('tsNext').addEventListener('click', next);
     document.getElementById('tsPrev').addEventListener('click', prev);
     cards.forEach(function (card) { card.addEventListener('click', next); });
     layout();
+    hideBack();
   }
 
   // --- Footer tagline ---

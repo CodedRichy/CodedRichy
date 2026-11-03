@@ -1,5 +1,5 @@
 /* Icon particle morph hero — particles trace icon strokes, flow along them,
-   and spring-morph between icons. Technique: one DataTexture row per SVG
+   and morph between icons on a short eased tween. Technique: one DataTexture row per SVG
    sub-path; the vertex shader samples the row at a per-particle phase. */
 (function () {
   'use strict';
@@ -23,6 +23,8 @@
     var fb = document.getElementById('heroFallback');
     if (fb) fb.style.display = 'flex';
     if (canvas) canvas.style.display = 'none';
+    var hero = document.getElementById('hero');
+    if (hero) hero.classList.add('hero-fallback-on');
   }
 
   var reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
@@ -40,10 +42,23 @@
   // pulled-back mobile camera makes fixed-px points read larger — scale down to match
   var ptScale = isMobile ? 0.5625 : 1.0;
 
-  /* ── Icons: one per flagship project, then the sign-off — 24×24 strokes.
-     HCR graph → FixMyPrompt wand → Veridock doc → Corvus branch →
-     Food Chain fin → Sentinel shield → RISHI. ── */
+  /* ── Icons: one per work card, in card order, looping — 24×24 strokes.
+     TargetX bullseye → CVB bars → HCR graph → RoadPack pin →
+     NullTrace shield → Torque gauge. ── */
   var ICON_DEFS = [
+    // TargetX — the mark you still need: a bullseye with sight ticks
+    [{ tag: 'circle', attrs: { cx: 12, cy: 12, r: 9 } },
+     { tag: 'circle', attrs: { cx: 12, cy: 12, r: 5.5 } },
+     { tag: 'circle', attrs: { cx: 12, cy: 12, r: 2 } },
+     'M12 0.5v3',
+     'M12 20.5v3',
+     'M0.5 12h3',
+     'M20.5 12h3'],
+    // CVB — three context arms, measured side by side
+    ['M2.5 21.5h19',
+     'M4.5 21.5V12h3.5v9.5',
+     'M10.25 21.5V5h3.5v16.5',
+     'M16 21.5V15h3.5v6.5'],
     // HCR — memory as a causal event graph
     [{ tag: 'circle', attrs: { cx: 12, cy: 12, r: 2.5 } },
      { tag: 'circle', attrs: { cx: 5, cy: 5, r: 2 } },
@@ -54,33 +69,17 @@
      'M13.8 10.2 17.5 6.5',
      'M10.2 13.8 6.5 17.5',
      'M13.8 13.8 17.5 17.5'],
-    // FixMyPrompt — the fixing wand
-    ['M13.5 10.5 4 20',
-     'M16 3v10',
-     'M11 8h10',
-     { tag: 'circle', attrs: { cx: 6, cy: 6, r: 1 } },
-     { tag: 'circle', attrs: { cx: 20, cy: 14, r: 1 } }],
-    // Veridock — verified document
-    ['M14.5 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7.5L14.5 2z',
-     'M14 2v6h6',
-     'm9 15 2 2 4-4'],
-    // Corvus — agents branching in parallel
-    ['M6 3v12',
-     { tag: 'circle', attrs: { cx: 18, cy: 6, r: 3 } },
-     { tag: 'circle', attrs: { cx: 6, cy: 18, r: 3 } },
-     'M18 9a9 9 0 0 1-9 9'],
-    // Food Chain — the apex predator circling
-    ['M5 17 C6.5 10 9.5 6 12.5 4 C13 10 16 14 19 17 Z',
-     'M2 20.5 Q5 19 8 20.5 Q11 22 14 20.5 Q17 19 22 20.5'],
-    // Sentinel — shield-check
+    // RoadPack — the location an SOS sends
+    ['M20 10c0 4.993-5.539 10.193-7.399 11.799a1 1 0 0 1-1.202 0C9.539 20.193 4 14.993 4 10a8 8 0 0 1 16 0',
+     { tag: 'circle', attrs: { cx: 12, cy: 10, r: 3 } }],
+    // NullTrace — shield raising an alert
     ['M20 13c0 5-3.5 7.5-7.66 8.95a1 1 0 0 1-.67-.01C7.5 20.5 4 18 4 13V6a1 1 0 0 1 1-1c2 0 4.5-1.2 6.24-2.72a1.17 1.17 0 0 1 1.52 0C14.51 3.81 17 5 19 5a1 1 0 0 1 1 1z',
-     'm9 12 2 2 4-4'],
-    // the sign-off — hand-traced letterforms, one row per letter
-    ['M3 16 L3 8 L4.6 8 Q6 8 6 10 Q6 12 4.6 12 L3 12 M4.6 12 L6 16',
-     'M7.4 8 L9.4 8 M8.4 8 L8.4 16 M7.4 16 L9.4 16',
-     'M13.5 9 Q13.5 8 12.2 8 Q10.9 8 10.9 9.7 Q10.9 11.1 12.2 12 Q13.5 12.9 13.5 14.3 Q13.5 16 12.2 16 Q10.9 16 10.9 15',
-     'M15.5 8 L15.5 16 M19 8 L19 16 M15.5 12 L19 12',
-     'M20.4 8 L22.4 8 M21.4 8 L21.4 16 M20.4 16 L22.4 16']
+     'M12 7.5v5',
+     { tag: 'circle', attrs: { cx: 12, cy: 16, r: 0.6 } }],
+    // Torque — a gauge, needle on the gear
+    ['M3.34 19a10 10 0 1 1 17.32 0',
+     'm12 14 4-4',
+     { tag: 'circle', attrs: { cx: 12, cy: 14, r: 1.2 } }]
   ];
   var ICON_COUNT = ICON_DEFS.length;
   var TEX_W = 1024;
@@ -348,9 +347,9 @@
     flyRandMag[fi] = 0.5 + Math.random() * 1.0;
   }
 
-  // outer sub-path per icon (fly-in targets): graph center, wand line, doc
-  // outline, branch arc, fin outline, shield outline, the R
-  var OUTER_PATH = [0, 0, 0, 3, 0, 0, 0];
+  // outer sub-path per icon (fly-in targets): outer ring, baseline, graph
+  // center, pin outline, shield outline, gauge arc
+  var OUTER_PATH = [0, 0, 0, 0, 0, 0];
 
   /* ── Row assignment per icon, cached ── */
   var iconAssignCache = [];
@@ -392,9 +391,48 @@
 
   var morphIcon = 1.0, t2 = 0, flyT = 0;
   var iconIdx = 0, iconPhase = 'showing', iconClock = 0;
-  var springX = 1.0, springV = 0.0;
-  var SPRING_K = 3.0;
-  var SPRING_D = 3.12;
+  // A symbol is only readable once formed, so it holds most of the cycle and
+  // the morph is short: 2.4s held, 0.85s moving, about 74% formed.
+  var HOLD_S = 2.4;
+  var MORPH_S = 0.85;
+  function easeInOutCubic(x) {
+    return x < 0.5 ? 4 * x * x * x : 1 - Math.pow(-2 * x + 2, 3) / 2;
+  }
+
+  /* ── Caption: names the symbol on screen, links to its card. Names and
+     targets come from the work cards themselves, which share the icon order. ── */
+  var label = document.getElementById('heroLabel');
+  var labelName = document.getElementById('heroLabelName');
+  var cards = document.querySelectorAll('.work-grid .work-card');
+  var captions = [];
+  for (var ci = 0; ci < cards.length && ci < ICON_COUNT; ci++) {
+    var nameEl = cards[ci].querySelector('.wc-name');
+    captions.push({ name: nameEl ? nameEl.textContent.trim() : '', id: cards[ci].id });
+  }
+  if (label && captions.length !== ICON_COUNT) { label.style.display = 'none'; label = null; }
+  var labelHeld = false;  // hovered or focused: hold the symbol so the link stays put
+  function setCaption(idx) {
+    if (!label) return;
+    labelName.textContent = captions[idx].name;
+    label.setAttribute('href', '#' + captions[idx].id);
+  }
+  function placeCaption() {
+    if (!label) return;
+    // icons span +-2 world units; project the bottom edge, then add a gap
+    var ch = canvas.clientHeight || H;
+    var below = (2.0 / halfH) * (ch / 2);
+    label.style.setProperty('--label-top', Math.round(canvas.offsetTop + container.offsetTop + ch / 2 + below + (isMobile ? 20 : 12)) + 'px');
+  }
+  if (label) {
+    setCaption(0);
+    placeCaption();
+    var hold = function () { labelHeld = true; };
+    var release = function () { labelHeld = false; };
+    label.addEventListener('mouseenter', hold);
+    label.addEventListener('mouseleave', release);
+    label.addEventListener('focus', hold);
+    label.addEventListener('blur', release);
+  }
 
   assignToIcon(0);
   for (var idx = 0; idx < ICON_COUNT; idx++)
@@ -437,32 +475,30 @@
 
     t2 += dt * 0.24;
     flyT += dt;
-    iconClock += dt;
+    if (!(labelHeld && iconPhase === 'showing')) iconClock += dt;
 
-    // icon cycle: hold, then spring to the next — the name holds longer
-    if (iconPhase === 'showing' && iconClock > (iconIdx === ICON_COUNT - 1 ? 3.0 : 1.6)) {
+    // icon cycle: hold, then a short eased morph to the next; the last wraps
+    if (iconPhase === 'showing' && iconClock > HOLD_S) {
       aSubPathRowPrev.set(aSubPathRow);
       prevRowAttr.needsUpdate = true;
       aPhaseRatePrevBuf.set(aPhaseRateBuf);
       phaseRatePrevAttr.needsUpdate = true;
       iconIdx = (iconIdx + 1) % ICON_COUNT;
       assignToIcon(iconIdx);
-      springX = 0.0;
-      springV = 0.0;
       morphIcon = 0.0;
       iconPhase = 'morphing';
       iconClock = 0;
+      if (label) label.classList.add('is-swapping');
     }
 
     if (iconPhase === 'morphing') {
-      var Fs = -SPRING_K * (springX - 1.0);
-      var Fd = -SPRING_D * springV;
-      springV += (Fs + Fd) * dt;
-      springX += springV * dt;
-      morphIcon = springX;
-      if (Math.abs(springX - 1.0) < 0.001 && Math.abs(springV) < 0.001) {
-        springX = 1.0; springV = 0.0; morphIcon = 1.0;
+      var mp = Math.min(iconClock / MORPH_S, 1);
+      morphIcon = easeInOutCubic(mp);
+      if (mp >= 0.5 && label && labelName.textContent !== captions[iconIdx].name) setCaption(iconIdx);
+      if (mp >= 1) {
+        morphIcon = 1.0;
         iconPhase = 'showing'; iconClock = 0;
+        if (label) label.classList.remove('is-swapping');
       }
     }
 
@@ -596,6 +632,7 @@
   window.addEventListener('resize', function () {
     var W2 = container.offsetWidth || window.innerWidth;
     var H2 = container.offsetHeight || window.innerHeight;
+    placeCaption();
     if (W2 === lastW && window.innerWidth <= 768) return;
     lastW = W2;
     renderer.setSize(W2, H2);

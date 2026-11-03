@@ -41,6 +41,7 @@
   save(mem);
 
   var PROJECT_NAMES = {
+    'targetx': 'TargetX',
     'hcr': 'HCR',
     'fixmyprompt': 'FixMyPrompt',
     'torque': 'Torque',

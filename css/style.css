@@ -243,6 +243,36 @@ img { max-width: 100%; display: block; }
 }
 .hero-fallback .accent { color: var(--accent); font-family: var(--font-serif); font-style: italic; font-weight: 400; }
 
+/* Symbol caption: names the project the particles are drawing, links to its
+   card. icon-particles.js sets --label-top from the camera so it sits under
+   the symbol at any height, and swaps the name while the particles morph. */
+.hero-label {
+  position: absolute;
+  left: 50%;
+  top: var(--label-top, 78%);
+  z-index: 2;
+  transform: translateX(-50%);
+  display: inline-flex;
+  align-items: center;
+  gap: 0.6ch;
+  min-height: 44px;
+  padding: 0 14px;
+  border-radius: 999px;
+  font-family: var(--font-mono);
+  font-size: var(--font-size-3);
+  letter-spacing: 0.02em;
+  color: var(--text-secondary);
+  text-decoration: none;
+  white-space: nowrap;
+  transition: color 0.15s ease, background 0.15s ease, opacity 0.22s ease;
+}
+.hero-label-prompt { color: var(--accent); }
+.hero-label:hover,
+.hero-label:focus-visible { color: var(--text-primary); background: var(--accent-subtle); }
+.hero-label.is-swapping { opacity: 0; }
+.hero-fallback-on .hero-label { display: none; }
+.work-card { scroll-margin-top: 96px; }
+
 /* Memory status line — the session narrator */
 .hero-status {
   position: absolute;
@@ -598,7 +628,8 @@ img { max-width: 100%; display: block; }
 }
 /* every project scene is the same night window: soot to ash, dust text, amber prompt */
 .wc-scene-hcr, .wc-scene-fmp, .wc-scene-vdk, .wc-scene-crv, .wc-scene-fci,
-.wc-scene-sen, .wc-scene-cvb, .wc-scene-nt, .wc-scene-tq, .wc-scene-rp {
+.wc-scene-sen, .wc-scene-cvb, .wc-scene-nt, .wc-scene-tq, .wc-scene-rp,
+.wc-scene-tx {
   background: linear-gradient(160deg, oklch(0.17 0.008 75), oklch(0.27 0.012 75));
   color: oklch(0.74 0.016 75);
 }
@@ -938,7 +969,8 @@ img { max-width: 100%; display: block; }
   color: var(--text-secondary);
   background: var(--card-bg);
 }
-.tag--accent { color: var(--accent); border-color: color-mix(in oklab, var(--accent) 25%, transparent); background: var(--accent-subtle); }
+/* text pulled 12% toward ink/bone: plain --accent on its own 8% wash is 4.47:1 in light */
+.tag--accent { color: color-mix(in oklab, var(--accent) 88%, var(--text-primary)); border-color: color-mix(in oklab, var(--accent) 25%, transparent); background: var(--accent-subtle); }
 .project-section { margin-bottom: var(--space-9); }
 .project-section h2 {
   font-size: var(--font-size-6);
@@ -968,6 +1000,10 @@ img { max-width: 100%; display: block; }
   border-radius: var(--radius-1);
   padding: 1px 6px;
 }
+/* hero block sits on the same 48px rhythm as the sections below, with or
+   without a row of links under the intro */
+.project-page > section:first-child { margin-bottom: var(--space-9); }
+.project-page > section:first-child > .project-hero-sub:last-child { margin-bottom: 0; }
 .project-links { display: flex; gap: var(--space-3); flex-wrap: wrap; }
 .project-links a {
   display: inline-flex;
@@ -1035,10 +1071,23 @@ img { max-width: 100%; display: block; }
   .work-title { font-size: 30px; }
   .work-grid { grid-template-columns: 1fr; gap: 40px; margin: 0; }
   .more-section, .exp-section, .testimonials-section { padding-top: 96px; }
-  .more-row { flex-wrap: wrap; }
+  .more-row { flex-wrap: wrap; position: relative; padding-right: 36px; row-gap: var(--space-2); }
   .more-row-desc { flex-basis: 100%; }
+  /* arrow rides the name line instead of taking a row of its own */
+  .more-row .arrow-icon { position: absolute; right: var(--space-3); top: 21px; }
   .project-page { padding: 110px 20px 64px; }
   .card-title, .project-hero-title { font-size: var(--font-size-7); }
+}
+
+/* touch: the 30px pill buttons get a 44px-tall hit area without moving the pill */
+@media (pointer: coarse) {
+  .nav-menu-btn, .theme-btn, .term-btn, .footer-nav-btn { position: relative; }
+  .project-links a { min-height: 44px; }
+  .nav-menu-btn::after, .theme-btn::after, .term-btn::after, .footer-nav-btn::after {
+    content: '';
+    position: absolute;
+    inset: -7px -2px;
+  }
 }
 
 @media (hover: none) {

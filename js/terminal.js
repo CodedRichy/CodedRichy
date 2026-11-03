@@ -7,12 +7,13 @@
   var BASE = /\/(projects|writing)\//.test(location.pathname) ? '../' : '';
 
   var PROJECTS = [
-    ['hcr',         'HCR',          'cognitive runtime — agents that remember'],
-    ['fixmyprompt', 'FixMyPrompt',  'production SaaS — prompts, fixed'],
+    ['targetx',     'TargetX',      'KTU tracker: the mark you still need'],
     ['cvb',         'CVB',          'do agents honor what they only remember?'],
-    ['torque',      'Torque',       'model router — six runs, one honest kill'],
-    ['nulltrace',   'NullTrace',    '18 engines watching layer 2 and 3'],
+    ['hcr',         'HCR',          'cognitive runtime: agents that remember'],
     ['roadpack',    'RoadPack',     'India-first road safety'],
+    ['nulltrace',   'NullTrace',    '18 engines watching layer 2 and 3'],
+    ['torque',      'Torque',       'model router: six runs, one honest kill'],
+    ['fixmyprompt', 'FixMyPrompt',  'prompt-training SaaS, shipped'],
     ['regulait',    'Regulait',     'EU AI Act checker, shipped in a day'],
     ['sentinel',    'Sentinel',     'piracy detection, 3rd place ACM Nexus'],
     ['corvus',      'Corvus',       'agents building software in parallel'],
