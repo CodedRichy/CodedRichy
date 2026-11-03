@@ -403,8 +403,8 @@
   aPhaseRatePrevBuf.set(aPhaseRateBuf);
 
   /* ── Theme-aware color ── */
-  var LIGHT_COLOR = new THREE.Vector3(0.671, 0.427, 0.102);
-  var DARK_COLOR = new THREE.Vector3(0.890, 0.655, 0.373);
+  var LIGHT_COLOR = new THREE.Vector3(0.588, 0.341, 0.098);  /* amber ink #965719 */
+  var DARK_COLOR = new THREE.Vector3(0.953, 0.682, 0.345);  /* amber #f3ae58 */
   var targetColor = new THREE.Vector3();
   function setTargetColor() {
     var explicit = document.documentElement.getAttribute('data-theme');
